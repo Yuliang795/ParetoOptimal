@@ -1,0 +1,48 @@
+num branch_node: 15
+num leaf_node: 16
+num feature: 9
+tree_depth: 4
+num label: 7
+nDC: 1481
+
+***variables
+a: 1 - 135 -> 135
+s: 136 - 3345 -> 3210
+z: 3346 - 6769 -> 3424
+g: 6770 - 6881 -> 112
+x: 6882 - 8379 -> 1498
+ml: 8380 - 8406 -> 27
+cl: 8407 - 8486 -> 80
+
+variables***
+[debug] --> CL ML ratio 3
+the cl header --> p wcnf 8486 104721 268
+
+timeout 900s ~/SAT_Project/loandra-master/loandra_static -pmreslin-cglim=30 -weight-strategy=1 -print-model -verbosity=1 ./solutions/glass_0.1_mc0.5_s2352_r3/phase_1_clauses_final >./solutions/glass_0.1_mc0.5_s2352_r3/phase_1_loandra_res
+
+Start to read loandra res
+*loandra status: OPTIMUM FOUND
+-ml sat and violated: 27 | 0  | total #ml: 27 | -violated weight: 0
+-cl sat and violated: 80 | 0  | total #cl: 80 | -violated weight: 0
+7 -time: 0.00110 -dim: (540, 2)
+8 -time: 0.00008 -dim: (15, 9)
+9 -time: 0.05672 -dim: (28755, 3)
+10 -time: 0.11172 -dim: (14805, 3)
+11_12 -time: 0.02572 -dim: [13696, 2]
+13 -time: 0.00858 -dim: (3424, 5)
+14_15 -time: 0.00237 -dim: [270, 2]
+16 -time: 0.00021 -dim: (80, 2)
+17_18 -time: 0.11701 -dim: [41088, 3]
+19 -time: 0.00009 -dim: (6, 1)
+20 -time: 0.02738 -dim: (5, 214)
+21 -time: 0.00007 -dim: (1, 214)
+22 -time: 0.00002 -dim: (80, 3)
+23 -time: 0.00001 -dim: (80, 3)
+24 -time: 0.00003 -dim: (400, 5)
+25 -time: 0.00002 -dim: (162, 3)
+26 -time: 0.00001 -dim: (162, 3)
+smtPr 22-26 -time: 0.00180 -dim: nan
+slvr_header -time: 0.05164 -dim: nan
+*solver* -time: 34.56063 -dim: nan
+res_read -time: 0.00462 -dim: nan
+-- SUM CL TIME: 0.35294          |  SUM other TIME: 34.61689          |  SUM TIME: 34.96983

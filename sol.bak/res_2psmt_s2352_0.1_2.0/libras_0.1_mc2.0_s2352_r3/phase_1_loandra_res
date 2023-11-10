@@ -1,0 +1,1479 @@
+c
+c LOANDRA:	 an extension of Open-WBO to core-boosted linear search.
+c Version:	 July 2019 2018 -- Release: 1.0
+c Authors:	 Jeremias Berg, Emir Demirovic, Peter Stuckey
+c We thank the developers of Open-WBO for their work
+c
+c Open-WBO:	 a Modular MaxSAT Solver -- based on Glucose4.1 (core version)
+c Version:	 September 2018 -- Release: 2.1
+c Authors:	 Ruben Martins, Vasco Manquinho, Ines Lynce
+c Contributors:	 Miguel Neves, Saurabh Joshi, Norbert Manthey, Mikolas Janota
+c Contact:	 open-wbo@sat.inesc-id.pt -- http://sat.inesc-id.pt/open-wbo/
+c
+c WARNING: for repeatability, setting FPU to use double precision
+c |                                                                                                       |
+c ========================================[ Problem Statistics ]===========================================
+c |                                                                                                       |
+c |  Problem Format:             MaxSAT                                                                   |
+c |  Problem Type:             Weighted                                                                   |
+c |  Number of variables:         32070                                                                   |
+c |  Number of hard clauses:    1980320                                                                   |
+c |  Number of soft clauses:        720                                                                   |
+c |  Number of cardinality:           0                                                                   |
+c |  Number of PB :                   0                                                                   |
+c |  Parse time:                   0.24 s                                                                 |
+c |                                                                                                       |
+c PMRES ALGORITHM WITH LINEAR SEARCH 
+c PMRES LINEAR STRAT=1
+c PMRES LINEAR DIVISION=1
+c PMRES CORE DIVISION=0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c PMRES RELAX BEFORE STRAT =0
+c PMRES INCREMENTAL LIN DIVISION =0
+c PMRES MINIM =1
+c PMRES MINIM STRAT =0
+c PRE hard clauses before: 1981040
+c PRE soft literals before: 720
+c PRE time: 17 removed weight: 0
+c PRE hard clauses after: 1902094
+c PRE soft literals after: 720
+c Checking model
+c CG best 465 LB: 0 at 25
+o 465
+c CG GAP: 465 T 25
+c CG New weight: 1 at 25
+c PMRES CORE LIMIT (-1 = no limit)=55
+c Core budget remaining 30
+c Interrupted core guided phase
+c Starting lin search with: LB: 0 UB: 465 UB - LB: 465 Time 56
+c Deleting solver
+c CG New factor 1
+c Reduced cost 465 gap 465
+c Building new PB
+c Considering 720 of 720 soft clauses
+c Minimizing in init
+c Minimization time 1 init minsize 177 skipped 0
+c Reduced cost 465 gap 465
+c Encoding PB with UB: 465 obj size 720
+c Encoding Done
+c Setting Card Vars currently: 39023 / orig 32070
+c Checking model
+c Found same cost model covering more variables
+c CardVars DONE  
+c SAT Call at 57
+c Reduced cost 465 gap 465
+c Checking model
+c BOUND UPDATE RHS: 464 at 57
+c SAT Call at 57
+c Reduced cost 463 gap 465
+c Checking model
+c LIN best 463 LB: 0 at 57
+o 463
+c LIN GAP: 463 T 57
+c BOUND UPDATE RHS: 462 at 57
+c SAT Call at 57
+c Reduced cost 462 gap 463
+c Checking model
+c LIN best 462 LB: 0 at 57
+o 462
+c LIN GAP: 462 T 57
+c BOUND UPDATE RHS: 461 at 57
+c SAT Call at 57
+c Reduced cost 459 gap 462
+c Checking model
+c LIN best 459 LB: 0 at 57
+o 459
+c LIN GAP: 459 T 57
+c BOUND UPDATE RHS: 458 at 57
+c SAT Call at 57
+c Reduced cost 456 gap 459
+c Checking model
+c LIN best 456 LB: 0 at 57
+o 456
+c LIN GAP: 456 T 57
+c BOUND UPDATE RHS: 455 at 57
+c SAT Call at 57
+c Reduced cost 453 gap 456
+c Checking model
+c LIN best 453 LB: 0 at 57
+o 453
+c LIN GAP: 453 T 57
+c BOUND UPDATE RHS: 452 at 57
+c SAT Call at 57
+c Reduced cost 450 gap 453
+c Checking model
+c LIN best 450 LB: 0 at 57
+o 450
+c LIN GAP: 450 T 57
+c BOUND UPDATE RHS: 449 at 57
+c SAT Call at 57
+c Reduced cost 447 gap 450
+c Checking model
+c LIN best 447 LB: 0 at 57
+o 447
+c LIN GAP: 447 T 57
+c BOUND UPDATE RHS: 446 at 57
+c SAT Call at 57
+c Reduced cost 444 gap 447
+c Checking model
+c LIN best 444 LB: 0 at 57
+o 444
+c LIN GAP: 444 T 57
+c BOUND UPDATE RHS: 443 at 57
+c SAT Call at 57
+c Reduced cost 441 gap 444
+c Checking model
+c LIN best 441 LB: 0 at 57
+o 441
+c LIN GAP: 441 T 57
+c BOUND UPDATE RHS: 440 at 57
+c SAT Call at 57
+c Reduced cost 438 gap 441
+c Checking model
+c LIN best 438 LB: 0 at 57
+o 438
+c LIN GAP: 438 T 57
+c BOUND UPDATE RHS: 437 at 57
+c SAT Call at 57
+c Reduced cost 435 gap 438
+c Checking model
+c LIN best 435 LB: 0 at 57
+o 435
+c LIN GAP: 435 T 57
+c BOUND UPDATE RHS: 434 at 57
+c SAT Call at 57
+c Reduced cost 432 gap 435
+c Checking model
+c LIN best 432 LB: 0 at 57
+o 432
+c LIN GAP: 432 T 57
+c BOUND UPDATE RHS: 431 at 57
+c SAT Call at 57
+c Reduced cost 429 gap 432
+c Checking model
+c LIN best 429 LB: 0 at 57
+o 429
+c LIN GAP: 429 T 57
+c BOUND UPDATE RHS: 428 at 57
+c SAT Call at 57
+c Reduced cost 428 gap 429
+c Checking model
+c LIN best 428 LB: 0 at 57
+o 428
+c LIN GAP: 428 T 57
+c BOUND UPDATE RHS: 427 at 57
+c SAT Call at 57
+c Reduced cost 425 gap 428
+c Checking model
+c LIN best 425 LB: 0 at 57
+o 425
+c LIN GAP: 425 T 57
+c BOUND UPDATE RHS: 424 at 57
+c SAT Call at 57
+c Reduced cost 422 gap 425
+c Checking model
+c LIN best 422 LB: 0 at 57
+o 422
+c LIN GAP: 422 T 57
+c BOUND UPDATE RHS: 421 at 57
+c SAT Call at 57
+c Reduced cost 419 gap 422
+c Checking model
+c LIN best 419 LB: 0 at 57
+o 419
+c LIN GAP: 419 T 57
+c BOUND UPDATE RHS: 418 at 57
+c SAT Call at 57
+c Reduced cost 416 gap 419
+c Checking model
+c LIN best 416 LB: 0 at 57
+o 416
+c LIN GAP: 416 T 57
+c BOUND UPDATE RHS: 415 at 57
+c SAT Call at 57
+c Reduced cost 413 gap 416
+c Checking model
+c LIN best 413 LB: 0 at 57
+o 413
+c LIN GAP: 413 T 57
+c BOUND UPDATE RHS: 412 at 57
+c SAT Call at 57
+c Reduced cost 410 gap 413
+c Checking model
+c LIN best 410 LB: 0 at 57
+o 410
+c LIN GAP: 410 T 57
+c BOUND UPDATE RHS: 409 at 57
+c SAT Call at 57
+c Reduced cost 407 gap 410
+c Checking model
+c LIN best 407 LB: 0 at 57
+o 407
+c LIN GAP: 407 T 57
+c BOUND UPDATE RHS: 406 at 57
+c SAT Call at 57
+c Reduced cost 404 gap 407
+c Checking model
+c LIN best 404 LB: 0 at 57
+o 404
+c LIN GAP: 404 T 57
+c BOUND UPDATE RHS: 403 at 57
+c SAT Call at 57
+c Reduced cost 401 gap 404
+c Checking model
+c LIN best 401 LB: 0 at 57
+o 401
+c LIN GAP: 401 T 57
+c BOUND UPDATE RHS: 400 at 57
+c SAT Call at 57
+c Reduced cost 398 gap 401
+c Checking model
+c LIN best 398 LB: 0 at 57
+o 398
+c LIN GAP: 398 T 57
+c BOUND UPDATE RHS: 397 at 57
+c SAT Call at 57
+c Reduced cost 395 gap 398
+c Checking model
+c LIN best 395 LB: 0 at 57
+o 395
+c LIN GAP: 395 T 57
+c BOUND UPDATE RHS: 394 at 57
+c SAT Call at 57
+c Reduced cost 392 gap 395
+c Checking model
+c LIN best 392 LB: 0 at 57
+o 392
+c LIN GAP: 392 T 57
+c BOUND UPDATE RHS: 391 at 57
+c SAT Call at 57
+c Reduced cost 389 gap 392
+c Checking model
+c LIN best 389 LB: 0 at 57
+o 389
+c LIN GAP: 389 T 57
+c BOUND UPDATE RHS: 388 at 57
+c SAT Call at 57
+c Reduced cost 386 gap 389
+c Checking model
+c LIN best 386 LB: 0 at 57
+o 386
+c LIN GAP: 386 T 57
+c BOUND UPDATE RHS: 385 at 57
+c SAT Call at 57
+c Reduced cost 383 gap 386
+c Checking model
+c LIN best 383 LB: 0 at 57
+o 383
+c LIN GAP: 383 T 57
+c BOUND UPDATE RHS: 382 at 57
+c SAT Call at 57
+c Reduced cost 380 gap 383
+c Checking model
+c LIN best 380 LB: 0 at 57
+o 380
+c LIN GAP: 380 T 57
+c BOUND UPDATE RHS: 379 at 57
+c SAT Call at 57
+c Reduced cost 377 gap 380
+c Checking model
+c LIN best 377 LB: 0 at 57
+o 377
+c LIN GAP: 377 T 57
+c BOUND UPDATE RHS: 376 at 57
+c SAT Call at 57
+c Reduced cost 374 gap 377
+c Checking model
+c LIN best 374 LB: 0 at 57
+o 374
+c LIN GAP: 374 T 57
+c BOUND UPDATE RHS: 373 at 57
+c SAT Call at 57
+c Reduced cost 371 gap 374
+c Checking model
+c LIN best 371 LB: 0 at 57
+o 371
+c LIN GAP: 371 T 57
+c BOUND UPDATE RHS: 370 at 57
+c SAT Call at 57
+c Reduced cost 368 gap 371
+c Checking model
+c LIN best 368 LB: 0 at 57
+o 368
+c LIN GAP: 368 T 57
+c BOUND UPDATE RHS: 367 at 57
+c SAT Call at 57
+c Reduced cost 365 gap 368
+c Checking model
+c LIN best 365 LB: 0 at 57
+o 365
+c LIN GAP: 365 T 57
+c BOUND UPDATE RHS: 364 at 57
+c SAT Call at 57
+c Reduced cost 362 gap 365
+c Checking model
+c LIN best 362 LB: 0 at 57
+o 362
+c LIN GAP: 362 T 57
+c BOUND UPDATE RHS: 361 at 57
+c SAT Call at 57
+c Reduced cost 359 gap 362
+c Checking model
+c LIN best 359 LB: 0 at 57
+o 359
+c LIN GAP: 359 T 57
+c BOUND UPDATE RHS: 358 at 57
+c SAT Call at 57
+c Reduced cost 356 gap 359
+c Checking model
+c LIN best 356 LB: 0 at 57
+o 356
+c LIN GAP: 356 T 57
+c BOUND UPDATE RHS: 355 at 57
+c SAT Call at 57
+c Reduced cost 353 gap 356
+c Checking model
+c LIN best 353 LB: 0 at 57
+o 353
+c LIN GAP: 353 T 57
+c BOUND UPDATE RHS: 352 at 57
+c SAT Call at 57
+c Reduced cost 350 gap 353
+c Checking model
+c LIN best 350 LB: 0 at 57
+o 350
+c LIN GAP: 350 T 57
+c BOUND UPDATE RHS: 349 at 57
+c SAT Call at 57
+c Reduced cost 347 gap 350
+c Checking model
+c LIN best 347 LB: 0 at 57
+o 347
+c LIN GAP: 347 T 57
+c BOUND UPDATE RHS: 346 at 57
+c SAT Call at 57
+c Reduced cost 344 gap 347
+c Checking model
+c LIN best 344 LB: 0 at 57
+o 344
+c LIN GAP: 344 T 57
+c BOUND UPDATE RHS: 343 at 57
+c SAT Call at 57
+c Reduced cost 341 gap 344
+c Checking model
+c LIN best 341 LB: 0 at 57
+o 341
+c LIN GAP: 341 T 57
+c BOUND UPDATE RHS: 340 at 57
+c SAT Call at 57
+c Reduced cost 340 gap 341
+c Checking model
+c LIN best 340 LB: 0 at 57
+o 340
+c LIN GAP: 340 T 57
+c BOUND UPDATE RHS: 339 at 57
+c SAT Call at 57
+c Reduced cost 337 gap 340
+c Checking model
+c LIN best 337 LB: 0 at 58
+o 337
+c LIN GAP: 337 T 58
+c BOUND UPDATE RHS: 336 at 58
+c SAT Call at 58
+c Reduced cost 334 gap 337
+c Checking model
+c LIN best 334 LB: 0 at 58
+o 334
+c LIN GAP: 334 T 58
+c BOUND UPDATE RHS: 333 at 58
+c SAT Call at 58
+c Reduced cost 331 gap 334
+c Checking model
+c LIN best 331 LB: 0 at 58
+o 331
+c LIN GAP: 331 T 58
+c BOUND UPDATE RHS: 330 at 58
+c SAT Call at 58
+c Reduced cost 328 gap 331
+c Checking model
+c LIN best 328 LB: 0 at 58
+o 328
+c LIN GAP: 328 T 58
+c BOUND UPDATE RHS: 327 at 58
+c SAT Call at 58
+c Reduced cost 325 gap 328
+c Checking model
+c LIN best 325 LB: 0 at 58
+o 325
+c LIN GAP: 325 T 58
+c BOUND UPDATE RHS: 324 at 58
+c SAT Call at 58
+c Reduced cost 322 gap 325
+c Checking model
+c LIN best 322 LB: 0 at 58
+o 322
+c LIN GAP: 322 T 58
+c BOUND UPDATE RHS: 321 at 58
+c SAT Call at 58
+c Reduced cost 319 gap 322
+c Checking model
+c LIN best 319 LB: 0 at 58
+o 319
+c LIN GAP: 319 T 58
+c BOUND UPDATE RHS: 318 at 58
+c SAT Call at 58
+c Reduced cost 316 gap 319
+c Checking model
+c LIN best 316 LB: 0 at 58
+o 316
+c LIN GAP: 316 T 58
+c BOUND UPDATE RHS: 315 at 58
+c SAT Call at 58
+c Reduced cost 313 gap 316
+c Checking model
+c LIN best 313 LB: 0 at 58
+o 313
+c LIN GAP: 313 T 58
+c BOUND UPDATE RHS: 312 at 58
+c SAT Call at 58
+c Reduced cost 310 gap 313
+c Checking model
+c LIN best 310 LB: 0 at 58
+o 310
+c LIN GAP: 310 T 58
+c BOUND UPDATE RHS: 309 at 58
+c SAT Call at 58
+c Reduced cost 308 gap 310
+c Checking model
+c LIN best 308 LB: 0 at 58
+o 308
+c LIN GAP: 308 T 58
+c BOUND UPDATE RHS: 307 at 58
+c SAT Call at 58
+c Reduced cost 305 gap 308
+c Checking model
+c LIN best 305 LB: 0 at 58
+o 305
+c LIN GAP: 305 T 58
+c BOUND UPDATE RHS: 304 at 58
+c SAT Call at 58
+c Reduced cost 302 gap 305
+c Checking model
+c LIN best 302 LB: 0 at 58
+o 302
+c LIN GAP: 302 T 58
+c BOUND UPDATE RHS: 301 at 58
+c SAT Call at 58
+c Reduced cost 299 gap 302
+c Checking model
+c LIN best 299 LB: 0 at 58
+o 299
+c LIN GAP: 299 T 58
+c BOUND UPDATE RHS: 298 at 58
+c SAT Call at 58
+c Reduced cost 296 gap 299
+c Checking model
+c LIN best 296 LB: 0 at 58
+o 296
+c LIN GAP: 296 T 58
+c BOUND UPDATE RHS: 295 at 58
+c SAT Call at 58
+c Reduced cost 293 gap 296
+c Checking model
+c LIN best 293 LB: 0 at 58
+o 293
+c LIN GAP: 293 T 58
+c BOUND UPDATE RHS: 292 at 58
+c SAT Call at 58
+c Reduced cost 290 gap 293
+c Checking model
+c LIN best 290 LB: 0 at 58
+o 290
+c LIN GAP: 290 T 58
+c BOUND UPDATE RHS: 289 at 58
+c SAT Call at 58
+c Reduced cost 287 gap 290
+c Checking model
+c LIN best 287 LB: 0 at 59
+o 287
+c LIN GAP: 287 T 59
+c BOUND UPDATE RHS: 286 at 59
+c SAT Call at 59
+c Reduced cost 285 gap 287
+c Checking model
+c LIN best 285 LB: 0 at 59
+o 285
+c LIN GAP: 285 T 59
+c BOUND UPDATE RHS: 284 at 59
+c SAT Call at 59
+c Reduced cost 282 gap 285
+c Checking model
+c LIN best 282 LB: 0 at 59
+o 282
+c LIN GAP: 282 T 59
+c BOUND UPDATE RHS: 281 at 59
+c SAT Call at 59
+c Reduced cost 279 gap 282
+c Checking model
+c LIN best 279 LB: 0 at 59
+o 279
+c LIN GAP: 279 T 59
+c BOUND UPDATE RHS: 278 at 59
+c SAT Call at 59
+c Reduced cost 276 gap 279
+c Checking model
+c LIN best 276 LB: 0 at 59
+o 276
+c LIN GAP: 276 T 59
+c BOUND UPDATE RHS: 275 at 59
+c SAT Call at 59
+c Reduced cost 274 gap 276
+c Checking model
+c LIN best 274 LB: 0 at 59
+o 274
+c LIN GAP: 274 T 59
+c BOUND UPDATE RHS: 273 at 59
+c SAT Call at 59
+c Reduced cost 271 gap 274
+c Checking model
+c LIN best 271 LB: 0 at 59
+o 271
+c LIN GAP: 271 T 59
+c BOUND UPDATE RHS: 270 at 59
+c SAT Call at 59
+c Reduced cost 268 gap 271
+c Checking model
+c LIN best 268 LB: 0 at 59
+o 268
+c LIN GAP: 268 T 59
+c BOUND UPDATE RHS: 267 at 59
+c SAT Call at 59
+c Reduced cost 267 gap 268
+c Checking model
+c LIN best 267 LB: 0 at 59
+o 267
+c LIN GAP: 267 T 59
+c BOUND UPDATE RHS: 266 at 59
+c SAT Call at 59
+c Reduced cost 264 gap 267
+c Checking model
+c LIN best 264 LB: 0 at 59
+o 264
+c LIN GAP: 264 T 59
+c BOUND UPDATE RHS: 263 at 59
+c SAT Call at 59
+c Reduced cost 261 gap 264
+c Checking model
+c LIN best 261 LB: 0 at 59
+o 261
+c LIN GAP: 261 T 59
+c BOUND UPDATE RHS: 260 at 59
+c SAT Call at 59
+c Reduced cost 258 gap 261
+c Checking model
+c LIN best 258 LB: 0 at 59
+o 258
+c LIN GAP: 258 T 59
+c BOUND UPDATE RHS: 257 at 59
+c SAT Call at 59
+c Reduced cost 255 gap 258
+c Checking model
+c LIN best 255 LB: 0 at 59
+o 255
+c LIN GAP: 255 T 59
+c BOUND UPDATE RHS: 254 at 59
+c SAT Call at 59
+c Reduced cost 252 gap 255
+c Checking model
+c LIN best 252 LB: 0 at 59
+o 252
+c LIN GAP: 252 T 59
+c BOUND UPDATE RHS: 251 at 59
+c SAT Call at 59
+c Reduced cost 249 gap 252
+c Checking model
+c LIN best 249 LB: 0 at 59
+o 249
+c LIN GAP: 249 T 59
+c BOUND UPDATE RHS: 248 at 59
+c SAT Call at 59
+c Reduced cost 248 gap 249
+c Checking model
+c LIN best 248 LB: 0 at 59
+o 248
+c LIN GAP: 248 T 59
+c BOUND UPDATE RHS: 247 at 59
+c SAT Call at 59
+c Reduced cost 245 gap 248
+c Checking model
+c LIN best 245 LB: 0 at 59
+o 245
+c LIN GAP: 245 T 59
+c BOUND UPDATE RHS: 244 at 59
+c SAT Call at 59
+c Reduced cost 242 gap 245
+c Checking model
+c LIN best 242 LB: 0 at 59
+o 242
+c LIN GAP: 242 T 59
+c BOUND UPDATE RHS: 241 at 59
+c SAT Call at 59
+c Reduced cost 239 gap 242
+c Checking model
+c LIN best 239 LB: 0 at 59
+o 239
+c LIN GAP: 239 T 59
+c BOUND UPDATE RHS: 238 at 59
+c SAT Call at 59
+c Reduced cost 236 gap 239
+c Checking model
+c LIN best 236 LB: 0 at 59
+o 236
+c LIN GAP: 236 T 59
+c BOUND UPDATE RHS: 235 at 59
+c SAT Call at 59
+c Reduced cost 233 gap 236
+c Checking model
+c LIN best 233 LB: 0 at 59
+o 233
+c LIN GAP: 233 T 59
+c BOUND UPDATE RHS: 232 at 59
+c SAT Call at 59
+c Reduced cost 230 gap 233
+c Checking model
+c LIN best 230 LB: 0 at 59
+o 230
+c LIN GAP: 230 T 59
+c BOUND UPDATE RHS: 229 at 59
+c SAT Call at 59
+c Reduced cost 227 gap 230
+c Checking model
+c LIN best 227 LB: 0 at 59
+o 227
+c LIN GAP: 227 T 59
+c BOUND UPDATE RHS: 226 at 59
+c SAT Call at 59
+c Reduced cost 224 gap 227
+c Checking model
+c LIN best 224 LB: 0 at 59
+o 224
+c LIN GAP: 224 T 59
+c BOUND UPDATE RHS: 223 at 59
+c SAT Call at 59
+c Reduced cost 223 gap 224
+c Checking model
+c LIN best 223 LB: 0 at 59
+o 223
+c LIN GAP: 223 T 59
+c BOUND UPDATE RHS: 222 at 59
+c SAT Call at 59
+c Reduced cost 220 gap 223
+c Checking model
+c LIN best 220 LB: 0 at 60
+o 220
+c LIN GAP: 220 T 60
+c BOUND UPDATE RHS: 219 at 60
+c SAT Call at 60
+c Reduced cost 218 gap 220
+c Checking model
+c LIN best 218 LB: 0 at 60
+o 218
+c LIN GAP: 218 T 60
+c BOUND UPDATE RHS: 217 at 60
+c SAT Call at 60
+c Reduced cost 215 gap 218
+c Checking model
+c LIN best 215 LB: 0 at 60
+o 215
+c LIN GAP: 215 T 60
+c BOUND UPDATE RHS: 214 at 60
+c SAT Call at 60
+c Reduced cost 212 gap 215
+c Checking model
+c LIN best 212 LB: 0 at 60
+o 212
+c LIN GAP: 212 T 60
+c BOUND UPDATE RHS: 211 at 60
+c SAT Call at 60
+c Reduced cost 209 gap 212
+c Checking model
+c LIN best 209 LB: 0 at 60
+o 209
+c LIN GAP: 209 T 60
+c BOUND UPDATE RHS: 208 at 60
+c SAT Call at 60
+c Reduced cost 206 gap 209
+c Checking model
+c LIN best 206 LB: 0 at 60
+o 206
+c LIN GAP: 206 T 60
+c BOUND UPDATE RHS: 205 at 60
+c SAT Call at 60
+c Reduced cost 205 gap 206
+c Checking model
+c LIN best 205 LB: 0 at 60
+o 205
+c LIN GAP: 205 T 60
+c BOUND UPDATE RHS: 204 at 60
+c SAT Call at 60
+c Reduced cost 203 gap 205
+c Checking model
+c LIN best 203 LB: 0 at 61
+o 203
+c LIN GAP: 203 T 61
+c BOUND UPDATE RHS: 202 at 61
+c SAT Call at 61
+c Reduced cost 200 gap 203
+c Checking model
+c LIN best 200 LB: 0 at 61
+o 200
+c LIN GAP: 200 T 61
+c BOUND UPDATE RHS: 199 at 61
+c SAT Call at 61
+c Reduced cost 197 gap 200
+c Checking model
+c LIN best 197 LB: 0 at 61
+o 197
+c LIN GAP: 197 T 61
+c BOUND UPDATE RHS: 196 at 61
+c SAT Call at 61
+c Reduced cost 194 gap 197
+c Checking model
+c LIN best 194 LB: 0 at 61
+o 194
+c LIN GAP: 194 T 61
+c BOUND UPDATE RHS: 193 at 61
+c SAT Call at 61
+c Reduced cost 191 gap 194
+c Checking model
+c LIN best 191 LB: 0 at 61
+o 191
+c LIN GAP: 191 T 61
+c BOUND UPDATE RHS: 190 at 61
+c SAT Call at 61
+c Reduced cost 190 gap 191
+c Checking model
+c LIN best 190 LB: 0 at 61
+o 190
+c LIN GAP: 190 T 61
+c BOUND UPDATE RHS: 189 at 61
+c SAT Call at 61
+c Reduced cost 189 gap 190
+c Checking model
+c LIN best 189 LB: 0 at 61
+o 189
+c LIN GAP: 189 T 61
+c BOUND UPDATE RHS: 188 at 61
+c SAT Call at 61
+c Reduced cost 186 gap 189
+c Checking model
+c LIN best 186 LB: 0 at 61
+o 186
+c LIN GAP: 186 T 61
+c BOUND UPDATE RHS: 185 at 61
+c SAT Call at 61
+c Reduced cost 183 gap 186
+c Checking model
+c LIN best 183 LB: 0 at 61
+o 183
+c LIN GAP: 183 T 61
+c BOUND UPDATE RHS: 182 at 61
+c SAT Call at 61
+c Reduced cost 180 gap 183
+c Checking model
+c LIN best 180 LB: 0 at 61
+o 180
+c LIN GAP: 180 T 61
+c BOUND UPDATE RHS: 179 at 61
+c SAT Call at 61
+c Reduced cost 177 gap 180
+c Checking model
+c LIN best 177 LB: 0 at 61
+o 177
+c LIN GAP: 177 T 61
+c BOUND UPDATE RHS: 176 at 61
+c SAT Call at 61
+c Reduced cost 174 gap 177
+c Checking model
+c LIN best 174 LB: 0 at 61
+o 174
+c LIN GAP: 174 T 61
+c BOUND UPDATE RHS: 173 at 61
+c SAT Call at 61
+c Reduced cost 171 gap 174
+c Checking model
+c LIN best 171 LB: 0 at 61
+o 171
+c LIN GAP: 171 T 61
+c BOUND UPDATE RHS: 170 at 61
+c SAT Call at 61
+c Reduced cost 170 gap 171
+c Checking model
+c LIN best 170 LB: 0 at 61
+o 170
+c LIN GAP: 170 T 61
+c BOUND UPDATE RHS: 169 at 61
+c SAT Call at 61
+c Reduced cost 167 gap 170
+c Checking model
+c LIN best 167 LB: 0 at 61
+o 167
+c LIN GAP: 167 T 61
+c BOUND UPDATE RHS: 166 at 61
+c SAT Call at 61
+c Reduced cost 164 gap 167
+c Checking model
+c LIN best 164 LB: 0 at 61
+o 164
+c LIN GAP: 164 T 61
+c BOUND UPDATE RHS: 163 at 61
+c SAT Call at 61
+c Reduced cost 162 gap 164
+c Checking model
+c LIN best 162 LB: 0 at 61
+o 162
+c LIN GAP: 162 T 61
+c BOUND UPDATE RHS: 161 at 61
+c SAT Call at 61
+c Reduced cost 161 gap 162
+c Checking model
+c LIN best 161 LB: 0 at 61
+o 161
+c LIN GAP: 161 T 61
+c BOUND UPDATE RHS: 160 at 61
+c SAT Call at 61
+c Reduced cost 158 gap 161
+c Checking model
+c LIN best 158 LB: 0 at 61
+o 158
+c LIN GAP: 158 T 61
+c BOUND UPDATE RHS: 157 at 61
+c SAT Call at 61
+c Reduced cost 155 gap 158
+c Checking model
+c LIN best 155 LB: 0 at 61
+o 155
+c LIN GAP: 155 T 61
+c BOUND UPDATE RHS: 154 at 61
+c SAT Call at 61
+c Reduced cost 152 gap 155
+c Checking model
+c LIN best 152 LB: 0 at 61
+o 152
+c LIN GAP: 152 T 61
+c BOUND UPDATE RHS: 151 at 61
+c SAT Call at 61
+c Reduced cost 149 gap 152
+c Checking model
+c LIN best 149 LB: 0 at 61
+o 149
+c LIN GAP: 149 T 61
+c BOUND UPDATE RHS: 148 at 61
+c SAT Call at 61
+c Reduced cost 148 gap 149
+c Checking model
+c LIN best 148 LB: 0 at 61
+o 148
+c LIN GAP: 148 T 61
+c BOUND UPDATE RHS: 147 at 61
+c SAT Call at 61
+c Reduced cost 145 gap 148
+c Checking model
+c LIN best 145 LB: 0 at 61
+o 145
+c LIN GAP: 145 T 61
+c BOUND UPDATE RHS: 144 at 61
+c SAT Call at 61
+c Reduced cost 142 gap 145
+c Checking model
+c LIN best 142 LB: 0 at 61
+o 142
+c LIN GAP: 142 T 61
+c BOUND UPDATE RHS: 141 at 61
+c SAT Call at 61
+c Reduced cost 139 gap 142
+c Checking model
+c LIN best 139 LB: 0 at 61
+o 139
+c LIN GAP: 139 T 61
+c BOUND UPDATE RHS: 138 at 61
+c SAT Call at 61
+c Reduced cost 136 gap 139
+c Checking model
+c LIN best 136 LB: 0 at 61
+o 136
+c LIN GAP: 136 T 61
+c BOUND UPDATE RHS: 135 at 61
+c SAT Call at 61
+c Reduced cost 133 gap 136
+c Checking model
+c LIN best 133 LB: 0 at 61
+o 133
+c LIN GAP: 133 T 61
+c BOUND UPDATE RHS: 132 at 61
+c SAT Call at 61
+c Reduced cost 130 gap 133
+c Checking model
+c LIN best 130 LB: 0 at 61
+o 130
+c LIN GAP: 130 T 61
+c BOUND UPDATE RHS: 129 at 61
+c SAT Call at 61
+c Reduced cost 127 gap 130
+c Checking model
+c LIN best 127 LB: 0 at 61
+o 127
+c LIN GAP: 127 T 61
+c BOUND UPDATE RHS: 126 at 61
+c SAT Call at 61
+c Reduced cost 124 gap 127
+c Checking model
+c LIN best 124 LB: 0 at 61
+o 124
+c LIN GAP: 124 T 61
+c BOUND UPDATE RHS: 123 at 61
+c SAT Call at 61
+c Reduced cost 122 gap 124
+c Checking model
+c LIN best 122 LB: 0 at 61
+o 122
+c LIN GAP: 122 T 61
+c BOUND UPDATE RHS: 121 at 61
+c SAT Call at 61
+c Reduced cost 121 gap 122
+c Checking model
+c LIN best 121 LB: 0 at 61
+o 121
+c LIN GAP: 121 T 61
+c BOUND UPDATE RHS: 120 at 61
+c SAT Call at 61
+c Reduced cost 120 gap 121
+c Checking model
+c LIN best 120 LB: 0 at 61
+o 120
+c LIN GAP: 120 T 61
+c BOUND UPDATE RHS: 119 at 61
+c SAT Call at 61
+c Reduced cost 119 gap 120
+c Checking model
+c LIN best 119 LB: 0 at 62
+o 119
+c LIN GAP: 119 T 62
+c BOUND UPDATE RHS: 118 at 62
+c SAT Call at 62
+c Reduced cost 117 gap 119
+c Checking model
+c LIN best 117 LB: 0 at 63
+o 117
+c LIN GAP: 117 T 63
+c BOUND UPDATE RHS: 116 at 63
+c SAT Call at 63
+c Reduced cost 114 gap 117
+c Checking model
+c LIN best 114 LB: 0 at 63
+o 114
+c LIN GAP: 114 T 63
+c BOUND UPDATE RHS: 113 at 63
+c SAT Call at 63
+c Reduced cost 111 gap 114
+c Checking model
+c LIN best 111 LB: 0 at 63
+o 111
+c LIN GAP: 111 T 63
+c BOUND UPDATE RHS: 110 at 63
+c SAT Call at 63
+c Reduced cost 110 gap 111
+c Checking model
+c LIN best 110 LB: 0 at 63
+o 110
+c LIN GAP: 110 T 63
+c BOUND UPDATE RHS: 109 at 63
+c SAT Call at 63
+c Reduced cost 109 gap 110
+c Checking model
+c LIN best 109 LB: 0 at 63
+o 109
+c LIN GAP: 109 T 63
+c BOUND UPDATE RHS: 108 at 63
+c SAT Call at 63
+c Reduced cost 106 gap 109
+c Checking model
+c LIN best 106 LB: 0 at 63
+o 106
+c LIN GAP: 106 T 63
+c BOUND UPDATE RHS: 105 at 63
+c SAT Call at 63
+c Reduced cost 105 gap 106
+c Checking model
+c LIN best 105 LB: 0 at 63
+o 105
+c LIN GAP: 105 T 63
+c BOUND UPDATE RHS: 104 at 63
+c SAT Call at 63
+c Reduced cost 104 gap 105
+c Checking model
+c LIN best 104 LB: 0 at 63
+o 104
+c LIN GAP: 104 T 63
+c BOUND UPDATE RHS: 103 at 63
+c SAT Call at 63
+c Reduced cost 103 gap 104
+c Checking model
+c LIN best 103 LB: 0 at 63
+o 103
+c LIN GAP: 103 T 63
+c BOUND UPDATE RHS: 102 at 63
+c SAT Call at 63
+c Reduced cost 100 gap 103
+c Checking model
+c LIN best 100 LB: 0 at 64
+o 100
+c LIN GAP: 100 T 64
+c BOUND UPDATE RHS: 99 at 64
+c SAT Call at 64
+c Reduced cost 99 gap 100
+c Checking model
+c LIN best 99 LB: 0 at 64
+o 99
+c LIN GAP: 99 T 64
+c BOUND UPDATE RHS: 98 at 64
+c SAT Call at 64
+c Reduced cost 98 gap 99
+c Checking model
+c LIN best 98 LB: 0 at 64
+o 98
+c LIN GAP: 98 T 64
+c BOUND UPDATE RHS: 97 at 64
+c SAT Call at 64
+c Reduced cost 95 gap 98
+c Checking model
+c LIN best 95 LB: 0 at 66
+o 95
+c LIN GAP: 95 T 66
+c BOUND UPDATE RHS: 94 at 66
+c SAT Call at 66
+c Reduced cost 92 gap 95
+c Checking model
+c LIN best 92 LB: 0 at 66
+o 92
+c LIN GAP: 92 T 66
+c BOUND UPDATE RHS: 91 at 66
+c SAT Call at 66
+c Reduced cost 89 gap 92
+c Checking model
+c LIN best 89 LB: 0 at 68
+o 89
+c LIN GAP: 89 T 68
+c BOUND UPDATE RHS: 88 at 68
+c SAT Call at 68
+c Reduced cost 86 gap 89
+c Checking model
+c LIN best 86 LB: 0 at 68
+o 86
+c LIN GAP: 86 T 68
+c BOUND UPDATE RHS: 85 at 68
+c SAT Call at 68
+c Reduced cost 83 gap 86
+c Checking model
+c LIN best 83 LB: 0 at 68
+o 83
+c LIN GAP: 83 T 68
+c BOUND UPDATE RHS: 82 at 68
+c SAT Call at 68
+c Reduced cost 82 gap 83
+c Checking model
+c LIN best 82 LB: 0 at 68
+o 82
+c LIN GAP: 82 T 68
+c BOUND UPDATE RHS: 81 at 68
+c SAT Call at 68
+c Reduced cost 81 gap 82
+c Checking model
+c LIN best 81 LB: 0 at 68
+o 81
+c LIN GAP: 81 T 68
+c BOUND UPDATE RHS: 80 at 68
+c SAT Call at 68
+c Reduced cost 80 gap 81
+c Checking model
+c LIN best 80 LB: 0 at 68
+o 80
+c LIN GAP: 80 T 68
+c BOUND UPDATE RHS: 79 at 68
+c SAT Call at 68
+c Reduced cost 79 gap 80
+c Checking model
+c LIN best 79 LB: 0 at 68
+o 79
+c LIN GAP: 79 T 68
+c BOUND UPDATE RHS: 78 at 68
+c SAT Call at 68
+c Reduced cost 78 gap 79
+c Checking model
+c LIN best 78 LB: 0 at 68
+o 78
+c LIN GAP: 78 T 68
+c BOUND UPDATE RHS: 77 at 68
+c SAT Call at 68
+c Reduced cost 76 gap 78
+c Checking model
+c LIN best 76 LB: 0 at 68
+o 76
+c LIN GAP: 76 T 68
+c BOUND UPDATE RHS: 75 at 68
+c SAT Call at 68
+c Reduced cost 75 gap 76
+c Checking model
+c LIN best 75 LB: 0 at 68
+o 75
+c LIN GAP: 75 T 68
+c BOUND UPDATE RHS: 74 at 68
+c SAT Call at 68
+c Reduced cost 73 gap 75
+c Checking model
+c LIN best 73 LB: 0 at 68
+o 73
+c LIN GAP: 73 T 68
+c BOUND UPDATE RHS: 72 at 68
+c SAT Call at 68
+c Reduced cost 72 gap 73
+c Checking model
+c LIN best 72 LB: 0 at 69
+o 72
+c LIN GAP: 72 T 69
+c BOUND UPDATE RHS: 71 at 69
+c SAT Call at 69
+c Reduced cost 69 gap 72
+c Checking model
+c LIN best 69 LB: 0 at 69
+o 69
+c LIN GAP: 69 T 69
+c BOUND UPDATE RHS: 68 at 69
+c SAT Call at 69
+c Reduced cost 68 gap 69
+c Checking model
+c LIN best 68 LB: 0 at 69
+o 68
+c LIN GAP: 68 T 69
+c BOUND UPDATE RHS: 67 at 69
+c SAT Call at 69
+c Reduced cost 65 gap 68
+c Checking model
+c LIN best 65 LB: 0 at 70
+o 65
+c LIN GAP: 65 T 70
+c BOUND UPDATE RHS: 64 at 70
+c SAT Call at 70
+c Reduced cost 64 gap 65
+c Checking model
+c LIN best 64 LB: 0 at 71
+o 64
+c LIN GAP: 64 T 71
+c BOUND UPDATE RHS: 63 at 71
+c SAT Call at 71
+c Reduced cost 63 gap 64
+c Checking model
+c LIN best 63 LB: 0 at 72
+o 63
+c LIN GAP: 63 T 72
+c BOUND UPDATE RHS: 62 at 72
+c SAT Call at 72
+c Reduced cost 62 gap 63
+c Checking model
+c LIN best 62 LB: 0 at 73
+o 62
+c LIN GAP: 62 T 73
+c BOUND UPDATE RHS: 61 at 73
+c SAT Call at 73
+c Reduced cost 61 gap 62
+c Checking model
+c LIN best 61 LB: 0 at 73
+o 61
+c LIN GAP: 61 T 73
+c BOUND UPDATE RHS: 60 at 73
+c SAT Call at 73
+c Reduced cost 58 gap 61
+c Checking model
+c LIN best 58 LB: 0 at 73
+o 58
+c LIN GAP: 58 T 73
+c BOUND UPDATE RHS: 57 at 73
+c SAT Call at 73
+c Reduced cost 56 gap 58
+c Checking model
+c LIN best 56 LB: 0 at 73
+o 56
+c LIN GAP: 56 T 73
+c BOUND UPDATE RHS: 55 at 73
+c SAT Call at 73
+c Reduced cost 55 gap 56
+c Checking model
+c LIN best 55 LB: 0 at 77
+o 55
+c LIN GAP: 55 T 77
+c BOUND UPDATE RHS: 54 at 77
+c SAT Call at 77
+c Reduced cost 54 gap 55
+c Checking model
+c LIN best 54 LB: 0 at 83
+o 54
+c LIN GAP: 54 T 83
+c BOUND UPDATE RHS: 53 at 83
+c SAT Call at 83
+c Reduced cost 53 gap 54
+c Checking model
+c LIN best 53 LB: 0 at 83
+o 53
+c LIN GAP: 53 T 83
+c BOUND UPDATE RHS: 52 at 83
+c SAT Call at 83
+c Reduced cost 52 gap 53
+c Checking model
+c LIN best 52 LB: 0 at 86
+o 52
+c LIN GAP: 52 T 86
+c BOUND UPDATE RHS: 51 at 86
+c SAT Call at 86
+c Reduced cost 51 gap 52
+c Checking model
+c LIN best 51 LB: 0 at 86
+o 51
+c LIN GAP: 51 T 86
+c BOUND UPDATE RHS: 50 at 86
+c SAT Call at 86
+c Reduced cost 50 gap 51
+c Checking model
+c LIN best 50 LB: 0 at 92
+o 50
+c LIN GAP: 50 T 92
+c BOUND UPDATE RHS: 49 at 92
+c SAT Call at 92
+c Reduced cost 48 gap 50
+c Checking model
+c LIN best 48 LB: 0 at 93
+o 48
+c LIN GAP: 48 T 93
+c BOUND UPDATE RHS: 47 at 93
+c SAT Call at 93
+c Reduced cost 47 gap 48
+c Checking model
+c LIN best 47 LB: 0 at 99
+o 47
+c LIN GAP: 47 T 99
+c BOUND UPDATE RHS: 46 at 99
+c SAT Call at 99
+c Reduced cost 46 gap 47
+c Checking model
+c LIN best 46 LB: 0 at 116
+o 46
+c LIN GAP: 46 T 116
+c BOUND UPDATE RHS: 45 at 116
+c SAT Call at 116
+c Reduced cost 45 gap 46
+c Checking model
+c LIN best 45 LB: 0 at 116
+o 45
+c LIN GAP: 45 T 116
+c BOUND UPDATE RHS: 44 at 116
+c SAT Call at 116
+c Reduced cost 43 gap 45
+c Checking model
+c LIN best 43 LB: 0 at 140
+o 43
+c LIN GAP: 43 T 140
+c BOUND UPDATE RHS: 42 at 140
+c SAT Call at 140
+c Reduced cost 42 gap 43
+c Checking model
+c LIN best 42 LB: 0 at 147
+o 42
+c LIN GAP: 42 T 147
+c BOUND UPDATE RHS: 41 at 147
+c SAT Call at 147
+c Reduced cost 41 gap 42
+c Checking model
+c LIN best 41 LB: 0 at 149
+o 41
+c LIN GAP: 41 T 149
+c BOUND UPDATE RHS: 40 at 149
+c SAT Call at 149
+c Reduced cost 40 gap 41
+c Checking model
+c LIN best 40 LB: 0 at 176
+o 40
+c LIN GAP: 40 T 176
+c BOUND UPDATE RHS: 39 at 176
+c SAT Call at 176
+c Reduced cost 39 gap 40
+c Checking model
+c LIN best 39 LB: 0 at 176
+o 39
+c LIN GAP: 39 T 176
+c BOUND UPDATE RHS: 38 at 176
+c SAT Call at 176
+c Reduced cost 38 gap 39
+c Checking model
+c LIN best 38 LB: 0 at 176
+o 38
+c LIN GAP: 38 T 176
+c BOUND UPDATE RHS: 37 at 176
+c SAT Call at 176
+c Reduced cost 37 gap 38
+c Checking model
+c LIN best 37 LB: 0 at 179
+o 37
+c LIN GAP: 37 T 179
+c BOUND UPDATE RHS: 36 at 179
+c SAT Call at 179
+c Reduced cost 36 gap 37
+c Checking model
+c LIN best 36 LB: 0 at 196
+o 36
+c LIN GAP: 36 T 196
+c BOUND UPDATE RHS: 35 at 196
+c SAT Call at 196
+c Reduced cost 35 gap 36
+c Checking model
+c LIN best 35 LB: 0 at 202
+o 35
+c LIN GAP: 35 T 202
+c BOUND UPDATE RHS: 34 at 202
+c SAT Call at 202
+c Reduced cost 34 gap 35
+c Checking model
+c LIN best 34 LB: 0 at 202
+o 34
+c LIN GAP: 34 T 202
+c BOUND UPDATE RHS: 33 at 202
+c SAT Call at 202
+c Reduced cost 31 gap 34
+c Checking model
+c LIN best 31 LB: 0 at 213
+o 31
+c LIN GAP: 31 T 213
+c BOUND UPDATE RHS: 30 at 213
+c SAT Call at 213
+c Reduced cost 30 gap 31
+c Checking model
+c LIN best 30 LB: 0 at 214
+o 30
+c LIN GAP: 30 T 214
+c BOUND UPDATE RHS: 29 at 214
+c SAT Call at 214
+c Reduced cost 29 gap 30
+c Checking model
+c LIN best 29 LB: 0 at 221
+o 29
+c LIN GAP: 29 T 221
+c BOUND UPDATE RHS: 28 at 221
+c SAT Call at 221
+c Reduced cost 28 gap 29
+c Checking model
+c LIN best 28 LB: 0 at 279
+o 28
+c LIN GAP: 28 T 279
+c BOUND UPDATE RHS: 27 at 279
+c SAT Call at 279
+c Reduced cost 27 gap 28
+c Checking model
+c LIN best 27 LB: 0 at 314
+o 27
+c LIN GAP: 27 T 314
+c BOUND UPDATE RHS: 26 at 314
+c SAT Call at 314
+c Reduced cost 26 gap 27
+c Checking model
+c LIN best 26 LB: 0 at 329
+o 26
+c LIN GAP: 26 T 329
+c BOUND UPDATE RHS: 25 at 329
+c SAT Call at 329
+c Reduced cost 23 gap 26
+c Checking model
+c LIN best 23 LB: 0 at 350
+o 23
+c LIN GAP: 23 T 350
+c BOUND UPDATE RHS: 22 at 350
+c SAT Call at 350
+c Reduced cost 22 gap 23
+c Checking model
+c LIN best 22 LB: 0 at 369
+o 22
+c LIN GAP: 22 T 369
+c BOUND UPDATE RHS: 21 at 369
+c SAT Call at 369
+c Reduced cost 21 gap 22
+c Checking model
+c LIN best 21 LB: 0 at 472
+o 21
+c LIN GAP: 21 T 472
+c BOUND UPDATE RHS: 20 at 472
+c SAT Call at 472
+c Reduced cost 20 gap 21
+c Checking model
+c LIN best 20 LB: 0 at 477
+o 20
+c LIN GAP: 20 T 477
+c BOUND UPDATE RHS: 19 at 477
+c SAT Call at 477
+c Reduced cost 19 gap 20
+c Checking model
+c LIN best 19 LB: 0 at 550
+o 19
+c LIN GAP: 19 T 550
+c BOUND UPDATE RHS: 18 at 550
+c SAT Call at 550
+c Reduced cost 18 gap 19
+c Checking model
+c LIN best 18 LB: 0 at 553
+o 18
+c LIN GAP: 18 T 553
+c BOUND UPDATE RHS: 17 at 553
+c SAT Call at 553
+c Reduced cost 17 gap 18
+c Checking model
+c LIN best 17 LB: 0 at 571
+o 17
+c LIN GAP: 17 T 571
+c BOUND UPDATE RHS: 16 at 571
+c SAT Call at 571
+c Reduced cost 16 gap 17
+c Checking model
+c LIN best 16 LB: 0 at 575
+o 16
+c LIN GAP: 16 T 575
+c BOUND UPDATE RHS: 15 at 575
+c SAT Call at 575
+c Reduced cost 15 gap 16
+c Checking model
+c LIN best 15 LB: 0 at 599
+o 15
+c LIN GAP: 15 T 599
+c BOUND UPDATE RHS: 14 at 599
+c SAT Call at 599
+c Reduced cost 14 gap 15
+c Checking model
+c LIN best 14 LB: 0 at 599
+o 14
+c LIN GAP: 14 T 599
+c BOUND UPDATE RHS: 13 at 599
+c SAT Call at 599
+c Reduced cost 13 gap 14
+c Checking model
+c LIN best 13 LB: 0 at 687
+o 13
+c LIN GAP: 13 T 687
+c BOUND UPDATE RHS: 12 at 687
+c SAT Call at 687
+c Reduced cost 12 gap 13
+c Checking model
+c LIN best 12 LB: 0 at 849
+o 12
+c LIN GAP: 12 T 849
+c BOUND UPDATE RHS: 11 at 849
+c SAT Call at 849
+c Reconstructing in print answer
+c Reconstruction time: 0
+c new cost: 12
+s SATISFIABLE
+v 000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000100011110010011000110101001111100001101111101110010001110011111000111100100110001101110011111100111111111111110110111001111101001111011001000011010100111110100110000100100001101111001100100010110010000000110111001110111001110001011000011010100111011101111001101110001101110011111110111100010110010110101001110111011110011000100011011100111010000110001100010001101110000101001011111110011000111110000111101101111111101000011111000011110010111111110110001111100101111011011111111010000111100011111100101111111101110011111101111110010111111110100001111000001111100000100010100000010101011110010010010000000000000001100110001101101000101100001101010111100000010100110100000110101011110010010010111010001011010100111011000001001101000001101110011101110011110110011100110111101111101001101011001100011011110101010100110101100111001101111010101100011100110110000110111011110100001100011000000001011000001010100110111100111001101111000111100111100110000000010111001110111001110011001000001011100111011100111001100100001101110011101010011100110010000110111001110101001100111100000001011000001011101111001100100001101110010101011011111111011000111110111110101101111111101100011111001011010110111011110100001111100011101011011111110111000111111111110101101111111101100011111010011010110111111110110001111111111101100001101010000000010011001110000001110101110000001001100111011010111011101000000011110011101100100100010100010000011011110010010010001010000000001101111001001001000101000000100110111100010011000110001100110110100010101000100011000110101011010001010100110101100011011101101000101011010101110101100101111111110101001100011001110110011010001010100000100000000010101100000100010000100110001100110111101110101000000011000110111011010001010100001001100011001101111011101000000100000000000000001000100001000010011000010110011110111000100001001100011001001111001001111000101001101001010111111110111010010111010100101011111111010110001011000010010111111111101011000101110001101110111111110111100010111010110011111111111110110001010000010010101111011101011000111001000001011111111110101100010100110000001111110111010110001010000000000111110011000011000101000000000011111001100001100010110010100001111110111010110001011111010000011111011001011011111001101001001111011111111101111101101100110111100111110110111110110110010011110011111111111111111011010101111001111101001111011001110011011110111110110111110100110011011110011111111011111110011001101110001011111101111111001100110111100101110110111111100110011011100010111011001111001001001000111000011101101111101001100100111000101110110111111100110011011110010111111111111111011111111111101111101000110100110100000011101011111110111111110110001111110011111011011111011111000001111001111101101111101101100100111100111110110111110011110000011110111111111111111111111010111111011110111111111100111100000111101111010110111010010010000011110011101111111111111111010111111011110111111111100111100000111101111010110111010010010000011110011101010011010010011001000111000111101001100000000100001011000011110110111111101111011111111111111010011010110011100110111100110101001101001001100000011100011110100110100100110010001110001111010011000000101001000111010111101000110000010100000011101111110100110100001010010001110101111010011010010111001100111010111101001101000010100100011101011110100110100101110011001110101111010011010110011101110111100111101001101011001110111011111011110100110101100111011101111001111010011010110011001110111010111101001101011001110111011110011110100110100100110000001110101111010001100000101000000111011110101001111101011100000011101111010100011010000010000101110111111010001100000101000000111011110101001111101011100000011101111010100011010000010000101110111111011001111001001001011111001011101101111100101100101111000101010110111110010110010111100010101011011101001101000011111011111111100110011010100001111111111010110011011110010010101111001111010001001110001000010111100111101100110100100100101111100011110100010010000010010101111000111011011111000011001010110000011101101111101001100101111000101110110111110000110010111100010101000001001000101000010011110111100000100111010110001001111011110100010010011010000101110001111011011111001011000001111001111101000100100110100001011110011110000010001101010000100111101111011001101001100000011111011110111101010100111000000111101111001111111010111100100011110111100011001101001100000011111011110111101010100111000000111101111001111111010111100100011110111100011011111110011100111110101010101001111011001110011011010101011110111111100110001111101010101011011100110010000110110001010101001100011001100011011000001010100110101100110001101101000101000011100010000000010110001010010101110101000000001111000101010010011010100000000110100010101101011101010000000000110001010100001110001000000001011000101010100111001100100000101100010101111011101110010000111110001010111101110111001000011111000101011110111011100100001111100010101010011100110010000110110001010101001100011001000011011000001010110111011100110001111100010101101110101010000000011011001110010100010100000000001101100111001010001010000000000010110011100101100101001000010001001001110010110010100110000000100101111001010001010000000000110010011100000010000110000000010010100010001001100011001010011011010001010000101001100101001100101001100001010101110110100111111111110000000000000000000000000000001000000100001100101001100001000100000010101110010100110101101100000000000011000000001000000010000000100001100000001100001000000000010000110010000110001100100000001010011001010011000110010000000100001100101001100001000000001010111110010100110111101110001001011111001010011011110111000000101111100101001101011011000000010101110000000110001101100000101010111000000011000110111000000101011100100001100011011000000000100000000000010001001100000100010100000000001100101110001010101111111101001111111111000101000101000100000011001011100010100010100010000001100101110001010101011100101001110011111000010011010110011100110110100011101001101011001110011011010001110100110001100110001101100000101010011101110011000110111001110101001101011001110011011010001010100110101100110001101101000101000011000010000000010010000110001001100011001000011011000001010100110001100100001101100000101010011000110011000110110000010101001100011001000011011000011010100110001100100001101110000101111011101110110000111111011110101101111111001110011111110111010110111111100110001111111111101011011111110011000111111001110101101110111001100011011110111010100111011100100001101110011101001001101010100000011011011110010101110101010000001111101111001010101010111000000111110111100001001101010100000011011011110010101110101010000001111101111001010101010111000000111110111100011001101110000000010110101010110101110111001000010101000101010110011011000000000101100010100010011101110111100110111110111110111111101000000011101000101000000011101100000000001101010101111000101110000000101010101010110101011100001100000101000101010000101000100110001100100010101101110111000011000001010101010100101010100001000001001000101011010101010100100001100100010101001011111010110000010111010110101001111101011000001011101011010000110110101100001101110101101000011011010110000010101010110000001111101011000001010101011010100110110101100000101110101101111010101001010000011111001110010111010101101000001101100111011011101011110000001110110011100111010101001010000011111001110010111010101101000001101100111011011101011110000001110110011100000010100110010100110111101110000001010011001000011001110111000010101001100101001111111011100010010101110010100110111101100000001010011001010011000010101000000100011100101001100101000100001010101110000100011001100100000001000011001010011000010110000000100011100101001100011001000000010011110010100110101100100000001000111001010011010110010000000100111100101001101011001000101110101110110110111111111100010111010111001010011001110110001111101111101101101111111111101101110100110110110111111111100111111010111011010011111111111010010101011110101001110101011000001010100110010000111111001010000001000111001010011010010011000010101001100100001111111011000001010100110010000111111001010000001000111001010011010010011000010101001100100001111111011000010001100110000000010110101010101001111001001100001011000101011111011011100011001011101010101111011100110000000100110001010101000111011000010010011010101011111111011100111001010100010101010000100000000000010110001010001000010000000000001011000100000100001000000000000101100010100111000101110000000001010001010011101010111000010010101000101001010101011100000001110100010101010001100000000000010110001010110100010100000100001101000101011010001011100010000010100010101011000101000000000000110001010011100110100000000001011000101011010011010000000000110100010101101101101110001110111011101110110111010111000110011101110111011110011011100010000111111010101101101101110001110111011101110110111010111000110011101110111011110011011100010000111111010101000010100110010000110011101110001001010011001010011011110111000000101101100101001101111011100011010111110110100111111111110100001000011001010011001010101000000001001100000000100101010100001010101110110100111101110100000101010111001010011011110010000010101001100101001100111000100001010101110110100111001111100000101010111001010011100110110000010101011100101001101111001000000010101110010100110111101000000001000011011010011011111011000000101001101100001100111111000010010001110110100110111111110001001000011011010011011111111000110101111110101001111101011100011010101111110100111111111100100101010111011000011100110110000010101111101101001111111111000011010101111110100111111111100100101010111011000011100110110000010101111101101001111111111000101001101000001000011010001011110110110100000100001101000101111010011010000010000110100010111001001101001100000001111011110101001101001001100010011000001110100110001101011001101111101111011001101000101000011111011111101000100100010100001011101011110000110001101010001100111101111000001001110101000010011010111101000100110010100001011111011110100110011101010000101111101111000001001110101000010011010110100000100111010100001001111011110000010001101000000100111101101000001000110100000010011110110100000100100010100001001101011010100010010001010000101110101111001001101001100000001011011110100100110100110100001001101011010110111010111110000011110111101001001101001100000001011011110100100110100110100001001101011010110111010111110000011110111101010011110110010100110110101010111111111111001100010111000101010100111101100101001101101010101011011111111110100111111111110101001100011001110011011010001011111101111100101001011100010100001010111111110100111111111110001001011111111010011011101011000010101111111101001101011101000001010111111110100111101111110001001001111111000010011101011000010101111111101001001010101100010011011110111101110111010110101001101111011110111011101011010100110111101110001101110101101011011111111111100111111111110111101111111111110011111111111010100111111101101001101111101101000000100000000000010001001100000000010000000000001000000010000000001001100000000100010001100000000100000000000010001001100000000010000000000001000000010000000001001100000000100010001100000000000001000000000000000000000000000000000000000000000000100000000000000100000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000001000000000001000000000000000000000000001000000000000000000000000000010000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000100000000000000000000010000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000010000000000000000000010000000000000000000000000000000000000000000000000000001000000000000000001000000000000000000000000000000010000000000000000000000000100000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000001000000000000000000000000000000000000000000000000000001000000000000000000000000000001000000000001000000000000000000000000000000100000000000000000000000000000010000000000000000000000000000000000000000000000000100000000000000000000000000000000000001000010000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000000010000000000000000000000000000001000000000000000000000000000010000000000000000000000000000000000000000000010000000000000010000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000001000000000000000000000000000000000000000010000000000000000000000000000000001000000000000000000000000001000000000000000000000000000000000010000000000000000000000000000100000000000000000000000000000000100000000000000000000000000000010000000000000000000000000000000010000000010000000000000000000000000000001000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000010000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000001000000000000000000000000000000010000000000000000000000000010000000000000000000100000000000000000000000000000000000000000001000000000000000010000000000000000000000000000000000000000000000000000001000000000000000000000000001000000000000000010000000000000000000000000000000100000000000000000000000000000000000000000000001000000000000000000000000000010000000000000000000000000000000000100000000000000000000000000000001000000000000100000000000000000000000000000000000000000000000000000000010000000000100000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000010000000000000000000000000000000100000000000000000000000000000000000000000000001000000000000000010000000000000000000000000000000100000000000000000000000000000000000000000000001000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000010000000000000000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000001000000000000000000000000000001000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000001000000000000000000000000000000000100000000000000000000010000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000010000000000000000000000100000000000000000000000000000000000000001000000000000000000000000000000000000000000010000000000000000000100000000000000000000000000000000000000000001000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000010000000000000000000010000000000000000000000000000100000000000000000000000000000000000000000000010000000000000000000010000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000100000000000100000000000000000000000000000000000000000000010000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000001000000000000000100000000000000000000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000001000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000000000000000000000010000000000000000000000000000000000001000000000000000000001000000000000000000000010000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000000000000010000000000000000000000000000001000000000000000000000000010000000000000000000000000001000000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000100000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000001000000000000000000000000000000000000001000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000010000000000000000000000000000000000100000000000000000000000000100000000000000000100000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000100000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000100000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000010000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000010000001000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000010000000000000000000000000000001000000000000000000000000000000000000010000000000000000000000000010000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000010000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000001000000000000000000000000000000000000000001000000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000100000000001000000000000000000000000000000000000100000000000000000000000000000000000000000000001000000000000000010000000000000000000000000000000000000000000100000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000001000000000000000000000000000000000000010000000000000000000000000000000010000000000000000000000001000000000000000000000000000000000000010000001000000000000000000000000000000000000100000000000000000000000000000100000000000000000000000000001000000000000000000000000000000000000100000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000001000000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000000000000001000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000001000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000001000000000000000000000000001000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000000100000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000000100000000000000000000001000000000000000000000000000000000001000000000000000000000000000000100000000010000000000000000000000000000000000100000000000000000000000000000000000000000000000000010000000010000000000000000000000000000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000100000000001000000000000000000000000000000010000000000000000000000000000000000100000000000000000000000000000000000000000000000001000000000000000000010000000000000000000000000000001000000000000000000000000000000000000000010000000000000010000000000000000000000000000000000000000100000000000000000000000000000010000000000000000000000000010000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000010000000000000000000000000000100000000000000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000001000000000000000000000000000000000000000000100000000000000000000000000100000000000000000000000001000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000001000000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000000000010000000000000000000000000000000000000100000000000000000000000010000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000001000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000100000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000010000000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000010000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000010000000000000000000000000000001000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000001000000000000000000000010000000000000000000000000000000000000000000010010000000000000000000000000000000000000000000000000001000000000000000000000000000000000001000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000100000000000000000000100000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000010000000000000000000010000000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000100000111111111111111111111111111101111100000000001111110000000001111111100000001111111111100001111100000000001111111111100001110000000000001111111111110001111000000000001000000000000001111111000000001111100000000001100000000000001111111110000001111111100000001111100000000001111000000000001111111000000001111111111111001111100000000001111110000000001111000000000001111000000000001111111111111111111111110000001111111111000001100000000000001110000000000001111111111000001111100000000001000000000000001100000000000001000000000000001110000000000001111000000000001111100000000001000000000000001111100000000001111110000000001111100000000001111110000000001110000000000001111111000000001111100000000001111100000000001111100000000001111111100000001111100000000001111111000000001100000000000001111110000000001111111110000001111111000000001111111000000001111100000000001110000000000001110000000000001110000000000001111111111000001100000000000001110000000000001111111111100001111100000000001111000000000001111111111000001111110000000001111100000000001111100000000001111100000000001111000000000001111100000000001111111100000001111100000000001111111110000001111111111110001111100000000001111100000000001111100000000001110000000000001110000000000001110000000000001111111111111001110000000000001111100000000001111111110000001110000000000001111111110000001111111111000001111111110000001111111111000001111111100000001111110000000001111110000000001111110000000001111111111100001111110000000001111110000000001111100000000001111110000000001111110000000001111100000000001111100000000001111111100000001111111100000001111111100000001111111111111101111000000000001111111000000001111111100000001111111100000001111111000000001111111100000001111111000000001111111000000001111111111111111111111110000001111111111100001111111100000001111111100000001111111100000001111111111111101111111111111101111111100000001111111111111101111111111111101111111100000001100000000000001100000000000001111000000000001110000000000001100000000000001100000000000001100000000000001111111110000001100000000000001100000000000001100000000000001100000000000001100000000000001100000000000001100000000000001100000000000001100000000000001100000000000001111111110000001111000000000001111111110000001111111110000001111000000000001111111110000001111111100000001111100000000001111100000000001111111100000001111111111100001111111100000001100000000000001111111100000001100000000000001111111000000001111111000000001111111000000001100000000000001100000000000001100000000000001111111100000001100000000000001100000000000001111111100000001111111111100001111100000000001111111100000001111111111100001111100000000001111000000000001111111111111111111111111100001111111000000001110000000000001110000000000001111111110000001111000000000001111111000000001000000000000001111111110000001111111111111111111111111100001111111111100001111111111100001111111111111111111111111000001111111000000001111000000000001100000000000001100000000000001111111110000001111111110000001111111110000001111100000000001111111111000001111000000000001111111111111001111100000000001111100000000001111000000000001111100000000001111100000000001111100000000001111000000000001111100000000001111110000000001111000000000001111000000000001111111111000001111110000000001111000000000001111111111000001111110000000001110000000000001111111110000001111111110000001110000000000001100000000000001100000000000001110000000000001111000000000001110000000000001110000000000001111100000000001111111111000001111111111000001110000000000001111111111000001111111111000001111111111100001111000000000001111000000000001111111000000001111000000000001111000000000001111111000000001111000000000001111000000000001111111000000001111000000000001111000000000001111000000000001111111111110001111111000000001111000000000001111000000000001111111110000001111111111100001111000000000001111111111111111111000000000001111110000000001000000000000001111111000000001111000000000001111111111000001111100000000001111000000000001111111111000001111111111100001111000000000001110000000000001111111111100001111000000000001110000000000001111000000000001111000000000001111110000000001111000000000001111111111111111111100000000001111000000000001111100000000001111100000000001111100000000001111100000000001111100000000001110000000000001110000000000001111111111111111110000000000001111110000000001111110000000001111110000000001111100000000001111110000000001111110000000001111100000000001111110000000001111111110000001111111111111111111110000000001111100000000001111111110000001111110000000001111111110000001111111111000001111111110000001111111111100001111111111100001110000000000001111111110000001100000000000001111100000000001111110000000001111111111100001100000000000001111100000000001110000000000001111111111100001111100000000001110000000000001111111111100001111000000000001111000000000001111000000000001111111111111001111100000000001111111110000001111111111111001111000000000001111000000000001111111111111001111110000000001111000000000001111111111111111111100000000001111000000000001111100000000001111100000000001111110000000001111111111111001111100000000001111111111111001111111111111001111100000000001111111111111001100000000000001100000000000001100000000000001111111100000001100000000000001100000000000001111111000000001100000000000001100000000000001100000000000001100000000000001100000000000001110000000000001100000000000001111111111000001111111111000001110000000000001100000000000001111111100000001111111100000001111111100000001111111100000001111111100000001111111100000001111111111111111111111111111101111111111111111111111100000001110000000000001111111111111111111111111111001111000000000001111111111111001111111111111001111100000000001111111111111001110000000000001110000000000001110000000000001111111100000001111111111100001111000000000001111111111000001111111111000001111111110000001111111111000001111111111000001111111110000001101011011011011110111101011011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111

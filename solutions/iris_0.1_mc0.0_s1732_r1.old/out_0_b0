@@ -1,0 +1,5 @@
+---curr_b1_sat 0 - curr_b0_sat 0
+ ---> [debug] ---> (2438, 1)   ndc: 1219
+content/instance_iris ./consts_collection/1732/consts_k0.0_s1732/iris_0.1_mc0.0_s1732 ./solutions/iris_0.1_mc0.0_s1732_r1/ ./solutions/iris_0.1_mc0.0_s1732_r1/clauses_iris_0.1_mc0.0_s1732
+Smart Pair jar 
+java -DdataPath=content/instance_iris -DxStartInd=2303 -Db0StartInd=2753 -DhardClauseWeight=2439 -DdistanceClassPath=./solutions/iris_0.1_mc0.0_s1732_r1/DC -DoutFileName=./solutions/iris_0.1_mc0.0_s1732_r1/clauses_iris_0.1_mc0.0_s1732 -jar smart-pair.jar

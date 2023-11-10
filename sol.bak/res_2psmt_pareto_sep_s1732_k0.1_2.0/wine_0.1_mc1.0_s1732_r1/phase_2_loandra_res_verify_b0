@@ -1,0 +1,482 @@
+c
+c LOANDRA:	 an extension of Open-WBO to core-boosted linear search.
+c Version:	 July 2019 2018 -- Release: 1.0
+c Authors:	 Jeremias Berg, Emir Demirovic, Peter Stuckey
+c We thank the developers of Open-WBO for their work
+c
+c Open-WBO:	 a Modular MaxSAT Solver -- based on Glucose4.1 (core version)
+c Version:	 September 2018 -- Release: 2.1
+c Authors:	 Ruben Martins, Vasco Manquinho, Ines Lynce
+c Contributors:	 Miguel Neves, Saurabh Joshi, Norbert Manthey, Mikolas Janota
+c Contact:	 open-wbo@sat.inesc-id.pt -- http://sat.inesc-id.pt/open-wbo/
+c
+c WARNING: for repeatability, setting FPU to use double precision
+c |                                                                                                       |
+c ========================================[ Problem Statistics ]===========================================
+c |                                                                                                       |
+c |  Problem Format:             MaxSAT                                                                   |
+c |  Problem Type:           Unweighted                                                                   |
+c |  Number of variables:          5869                                                                   |
+c |  Number of hard clauses:      41971                                                                   |
+c |  Number of soft clauses:       1275                                                                   |
+c |  Number of cardinality:           0                                                                   |
+c |  Number of PB :                   0                                                                   |
+c |  Parse time:                   0.02 s                                                                 |
+c |                                                                                                       |
+c PMRES ALGORITHM WITH LINEAR SEARCH 
+c PMRES LINEAR STRAT=1
+c PMRES LINEAR DIVISION=1
+c PMRES CORE DIVISION=0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c PMRES RELAX BEFORE STRAT =0
+c PMRES INCREMENTAL LIN DIVISION =0
+c PMRES MINIM =1
+c PMRES MINIM STRAT =0
+c PRE hard clauses before: 43246
+c PRE soft literals before: 1275
+c PRE time: 0 removed weight: 1082
+c PRE hard clauses after: 31683
+c PRE soft literals after: 193
+c Checking model
+c CG best 1274 LB: 1082 at 1
+o 1274
+c CG GAP: 192 T 1
+c CG New weight: 1 at 1
+c PMRES CORE LIMIT (-1 = no limit)=31
+c Core budget remaining 30
+c CG GAP: 191 T 1
+c LB : 1083         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 190 T 1
+c LB : 1084         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 189 T 1
+c LB : 1085         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 188 T 1
+c LB : 1086         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 187 T 1
+c LB : 1087         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 186 T 1
+c LB : 1088         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 185 T 1
+c LB : 1089         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 184 T 1
+c LB : 1090         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 183 T 1
+c LB : 1091         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 182 T 1
+c LB : 1092         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 181 T 1
+c LB : 1093         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 180 T 1
+c LB : 1094         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 179 T 1
+c LB : 1095         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 178 T 1
+c LB : 1096         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 177 T 1
+c LB : 1097         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 176 T 1
+c LB : 1098         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 175 T 1
+c LB : 1099         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 174 T 1
+c LB : 1100         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 173 T 1
+c LB : 1101         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 172 T 1
+c LB : 1102         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 171 T 1
+c LB : 1103         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 170 T 1
+c LB : 1104         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 169 T 1
+c LB : 1105         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 168 T 1
+c LB : 1106         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 167 T 1
+c LB : 1107         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 166 T 1
+c LB : 1108         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 165 T 1
+c LB : 1109         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 164 T 1
+c LB : 1110         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 163 T 1
+c LB : 1111         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 162 T 1
+c LB : 1112         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 161 T 1
+c LB : 1113         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 160 T 1
+c LB : 1114         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 159 T 1
+c LB : 1115         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 158 T 1
+c LB : 1116         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 157 T 1
+c LB : 1117         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 156 T 1
+c LB : 1118         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 155 T 1
+c LB : 1119         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 154 T 1
+c LB : 1120         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 153 T 1
+c LB : 1121         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 152 T 1
+c LB : 1122         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 151 T 1
+c LB : 1123         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 150 T 1
+c LB : 1124         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 149 T 1
+c LB : 1125         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 148 T 1
+c LB : 1126         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 147 T 1
+c LB : 1127         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 146 T 1
+c LB : 1128         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 145 T 1
+c LB : 1129         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 144 T 1
+c LB : 1130         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 143 T 1
+c LB : 1131         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 142 T 1
+c LB : 1132         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 141 T 1
+c LB : 1133         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 140 T 1
+c LB : 1134         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 139 T 1
+c LB : 1135         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 138 T 1
+c LB : 1136         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 137 T 1
+c LB : 1137         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 136 T 1
+c LB : 1138         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 135 T 1
+c LB : 1139         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 134 T 1
+c LB : 1140         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 133 T 1
+c LB : 1141         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 132 T 1
+c LB : 1142         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 131 T 1
+c LB : 1143         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 130 T 1
+c LB : 1144         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 129 T 1
+c LB : 1145         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 128 T 1
+c LB : 1146         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 127 T 1
+c LB : 1147         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 126 T 1
+c LB : 1148         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 125 T 1
+c LB : 1149         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 124 T 1
+c LB : 1150         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 123 T 1
+c LB : 1151         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 122 T 1
+c LB : 1152         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 121 T 1
+c LB : 1153         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 120 T 1
+c LB : 1154         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 119 T 1
+c LB : 1155         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 118 T 1
+c LB : 1156         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 117 T 1
+c LB : 1157         CS : 5            W  : 1           
+c Core budget remaining 30
+c CG GAP: 116 T 1
+c LB : 1158         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 115 T 1
+c LB : 1159         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 114 T 1
+c LB : 1160         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 113 T 1
+c LB : 1161         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 112 T 1
+c LB : 1162         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 111 T 1
+c LB : 1163         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 110 T 1
+c LB : 1164         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 109 T 1
+c LB : 1165         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 108 T 1
+c LB : 1166         CS : 4            W  : 1           
+c Core budget remaining 30
+c CG GAP: 107 T 1
+c LB : 1167         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 106 T 1
+c LB : 1168         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 105 T 1
+c LB : 1169         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 104 T 1
+c LB : 1170         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 103 T 1
+c LB : 1171         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 102 T 1
+c LB : 1172         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 101 T 1
+c LB : 1173         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 100 T 1
+c LB : 1174         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 99 T 1
+c LB : 1175         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 98 T 1
+c LB : 1176         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 97 T 1
+c LB : 1177         CS : 3            W  : 1           
+c Core budget remaining 30
+c CG GAP: 96 T 1
+c LB : 1178         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 95 T 1
+c LB : 1179         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 94 T 1
+c LB : 1180         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 93 T 1
+c LB : 1181         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 92 T 1
+c LB : 1182         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 91 T 1
+c LB : 1183         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 90 T 1
+c LB : 1184         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 89 T 1
+c LB : 1185         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 88 T 1
+c LB : 1186         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 87 T 1
+c LB : 1187         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 86 T 1
+c LB : 1188         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 85 T 1
+c LB : 1189         CS : 4            W  : 1           
+c Core budget remaining 30
+c CG GAP: 84 T 1
+c LB : 1190         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 83 T 1
+c LB : 1191         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 82 T 1
+c LB : 1192         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 81 T 1
+c LB : 1193         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 80 T 1
+c LB : 1194         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 79 T 1
+c LB : 1195         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 78 T 1
+c LB : 1196         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 77 T 1
+c LB : 1197         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 76 T 1
+c LB : 1198         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 75 T 1
+c LB : 1199         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 74 T 1
+c LB : 1200         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 73 T 1
+c LB : 1201         CS : 1            W  : 1           
+c Core budget remaining 30
+c CG GAP: 72 T 1
+c LB : 1202         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 71 T 1
+c LB : 1203         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 70 T 1
+c LB : 1204         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 69 T 1
+c LB : 1205         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 68 T 1
+c LB : 1206         CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 67 T 2
+c LB : 1207         CS : 2            W  : 1           
+c Core budget remaining 29
+c CG GAP: 66 T 2
+c LB : 1208         CS : 2            W  : 1           
+c Core budget remaining 29
+c CG GAP: 65 T 2
+c LB : 1209         CS : 2            W  : 1           
+c Core budget remaining 29
+c CG GAP: 64 T 3
+c LB : 1210         CS : 1            W  : 1           
+c Core budget remaining 28
+c CG GAP: 63 T 5
+c LB : 1211         CS : 1            W  : 1           
+c Core budget remaining 26
+c CG GAP: 62 T 5
+c LB : 1212         CS : 1            W  : 1           
+c Core budget remaining 26
+c CG GAP: 61 T 6
+c LB : 1213         CS : 1            W  : 1           
+c Core budget remaining 25
+c CG GAP: 60 T 7
+c LB : 1214         CS : 1            W  : 1           
+c Core budget remaining 24
+c SAT-During core guided phase at 7
+c Checking model
+c CG best 1273 LB: 1214 at 7
+o 1273
+c CG GAP: 59 T 7
+c Hardening with gap: 59
+c Hardened in total: 0 clauses
+c Hardening again at gap 1
+c Strat 2 Relax
+c Updating solver at 7
+c Starting lin search with: LB: 1214 UB: 1273 UB - LB: 59 Time 7
+c Deleting solver
+c CG New factor 1
+c Extending best model to full formula
+c Checking model
+c Reduced cost 59 gap 59
+c Building new PB
+c Considering 61 of 61 soft clauses
+c Minimizing in init
+c Minimization time 0 init minsize 59 skipped 0
+c Reduced cost 58 gap 59
+c DIF before minim: 59 after 58
+c Encoding PB with UB: 58 obj size 61
+c Encoding Done
+c Setting Card Vars currently: 6540 / orig 6061
+c Checking model
+c LIN best 1272 LB: 1214 at 7
+o 1272
+c LIN GAP: 58 T 7
+c CardVars DONE  
+c SAT Call at 7
+c Reduced cost 58 gap 58
+c Checking model
+c BOUND UPDATE RHS: 57 at 7
+c SAT Call at 7
+c Reconstructing in print answer
+c Reconstruction time: 0
+c new cost: 1272
+s OPTIMUM FOUND
+v 0000000000001000000000100000000010000000000000000001001000000000000000000010001000000000000000000001001000000000000000001010000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000001000010100101000100100001010001001000100100000010010001000000100100000000000000000100010000000001000000000000010000001000000100110000100000010000100100000000001010000000100000000000000000000100000000000000000000100000000000000000000000000000000000000000000000000000000001111111011101110111010111110110110111110110101001100110011111010111010011111101101111101010111101001000110100011111111111111001111111011111111010111101111010110101110111111000110101111110111111011011101101110110111011111101111110111111011110111111010110100111011101111011110101101110111101011110111111110101111111110111111111101111111111111011111111101010110101111110111101110111111011110101111011111111111110111111111110111111010101110010011101011110111011010111101111110100111010111101011011101101110010011001001100100110010011001001110101110011011001001110000110010111001001100011110000111000001010101101001011100001100100110000011000101100010110011011000001100000111010011000101100000100010011000001100010110010011000001100100110010011000101100000110000011001001100000110001011001101100100110000011000001100000100000010000001100000000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000010000000010000001000000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000011000000000001000001000000000100010000000100000000000001000100000100000000000100000001000000010001000000010000000000000100000001010000000100000001000000000001000100000001000000000000010000010001000000010000000100000001000000000001000000010000000100010000000100000001000000010000000100000000000001000001000100000000000001010000000000000100000100010000000100000000000100010000000100000001000000010000000000000100000001010000000000010001000000010000000100000001000000010000000100000000000100000000010000100001000000010000000100000001000000010000000100000001000000000001000000001000000010000000100000001000000010000000100000001000001000000000100000001000000010000000100100000000000010000000100000001000010000000000100000001000000010000010000000100000001000000000100000001000000010000010000000001000000010000000100000100000000010000000100000001000000010000010000000001000000010000000100000001000001000000010000000001000000010000000100000001000000010000000100101001101111101111101001001001001001001001001001001001001001001001001001001001001001001101001101001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101111101101101101101101101101111111111111111111111111111111111111101111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

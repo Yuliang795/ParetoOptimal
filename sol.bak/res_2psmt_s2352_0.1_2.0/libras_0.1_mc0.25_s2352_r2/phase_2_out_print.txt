@@ -1,0 +1,48 @@
+--- len ml cl ---   ml: 2, cl: 88
+num branch_node: 31
+num leaf_node: 32
+num feature: 90
+tree_depth: 5
+nDC: 3802
+
+a: 1 - 2790 -> 2790  
+s: 2791 - 13950 -> 11160
+z: 13951 - 25470 -> 11520
+g: 25471 - 25950 -> 480
+x: 25951 - 31350 -> 5400
+b0: 31351 - 35152 -> 3802
+b1: 35153 - 38954 -> 3802
+ ---> [debug] ---> (7604, 1)   ndc: 3802
+-b1w_break_flag break
+--b1w_break_flag break
+-b0 flag True
+-- b0 flag break
+mlcl:1.06139| b+:1.05738| b-:1.05738
+dt_consts -time: 0.01481 -dim: nan
+DC -time: 0.12748 -dim: 3802
+tree_var -time: 0.00010 -dim: nan
+7 -time: 0.21578 -dim: (124155, 2)
+8 -time: 0.00050 -dim: (31, 90)
+9 -time: 2.15071 -dim: (1001610, 3)
+10 -time: 3.88363 -dim: (440820, 3)
+11_12 -time: 0.09837 -dim: [57600, 2]
+13 -time: 0.02718 -dim: (11520, 6)
+14_15 -time: 0.02697 -dim: [5580, 2]
+16 -time: 0.00075 -dim: (416, 2)
+17_18 -time: 1.09445 -dim: [322560, 3]
+19 -time: 0.00012 -dim: (14, 1)
+20 -time: 0.13838 -dim: (13, 360)
+21 -time: 0.00009 -dim: (1, 360)
+smtPr -time: 1.34695 -dim: 115676
+32_33_34 -time: 0.01962 -dim: (11404, 2)
+cl_file_header -time: 1.32334 -dim: nan
+cl_gen_oa -time: 11.05972 -dim: nan
+*solver* -time: 900.05833 -dim: nan
+-- SUM CL TIME: 7.65655          |  SUM other TIME: 902.87101          |  SUM TIME: 910.52756
+
+loandra header: p wcnf 38954 2103567 7605
+
+*loandra status: SATISFIABLE
+ARI: 0.19015668034128771
+b0_final: 2862 | 0_ind: 2862
+b1_final: 75 | 0_ind: 75

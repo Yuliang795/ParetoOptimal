@@ -1,0 +1,45 @@
+---curr_b1_sat 66 - curr_b0_sat 829
+ ---> [debug] ---> (2438, 1)   ndc: 1219
+content/instance_iris ./consts_collection/2352/consts_k0.0_s2352/iris_0.1_mc0.0_s2352 ./solutions/iris_0.1_mc0.0_s2352_r1/ ./solutions/iris_0.1_mc0.0_s2352_r1/clauses_iris_0.1_mc0.0_s2352
+Smart Pair jar 
+java -DdataPath=content/instance_iris -DxStartInd=2303 -Db0StartInd=2753 -DhardClauseWeight=2439 -DdistanceClassPath=./solutions/iris_0.1_mc0.0_s2352_r1/DC -DoutFileName=./solutions/iris_0.1_mc0.0_s2352_r1/clauses_iris_0.1_mc0.0_s2352 -jar smart-pair.jar
+========= Smart Pair started =========
+No constsPath provided -Implementing Smart Pair without ML CL Constraints
+extracting DC from ./solutions/iris_0.1_mc0.0_s2352_r1/DC
+df length: 150, num label: 3, num DC: 1219
+x: 150-3, b0: 1219, b1: 1219
+flags: l, 150, 4, 3
+distance class size : 1219 
+consts size ml: 0, cl: 0
+SmartPair Finished, 34121 clauses write to ./solutions/iris_0.1_mc0.0_s2352_r1/clauses_iris_0.1_mc0.0_s2352
+========= Smart Pair Finished =========
+
+df_consts -time: 0.00571 -dim: nan
+DC -time: 0.02256 -dim: 1219
+tree_var -time: 0.00005 -dim: nan
+7 -time: 0.00038 -dim: (42, 2)
+8 -time: 0.00011 -dim: (7, 4)
+9 -time: 0.01617 -dim: (4172, 3)
+10 -time: 0.03523 -dim: (3339, 3)
+11_12 -time: 0.01796 -dim: [3600, 2]
+13 -time: 0.00454 -dim: (1200, 4)
+14_15 -time: 0.00194 -dim: [56, 2]
+16 -time: 0.00014 -dim: (8, 2)
+17_18 -time: 0.02746 -dim: [4800, 3]
+19 -time: 0.00009 -dim: (2, 1)
+20 -time: 0.01217 -dim: (1, 150)
+21 -time: 0.00009 -dim: (1, 150)
+32_33_34 -time: 0.01141 -dim: (3655, 2)
+smtPr_22-31 -time: 0.35784 -dim: nan
+cl_file_header -time: 0.05947 -dim: nan
+*solver* -time: 0.22251 -dim: nan
+-- SUM CL TIME: 0.48553          |  SUM other TIME: 0.31030          |  SUM TIME: 0.79583
+Global Solver Time: 2.7059456212446094 - curr_slvr_time: 0.2225099867209792 -sum: 2.9284556079655886  timelimit: 36000
+
+loandra header: p wcnf 5190 56371 2439
+
+[debug] (0, 2) (0, 2)
+*loandra status: OPTIMUM FOUND
+ARI: 0.520684414656714
+b0_final: 896 | 0_ind: 896
+b1_final: 74 | 0_ind: 74

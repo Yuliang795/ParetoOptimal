@@ -1,0 +1,30 @@
+---curr_b1_sat 2370 - curr_b0_sat 3574
+ ---> [debug] ---> (7154, 1)   ndc: 3577
+df_consts -time: 0.01849 -dim: nan
+DC -time: 0.11487 -dim: 3577
+tree_var -time: 0.00007 -dim: nan
+7 -time: 0.00840 -dim: (3927, 2)
+8 -time: 0.00012 -dim: (7, 34)
+9 -time: 0.15932 -dim: (83300, 3)
+10 -time: 0.13546 -dim: (26502, 3)
+11_12 -time: 0.01357 -dim: [8424, 2]
+13 -time: 0.00541 -dim: (2808, 4)
+14_15 -time: 0.00635 -dim: [476, 2]
+16 -time: 0.00001 -dim: (0, 2)
+17_18 -time: 0.01717 -dim: [5616, 3]
+19 -time: 0.00004 -dim: (1, 1)
+20 -time: 0.01319 -dim: (0, 351)
+21 -time: 0.00008 -dim: (1, 351)
+smtPr -time: 46.34544 -dim: 123550
+32_33_34 -time: 0.01672 -dim: (10729, 2)
+cl_file_header -time: 0.15232 -dim: nan
+cl_gen_oa -time: 351.13430 -dim: nan
+*solver* -time: 0.68586 -dim: nan
+-- SUM CL TIME: 0.37584          |  SUM other TIME: 47.31705          |  SUM TIME: 47.69289
+Global Solver Time: 18.340731139760464 - curr_slvr_time: 0.6858580312691629 -sum: 19.026589171029627  timelimit: 36000
+
+loandra header: p wcnf 13375 268921 3578
+
+*loandra status: UNSATISFIABLE
+b0_final: 0 | 0_ind: 0
+b1_final: 0 | 0_ind: 0

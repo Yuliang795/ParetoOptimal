@@ -1,0 +1,33 @@
+ ---> [debug] ---> (7604, 1)   ndc: 3802
+-b1w_break_flag break
+--b1w_break_flag break
+-b0 flag True
+-- b0 flag break
+df_consts -time: 0.03734 -dim: nan
+DC -time: 0.13847 -dim: 3802
+tree_var -time: 0.00009 -dim: nan
+7 -time: 0.29674 -dim: (124155, 2)
+8 -time: 0.00050 -dim: (31, 90)
+9 -time: 2.02202 -dim: (1001610, 3)
+10 -time: 4.07910 -dim: (440820, 3)
+11_12 -time: 0.09810 -dim: [57600, 2]
+13 -time: 0.02735 -dim: (11520, 6)
+14_15 -time: 0.02694 -dim: [5580, 2]
+16 -time: 0.00075 -dim: (416, 2)
+17_18 -time: 1.03974 -dim: [322560, 3]
+19 -time: 0.00012 -dim: (14, 1)
+20 -time: 0.13757 -dim: (13, 360)
+21 -time: 0.00009 -dim: (1, 360)
+smtPr -time: 35.61644 -dim: 801710
+32_33_34 -time: 0.01890 -dim: (11404, 2)
+cl_file_header -time: 2.05223 -dim: nan
+cl_gen_oa -time: 993.21866 -dim: nan
+*solver* -time: 190.74456 -dim: nan
+-- SUM CL TIME: 7.74792          |  SUM other TIME: 228.58913          |  SUM TIME: 236.33705
+
+loandra header: p wcnf 38954 2785799 14462809
+
+*loandra status: OPTIMUM FOUND
+ARI: 0.10203295810844207
+b0_final: 3802 | 0_ind: 0
+b1_final: 280 | 0_ind: 280

@@ -1,0 +1,1514 @@
+c
+c LOANDRA:	 an extension of Open-WBO to core-boosted linear search.
+c Version:	 July 2019 2018 -- Release: 1.0
+c Authors:	 Jeremias Berg, Emir Demirovic, Peter Stuckey
+c We thank the developers of Open-WBO for their work
+c
+c Open-WBO:	 a Modular MaxSAT Solver -- based on Glucose4.1 (core version)
+c Version:	 September 2018 -- Release: 2.1
+c Authors:	 Ruben Martins, Vasco Manquinho, Ines Lynce
+c Contributors:	 Miguel Neves, Saurabh Joshi, Norbert Manthey, Mikolas Janota
+c Contact:	 open-wbo@sat.inesc-id.pt -- http://sat.inesc-id.pt/open-wbo/
+c
+c WARNING: for repeatability, setting FPU to use double precision
+c |                                                                                                       |
+c ========================================[ Problem Statistics ]===========================================
+c |                                                                                                       |
+c |  Problem Format:             MaxSAT                                                                   |
+c |  Problem Type:             Weighted                                                                   |
+c |  Number of variables:         79782                                                                   |
+c |  Number of hard clauses:    3800668                                                                   |
+c |  Number of soft clauses:       1150                                                                   |
+c |  Number of cardinality:           0                                                                   |
+c |  Number of PB :                   0                                                                   |
+c |  Parse time:                   0.59 s                                                                 |
+c |                                                                                                       |
+c PMRES ALGORITHM WITH LINEAR SEARCH 
+c PMRES LINEAR STRAT=1
+c PMRES LINEAR DIVISION=1
+c PMRES CORE DIVISION=0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c PMRES RELAX BEFORE STRAT =0
+c PMRES INCREMENTAL LIN DIVISION =0
+c PMRES MINIM =1
+c PMRES MINIM STRAT =0
+c PRE hard clauses before: 3801818
+c PRE soft literals before: 1150
+c PRE time: 14 removed weight: 0
+c PRE hard clauses after: 3653017
+c PRE soft literals after: 1150
+c Checking model
+c CG best 1265 LB: 0 at 15
+o 1265
+c CG GAP: 1265 T 15
+c CG New weight: 1 at 15
+c PMRES CORE LIMIT (-1 = no limit)=45
+c Core budget remaining 30
+c Interrupted core guided phase
+c Starting lin search with: LB: 0 UB: 1265 UB - LB: 1265 Time 45
+c Deleting solver
+c CG New factor 1
+c Reduced cost 1265 gap 1265
+c Building new PB
+c Considering 1150 of 1150 soft clauses
+c Minimizing in init
+c Minimization time 3 init minsize 429 skipped 0
+c Reduced cost 1265 gap 1265
+c Encoding PB with UB: 1265 obj size 1150
+c Encoding Done
+c Setting Card Vars currently: 93958 / orig 79782
+c Checking model
+c Found same cost model covering more variables
+c CardVars DONE  
+c SAT Call at 49
+c Reduced cost 1265 gap 1265
+c Checking model
+c BOUND UPDATE RHS: 1264 at 49
+c SAT Call at 49
+c Reduced cost 1260 gap 1265
+c Checking model
+c LIN best 1260 LB: 0 at 49
+o 1260
+c LIN GAP: 1260 T 49
+c BOUND UPDATE RHS: 1259 at 49
+c SAT Call at 49
+c Reduced cost 1255 gap 1260
+c Checking model
+c LIN best 1255 LB: 0 at 50
+o 1255
+c LIN GAP: 1255 T 50
+c BOUND UPDATE RHS: 1254 at 50
+c SAT Call at 50
+c Reduced cost 1254 gap 1255
+c Checking model
+c LIN best 1254 LB: 0 at 50
+o 1254
+c LIN GAP: 1254 T 50
+c BOUND UPDATE RHS: 1253 at 50
+c SAT Call at 50
+c Reduced cost 1253 gap 1254
+c Checking model
+c LIN best 1253 LB: 0 at 50
+o 1253
+c LIN GAP: 1253 T 50
+c BOUND UPDATE RHS: 1252 at 50
+c SAT Call at 50
+c Reduced cost 1252 gap 1253
+c Checking model
+c LIN best 1252 LB: 0 at 50
+o 1252
+c LIN GAP: 1252 T 50
+c BOUND UPDATE RHS: 1251 at 50
+c SAT Call at 50
+c Reduced cost 1251 gap 1252
+c Checking model
+c LIN best 1251 LB: 0 at 50
+o 1251
+c LIN GAP: 1251 T 50
+c BOUND UPDATE RHS: 1250 at 50
+c SAT Call at 50
+c Reduced cost 1250 gap 1251
+c Checking model
+c LIN best 1250 LB: 0 at 50
+o 1250
+c LIN GAP: 1250 T 50
+c BOUND UPDATE RHS: 1249 at 50
+c SAT Call at 50
+c Reduced cost 1249 gap 1250
+c Checking model
+c LIN best 1249 LB: 0 at 50
+o 1249
+c LIN GAP: 1249 T 50
+c BOUND UPDATE RHS: 1248 at 50
+c SAT Call at 50
+c Reduced cost 1248 gap 1249
+c Checking model
+c LIN best 1248 LB: 0 at 50
+o 1248
+c LIN GAP: 1248 T 50
+c BOUND UPDATE RHS: 1247 at 50
+c SAT Call at 50
+c Reduced cost 1247 gap 1248
+c Checking model
+c LIN best 1247 LB: 0 at 50
+o 1247
+c LIN GAP: 1247 T 50
+c BOUND UPDATE RHS: 1246 at 50
+c SAT Call at 50
+c Reduced cost 1246 gap 1247
+c Checking model
+c LIN best 1246 LB: 0 at 50
+o 1246
+c LIN GAP: 1246 T 50
+c BOUND UPDATE RHS: 1245 at 50
+c SAT Call at 50
+c Reduced cost 1245 gap 1246
+c Checking model
+c LIN best 1245 LB: 0 at 50
+o 1245
+c LIN GAP: 1245 T 50
+c BOUND UPDATE RHS: 1244 at 50
+c SAT Call at 50
+c Reduced cost 1244 gap 1245
+c Checking model
+c LIN best 1244 LB: 0 at 50
+o 1244
+c LIN GAP: 1244 T 50
+c BOUND UPDATE RHS: 1243 at 50
+c SAT Call at 50
+c Reduced cost 1243 gap 1244
+c Checking model
+c LIN best 1243 LB: 0 at 50
+o 1243
+c LIN GAP: 1243 T 50
+c BOUND UPDATE RHS: 1242 at 50
+c SAT Call at 50
+c Reduced cost 1242 gap 1243
+c Checking model
+c LIN best 1242 LB: 0 at 50
+o 1242
+c LIN GAP: 1242 T 50
+c BOUND UPDATE RHS: 1241 at 50
+c SAT Call at 50
+c Reduced cost 1241 gap 1242
+c Checking model
+c LIN best 1241 LB: 0 at 50
+o 1241
+c LIN GAP: 1241 T 50
+c BOUND UPDATE RHS: 1240 at 50
+c SAT Call at 50
+c Reduced cost 1236 gap 1241
+c Checking model
+c LIN best 1236 LB: 0 at 50
+o 1236
+c LIN GAP: 1236 T 50
+c BOUND UPDATE RHS: 1235 at 50
+c SAT Call at 50
+c Reduced cost 1231 gap 1236
+c Checking model
+c LIN best 1231 LB: 0 at 50
+o 1231
+c LIN GAP: 1231 T 50
+c BOUND UPDATE RHS: 1230 at 50
+c SAT Call at 50
+c Reduced cost 1227 gap 1231
+c Checking model
+c LIN best 1227 LB: 0 at 50
+o 1227
+c LIN GAP: 1227 T 50
+c BOUND UPDATE RHS: 1226 at 50
+c SAT Call at 50
+c Reduced cost 1226 gap 1227
+c Checking model
+c LIN best 1226 LB: 0 at 50
+o 1226
+c LIN GAP: 1226 T 50
+c BOUND UPDATE RHS: 1225 at 50
+c SAT Call at 50
+c Reduced cost 1225 gap 1226
+c Checking model
+c LIN best 1225 LB: 0 at 51
+o 1225
+c LIN GAP: 1225 T 51
+c BOUND UPDATE RHS: 1224 at 51
+c SAT Call at 51
+c Reduced cost 1220 gap 1225
+c Checking model
+c LIN best 1220 LB: 0 at 51
+o 1220
+c LIN GAP: 1220 T 51
+c BOUND UPDATE RHS: 1219 at 51
+c SAT Call at 51
+c Reduced cost 1215 gap 1220
+c Checking model
+c LIN best 1215 LB: 0 at 51
+o 1215
+c LIN GAP: 1215 T 51
+c BOUND UPDATE RHS: 1214 at 51
+c SAT Call at 51
+c Reduced cost 1210 gap 1215
+c Checking model
+c LIN best 1210 LB: 0 at 51
+o 1210
+c LIN GAP: 1210 T 51
+c BOUND UPDATE RHS: 1209 at 51
+c SAT Call at 51
+c Reduced cost 1205 gap 1210
+c Checking model
+c LIN best 1205 LB: 0 at 51
+o 1205
+c LIN GAP: 1205 T 51
+c BOUND UPDATE RHS: 1204 at 51
+c SAT Call at 51
+c Reduced cost 1200 gap 1205
+c Checking model
+c LIN best 1200 LB: 0 at 51
+o 1200
+c LIN GAP: 1200 T 51
+c BOUND UPDATE RHS: 1199 at 51
+c SAT Call at 51
+c Reduced cost 1199 gap 1200
+c Checking model
+c LIN best 1199 LB: 0 at 51
+o 1199
+c LIN GAP: 1199 T 51
+c BOUND UPDATE RHS: 1198 at 51
+c SAT Call at 51
+c Reduced cost 1194 gap 1199
+c Checking model
+c LIN best 1194 LB: 0 at 51
+o 1194
+c LIN GAP: 1194 T 51
+c BOUND UPDATE RHS: 1193 at 51
+c SAT Call at 51
+c Reduced cost 1189 gap 1194
+c Checking model
+c LIN best 1189 LB: 0 at 51
+o 1189
+c LIN GAP: 1189 T 51
+c BOUND UPDATE RHS: 1188 at 51
+c SAT Call at 51
+c Reduced cost 1184 gap 1189
+c Checking model
+c LIN best 1184 LB: 0 at 51
+o 1184
+c LIN GAP: 1184 T 51
+c BOUND UPDATE RHS: 1183 at 51
+c SAT Call at 51
+c Reduced cost 1179 gap 1184
+c Checking model
+c LIN best 1179 LB: 0 at 51
+o 1179
+c LIN GAP: 1179 T 51
+c BOUND UPDATE RHS: 1178 at 51
+c SAT Call at 51
+c Reduced cost 1174 gap 1179
+c Checking model
+c LIN best 1174 LB: 0 at 51
+o 1174
+c LIN GAP: 1174 T 51
+c BOUND UPDATE RHS: 1173 at 51
+c SAT Call at 51
+c Reduced cost 1173 gap 1174
+c Checking model
+c LIN best 1173 LB: 0 at 51
+o 1173
+c LIN GAP: 1173 T 51
+c BOUND UPDATE RHS: 1172 at 51
+c SAT Call at 51
+c Reduced cost 1172 gap 1173
+c Checking model
+c LIN best 1172 LB: 0 at 51
+o 1172
+c LIN GAP: 1172 T 51
+c BOUND UPDATE RHS: 1171 at 51
+c SAT Call at 51
+c Reduced cost 1171 gap 1172
+c Checking model
+c LIN best 1171 LB: 0 at 51
+o 1171
+c LIN GAP: 1171 T 51
+c BOUND UPDATE RHS: 1170 at 51
+c SAT Call at 51
+c Reduced cost 1170 gap 1171
+c Checking model
+c LIN best 1170 LB: 0 at 51
+o 1170
+c LIN GAP: 1170 T 51
+c BOUND UPDATE RHS: 1169 at 51
+c SAT Call at 51
+c Reduced cost 1165 gap 1170
+c Checking model
+c LIN best 1165 LB: 0 at 51
+o 1165
+c LIN GAP: 1165 T 51
+c BOUND UPDATE RHS: 1164 at 51
+c SAT Call at 51
+c Reduced cost 1160 gap 1165
+c Checking model
+c LIN best 1160 LB: 0 at 51
+o 1160
+c LIN GAP: 1160 T 51
+c BOUND UPDATE RHS: 1159 at 51
+c SAT Call at 51
+c Reduced cost 1155 gap 1160
+c Checking model
+c LIN best 1155 LB: 0 at 51
+o 1155
+c LIN GAP: 1155 T 51
+c BOUND UPDATE RHS: 1154 at 51
+c SAT Call at 51
+c Reduced cost 1150 gap 1155
+c Checking model
+c LIN best 1150 LB: 0 at 52
+o 1150
+c LIN GAP: 1150 T 52
+c BOUND UPDATE RHS: 1149 at 52
+c SAT Call at 52
+c Reduced cost 1145 gap 1150
+c Checking model
+c LIN best 1145 LB: 0 at 52
+o 1145
+c LIN GAP: 1145 T 52
+c BOUND UPDATE RHS: 1144 at 52
+c SAT Call at 52
+c Reduced cost 1144 gap 1145
+c Checking model
+c LIN best 1144 LB: 0 at 52
+o 1144
+c LIN GAP: 1144 T 52
+c BOUND UPDATE RHS: 1143 at 52
+c SAT Call at 52
+c Reduced cost 1143 gap 1144
+c Checking model
+c LIN best 1143 LB: 0 at 52
+o 1143
+c LIN GAP: 1143 T 52
+c BOUND UPDATE RHS: 1142 at 52
+c SAT Call at 52
+c Reduced cost 1142 gap 1143
+c Checking model
+c LIN best 1142 LB: 0 at 52
+o 1142
+c LIN GAP: 1142 T 52
+c BOUND UPDATE RHS: 1141 at 52
+c SAT Call at 52
+c Reduced cost 1139 gap 1142
+c Checking model
+c LIN best 1139 LB: 0 at 52
+o 1139
+c LIN GAP: 1139 T 52
+c BOUND UPDATE RHS: 1138 at 52
+c SAT Call at 52
+c Reduced cost 1138 gap 1139
+c Checking model
+c LIN best 1138 LB: 0 at 52
+o 1138
+c LIN GAP: 1138 T 52
+c BOUND UPDATE RHS: 1137 at 52
+c SAT Call at 52
+c Reduced cost 1137 gap 1138
+c Checking model
+c LIN best 1137 LB: 0 at 53
+o 1137
+c LIN GAP: 1137 T 53
+c BOUND UPDATE RHS: 1136 at 53
+c SAT Call at 53
+c Reduced cost 1136 gap 1137
+c Checking model
+c LIN best 1136 LB: 0 at 53
+o 1136
+c LIN GAP: 1136 T 53
+c BOUND UPDATE RHS: 1135 at 53
+c SAT Call at 53
+c Reduced cost 1135 gap 1136
+c Checking model
+c LIN best 1135 LB: 0 at 53
+o 1135
+c LIN GAP: 1135 T 53
+c BOUND UPDATE RHS: 1134 at 53
+c SAT Call at 53
+c Reduced cost 1134 gap 1135
+c Checking model
+c LIN best 1134 LB: 0 at 53
+o 1134
+c LIN GAP: 1134 T 53
+c BOUND UPDATE RHS: 1133 at 53
+c SAT Call at 53
+c Reduced cost 1129 gap 1134
+c Checking model
+c LIN best 1129 LB: 0 at 53
+o 1129
+c LIN GAP: 1129 T 53
+c BOUND UPDATE RHS: 1128 at 53
+c SAT Call at 53
+c Reduced cost 1124 gap 1129
+c Checking model
+c LIN best 1124 LB: 0 at 53
+o 1124
+c LIN GAP: 1124 T 53
+c BOUND UPDATE RHS: 1123 at 53
+c SAT Call at 53
+c Reduced cost 1119 gap 1124
+c Checking model
+c LIN best 1119 LB: 0 at 53
+o 1119
+c LIN GAP: 1119 T 53
+c BOUND UPDATE RHS: 1118 at 53
+c SAT Call at 53
+c Reduced cost 1114 gap 1119
+c Checking model
+c LIN best 1114 LB: 0 at 53
+o 1114
+c LIN GAP: 1114 T 53
+c BOUND UPDATE RHS: 1113 at 53
+c SAT Call at 53
+c Reduced cost 1113 gap 1114
+c Checking model
+c LIN best 1113 LB: 0 at 53
+o 1113
+c LIN GAP: 1113 T 53
+c BOUND UPDATE RHS: 1112 at 53
+c SAT Call at 53
+c Reduced cost 1112 gap 1113
+c Checking model
+c LIN best 1112 LB: 0 at 53
+o 1112
+c LIN GAP: 1112 T 53
+c BOUND UPDATE RHS: 1111 at 53
+c SAT Call at 53
+c Reduced cost 1111 gap 1112
+c Checking model
+c LIN best 1111 LB: 0 at 53
+o 1111
+c LIN GAP: 1111 T 53
+c BOUND UPDATE RHS: 1110 at 53
+c SAT Call at 53
+c Reduced cost 1110 gap 1111
+c Checking model
+c LIN best 1110 LB: 0 at 53
+o 1110
+c LIN GAP: 1110 T 53
+c BOUND UPDATE RHS: 1109 at 53
+c SAT Call at 53
+c Reduced cost 1105 gap 1110
+c Checking model
+c LIN best 1105 LB: 0 at 53
+o 1105
+c LIN GAP: 1105 T 53
+c BOUND UPDATE RHS: 1104 at 53
+c SAT Call at 53
+c Reduced cost 1104 gap 1105
+c Checking model
+c LIN best 1104 LB: 0 at 53
+o 1104
+c LIN GAP: 1104 T 53
+c BOUND UPDATE RHS: 1103 at 53
+c SAT Call at 53
+c Reduced cost 1103 gap 1104
+c Checking model
+c LIN best 1103 LB: 0 at 53
+o 1103
+c LIN GAP: 1103 T 53
+c BOUND UPDATE RHS: 1102 at 53
+c SAT Call at 53
+c Reduced cost 1102 gap 1103
+c Checking model
+c LIN best 1102 LB: 0 at 53
+o 1102
+c LIN GAP: 1102 T 53
+c BOUND UPDATE RHS: 1101 at 53
+c SAT Call at 53
+c Reduced cost 1101 gap 1102
+c Checking model
+c LIN best 1101 LB: 0 at 54
+o 1101
+c LIN GAP: 1101 T 54
+c BOUND UPDATE RHS: 1100 at 54
+c SAT Call at 54
+c Reduced cost 1096 gap 1101
+c Checking model
+c LIN best 1096 LB: 0 at 54
+o 1096
+c LIN GAP: 1096 T 54
+c BOUND UPDATE RHS: 1095 at 54
+c SAT Call at 54
+c Reduced cost 1092 gap 1096
+c Checking model
+c LIN best 1092 LB: 0 at 54
+o 1092
+c LIN GAP: 1092 T 54
+c BOUND UPDATE RHS: 1091 at 54
+c SAT Call at 54
+c Reduced cost 1091 gap 1092
+c Checking model
+c LIN best 1091 LB: 0 at 54
+o 1091
+c LIN GAP: 1091 T 54
+c BOUND UPDATE RHS: 1090 at 54
+c SAT Call at 54
+c Reduced cost 1090 gap 1091
+c Checking model
+c LIN best 1090 LB: 0 at 54
+o 1090
+c LIN GAP: 1090 T 54
+c BOUND UPDATE RHS: 1089 at 54
+c SAT Call at 54
+c Reduced cost 1089 gap 1090
+c Checking model
+c LIN best 1089 LB: 0 at 54
+o 1089
+c LIN GAP: 1089 T 54
+c BOUND UPDATE RHS: 1088 at 54
+c SAT Call at 54
+c Reduced cost 1088 gap 1089
+c Checking model
+c LIN best 1088 LB: 0 at 54
+o 1088
+c LIN GAP: 1088 T 54
+c BOUND UPDATE RHS: 1087 at 54
+c SAT Call at 54
+c Reduced cost 1087 gap 1088
+c Checking model
+c LIN best 1087 LB: 0 at 54
+o 1087
+c LIN GAP: 1087 T 54
+c BOUND UPDATE RHS: 1086 at 54
+c SAT Call at 54
+c Reduced cost 1086 gap 1087
+c Checking model
+c LIN best 1086 LB: 0 at 54
+o 1086
+c LIN GAP: 1086 T 54
+c BOUND UPDATE RHS: 1085 at 54
+c SAT Call at 54
+c Reduced cost 1085 gap 1086
+c Checking model
+c LIN best 1085 LB: 0 at 54
+o 1085
+c LIN GAP: 1085 T 54
+c BOUND UPDATE RHS: 1084 at 54
+c SAT Call at 54
+c Reduced cost 1084 gap 1085
+c Checking model
+c LIN best 1084 LB: 0 at 54
+o 1084
+c LIN GAP: 1084 T 54
+c BOUND UPDATE RHS: 1083 at 54
+c SAT Call at 54
+c Reduced cost 1083 gap 1084
+c Checking model
+c LIN best 1083 LB: 0 at 54
+o 1083
+c LIN GAP: 1083 T 54
+c BOUND UPDATE RHS: 1082 at 54
+c SAT Call at 54
+c Reduced cost 1082 gap 1083
+c Checking model
+c LIN best 1082 LB: 0 at 54
+o 1082
+c LIN GAP: 1082 T 54
+c BOUND UPDATE RHS: 1081 at 54
+c SAT Call at 54
+c Reduced cost 1081 gap 1082
+c Checking model
+c LIN best 1081 LB: 0 at 54
+o 1081
+c LIN GAP: 1081 T 54
+c BOUND UPDATE RHS: 1080 at 54
+c SAT Call at 54
+c Reduced cost 1080 gap 1081
+c Checking model
+c LIN best 1080 LB: 0 at 54
+o 1080
+c LIN GAP: 1080 T 54
+c BOUND UPDATE RHS: 1079 at 54
+c SAT Call at 54
+c Reduced cost 1079 gap 1080
+c Checking model
+c LIN best 1079 LB: 0 at 54
+o 1079
+c LIN GAP: 1079 T 54
+c BOUND UPDATE RHS: 1078 at 54
+c SAT Call at 54
+c Reduced cost 1078 gap 1079
+c Checking model
+c LIN best 1078 LB: 0 at 54
+o 1078
+c LIN GAP: 1078 T 54
+c BOUND UPDATE RHS: 1077 at 54
+c SAT Call at 54
+c Reduced cost 1077 gap 1078
+c Checking model
+c LIN best 1077 LB: 0 at 54
+o 1077
+c LIN GAP: 1077 T 54
+c BOUND UPDATE RHS: 1076 at 54
+c SAT Call at 54
+c Reduced cost 1076 gap 1077
+c Checking model
+c LIN best 1076 LB: 0 at 54
+o 1076
+c LIN GAP: 1076 T 54
+c BOUND UPDATE RHS: 1075 at 54
+c SAT Call at 54
+c Reduced cost 1075 gap 1076
+c Checking model
+c LIN best 1075 LB: 0 at 54
+o 1075
+c LIN GAP: 1075 T 54
+c BOUND UPDATE RHS: 1074 at 54
+c SAT Call at 54
+c Reduced cost 1070 gap 1075
+c Checking model
+c LIN best 1070 LB: 0 at 54
+o 1070
+c LIN GAP: 1070 T 54
+c BOUND UPDATE RHS: 1069 at 54
+c SAT Call at 54
+c Reduced cost 1065 gap 1070
+c Checking model
+c LIN best 1065 LB: 0 at 54
+o 1065
+c LIN GAP: 1065 T 54
+c BOUND UPDATE RHS: 1064 at 54
+c SAT Call at 54
+c Reduced cost 1060 gap 1065
+c Checking model
+c LIN best 1060 LB: 0 at 54
+o 1060
+c LIN GAP: 1060 T 54
+c BOUND UPDATE RHS: 1059 at 54
+c SAT Call at 54
+c Reduced cost 1055 gap 1060
+c Checking model
+c LIN best 1055 LB: 0 at 54
+o 1055
+c LIN GAP: 1055 T 54
+c BOUND UPDATE RHS: 1054 at 54
+c SAT Call at 54
+c Reduced cost 1050 gap 1055
+c Checking model
+c LIN best 1050 LB: 0 at 54
+o 1050
+c LIN GAP: 1050 T 54
+c BOUND UPDATE RHS: 1049 at 54
+c SAT Call at 54
+c Reduced cost 1047 gap 1050
+c Checking model
+c LIN best 1047 LB: 0 at 54
+o 1047
+c LIN GAP: 1047 T 54
+c BOUND UPDATE RHS: 1046 at 54
+c SAT Call at 54
+c Reduced cost 1042 gap 1047
+c Checking model
+c LIN best 1042 LB: 0 at 55
+o 1042
+c LIN GAP: 1042 T 55
+c BOUND UPDATE RHS: 1041 at 55
+c SAT Call at 55
+c Reduced cost 1037 gap 1042
+c Checking model
+c LIN best 1037 LB: 0 at 55
+o 1037
+c LIN GAP: 1037 T 55
+c BOUND UPDATE RHS: 1036 at 55
+c SAT Call at 55
+c Reduced cost 1032 gap 1037
+c Checking model
+c LIN best 1032 LB: 0 at 55
+o 1032
+c LIN GAP: 1032 T 55
+c BOUND UPDATE RHS: 1031 at 55
+c SAT Call at 55
+c Reduced cost 1029 gap 1032
+c Checking model
+c LIN best 1029 LB: 0 at 55
+o 1029
+c LIN GAP: 1029 T 55
+c BOUND UPDATE RHS: 1028 at 55
+c SAT Call at 55
+c Reduced cost 1028 gap 1029
+c Checking model
+c LIN best 1028 LB: 0 at 55
+o 1028
+c LIN GAP: 1028 T 55
+c BOUND UPDATE RHS: 1027 at 55
+c SAT Call at 55
+c Reduced cost 1023 gap 1028
+c Checking model
+c LIN best 1023 LB: 0 at 55
+o 1023
+c LIN GAP: 1023 T 55
+c BOUND UPDATE RHS: 1022 at 55
+c SAT Call at 55
+c Reduced cost 1018 gap 1023
+c Checking model
+c LIN best 1018 LB: 0 at 55
+o 1018
+c LIN GAP: 1018 T 55
+c BOUND UPDATE RHS: 1017 at 55
+c SAT Call at 55
+c Reduced cost 1014 gap 1018
+c Checking model
+c LIN best 1014 LB: 0 at 56
+o 1014
+c LIN GAP: 1014 T 56
+c BOUND UPDATE RHS: 1013 at 56
+c SAT Call at 56
+c Reduced cost 1013 gap 1014
+c Checking model
+c LIN best 1013 LB: 0 at 57
+o 1013
+c LIN GAP: 1013 T 57
+c BOUND UPDATE RHS: 1012 at 57
+c SAT Call at 57
+c Reduced cost 1009 gap 1013
+c Checking model
+c LIN best 1009 LB: 0 at 58
+o 1009
+c LIN GAP: 1009 T 58
+c BOUND UPDATE RHS: 1008 at 58
+c SAT Call at 58
+c Reduced cost 1008 gap 1009
+c Checking model
+c LIN best 1008 LB: 0 at 60
+o 1008
+c LIN GAP: 1008 T 60
+c BOUND UPDATE RHS: 1007 at 60
+c SAT Call at 60
+c Reduced cost 1007 gap 1008
+c Checking model
+c LIN best 1007 LB: 0 at 60
+o 1007
+c LIN GAP: 1007 T 60
+c BOUND UPDATE RHS: 1006 at 60
+c SAT Call at 60
+c Reduced cost 1006 gap 1007
+c Checking model
+c LIN best 1006 LB: 0 at 60
+o 1006
+c LIN GAP: 1006 T 60
+c BOUND UPDATE RHS: 1005 at 60
+c SAT Call at 60
+c Reduced cost 1005 gap 1006
+c Checking model
+c LIN best 1005 LB: 0 at 60
+o 1005
+c LIN GAP: 1005 T 60
+c BOUND UPDATE RHS: 1004 at 60
+c SAT Call at 60
+c Reduced cost 1000 gap 1005
+c Checking model
+c LIN best 1000 LB: 0 at 60
+o 1000
+c LIN GAP: 1000 T 60
+c BOUND UPDATE RHS: 999 at 60
+c SAT Call at 60
+c Reduced cost 995 gap 1000
+c Checking model
+c LIN best 995 LB: 0 at 60
+o 995
+c LIN GAP: 995 T 60
+c BOUND UPDATE RHS: 994 at 60
+c SAT Call at 60
+c Reduced cost 990 gap 995
+c Checking model
+c LIN best 990 LB: 0 at 60
+o 990
+c LIN GAP: 990 T 60
+c BOUND UPDATE RHS: 989 at 60
+c SAT Call at 60
+c Reduced cost 985 gap 990
+c Checking model
+c LIN best 985 LB: 0 at 60
+o 985
+c LIN GAP: 985 T 60
+c BOUND UPDATE RHS: 984 at 60
+c SAT Call at 60
+c Reduced cost 980 gap 985
+c Checking model
+c LIN best 980 LB: 0 at 60
+o 980
+c LIN GAP: 980 T 60
+c BOUND UPDATE RHS: 979 at 60
+c SAT Call at 60
+c Reduced cost 975 gap 980
+c Checking model
+c LIN best 975 LB: 0 at 60
+o 975
+c LIN GAP: 975 T 60
+c BOUND UPDATE RHS: 974 at 60
+c SAT Call at 61
+c Reduced cost 970 gap 975
+c Checking model
+c LIN best 970 LB: 0 at 61
+o 970
+c LIN GAP: 970 T 61
+c BOUND UPDATE RHS: 969 at 61
+c SAT Call at 61
+c Reduced cost 965 gap 970
+c Checking model
+c LIN best 965 LB: 0 at 61
+o 965
+c LIN GAP: 965 T 61
+c BOUND UPDATE RHS: 964 at 61
+c SAT Call at 61
+c Reduced cost 960 gap 965
+c Checking model
+c LIN best 960 LB: 0 at 61
+o 960
+c LIN GAP: 960 T 61
+c BOUND UPDATE RHS: 959 at 61
+c SAT Call at 61
+c Reduced cost 959 gap 960
+c Checking model
+c LIN best 959 LB: 0 at 61
+o 959
+c LIN GAP: 959 T 61
+c BOUND UPDATE RHS: 958 at 61
+c SAT Call at 61
+c Reduced cost 958 gap 959
+c Checking model
+c LIN best 958 LB: 0 at 62
+o 958
+c LIN GAP: 958 T 62
+c BOUND UPDATE RHS: 957 at 62
+c SAT Call at 62
+c Reduced cost 956 gap 958
+c Checking model
+c LIN best 956 LB: 0 at 62
+o 956
+c LIN GAP: 956 T 62
+c BOUND UPDATE RHS: 955 at 62
+c SAT Call at 62
+c Reduced cost 951 gap 956
+c Checking model
+c LIN best 951 LB: 0 at 62
+o 951
+c LIN GAP: 951 T 62
+c BOUND UPDATE RHS: 950 at 62
+c SAT Call at 62
+c Reduced cost 950 gap 951
+c Checking model
+c LIN best 950 LB: 0 at 63
+o 950
+c LIN GAP: 950 T 63
+c BOUND UPDATE RHS: 949 at 63
+c SAT Call at 63
+c Reduced cost 945 gap 950
+c Checking model
+c LIN best 945 LB: 0 at 64
+o 945
+c LIN GAP: 945 T 64
+c BOUND UPDATE RHS: 944 at 64
+c SAT Call at 64
+c Reduced cost 940 gap 945
+c Checking model
+c LIN best 940 LB: 0 at 64
+o 940
+c LIN GAP: 940 T 64
+c BOUND UPDATE RHS: 939 at 64
+c SAT Call at 64
+c Reduced cost 939 gap 940
+c Checking model
+c LIN best 939 LB: 0 at 67
+o 939
+c LIN GAP: 939 T 67
+c BOUND UPDATE RHS: 938 at 67
+c SAT Call at 67
+c Reduced cost 938 gap 939
+c Checking model
+c LIN best 938 LB: 0 at 67
+o 938
+c LIN GAP: 938 T 67
+c BOUND UPDATE RHS: 937 at 67
+c SAT Call at 67
+c Reduced cost 933 gap 938
+c Checking model
+c LIN best 933 LB: 0 at 67
+o 933
+c LIN GAP: 933 T 67
+c BOUND UPDATE RHS: 932 at 67
+c SAT Call at 67
+c Reduced cost 928 gap 933
+c Checking model
+c LIN best 928 LB: 0 at 67
+o 928
+c LIN GAP: 928 T 67
+c BOUND UPDATE RHS: 927 at 67
+c SAT Call at 67
+c Reduced cost 923 gap 928
+c Checking model
+c LIN best 923 LB: 0 at 67
+o 923
+c LIN GAP: 923 T 67
+c BOUND UPDATE RHS: 922 at 67
+c SAT Call at 67
+c Reduced cost 918 gap 923
+c Checking model
+c LIN best 918 LB: 0 at 67
+o 918
+c LIN GAP: 918 T 67
+c BOUND UPDATE RHS: 917 at 67
+c SAT Call at 67
+c Reduced cost 917 gap 918
+c Checking model
+c LIN best 917 LB: 0 at 67
+o 917
+c LIN GAP: 917 T 67
+c BOUND UPDATE RHS: 916 at 67
+c SAT Call at 67
+c Reduced cost 912 gap 917
+c Checking model
+c LIN best 912 LB: 0 at 67
+o 912
+c LIN GAP: 912 T 67
+c BOUND UPDATE RHS: 911 at 67
+c SAT Call at 67
+c Reduced cost 911 gap 912
+c Checking model
+c LIN best 911 LB: 0 at 68
+o 911
+c LIN GAP: 911 T 68
+c BOUND UPDATE RHS: 910 at 68
+c SAT Call at 68
+c Reduced cost 906 gap 911
+c Checking model
+c LIN best 906 LB: 0 at 68
+o 906
+c LIN GAP: 906 T 68
+c BOUND UPDATE RHS: 905 at 68
+c SAT Call at 68
+c Reduced cost 905 gap 906
+c Checking model
+c LIN best 905 LB: 0 at 70
+o 905
+c LIN GAP: 905 T 70
+c BOUND UPDATE RHS: 904 at 70
+c SAT Call at 70
+c Reduced cost 904 gap 905
+c Checking model
+c LIN best 904 LB: 0 at 70
+o 904
+c LIN GAP: 904 T 70
+c BOUND UPDATE RHS: 903 at 70
+c SAT Call at 70
+c Reduced cost 903 gap 904
+c Checking model
+c LIN best 903 LB: 0 at 70
+o 903
+c LIN GAP: 903 T 70
+c BOUND UPDATE RHS: 902 at 70
+c SAT Call at 70
+c Reduced cost 902 gap 903
+c Checking model
+c LIN best 902 LB: 0 at 71
+o 902
+c LIN GAP: 902 T 71
+c BOUND UPDATE RHS: 901 at 71
+c SAT Call at 71
+c Reduced cost 897 gap 902
+c Checking model
+c LIN best 897 LB: 0 at 71
+o 897
+c LIN GAP: 897 T 71
+c BOUND UPDATE RHS: 896 at 71
+c SAT Call at 71
+c Reduced cost 892 gap 897
+c Checking model
+c LIN best 892 LB: 0 at 71
+o 892
+c LIN GAP: 892 T 71
+c BOUND UPDATE RHS: 891 at 71
+c SAT Call at 71
+c Reduced cost 891 gap 892
+c Checking model
+c LIN best 891 LB: 0 at 72
+o 891
+c LIN GAP: 891 T 72
+c BOUND UPDATE RHS: 890 at 72
+c SAT Call at 72
+c Reduced cost 890 gap 891
+c Checking model
+c LIN best 890 LB: 0 at 72
+o 890
+c LIN GAP: 890 T 72
+c BOUND UPDATE RHS: 889 at 72
+c SAT Call at 72
+c Reduced cost 889 gap 890
+c Checking model
+c LIN best 889 LB: 0 at 72
+o 889
+c LIN GAP: 889 T 72
+c BOUND UPDATE RHS: 888 at 72
+c SAT Call at 72
+c Reduced cost 884 gap 889
+c Checking model
+c LIN best 884 LB: 0 at 72
+o 884
+c LIN GAP: 884 T 72
+c BOUND UPDATE RHS: 883 at 72
+c SAT Call at 72
+c Reduced cost 883 gap 884
+c Checking model
+c LIN best 883 LB: 0 at 75
+o 883
+c LIN GAP: 883 T 75
+c BOUND UPDATE RHS: 882 at 75
+c SAT Call at 75
+c Reduced cost 882 gap 883
+c Checking model
+c LIN best 882 LB: 0 at 75
+o 882
+c LIN GAP: 882 T 75
+c BOUND UPDATE RHS: 881 at 75
+c SAT Call at 75
+c Reduced cost 881 gap 882
+c Checking model
+c LIN best 881 LB: 0 at 75
+o 881
+c LIN GAP: 881 T 75
+c BOUND UPDATE RHS: 880 at 75
+c SAT Call at 75
+c Reduced cost 880 gap 881
+c Checking model
+c LIN best 880 LB: 0 at 75
+o 880
+c LIN GAP: 880 T 75
+c BOUND UPDATE RHS: 879 at 75
+c SAT Call at 75
+c Reduced cost 879 gap 880
+c Checking model
+c LIN best 879 LB: 0 at 75
+o 879
+c LIN GAP: 879 T 75
+c BOUND UPDATE RHS: 878 at 75
+c SAT Call at 75
+c Reduced cost 874 gap 879
+c Checking model
+c LIN best 874 LB: 0 at 75
+o 874
+c LIN GAP: 874 T 75
+c BOUND UPDATE RHS: 873 at 75
+c SAT Call at 75
+c Reduced cost 873 gap 874
+c Checking model
+c LIN best 873 LB: 0 at 75
+o 873
+c LIN GAP: 873 T 75
+c BOUND UPDATE RHS: 872 at 75
+c SAT Call at 75
+c Reduced cost 868 gap 873
+c Checking model
+c LIN best 868 LB: 0 at 75
+o 868
+c LIN GAP: 868 T 75
+c BOUND UPDATE RHS: 867 at 75
+c SAT Call at 75
+c Reduced cost 863 gap 868
+c Checking model
+c LIN best 863 LB: 0 at 75
+o 863
+c LIN GAP: 863 T 75
+c BOUND UPDATE RHS: 862 at 75
+c SAT Call at 75
+c Reduced cost 858 gap 863
+c Checking model
+c LIN best 858 LB: 0 at 75
+o 858
+c LIN GAP: 858 T 75
+c BOUND UPDATE RHS: 857 at 75
+c SAT Call at 75
+c Reduced cost 857 gap 858
+c Checking model
+c LIN best 857 LB: 0 at 99
+o 857
+c LIN GAP: 857 T 99
+c BOUND UPDATE RHS: 856 at 99
+c SAT Call at 99
+c Reduced cost 856 gap 857
+c Checking model
+c LIN best 856 LB: 0 at 99
+o 856
+c LIN GAP: 856 T 99
+c BOUND UPDATE RHS: 855 at 99
+c SAT Call at 99
+c Reduced cost 855 gap 856
+c Checking model
+c LIN best 855 LB: 0 at 99
+o 855
+c LIN GAP: 855 T 99
+c BOUND UPDATE RHS: 854 at 99
+c SAT Call at 99
+c Reduced cost 854 gap 855
+c Checking model
+c LIN best 854 LB: 0 at 99
+o 854
+c LIN GAP: 854 T 99
+c BOUND UPDATE RHS: 853 at 99
+c SAT Call at 99
+c Reduced cost 852 gap 854
+c Checking model
+c LIN best 852 LB: 0 at 100
+o 852
+c LIN GAP: 852 T 100
+c BOUND UPDATE RHS: 851 at 100
+c SAT Call at 100
+c Reduced cost 851 gap 852
+c Checking model
+c LIN best 851 LB: 0 at 100
+o 851
+c LIN GAP: 851 T 100
+c BOUND UPDATE RHS: 850 at 100
+c SAT Call at 100
+c Reduced cost 850 gap 851
+c Checking model
+c LIN best 850 LB: 0 at 102
+o 850
+c LIN GAP: 850 T 102
+c BOUND UPDATE RHS: 849 at 102
+c SAT Call at 102
+c Reduced cost 849 gap 850
+c Checking model
+c LIN best 849 LB: 0 at 102
+o 849
+c LIN GAP: 849 T 102
+c BOUND UPDATE RHS: 848 at 102
+c SAT Call at 102
+c Reduced cost 848 gap 849
+c Checking model
+c LIN best 848 LB: 0 at 103
+o 848
+c LIN GAP: 848 T 103
+c BOUND UPDATE RHS: 847 at 103
+c SAT Call at 103
+c Reduced cost 847 gap 848
+c Checking model
+c LIN best 847 LB: 0 at 103
+o 847
+c LIN GAP: 847 T 103
+c BOUND UPDATE RHS: 846 at 103
+c SAT Call at 103
+c Reduced cost 846 gap 847
+c Checking model
+c LIN best 846 LB: 0 at 103
+o 846
+c LIN GAP: 846 T 103
+c BOUND UPDATE RHS: 845 at 103
+c SAT Call at 103
+c Reduced cost 845 gap 846
+c Checking model
+c LIN best 845 LB: 0 at 103
+o 845
+c LIN GAP: 845 T 103
+c BOUND UPDATE RHS: 844 at 103
+c SAT Call at 103
+c Reduced cost 840 gap 845
+c Checking model
+c LIN best 840 LB: 0 at 103
+o 840
+c LIN GAP: 840 T 103
+c BOUND UPDATE RHS: 839 at 103
+c SAT Call at 103
+c Reduced cost 835 gap 840
+c Checking model
+c LIN best 835 LB: 0 at 103
+o 835
+c LIN GAP: 835 T 103
+c BOUND UPDATE RHS: 834 at 103
+c SAT Call at 103
+c Reduced cost 834 gap 835
+c Checking model
+c LIN best 834 LB: 0 at 104
+o 834
+c LIN GAP: 834 T 104
+c BOUND UPDATE RHS: 833 at 104
+c SAT Call at 104
+c Reduced cost 829 gap 834
+c Checking model
+c LIN best 829 LB: 0 at 104
+o 829
+c LIN GAP: 829 T 104
+c BOUND UPDATE RHS: 828 at 104
+c SAT Call at 104
+c Reduced cost 828 gap 829
+c Checking model
+c LIN best 828 LB: 0 at 104
+o 828
+c LIN GAP: 828 T 104
+c BOUND UPDATE RHS: 827 at 104
+c SAT Call at 104
+c Reduced cost 827 gap 828
+c Checking model
+c LIN best 827 LB: 0 at 104
+o 827
+c LIN GAP: 827 T 104
+c BOUND UPDATE RHS: 826 at 104
+c SAT Call at 104
+c Reduced cost 826 gap 827
+c Checking model
+c LIN best 826 LB: 0 at 105
+o 826
+c LIN GAP: 826 T 105
+c BOUND UPDATE RHS: 825 at 105
+c SAT Call at 105
+c Reduced cost 821 gap 826
+c Checking model
+c LIN best 821 LB: 0 at 106
+o 821
+c LIN GAP: 821 T 106
+c BOUND UPDATE RHS: 820 at 106
+c SAT Call at 106
+c Reduced cost 820 gap 821
+c Checking model
+c LIN best 820 LB: 0 at 106
+o 820
+c LIN GAP: 820 T 106
+c BOUND UPDATE RHS: 819 at 106
+c SAT Call at 106
+c Reduced cost 819 gap 820
+c Checking model
+c LIN best 819 LB: 0 at 117
+o 819
+c LIN GAP: 819 T 117
+c BOUND UPDATE RHS: 818 at 117
+c SAT Call at 117
+c Reduced cost 817 gap 819
+c Checking model
+c LIN best 817 LB: 0 at 117
+o 817
+c LIN GAP: 817 T 117
+c BOUND UPDATE RHS: 816 at 117
+c SAT Call at 117
+c Reduced cost 816 gap 817
+c Checking model
+c LIN best 816 LB: 0 at 117
+o 816
+c LIN GAP: 816 T 117
+c BOUND UPDATE RHS: 815 at 117
+c SAT Call at 117
+c Reduced cost 811 gap 816
+c Checking model
+c LIN best 811 LB: 0 at 118
+o 811
+c LIN GAP: 811 T 118
+c BOUND UPDATE RHS: 810 at 118
+c SAT Call at 118
+c Reduced cost 806 gap 811
+c Checking model
+c LIN best 806 LB: 0 at 118
+o 806
+c LIN GAP: 806 T 118
+c BOUND UPDATE RHS: 805 at 118
+c SAT Call at 118
+c Reduced cost 801 gap 806
+c Checking model
+c LIN best 801 LB: 0 at 118
+o 801
+c LIN GAP: 801 T 118
+c BOUND UPDATE RHS: 800 at 118
+c SAT Call at 118
+c Reduced cost 796 gap 801
+c Checking model
+c LIN best 796 LB: 0 at 143
+o 796
+c LIN GAP: 796 T 143
+c BOUND UPDATE RHS: 795 at 143
+c SAT Call at 143
+c Reduced cost 795 gap 796
+c Checking model
+c LIN best 795 LB: 0 at 147
+o 795
+c LIN GAP: 795 T 147
+c BOUND UPDATE RHS: 794 at 147
+c SAT Call at 147
+c Reduced cost 794 gap 795
+c Checking model
+c LIN best 794 LB: 0 at 225
+o 794
+c LIN GAP: 794 T 225
+c BOUND UPDATE RHS: 793 at 225
+c SAT Call at 225
+c Reduced cost 793 gap 794
+c Checking model
+c LIN best 793 LB: 0 at 225
+o 793
+c LIN GAP: 793 T 225
+c BOUND UPDATE RHS: 792 at 225
+c SAT Call at 225
+c Reduced cost 792 gap 793
+c Checking model
+c LIN best 792 LB: 0 at 225
+o 792
+c LIN GAP: 792 T 225
+c BOUND UPDATE RHS: 791 at 225
+c SAT Call at 225
+c Reduced cost 791 gap 792
+c Checking model
+c LIN best 791 LB: 0 at 230
+o 791
+c LIN GAP: 791 T 230
+c BOUND UPDATE RHS: 790 at 230
+c SAT Call at 230
+c Reduced cost 790 gap 791
+c Checking model
+c LIN best 790 LB: 0 at 230
+o 790
+c LIN GAP: 790 T 230
+c BOUND UPDATE RHS: 789 at 230
+c SAT Call at 230
+c Reduced cost 789 gap 790
+c Checking model
+c LIN best 789 LB: 0 at 230
+o 789
+c LIN GAP: 789 T 230
+c BOUND UPDATE RHS: 788 at 230
+c SAT Call at 230
+c Reduced cost 788 gap 789
+c Checking model
+c LIN best 788 LB: 0 at 230
+o 788
+c LIN GAP: 788 T 230
+c BOUND UPDATE RHS: 787 at 230
+c SAT Call at 230
+c Reduced cost 787 gap 788
+c Checking model
+c LIN best 787 LB: 0 at 231
+o 787
+c LIN GAP: 787 T 231
+c BOUND UPDATE RHS: 786 at 231
+c SAT Call at 231
+c Reduced cost 786 gap 787
+c Checking model
+c LIN best 786 LB: 0 at 231
+o 786
+c LIN GAP: 786 T 231
+c BOUND UPDATE RHS: 785 at 231
+c SAT Call at 231
+c Reduced cost 781 gap 786
+c Checking model
+c LIN best 781 LB: 0 at 231
+o 781
+c LIN GAP: 781 T 231
+c BOUND UPDATE RHS: 780 at 231
+c SAT Call at 231
+c Reduced cost 780 gap 781
+c Checking model
+c LIN best 780 LB: 0 at 235
+o 780
+c LIN GAP: 780 T 235
+c BOUND UPDATE RHS: 779 at 235
+c SAT Call at 235
+c Reduced cost 776 gap 780
+c Checking model
+c LIN best 776 LB: 0 at 235
+o 776
+c LIN GAP: 776 T 235
+c BOUND UPDATE RHS: 775 at 235
+c SAT Call at 235
+c Reduced cost 775 gap 776
+c Checking model
+c LIN best 775 LB: 0 at 235
+o 775
+c LIN GAP: 775 T 235
+c BOUND UPDATE RHS: 774 at 235
+c SAT Call at 235
+c Reduced cost 774 gap 775
+c Checking model
+c LIN best 774 LB: 0 at 235
+o 774
+c LIN GAP: 774 T 235
+c BOUND UPDATE RHS: 773 at 235
+c SAT Call at 235
+c Reduced cost 773 gap 774
+c Checking model
+c LIN best 773 LB: 0 at 236
+o 773
+c LIN GAP: 773 T 236
+c BOUND UPDATE RHS: 772 at 236
+c SAT Call at 236
+c Reduced cost 772 gap 773
+c Checking model
+c LIN best 772 LB: 0 at 236
+o 772
+c LIN GAP: 772 T 236
+c BOUND UPDATE RHS: 771 at 236
+c SAT Call at 236
+c Reduced cost 771 gap 772
+c Checking model
+c LIN best 771 LB: 0 at 236
+o 771
+c LIN GAP: 771 T 236
+c BOUND UPDATE RHS: 770 at 236
+c SAT Call at 236
+c Reduced cost 770 gap 771
+c Checking model
+c LIN best 770 LB: 0 at 236
+o 770
+c LIN GAP: 770 T 236
+c BOUND UPDATE RHS: 769 at 236
+c SAT Call at 236
+c Reduced cost 765 gap 770
+c Checking model
+c LIN best 765 LB: 0 at 237
+o 765
+c LIN GAP: 765 T 237
+c BOUND UPDATE RHS: 764 at 237
+c SAT Call at 237
+c Reduced cost 760 gap 765
+c Checking model
+c LIN best 760 LB: 0 at 237
+o 760
+c LIN GAP: 760 T 237
+c BOUND UPDATE RHS: 759 at 237
+c SAT Call at 237
+c Reduced cost 756 gap 760
+c Checking model
+c LIN best 756 LB: 0 at 237
+o 756
+c LIN GAP: 756 T 237
+c BOUND UPDATE RHS: 755 at 237
+c SAT Call at 237
+c Reduced cost 751 gap 756
+c Checking model
+c LIN best 751 LB: 0 at 237
+o 751
+c LIN GAP: 751 T 237
+c BOUND UPDATE RHS: 750 at 237
+c SAT Call at 237
+c Reduced cost 746 gap 751
+c Checking model
+c LIN best 746 LB: 0 at 237
+o 746
+c LIN GAP: 746 T 237
+c BOUND UPDATE RHS: 745 at 237
+c SAT Call at 237
+c Reduced cost 745 gap 746
+c Checking model
+c LIN best 745 LB: 0 at 392
+o 745
+c LIN GAP: 745 T 392
+c BOUND UPDATE RHS: 744 at 392
+c SAT Call at 392
+c Reduced cost 744 gap 745
+c Checking model
+c LIN best 744 LB: 0 at 393
+o 744
+c LIN GAP: 744 T 393
+c BOUND UPDATE RHS: 743 at 393
+c SAT Call at 393
+c Reduced cost 743 gap 744
+c Checking model
+c LIN best 743 LB: 0 at 393
+o 743
+c LIN GAP: 743 T 393
+c BOUND UPDATE RHS: 742 at 393
+c SAT Call at 393
+c Reduced cost 742 gap 743
+c Checking model
+c LIN best 742 LB: 0 at 393
+o 742
+c LIN GAP: 742 T 393
+c BOUND UPDATE RHS: 741 at 393
+c SAT Call at 393
+c Reduced cost 741 gap 742
+c Checking model
+c LIN best 741 LB: 0 at 393
+o 741
+c LIN GAP: 741 T 393
+c BOUND UPDATE RHS: 740 at 393
+c SAT Call at 393
+c Reduced cost 740 gap 741
+c Checking model
+c LIN best 740 LB: 0 at 762
+o 740
+c LIN GAP: 740 T 762
+c BOUND UPDATE RHS: 739 at 762
+c SAT Call at 762
+c Reconstructing in print answer
+c Reconstruction time: 0
+c new cost: 740
+s SATISFIABLE
+v 000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000001000000000000000000000000000000100110100101011000101000110100011011101101010111111011011000101101011101111111101111100110111011110001111100010110011011010101010111110001011111101100110111011011101111101010110011011010101011110111111011001101011111111111010100111011011110110010111101110110110001011001101100110110001111101101110110101011111001111000010101001110111111001010100101011101101101010110101111110101101010110111110010101111110110011011001101101110101111111101111010101100011111011101100010101111110010101101010110011011001101100110111001011000101101110101101011010101110111101101110011101101110111111111101101101110110001011000111001110110001011011101000010100101010010101001010111101011011101100110110011011111101001010101011111011101101110110111011011101101110110111011011101101110100111011111111101110110001011101111100010110011111010101101010110011010000101101010110101011010101100110110001111001101000010100111010100111001010110001010101111100110110001111010101101011110101111000101110101111011111000101101010110101011010101011111110101011000101100110110101011100111001111100001010101111110111110011110111101100010110011011001101100010110000011110101000110111111011110101001110110011011001101100110100111011001101100110110011111101111111111101111011111111000010110011010111101101010110101011001101000010111111111111111111011100011010000101100110111011110000101110111110011011001101111010100001011001101000010111111010000101100010110001011001101100010110011011101111000010111111010000101101010111111011010101000010111011110010101100111110011111000101100010111101010100111101010110011011100111110011100111011000101110111110101011000001100110110001011101111101010111111111111111100110100011010010101111111110101010001101011110111001111001101000110111101111000101100000110110011010101000010110001011000101101110110011011000101100010100001011000101100000111011111000101001010110101011001101101010111001111010101101010111011010000101000110100011011010101100010100011011001101000110110101011000101100110110101011011101100010110011011101111010011110101011010101100010100001011001111110111100101011100111100010101101111010101000110101011111010101100010111001111000101101010110111011111111100110111011111001101101010101001111000101111111110001011010101101010110101011100111101110110011011111111101110111111111010001110010100101011000001101110110101010010101111111110001011000101100010111101110010101111111111001111010101001010110001011000101100000111101111011101100010111101111000101111100100101011100111010011110101011010101011111101111111011101111111101011110011101110011111011110011101001110111101111100111110010110111011000101101010110001011101101110110110101010001101010111110101010000101010111110001011001111101010101001110100111101010100001011000101010111111111011100101000010110101011010101110110100111010000101100111111011110100111010111111011111011101000010111001011011101100010111011011000101100110110001011010101100010110001011001101100010110101011010101101010110101011000101010111100101011010101111111101011110001101110111110001010111111100010110011010111111000010110011011100111110111111101011110101111111100001011110101101111110011011001101101010110011011001101101110111001011100101011111111011011010111111011110101011001101100110110111010011101010111111101011111101000010100110010010101011110101111110111111011110100011011011101100011110101010111101101010110110111101011100010111111111010111000010110001011111101100010100011011000101110000101001111000101100010110011010000101111010101111010110111001010110101011111101101010110001011000101101110110001011010101001010110001011110101001010100101011000101100010110001011111111001010111101011011101111110101101110110111100010110001011001101100010110101011001101101010100101011000101001010100101011100101110011111101011110101101011110111011110111101110111101110000111010111111001010111111100110101111010001101111111111011111000101111111101011111010101100110100101010001101101010110001011001101001010110001111101111001110100111011111101011110110011011010101101110110101011011101000110100101011010101101010110101010111101101010100001011011101100110100001011010101100110101011111000101111110101111010111111100010100111011110111101110110001010111101110010111111011011101001010111101010111111100110100001011000101101110100111010111101100110100001011100101100010100001011010101010010110101010111101011011101111111011101110111101111010000101110111100101011010101101110110101010101101100010101111110010101011110110011011001101100110110011011000101001010111001010010101101010100000010111101101110110101011011101100110110101011000101001010110011011001101101010100101011000101110011110011010110101001010101111111001101001010100011011000101110111110011010001101000110110111010000101100000110011010101111101110110001010100101100010110111010010101111111110101111001101101010110001010010101100010111101010101101011111110111011011101101110110001011000101100110110101011000101001010110001011011101110111110001011000101101110110001010010101011011110001011000101101010110101011000101100010110001011011101100110101011111000001100000110011011000101100010110001010100101101010101011111111111101010110011110000111000010110001011000101000110111001111001111101100110010011101111111110110010011001101110111110101011000101011111111111010001101000110111111011000101100110110001111000111100011110101010010101101110110001110101111100110110011011001101000010111011110100111110110101001111011101000110100011011101111011011111001011000101110110110001011110101010011101111011001101111011101001111011101111011110011011001101011111110001011010101101110110101011001101110110110011011000101110110100101011001101000010110001011011100101110111111011000001111010110001011000101100000110011011000101001110110111011010101101010100011011001101100010110001011001101101110110111011011101000010111101111011101001010100001011001101100110110001011000101100010110001010110101100010101111011000101100011111001011000101101110110101010011101111111110001010011111100010110001011000101011110111101011001101111111111111111000101111111110001011010111111011110011010100111101010110001011000101011110111111110000111100000100001011010101101010110001010111111011111101111111000101100010100001010000101101010110111011000101100010111011011101101100000111101011011101111110100001011111111101010100001011001101110110110101011010101101010101101110001101110111110101011000101101010110101011011101111110110101011010101101010110101010010101101010111101011100111101010110011011100111110011110001011010101100010101001110000101100110110001011001101101010100001010011101000110110111011010101110111110111011000101100010101111010111101100000110000011000001111110111111010101111111110111111011001101110011110001011011101100110110011011001101100110101111111100101101110101101111010101101110111001011100101110110111111011101101101010100111010011101001110110001010110101011010110101011010101100010110001010010101001010110101010000101101010100111011010101101110110011010000101001110110001010001101101010111101111001101100110110011010011101100010110001011000101100010100001011010101101010110101110000101101010110101011010101110111111011111010101000010110101011001101110111100011011111101100010100110011000101100010110101011000101100110101101110001101001010111001111100111100010101001110011101001010100011011110101100111110111010100111010110110011011001111111110111000010001101100010110001011010101101010110001011000101110011101001111011001001010110101011000101101010110101011111101010111111111111000111101010110101010001101100110100001011011101010011110011110001101000110100011011100111010011110101010001101100110110101011001101000010111001111100111010011100001010010101101010110111011111111100110110011010100101100110110011010010101101010100001010011101110011110011011000101111011110000010000101111010110001011101001011111110111011010111111110110101011010111100010110011011100111110011101011111010101100010111001111100111001010111111110111101100010110001011010101100110110011011001101011110111001111000101100110110011010010101100010110011011110111001110110001010111111111110100001010101111011010100011010101111101011110101010100111101010110001011010101101110110011010110111001010110011010000101001010100001010000101100010110101011010101110111100101011001101111111111111111111111101010101001111010101101010110101011001101100010110001011000101101110110101011000101111111100111010000101001010101011111000101010111110001011001101101110110011011001101101010111111011000101101010100001010101111010111111111010010101001110110101011010101110111110111011000101100010110001011011101101010101111111001101100110110011011111111001010100011010010101010111110001010000101010111110011010111111101010111111111101111000010110101011000101101110100011111010101101010110001011110111101110110011110001101000010110001011000101100010110001011000101110110111001110011101000110101011111000101110010110001011100101110010111001011110111100010110011011000101100010100011010000101010011110001011111111101010100001011010101101010110101011010101100111111011010100111100010110101011000101100110100001011010101101110110011011101111100110110101011000101100110110011011001101011011110011011001101000010110001011000101101111110101010010101000110110001011011101101111110111010010101001010110001011010101101011110101011000101101010111011110010101101010110001010001101001110110011011000101100110111111010111101111110101111011111101011110110101110110111000010110001010010101111110110011011111101100110100001010000101101010100011011001101000110110001011000101100010110001011010101100010100101011000101100010110001010000101111111110001011001101111110110001011000101010011110001011000101101010111001010001101000010100001010110111101110110001011000101101010100001010101111110110110111011010101111111110101010111101011111100111010000101100010111011011001101100110110011011010101100010111011110111101100110111101011101111101010110111011001101100010101011111010101001010111111111111111101010110111110111111101100110001011010101100110110101011000101011010110001011011101110010100101011000101000010110011111001101011011110101011010101000010100001011010101101010110001011010111000010110001011001101010011100001011000101011110110101010010101111010100001011011101100010110011111001101111110110111011111101001110111111111011101000110110111011101111100010110111011010101100010111001111000101101010111001011011101101110100001011000101000110111101011111011100010110001010011101001110111111111001101101010101001111010101101110100011111110101111011100101010010101100110100001011000101000110100001010000101000010110101010110111100010110111111000101101010110101011011101000110110001011001101101110110011011010101100010110011011010101100010111111010010101111111110101011000101001010110111011011101101110110011010001101100010110111011110101111010110001010101111110111101011111111101001010111111011000101111111100001010011101111111111011111010101100110100101010001101000010100001011001101011111111111111110101001110110011010100111111110100001011101111011110111111011011101101110110111010000101100110110001010001101100010110011010001101111110110101011000101100010110001011101101111110110101010000101101011111111011110101101110101101110101111010111101111011010101101110110011011000101101110110101011001101100010100001010111101011110110001011010101100010110101011010101101010100001011011101101010110001011000101110111111011111101111101110111111111010101100110110111010000101101111110101010011101101010100101011000101010111111111111010101100110110111010010101101110110111011011101000010100101011110101111111100001011001101101010101011111111111101010110101011011101100010110011011111111101010110111011000101000010110001011011101110010110101011010111001010110111011010101110010100011111000101101110110101011000101110010111011110010101101110110111011110101111111110101011010101111101100001011000101101110110001011001101100110110111111110111010110110111010000101100010100101011101101101110100001110111111000010110111011111111101010110001011010101001010111111011001101111110110001011011101101111111011110000101101010110111011110101001010110111011000101111010110001011011101101110110111011000101100010101011111000101011010110011011001101101010100101011111101000110111111010001101100010111011111111101000110110111010000101011010110111011111111110110110111011011101010111111011011111111101110110101011000101100010100001011000111100010110101011010101011011111111111000101101010111011010000101110111111101011000101001110110001011000101010111111111111111111000010111011111010101100010100101010001111000110110001010000101001010101101010011101100010110111011111111100010100111011010101101110100001010000101100010110101011010101011011110101011111101110011110111010010101100010110001011011101111010110011011001101101110111111011111111111111011110111011101110100010111001111111011111101111011011001010100111111111111001110111111111011111111101100111011111111111000110011110101011011111111011111011111011111111111111111111001111101111011110111111011111101111011011101111100110100011111011100100111111111111110101100111110111001001111101111110111111101111111101111100111110111110111111111111111101100110010011001001111111111011111011001101100110110110111011101100111010111111011111101111110111111011111101111110001100011100000110110011001011111111111000011111111111111110111011011001101101110110111011011101100111010011101011111110111111111011001111110110110011101111101100111111111111001111111111010011111011111100111110111111101100100111111111111001101111110110010111111111101111110011111011111101111101111111111111110101111111111111111100110111011010101111101110110011011101111111110110011101111110111111111111111010111110111111111111111111111111111110111001111110111111100111101101110011110111001001111111111111111111011111100111110111111011111100111110011011011111110111110011111000111111011011101111111101110010010011111011110001110110011011001110101110110011101110110110010110011011001111111110010011111001101100101110111010101111101111110011011000111111111111011111110110101011100011111110111101111111111101010110111111110111111011111111111101111111111011101111010001011100101100011011111101000110100011110111111001101110110111001111010100110111110111111010111101111010111010101111111111111111101111111101110111001001001110111111111111101010111111010111001111111111101111110011011100111101111010101010000101100111110011111110111111110010011011001111100111011111011001111100110111000111111111101011110000111111111111011110001011001111111011110001011000101000011110001011101110111111111111111010101110101111111111110111110111110011111000111100011111010111111111100111111111111111111111110110110101001100101111110111111011110111111110001110000100101111111110111010110100111111111111101011111010010011011011111111111011111111011111111010010011011001111100011111111111001111100111110011111111111111110010011111110111110011111101011001101100110100011011001100000110010011011000100000110001011111111100100111111101111111100101111110011111001111101110010011111111101100111111011111010101110011111011111110111111111110111011101101100110110011011001111111111111111100001111111011110011111000110111111110111011001110101110110011111010111100110110011001001011110111110111111111100110010110010111011101110111110111111101111111010110111011000111101111110111101011100100111111111011011100100111010111111111010111110111011111111111111110111111011001111111001111011011001111111111111111111101111111111010111111111111101111111101111011111101011110100111000111111111111111001000111100111110111111111111110011111101111110101100111110001111111110101011111111111100111111011110001011001111100111110101111111101100110110011101111011001110100010111111101100010010011111000111111010111011111000011110011011011011101111111110110111111100111001111111011111011110110111111011111101101110101111111111000111111111110011101000111110011111111011011111111110110011111111100010111111111001100100100111010111111011111110011111111111011111110011110011111000111110011111001111111111110011111101011001101100010111011111011011111110010111111111111001111110001111010111111010110011011100111111011010001011001101110101111111001101101100111111101111011100101111110111111011111110111111111011101111011111101110011101011111110110011111011100100110110001101110101100111110011110001101110111111011101111111111111111011101111111101111011111111111101000111101111111000101110110110011011001111111110110011011000101100011111111111111111101111111111011101111111111111111011001011110111110001011111111111011111111101110011111101110111111100110101011011111111011011111111111101101111011100011010111111111111100110110011111011011111111111110101111110111111011001101111110000111111111111001111101111110111111111111100111111111111000101100111110111111101111110101011101101011111110011111011011101111111101111110111111110100010110111011011111100111011111111111101100111110011101001111100010010011101101111111110010001101001111110111110111011100101100001111111111100111100011011111011001110110111110111111110111100010111001111010101100110110011011001111110111110101111000111111010111001111011111111110111011011001111111111111011111111111111111111111111111011111011111101101000111101011111100101010101100110110010011101111101011010101010001111100011111111111011101110111110111111001101100111110111111110111111010001011011100111101100001011011101011111001111100111110111101111111100111110011111001111100111110101100101111101111011101110011011101011001111100111110011011101101100010111011111011011111110010111111111011111111110001101111111111111110100111111011111010110011111011111101101111111011010011111110110011111111101101111111100111111100000111011110111111011111011011111111111111111001111100001000101100010111001111001101110011111101111011111100111010110111111111110011111101111001111100101010100011101110111110110001000000111100010000011111110101000011011111101110101100111110001110000110101011011111111110111011011111101111111111111111110010011011101100111110001101110111111011111100101001111111111111111111001111101111111111111111111111101111011111001111111011010101111110101110010110010011011111100010111010111111101110111010111101011101110111111111111011100111111110111011001110111111010111111010101100110010011111110111111010110111111111111111111111111111011111101011110111111101111101111111101111001110111111111111011001111101011111111010010101110111111111000001000100111110111000101101100110110011011011110111111111111111110110111011111001111111111111011111101111111110111111111111111000100100111111011111011100000011110011111100111101110110111011001111101111110111111011010110101111110111011111100101111111111011111100110000110111111111111111111111101011111101101111101101010111101011010111101000101110110110011111111111110010110011011001101100110010111111111110100111011111111111111100011110101111111100100111010111011101111111111111111001001110111111110011101011110101100110011111001111111111111111001001110111110110011111110110111001111111111000111101111011111111111111101111111011111111110111111111111101111111111001111100100011101100111111011011011110111010110101011001101100110111010111110011101011111110111110111100111111111111011111100111011111001000011111101111110111111011111111010010111111101100110110111111110101110011010111101011110111010010011111110111110110110111101001101110111011101111011111111011111111111011111111111111111000001111101111011011011001111100011110001111001111100111010101111001011111010010011111111111111110110011111111111100111110101101111101110101011101011001111110111110001011001111111111111101111111111110111111111111111111100111111111111111111111111011101111001111111101111011111111111111111110101111111111111101111101111111111110111111010101010101110110111001111110111111111111101111101101110110101010111110111111111111001111100111110011110011011001110100111111111111011100100111110101111011110111101111101111011111110101111110011000010111110000110111111011101011110101011100111101111011111011100000110101111100111110110111110100011111011101110011111011011001111111111110001111111110101110011111111011111111111111111011001111111110010011011100111101111111111011001111100111111101111111111100010011001111110110111010110011011001101101110110011011001111111011110111111011101110111110100111101110111111110111111101111111101111011111011111111011111101111111111101111110011111011111111011111111111000111111011110011111111110111111110001111001101100111111011111111011111111010111001011101110001111011111011011111110110111101111110101011111111111000100100110011010101111111111111011111111111111111111111111101010111111111110110111111010101010110011111100110111001100111111100111111111111101111111101100110110011011001101100111110011101111101111111111101101110101100111111101011001111101011111101111011101000111110111011001111110010111011011101100101111010001111111111101111111101010101110100111111011111101111111010110011111001110101110110001111011110100111010001101111111111110111011101011111111100110011111011111101011111111111011111100110110111111101111111010111011111011101100111010011111011111101111111011111011111100011111111111001110111011011111111111111011100011101011101111111010110011011011101100110110011011001111100101111111111011111101111110111111001010111111110001111000111001111110001010001011111011110011001010011101011110011111111111110111110010111111111111110111001111111011111101011111111111111111001111111001101101110111110111001001111101111111111111111110111111111111011100111111111110111111100101110101011101011100101100011111011111000111111111111011001001111000110111001001010111111010010100111110101100110010011001010111111110010100111111100100111110101111111111111111111111111111101100011111111111111111101111111011111010111100110011101001000101101101111101101001111111110011101001110111101000011100111111110111011111111111111100100011111111111111110111111111111111111010101111111011111101111111101110111001001111100010110011001101111111111110011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111111111111111111111111111111111111111111111111111111111111101111110101111111111110101000111111101011001111111010110011111101101110111110001111011111101111110101101011111101011010111011001110111111110011111110111111011110011011110111111111111011111011111110111111101001000111101111010111011011110100010110011111111111111111111011010101111111111110111111001011101111111011111111101100110010110111111111111010000011111111111111111111111011101101110111110111111010111100111011101010101101001111010111001001100100110010011011001101101111011000111111111101111000110110000111111010111001111011111111011110111111111101110110110011111011111111011111111111110110111111111001110111111111011111011111111111111111111111111111111100111111111111101111111110111001111000111111011110101011000111111111111001111000111101111111111111000101100110100111101010101110011111011101111111111110110111111011110101111010111111010110101111010101111110010111111111011111000101110111110111010101101010111111111101011101100010110001011000101100111110111101011111101101110001011001111111110101011111111101100110110011011001101100111110011111111111110111111111001001111111111111101001001111100011010111111011111111111111011111111100010111011111111111111111101111111111111111111010010001111101111100011110001111111111111111111101101011111111111010111010001111100011110001010001111101011110100111110101100111111111111101011111011111111101000100100110100011011011111111111111111111111111111111111111111111111111111111111111111011101011110011101111110111101110111001011111111011110011111011111111111111110101110111100011111111111010011111011110101111100111101011111101111100101010111111101001001101100111111101111111111111111111111011001100100110110011111011101101111111111111011110100011111011111111111101010111111011000110101111110101011000111110111111111111011111111110111001011101011111011111101111111110101011111111111111101100111110111111111110111011111011011001111111111111111111110110101111111111111101111110011110111011101111100010010011011001101101111101111101111110111111101111111011111111111110011111010011110110110011011101111111011110111111101111111111111111011101111101111111101111111111101101111111111111111111110100010111111100100110111010111011111101111111011011001010111111111111111111111100010110011111001111110111010111001001111101111111111111011111111111111110111110111111111111101111011111111001111101111110111110111111111111010111101010110011111101110000011111111111111111101011110001111110111111010110001111110101110111111101011000110101111111111111111111100011110111111101100000010110011111011101000111110111101011101110010110011101011101110011110111101111110111111010011001001110111111111101111001111111011111101111011111101110110111101111111111001111011111101111100011111010111101111110011110001111111110100111111111111000111100110110111111111101100110111010111010101000101111111111001111101111110110011101111101111111010111000101110011110111111101101101101011101111110111100011110001011001111111111111111111111101110111011101111011101100010010111111101101101110111011111111111111011111111111110011111111111101111111111111011111101111110111111111111101111011111111011111101111110111111011111101111111111111111111101111110111111011111101111110111111111111111111110111111011111111111101111111111111111111110111111011111111111110111111011110111111111111111011111011111101111111011111111111110111111011111101111110111111111111101111110111111011111101111110111111011111101111111111111011111111111111111111111111101111110111111111111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111011111111011111101111110111111011111101111111111111111111111111110111111011111101111110111110011111111111011111111011111111001101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101110111011101011101100111011111001011111111111111011111010110111011111111011001111101111111111111101111111010110011011001101100111110101111111111101110110111111110100100110110011111011101100111111101011111111111101111111101011011111011111001111101111111101111111111111100100111111011101100110101011111111101111110111111010001111011101110111110001011001111101111011111101111110101111111001111111111111111111101011000101100111110111111011100100011111111111111101100111010111111110111111011111011101011111111111111111111101101110111111111111111100100001111111111111101100111110111101110011111110110011001001110111011111111011001111101110111001101110110111111110111111011111111011011111101111111101111010111101111111111111110001001011011111111111101011001101110110111111011001011111110010001111101011111111111111111111111111011010111111111101110111111111111011111101111111111111111111101111110101101110111101111010111010011110111110110011111001111101110010001101111110111011010111111010001110011111011111110110111110011011101111101110111011111101010110101110110011111111110011110110011111111101000110111001111111111100111110111111110111011010100011111001111100011110011111111101100110110011111110111100011110101011001101111111110111110011110011111111101111111111111011011110110111111111011010111101010111101110010011011001111100011110111101000011111011111101011001110111111110111111011110101110001011111000111101111111011111101101110111010111111110101110111011011111101111110111111111111101101100110110111111111101110110110011101010110111010000011111110111111011111101011101111111011110010111111101110011110001111111111100011111101011001101100110110011011001101100111111111111000111100111110101111110101110011110101111110101110111111111011101111100011111101011001101110111011101111011101000111111111011001111110111111111111101111111110111001011001110100010111111011001110111111010011111011111111011010111111111111111110010111101011111111111010101111110101100111111110110011101100111110111111111111111111111111111011111111011111111111011101001111110111011001111101111110111111011111111111111111011001111100101011101111101111100111111101111111101110111111111111111101100111110111111110101100111111101111101110111111111101111000110101111110011011101110111110100111111001111100110110111111001110111111111111111000111100011110101111110111100011110001101000111110110110111101000111100101111011101010111101010110010001010110111111110111111110111111011110001111101111110101111111111111111111111111110111111111111111011111111111111111101111111111101111111101111011101111111111101111110111111111111111111011001101011111111101111111111011111101111111111111111111111111110111111011111101111111111111111110101111110111111011111111111111111111111111101111111111111111111101111111111101011111111011111111111111011111111111110111011111101111110111111111111111111111111111011111111111111111111011111101111110111011011110101011111111111111011111111010111111111111111111111111111111011101111110111111111111101111110111101111110111111110110111111111100111010111111011111111101111111111011111111011010111111011111101111111011101000110111111111111111111011111101111111101011111111111111111111011111111111011011101111111111111010101011111111100111111111101011111100111011011101101110100111011001111101110110111010011101101111110111011111111101110110111011011111101111100111011011111011111110111111011111101111111111111111111111111110111011011101001110110111011011101101110110011111001111110111110111110011101001110111111011111111011111110111011001101001111100111111111111101110100101011011101101110110111011111111001110100111011110111111011111111111100111011011111011111111111111111111011110011101100010110111011111111111111110111010100111111111111111110111111111111111011110111111111111111011111101111011111111111110011111101111111111110111111111111111111111111111111111111111111111111101110111111111111111111111111011111111111111111101111111111111111111101111111111101111110111111110111111101110100101111011101001111100111011101101111111100111111011101101110110011011001101101110110111010011111001110110111011111111101110100111010011101011100101111110110001001101100111011111111101000111111110111111110111110011011010111011111111111111101111110111111011110101111111111111111111011101001110101111110111111101110111111111111111101110101111111111111101110110111011011101101110110111010111111011111101101110111111011111111111110111111011111110101011101111011110101111111111101101111111011111101111111111111111110101111110111111110010001001111000110111011111111101110101111010111111101110110111011001101100110101111110111111111111111111110111111100111111111110101111010011111111111111111111111111111111111101111111110111010111111111111111111110111111011111111111111111111011111101110110111111011111101111111001101111111111111110111111011111111111110111111111010111111111111111101110110111010111111111110110101011110101111111111111010111101100110111111111111111111111101101011011111111111111111110111111011111111011111011101101110111111111111111011111100111011111111111111111111111111111111111111111111110111101111101111111111111011101111111111111111111111111111111011101101110110111011011101100111101111110011101101110110111011011101101110110111011011101101110110111011011101110111110111011011101101110110111011011111110111110111010111011011101111111111111111111111111111011011101111111111111110111111111111110111011101111111111101111110111111011110111111010111101111101101110010111011111101111111111111101111111101111111111101011111101111110110011011001101111111011101100010110111011111101011111110111010111111111111101111110111111111111111111011111101011111101111011101011011101111111011111111111111101111011110001111110101110011110101111110111111111111101111110111101011111101011111111111011111111111110110111011111001011111101111011111111111011111111111111111011111101111111111111111111111111111111111011111101111110111111111111111111111111101111111111111111111111011111111111110111111111110111111111111111111111111111111111101111111111111111111111111111111111011111111111111101011111111111110110111111110111111111111101111111111111010111111011111111111110111111111111101101010111111101111111111111111111111110111111111111111111110111111111111110111011111111111111111111111111111111111101111111001111111011111111111101111111110101111111101111111111101111110111111111111101111111111111110111101111110010000000000100001000000000001000000010100000000000001010000000001000000010000000001000100000000010000010000000000000100010000000100000001000000000001000100000100000000010000010000000100000000010000000100000001000000000010010000000001000000000100010000000000000100000100000010000000001001000000000100000001000000010000000100000100000001000000000000010001000000000001000000010000010000000010000000100100000000010000000100000010000000010000000100000000001001000000000100000001000000010000000001000100000000000001000000010001000000010000000001000000001000010000000100000001000000010000001000000001000000010000000000100001000001000000000001000000001000010000010000000100000000010000000100000001000000000010000100000001000000000001000000100000001000000010001000000001000000010000000100000100000000000010000000010001000000010000000100000001000000010000000100000001000000010000000000100100000000010000000100000100000000010000000100000001000000010000000100000000000100010000000100000001000000010000000100000001000000000001000000100000000100000010000100000000000100010000000100000001000000010000000100000001000001000000010000000001000000010000000100000001000000000100000100000001000000010000000100000010000000000100000000010000000101000000000100000000001000010000000100000001000000010000000010000010000000000001010000000010000000000010000100000001000000010000000000100001000000010000000100000100000001000000000000100100000000000001000100000000001000010000000100000001000000000001010000000100000000100000000000010000000100010000010000000000000101000000000100000001000000100000000000010001000000000001010000000000000100010000000100000001000000010000000100000100000000000001010000000000000100010000010000000001000000000001010000000000001000010000000100000001000000010000001000000000000100010000000100000010000000100000000000100001000001000000000100000000100000010000000100000100000000010000010000000100000000010000000000010000001001000000000100000000000100000010001000000001000000000001001000000001000000001000000010000001000000000001000100000001000000010000000100000001000000010000000000010001000000001000010000000001000000000010000100000001000000010000001000000001000000010000010000000000000100000001000000010001000000010000000000010001000000000001000100000001000000010000000100000001000000010000000100000100000000000001000100000001000000010000000000010001000001000000000000100010000000010000000001000001000000000001000000010001000000010000001000000001000000010000000100000100000000010000010000000001000000010000000000010001000001000000000100000001000000010000000100000010000000010000000100000100000000010000010000000000100000100000000000100000100000010000000100000000001001000000000100000001000000010000001000000000001001000000001000000001000000000010000100000001000000001000001000000001000000010000001000000001000001000000000000100010000000000001000100000001000000000100000001000001000001000000000000010000001000100000010000000000001000000010001000000010000000100000000100000001000000010000000100000100000001000000000100000000000100000001000100000000000100000001000100000001000000010000000000010000000100010000000000010001000000000001010000000010000000000001000100000001000001000000000000100000000100010000010000000000000100000001010000000001000000000001001000000001000000010000010000000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000001000000100001000001000000000000010000000101000000000100000000010000010000000100000000010000000001000100000010000001000000001000000010000001000000000000010010000000010000000100000001000000010000000100000001000000010000001000000010000000000100010000000001000000100000000100000001000000010000000100000000001000000001001000000100000000000001000000100000001000000010000001000000010000000010000000010001000000010000000100000000001000010000000010000100000000010000010000000001000000000001000100000100000000010000000000010001000000100000000000010001000000010000000100000000000100100000000000100000010000000010000100000100000000010000000100000001000000010000000100000001000000000010000100000010000000000010000000100001000000010000000100000100000000000010001000000001000001000000000001000000010000010000000100000001000000010000000100000001000000010000000000100001000000000010000000100010000000100000001000000010000000010000000100000010000000010000001000000000000100000001001000000000010000010000000000100000000101000000010000000001000001000000000000010001000000010000000000100000000100010000000100000001000000000010000100000100000000000010000000100100000000000010000100000001000000010000000100000001000000000001000000100001000000010000000100000000001000010000000000010001000000010000000000010001000000010000000000010001000001000000000000100000010000010000000000100010000000010000000100000000001000100000010000000001000000000010001000000000010000010000000000010001000000010000000000100000001000010000000000010010000000010000000000010001000000000001000100000000001000000100000001000001000001000000000000100000000101000000000000100001000000010000000100000000000100010000000001000000001000000010000100000001000000010000000100000001000000000010001000000000001000010000000000010000001000010000000100000001000000010000000100000001000000000010000100000001000000010000000000100001000000100000000100000000001000000010000001000001000000000010000000010001000001000000000100000000000100000001000100000000000100001000000100000000000100010000000100000000000100010000000100000000001001000000000100000001000000010000000100000000001000010000001000000000000100000100000100000001000000010000000100000001000000010000000100000001000000000010000100000001000001000000000100000001000000010000000100000000001000000100000100000001000000010000000100000001000000010000000100000001000000010000000000010000100000001000000100000001000000010000000100000000000100010000000000010100000000010000000100000000000100000001000100000001000000000001001000000001000000001000000010000100000001000000000010000001000001000000000100000001000000000100010000000000000100000001010000000001000000010000000100000001000000010000000100000000001000010000000100000000000100010000000100000001000000000001010000000000000101000000000000010001000000000001000000010100000000000100001000000001000001000000000100000010000000000001000000100001000000100000000000010001000000100000000100000001000000000100000100000001000000010000000100000001000001000000000100000001000001000000000000100001000000000001000100000001000000010000010000000000100000100000000100000001000000001000000100000001000000000010000100000001000000010000000000010001000000010000000100000001000000010000000100000001000000000001001000000001000000000010000000010001000000010000000100000001000000010000000100000000001000010000000000100001000000010000001000000001000000010000000100000000001001000000000100000000010000010000000100000001000000000010001000000001000001000000010000000001000001000000000100000001000000100000000100000000000100010000000100000001000000000010010000000000000100001000000000010001000000010000000100000000010000000100000001000001000000010000000000010000000100010000000100000001000000010000010000000100000000001000001000000001000001000000000000010100000000010000000000010001000001000000000100000001000000010000000001000000000101000000000100000001000000010000000100000001000001000000000100000001000000010000000100000000001000010000001000000010000000010000000100000010000000100000000100000001000000010000000000010000000100010000000100000001000000010000000000010000001000000001000100000001000001000000000100000001000000010000000000100000001000001000000010000000100001000000010000000000000101000000010000000001000000100000000100000001000000010000000100000001000000010000000001000010000000010000000001000001000000010000001000000010000001000000010000000100000000010000000000100000001000000010000100000000001000000010000100000001000000010000000100000000001000000010000100000000000100010000000000100001000000010000000100000000000100000010000100000000000100010000001000000001000000010000000100000000001000010000000100000001000000010000000000010001000000010000000100000000000100010000000100000001000001000000010000000001000000000001000100000001000001000000000000010100000000010000000000100001000000010000000100000001000000010000000001000000000100000010001000000010000000010000000000010000001000000010000000010010000000010000000100000000000100000001000100000001000001000000001000000000000100010000000100000001000000010000000100000001000000100000000000010000100000000010000100000001000000010000000100000100000000000001010000000001000000010000000100000000000100010000000000010001000000000001000100000000000100000001000000010010000000000001000100000000000100010000000100000001000000000001001000000010000000000001000000010000001000010000000100000100000000010000000100000000000100010000000100000000001000010000000000010000001000100000000100000001000000100000000010000000000100100000000100000100000000000100000100000001000001000000000100000001000000010000000100000010000000100000000000010001000000010000001000000010000000000010010000000000001000010000000100000001000000010000000100000001000000000010001000000001000000010000000100000000001000010000000100000010000000000010000100000000010001000000000000010000000100000010000000010000000100010000000100000000000100010000000100000001000000010000000100000000010000000010000100000000000100000010000000010000000100010000000100000001000001000000000000100001000001000000010000000100000000010000000000010001000000010000000100000001000000010000000100000001000000010000000100000001000001000000000000100000000100000010000000010001000000000001000100000001000000010000000100000001000000010000010000000001000000010000000000010000000100000001010000000000001000000010000100000001000001000000000100000001000000010000000100000001000000010000000001000001000000010000000100000100000000000010000000010000001000000001000100000000000100000001000100000000010000010000010000000100000000000001000100000001000000010000000000010001000000010000000100000010000000010000000100000000000100000001000100000001000000010000000100000001000001000000001000000000001000000001000000010001000000100000000100000010000000100000001000000010000000010000000100000001000000010000000000010000000100000001000100000100000000010000000000010001000000010000000100000001000000010000010000000000000100010000000100000001000000010000000000010001000000010000000100000100000000010000000100000001000000010000000100000001000000000100000100000001000000000001000100000001000000010000000100000000001000000001000100000001000000010000000100000000001000000010000100000001000000010000000100000001000000010000010000000000001000010000000100000000000100000010000100000001000000010000010000000000001001000000000000100100000000000010000100000000010000000001000100000000001001000000000100000100000000010000000000010000000100010000000000010001000000000001000100000001000000010000000100000001000000010000000000100001000000010000000100000000000101000000000100000001000001000000000100000001000000000001000100000001000000010000001000000000000100000001000000010000010000010000000100000001000000010000000000010000000101000000000100000001000001000000000100000000001000000100000000100000000100010000010000000001000000010000000100000001000000010000010000000000001000010000001000000100000000010000000100000001000000010000000000010001000000000010010000000100000000010000000100000000010000001000000100000001000000010000000100000001000000000010000100000001000000100000000000100001000000000001000100000001000000000100000100000001000000000001000000010001000000010000000100000001000000000001000100000001000000000001000000010001000000000010000100000000001000100000000000010001000000010000000100000001000001000000000100000100000000000010010000000001000000000001000100000100000000010000000100000001000000010000001000000001000000010000001000000001000000010000000000010001000000000001001000000100000000010000000100000000001000000010010000000001000000010000000000010001000000010000000000010010000000100000000000100000001000010000000000010001000000000001000000010000000100000001000100000000010000010000000100000001000000010000000100000001000000000001000100000001000000010000000100000001000000010000000100000001000000010000010000000000001001000000000100000001000000000010000100000001000000010000000100000000000100010000000100000010000000100000000100000000000101000000000000010100000000000010010000000001000001000000000000010000001001000000010000000001000000010000000000100000000100000001000000010001000000000100010000000010000000000010000100000000000101000000000000010100000000000010010000000001000000010000000100000000000100010000000100000000000100010000000100000000000101000000000100000001000000010000000100000100000001000000000100000000000100010000010000000010000000010000000001000000000100000001000000100001000000010000000100000001000000010000000100000001000000010000000000010000001000000010000100000001000000010000000100000001000000010000000000010001000000010000000100000001000001000000010000000100000000010000010000000001000000010000000100000000000100010000000100000000001000010000000000100001000000000001010000000001000000010000000100000000001000010000000100000001000000000001000000100010000001000000000000010001000000010000000000010100000000010000000100000001000000010000000100000100000000010000000100000001000000000001000100000001000000100000000100000001000000000010000100000001000000100000000000010001000000010000000100000001000000100000010000000000001000010000000100000010000001000000000100000001000001000000000000010001000000010000000100000001000000010000000100000010000000000001000100000000000100010000000000100100000000010000000000010000010000000001000100000100000000010000000100000001000000000010010000000001000001000000000100000001000000010000010000000000000100010000000100000010000000000010000100000001000000100000000100000001000000010000000100000001000000010000000000010001000000000010000100000001000000010000000000100100000000000001010000000000000100010000010000000100000000000001000100000000000100000010000100000100000001000000000100000001000000000001010000000100000000010000000100000001000000010000000000010001000000010000000100000001000000000100010000000001000000010000010000000000000101000000001000000001000000000010000100000001000000000001010000000100000000000001010000000001000000010000000000100000000100000001000100000000000100000010000000100000001000010000000100000100000000010000000000100001000000010000000000010000000100010000000100000001000000000100000100000100000000100000000100000000001000010000000100000001000000100000000100000001000000010000010000000100000001000000010000000001000001000000000100000100000000000100000000100000100000000001010000000100000001000000010000000100000000001000010000000100000000000000110000000000100001000000010000000100000001000000010000000100000001000000010000000000010000000100000000100001000001000000000010000100000000001000010000000100000000001000010000000000100001000000010000000100000001000000000001000000010001000000010000000100000000001000000010000000100001000000010000000000100000001000000010000000010000001000010000000100000001000000010000000100000001000000010000000010000000001000000010000000100001000000001000000100000001000000000100000000100000001000000010000000100000001000010000000100000001000000010000000000100001000000000010000100000000001000010000000100000001000000010000000100000001000000010000000100000000001000010000000100000000010000000010000000010001000000010000000100000001000000001000000100000001000000000001000100000001000000000100000001000001000000000010000001000001000000000010000100000001000000010000000100000001000000010000000100000001000000010000000000001001000000010000000000001000010000010000000000100001000000010000000100000001000000010000000100000001000000010000000000100001000000010000000100000001000000010000000100000000010000000010000100000000100000000010000000100001000000000010000100000001000000000010000000100001000000000010000100000000001000000001000001000001000000010000000000100001000000010000000100000001000000001000000100000001000000010000000100000001000000010000000100000001000000001000000100000000000100010000000001000000001000010000000100000001000000010000000100000000010000000100000100000000010000010000000100000001000000010000000001000001000000010000000100000001000000000100000000100001000000010000000100000001000000000100000100000001000000010000000001000001000000010000000000100000001000010000000100000001000000000010000000100001000000010000000000100001000000000100000000010001000000010000000000010001000000010000000000100001000000010000000000100000001000010000000001000001000000010000000100000000010000000001000100000001000000010000000100000001000000010000000000010001000000010000000100000001000000000010000000000100001000010000000100000001000000010000000010000000001000010000000000010001000000010000000100000000000100000010000000100001000000010000000100000001000000000010000000100001000000010000000100000001000000010000000100000001000000000010000100000001000000010000000000100000001000000010000000100000001000000010000000100000001000000100000100000000001000010000000100000000001000010000000100000001000000000010000100000000001000010000000100000000010000010000000100000001000000010000000001000000001000000010000000100001000000010000000010000001000000010000000100000001000000010000000000100001000000000010000100000001000000000010000000100000000010010000000100000000010000000010000000010000010000010000000100000001000000000010000000100001000000010000000100000000001000010000000000100000001000010000000100000000000001000100000100000001000000000100000000100001000000000000100000100001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000001001000000010000000000100001000000010000000100000001000000010000000100000000001000010000000100000001000000010000000100000001000000010000000000100001000000010000000100000000001000000010000100000000000100000010000000010000001000000010000100000001000000000100000100000000000010010000000001000001000000000010000100000000100000010000000100000001000000010000000100000000010000000001000100000001000000010000000100000001000000010000000000100001000000000010000100000000010000010000000001000000001000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000100000001000000100000100000000000100000010000100000000100000010000000100000001000000000010000001000001000000010000000000100000010000000001000001000000001000010000000100000000001000010000000100000001000000010000000001000000100000001000000000001000000100000010000100000000001000000010000100000000001000010000000010000000010000010000000100000001000000010000000100000001000000010000000100000000001000001000000100000000010000000010000000100001000000000010000000100000001000010000000100000001000000010000000001000001000000010000000000100000000010010000000001000001000000010000000100000000000100000001000100000001000000010000000100000000000100010000000100000000000010010000000100000001000000000010000100000000000100010000000000000101000000010000000100000000100000010000000100000001000000010000000100000001000000010000000100000000001000010000000100000001000000000000001100000001000000010000000001000001000000000001000000010001000000000010000000100001000000010000000100000000001000010000000100000001000000000010000100000001000000000010000100000001000000010000000001000000001000000001000100000001000000010000000000100001000000010000000100000001000000000100000100000000001000000010000000100001000000010000000100000001000000000100000100000001000000000100000000100001000000010000000100000001000000010000000100000000000100010000000100000001000000010000000000000010001000000010000000001001000000010000000000100001000000010000000100000000010000010000000100000000001000010000000100000001000000000100000001000001000000000000010001000000000100000001000000010001000000010000000000010000000100000001000000010000001000000001000100000000010000010000000000100001000000010000000001000000001000000100000100000000000100000010000100000000000100010000000100000001000000010000000000010000000100000010000100000001000000000001000000100000000100000010000100000000001000010000000000010000001000010000000000010000000100010000000100000001000000000001000000000010001000000100000100000000010000010000000100000001000000010000000000010001000000010000000100000001000000000000001000001001000000000010000000100001000000000010000100000000001000010000000100000000001000010000000010000001000000010000000100000000100000010000000100000001000000010000000000010000001000010000000100000001000000010000000000000101000000010000000100000001000000010000000100000001000000000000100100000001000000010000000100000000010000000010000000010001000000000100000000010000010000010000000100000000010000010000000100000000010000010000000000100001000000010000000100000000001000000010000100000001000000000010000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000100001000000010000000000100000010000010000000000100000000001010000000001000000001000000010000000100001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000001000010000000100000000001000010000000100000001000000000010000000100001000000010000000100000000000001000001000000010001000000000001000100000001000000000010000000010001000000010000000100000001000000000001000100000001000000010000000100000000010000000010000100000001000000000010000000100000001000000010000100000001000000010000000100000001000000010000000100000000001000010000000001000001000000010000000000100001000000010000000100000001000000000000100100000001000000010000000000100001000000000010000100000001000000000001000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000001000000000100001000010000000000100001000000000010000000100000001000000100000000010000000100010000000000010001000000010000000100000001000000010000000000100000000100000001000000010000000100010000000000010000001000000010000100000000010000010000000100000001000000000010000100000001000000000010000100000000010000010000000100000001000000010000000100000001000000010000000000100001000000010000000000100001000000010000000100000001000000010000000100000000000100000010000100000001000000000010000100000001000000010000000100000000010000000000001000100001000000010000000000100001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000000100100000001000000010000000100000001000000000001000100000001000000010000000000000010010000000100000100000001000000010000000100000000010000000100000000010001000000010000000100000001000000010000000000100001000000010000000100000000001000010000000100000001000000000001000100000001000000000001000000001000000001000010000000010000000100010000000001000001000000010000000001000000000001000001000000010001000000000010000100000000010000010000000000100001000000010000000100000001000000000100000100000001000000010000000000100001000000000010000001000001000000010000000000100001000000010000000100000001000000000100000100000001000000000010000000100000001000000010000000100001000000010000000100000000010000010000000000001001000000010000000100000001000000000000100100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000001000010000000100000000000100010000000000100000010000000000100100000000000100000010000100000001000000010000000100000000001000000100000000000101000000010000000100000001000000010000000100000001000000010000000000010000000000100010000100000001000000000001000100000001000000010000000100000000001000000010000000100000001000010000000100000000010000010000000100000000001000010000000000100001000000010000000100000000001000010000000000100001000000000100000001000000001000010000000100000001000000010000000001000001000000010000000100000001000000000010000100000001000000000010000100000001000000010000000100000001000000000100000100000001000000000000100100000001000000010000000100000001000000000010000100000001000000000100000100000000001000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000100000000000001001000001000000000010000000100000001000000010000000100001000000000001000100000001000000010000000100000000000001010000000100000000100000010000000000100000000100010000000000100000000100010000000100000001000000010000000000010001000000000100000100000000000100000000010100000001000000000001000001000000010000010000000000100001000000010000000100000001000000010000000001000001000000010000000100000000010000000000001001000000001000010000000100000001000000010000000000100000100000000100000000100001000000000010000000010000001000000010000000100001000000000010000000010000001000010000000100000001000000010000000100000000001000010000000100000001000000010000000100000001000000000100000000100000001000000001000100000001000000000100000001000001000000000000001000010001000000010000000100000000001000010000000100000001000000010000000100000000000001010000000100000001000000000001000000100001000000000010000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000001000100000000001000010000000000100001000000000010000100000000010000010000000100000001000000010000000100000001000000010000000000100001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000000100001000000010000000000100001000000000010000100000001000000010000000001000001000000010000000100000000000100010000000100000000001000000010000000010001000000000010000100000001000000010000000001000000010000010000000100000001000000010000000001000000001000010000000000100000001000000010000000100000001000010000000000010001000000001000000000001001000000000100000100000001000000010000000100000000010000000010000100000001000000010000000100000001000000010000000010000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000100000001000000010000000000100001000000010000000100000001000000010000000100000000001000000010000100000000010000010000000100000001000000000010000100000001000000010000000100000001000000010000000100000000000001010000000100000000010000010000000001000000010000010000000100000000001000000010000000100000001000010000000100000001000000000000100000100001000000000100000100000000001000000010000000100000001000010000000100000001000000010000000000100001000000010000000000100001000000010000000100000001000000010000000100000000010000010000000100000001000000000001000100000001000000000010000100000001000000010000000100000001000000010000000100000001000000010000000000100001000000010000000000100001000000010000000000010000001000010000000100000000000100010000000100000000001000000010000000100001000000010000000100000001000000010000000100000001000000010000000100000000000100010000000100000001000000000001000000100001000000010000000100000001000000010000000000000011000000010000000100000000000100010000000100000001000000010000000100000000010000010000000000100000001000010000000100000001000000010000000000100000001000000010000100000000001000010000000100000001000000010000000100000001000000000100000000100001000000010000000000100001000000010000000100000001000000000100000001000000000100010000000100000001000000010000000100000000001000010000000100000001000000010000000000100001000000010000000100000001000000010000000100000001000000010000000001000001000000000010000000100000001000001000000100000001000000001000000100000001000000010000000100000000000010000010000001000001000000010000000100000001000000010000000001000001000000010000000100000001000000000001000100000001000000000010000000010000001000000100000000010001000000010000000000100000000001010000000100000001000000000010000100000001000000010000000000100001000000010000000100000001000000010000000000010001000000010000000100000001000000000001000100000001000000010000000100000001000000000010000100000000100000010000000100000001000000010000000100000001000000000010000100000000010000010000000000100001000000010000000100000001000000010000000100000000001000000010000100000000001000010000000100000000010000000010000100000000010000010000000100000001000000010000000000100001000000010000000100000001000000010000000100000001000000000010000100000001000000000000100100000001000000010000000000001001000000010000000100000001000000010000000100000001000000000010000100000000001000000100000000010000001000000001000100000001000000010000000000001001000000010000000000001000010000010000000100000000001000000000001100000001000000010000000000100001000000010000000100000000010000010000000100000000001000000010000100000000001000000100000100000001000000010000000100000000000100010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000100000000001000010000000000100001000000010000000100000001000000010000000000100001000000010000000100000001000000000010000000100000001000010000000100000001000000000010000100000000001000000010000100000000001000010000000001000001000000000001000100000000000100010000000100000001000000000001000100000000001000010000000100000001000000010000000100000001000000010000000100000000010000010000000000100001000000010000000100000001000000010000000100000001000000010000000000100000001000010000000100000000001000010000000100000000001000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000000001000000001000100000000001000010000000100000000000100000010000000100001000000010000000000100001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000100000000100010000000000100000010000000100000000100000000100000010000100000000000100010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000000100001000000000010000100000001000000000010000100000001000000010000000100000000000010010000000100000001000000000100000100000000010000010000000100000001000000000010000100000000100000000010000100000000001000000100000100000001000000010000000100000000100000000010000100000001000000010000000100000000001000000010000100000001000000010000000000100000010000010000000010000000100000010000000100000001000000010000000000010001000000010000000100000001000000000010000000100001000000010000000100000000000100010000000000100001000000010000000100000001000000000100000100000001000000010000000100000000010000010000000100000000010000010000000100000001000000010000000100000000001000000010000100000000010000000010000100000001000000000010000100000001000000010000000001000001000000010000000000010000010000010000000100000001000000010000000000100000001000000010000000100000001000010000000100000001000000010000000100000000010000010000000100000000010000010000000001000001000000010000000000100000010000010000000100000000001000010000000000100001000000010000000100000001000000000100000000100001000000000100000000100001000000010000000100000001000000010000000100000001000000000010000100000001000000010000000100000000001000010000000000010000001000010000000100000001000000010000000100000001000000010000000100000000001000010000000000100001000000010000000100000001000000010000000000100001000000000000001100000001000000010000000100000000010000010000000100000000001000010000000100000000001000010000000100000001000000010000000100000001000000010000000001000001000000000010000100000001000000000010000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000010000100000001000000000000100100000001000000000010000000000011000000010000000100000001000000010000000100000001000000000001000100000001000000010000000000010001000000010000000100000001000000000001000100000001000000000000100100000001000000000001000000010001000000010000000001000000000100001000000100000000000100000001000100000001000000010000000000010000000100000001000100000001000000000001000000010000000100010000000100000001000000000001000100000001000000000001000100000000000100010000000100000000100000010000000010000000000100000001000000010001000000010000000100000000000100010000000100000000000100000001000000010000000010000000010100000000100000010000000000010001000000010000000100000000100000000001000000010001000000000001000000001001000000010000000000010001000000000000100000010000000100001000000100000000000100010000000000010000000100000001000001000000000001010000000100000000100000001000000100000000000100010000000100000000000100010000000001000001000000010000000000000101000000000001000100000000000100000000100001000000010000000000100001000000010000000100000000001000010000000100000100000000010000000100000001000000010000000000100001000000000100000100000001000000010000010000000100000001000000000100000001000000000010000100000001000000010000000100000001000001000000000100000000001000000010010000000100000000000100000100000001000000000100000001000100000000010000000000100001000000010000000100000100000000000010000000100010000000100000010000000010000000000100010000000100000001000000010000000000001000010000000100000100000001000000000100000000000101000000010000000000010001000000010000000000010001000000010000000100000000000100010000000000010000010000010000000000010001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000000001000100000001000000000001000100000001000000010000000000010000010000000001000001000000000100000000100100000001000000000001000001000000010000000100000001000000010000000100000000010000000010000100000100000000010000000000100000001000000010000001000000001000000100000000100100000000001000010000000000010001000000000100000001000000000100010000000100000001000000010000000000000101000000010000000001000000000010000001000000010000010000010000000100000000010000000001000100000000010000000100000001000000010000000100000000010000000100000001000000010000000100010000000000010000000100000100000100000000000010000001000100000000010000010000000100000001000000010000000000000101000000010000000000000100100000000100000100000000010000000000100000010000010000000100000001000000010000000001000000010001000000010000000000010000010000010000000000000100000001010000000100000001000000010000000100000001000000000100000000010001000000010000000000010000000100010000000100000000000100000001000000010000000100000001000001000001000000010000000000010000000100010000000000010000100000010000000100000000010000000100000000010001000000000100000010000001000000010000000000001000010000010000000100000001000000000000100001000001000000010000000000010000000100010000000001000000010000010000000100000000000100000000100100000001000000010000000100000001000000010000000010000000010000000001000100000000000100010000000100000001000000010000000001000000010000000100000001000000010000000001000000001000010000000100000001000000010000000100000001000000010000000100000001000001000000000100000001000000010000000100000001000001000000000100000000010000000100010000000100000001000000010000000001000001000000010000000000010001000000000100000100000001000000000001000000010000000010010000000000001001000000000000100000010001000000010000000100000001000000000001000100000000000100000001000000010000000100000001000001000000010000000100000100000000000100000100000000010001000000000001000000010001000000010000000100000000000100000000100100000000000100010000000100000001000000000000100010000001000000000000100010000001000000010000000100000001000000001000000100000000000100010000000100000001000000000100000100000000000100000000100100000000100000010000000100000000000100000001000100000001000000010000000100000000000100000001000000010001000000010000000100000001000000010000000100000000000100010000000000010001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000000010100000001000000010000000000010001000000000001000100000000000001010000000100000001000000010000000100000000000001001000000100000001000000010000000000010001000000010000000000010001000000000100000100000001000000010000000100000001000000000001000001000000100000010000000100000001000000000001000100000001000000000001000000010001000000000001000100000001000000000001000110101111101011101010101011101110101111101110101010101011101111101010101110111110111110111010101011111010101011101011101010101010111010101111101010101110101010101010101010111110101111101010101010101010101010101011101010101010101010101011101011101010101010101010101010101010101010101010101010111110101010111010101010111010111010101010101110101110101010101010101011111011101010101010101111101010101110111010101010101110101010101011101110101110101110101010101010101010101010111011101011101111101010111010101010101010111110101010101010101010111110101010101010101110101010101010101010101010101011101010101010111010101110101010101010101011101110101010111010101010101011101111101011101010111010101010111010101010111010101010111010101010111110111010101110101010101010101011111010101010101010101010101010101110101010111010101110101110101010101110101010101010101010101010101010111010111011101011101010111010111010101010101010101010111110101010101010101011101010101111101010101010101111101110101011101010101010101010101011101011101010101010101010101010101011101010111111101010101010101010101010101010101010101010101011101010111110111010101010101010101011101011101010101010101010101010101010101010101010111011101010101010101110101011101010101010101010101010101010111110111010111010101010101110101010101010101010101010101010101010101010101010101010101110101010111010101010111010101010101010111010101010101010111010101010101010101010111010101010111010101010101010101011111010101010101011101010101010101010111111111110111010111110101110101010101010101010101010101110111010101011111010111010101010101010101010111010101010111010111010101010101111101010111010101010101010101010101010101010101010101010101010101010101010101010111011101010101010111110111010101010101010101110111010101011111110101010101010101111111010111011101010111010101110111010101010111010101010101010101010101010101010101010101010101010111010101010111111111110111110101010101010101110101110101010111111101010101010101010101010101010101010101010101010101010101010101010101010101010101010111110101010111011101010101010101110101010101010101010101010101010111010101010101010101011101010101011101110101010101010101010101010101010101010101010101010101011101010101010101010101010101110101011111010111010101010101010101010101110101010101010101010101010101010101011111010101010101010101010101011101010101010101010111010111111101010101010101010101010111010101010101010101010101110101010101110101010111010101010101110101011101010101010101011101111101010101010101010101010101010101010111010101010101010101010101010101010101011101010101010101110101010101010101011101010101010111010101010101010101010101010101010101010101110101010101010101110111011101011101010111011101010101010101010101010101010101010111010111010101010101010101011101010101010111010111010111010101110101010101110101011101010101010101111101011111010101010101010101010101010111010101010101010101010101010101010101010101010111011101110101011101010101010101010101010101011101010101110101010101010101010101010101010101011101010101010101010101010101010101110111010101010101010101010101010111011101110111010111110101010101010111110101010111011101110101010101010101010111010101011111010101110101110101010101010101010101010101010101010101010101010111111101110101010101010101010101110101010101010101010111010101011101010101011101010101010101010101010101010101010101110101010111010111010101010101010101010101011101011101011101010101110111010101110101010101010101010101010101010101010101011101110101111101010101011111010101111101010101010101010111110101110111010101010101111101110101010101010101010101011101010101010101010111011101010101010101010101111111110111011111011101111111111111111111111111111111111111111111010111111111111111111111111111111111111111111111111111111111111111111111110111111111011111011111111111111111111111111111111111111111111111111101111111111111011111111111010111110111111111111111111111110111110101111111111111111111111111111111111101111101111111111111111111111111110111111111111111011111111111111111011111110111111111111101011101111111110111111111011111111111011111110111111111111111111111111111011111111111111111111111110111111101111111111111111111111111110111111111110111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111101111111110111111111110111111111111111111111111101111101111101111111111111111111111111111101011111011111011111111111111111111111110111111111111111111111111111111111111111111111111111111111111111011101110111111101111111111101111111111111111111111101110111111111111111111111111111111111011111111101111111110111111101110111111111111111110101010111111111111111110101111111111111111111011101111111111111111111110111111101110111111111111111111111111101111111111111110111111101111111111111111111111111111111110111111111111111111111111111111111111111110111111111111111111111011111111111111111011111011111111111111111111111111111110111111111111101111111111111010111010111111111111111111111111101111111110111011111111111111111111111111111111111111111111111111111111111111111011101111111111111111111110111111111111111111111110111111101111111111111111111110111111111111111011111111101111111011101111101111101111111111111111111111111111111111111111111111111111101111101110111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111101111111111111111111111111111111110111111111111111011111111111111111111111111111111111111111110111111111111111011111111111111111111111111111111111111101111111111111111101111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111011111111111111111111101011111111101011111111111111111111111111111111111110101111111110111110101111111111101111111111111011111111111110111111111111111011111111111111111111101110111111111011111111111111111111111111111111111111111111101011111111111111111010111111111111111111111111111111111111111111111111101111111111111111111111111010111111111110111111111111111111111111111011111011111111111111111011111111111111111111111111101110111111111111111111111111101111101111111111111111111111111011111011111110101111111111111110111111101110111111111111101011111111111111111111111111111111111111111111111011111111111010111111111111111111111111101111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111110111111111111111111111111111110111111111111111111111111111110101111111110111111111111111111111010111011111111101111111111111110111111111111111111111011111111111111111111111111101111111111111111111111101111101110101111111111111111111011111011111111111111111111111111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111011111111111111111010111111111111111111111111111111111111111110111111111011111011111111101110111111111110111111111111111111111011111111101111111111111111111111111111111111111111111111111111101111111111111111101111111111111111111111111111101111101111111111111111111111111111111011111110111111111111111111111011111111111110111110101111111111111111111111101111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110111111111111111111111111111011111111111111111111111111111111111111111111111111111110111111111111111111111111111111111111101111111111111111111111111111111111111111111111111111101111111111111111111111111111111011111111111111111111111111111111101011111111111111111111101111111111111111111111111111111111111111101111111011101111111111101111111011111111101111111111111111111111101110101111111111111111111111111111111111111111111011111111101111101111111111111111101111111111111110111111101111111111111111111111111111101111101110111111101111111111111111111011111011111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111110111111111111111111111111111111111111111011111111111111111111111111111111111111111111111011111111111110111011111111111111111111111111111111111111111111111111101110111111111111111111111111101011101111111111101111111110111111111011111011111111111110101111101011111111111110111110111111111010101010101010101011101010101010111010101111111010101010101010111010101111111010111111101010101011101010101110111111111110101011111010111111111111111111111111101111111111111111101111111111111111111111111111101110111011111110101010101011101011101010101110111011111111111010111111111110111110101111101111101111101010101011111111111111111011101111101111111110111110101011101011101010101111111111101110101111111111111011111111111111111111111110111111111111101111101011111010111110101111111010111111111110101111111011111111111110101111111111111110101010101110101010101010101010111010101010111011111111111110111111111011111111101110111011111111111111111111111110101011111011111111111111111011111111111010111010111111111011111111111011111011101111111111111111111111111111111111111111111111111111111111111111111011111111111111101111111111101011111111111111111011111111111110101111111111111111111111111111101111111111111111101110111110111111000001111111011111111111011110111000111001100110101100111101110111110101111111011111111100111110111000111111111111011110011110110011101011010101011010110111111111110001111111111111111101111110011000110111111011111111101000101110011010111001110011101101111111111111010101010110011111111111111111110110011011011111011111111111101001111111111111111110011110011101111111111001110011111111110111111011110111110101001111011101111111111111111111111011111111101101010111101111011100110111001001101111101010111111011100101110111011110101110111000111111110011111111000110101111011111011101101111111111111111101110101111111101111111111001101011111111111011101101111111111111111111101110110111111111000110000101111111111110111111111001011011101110011111111111100111111001010111111110101111101111111100000101111100111101110011101111111111100001011111110011111111011111100111111101111011011101110111111011110011111011101111111010111101111111101100111011111001001111111101101011111111111111110001000101011101010011011111010110011111101011111111011111111101111111011101111111011111110111101110110111111101111111101011111110011111

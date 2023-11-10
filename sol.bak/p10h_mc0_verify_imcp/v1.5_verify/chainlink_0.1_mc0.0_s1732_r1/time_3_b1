@@ -1,0 +1,625 @@
+Timer unit: 1e-09 s
+
+Total time: 62.5929 s
+File: /u/d/songyul3/pareto_SAT_S_2P_objsep/clauses_gen_7_34.py
+Function: clause_gen_7_34 at line 21
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    21                                           def clause_gen_7_34(f,a, s, z, g, x, b0, b1, n_feature, n_points, n_labels, n_DC, tree_depth, n_bnodes, n_lnodes,
+    22                                                           feature_index, HARD_CLAUSE_W, TC, Distance_Class, df, ML, CL, use_SmartPair):
+    23                                           
+    24                                           	# (7)
+    25                                           	# (!a_t,j, !a_t,j')
+    26         1       2507.0   2507.0      0.0  	tmp_time_counter_start = time.perf_counter()
+    27                                           
+    28         1      14939.0  14939.0      0.0  	feature_comb_ind = np.array(list(combinations(feature_index, 2)))
+    29         1     124518.0 124518.0      0.0  	clause_list_7 = np.dstack((-a[:, feature_comb_ind[:, 0]], -a[:, feature_comb_ind[:, 1]])).reshape(-1, 2)
+    30                                           	# write to file
+    31         2      48061.0  24030.5      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_7)).reshape(-1, 1), clause_list_7,
+    32         2       2721.0   1360.5      0.0  													np.zeros(len(clause_list_7)).reshape(-1, 1))), fmt='%d')
+    33                                           
+    34         1        915.0    915.0      0.0  	tmp_time_counter_end = time.perf_counter()
+    35         1      35086.0  35086.0      0.0  	TC.counter(tmp_time_counter_start,
+    36         1        276.0    276.0      0.0  								tmp_time_counter_end,
+    37         1        278.0    278.0      0.0  								'7',
+    38         1        537.0    537.0      0.0  								clause_list_7.shape )
+    39                                           	## No need to add And(c), as all clauses are hard clauses
+    40                                           
+    41                                           	# (8)
+    42                                           	# this is just the rows of a are the clauses
+    43         1        778.0    778.0      0.0  	tmp_time_counter_start = time.perf_counter()
+    44         1        318.0    318.0      0.0  	clause_list_8 = a
+    45         1      91727.0  91727.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(a)).reshape(-1, 1), a, np.zeros(len(a)).reshape(-1, 1))),
+    46         1        326.0    326.0      0.0  						fmt='%d')
+    47         1        748.0    748.0      0.0  	tmp_time_counter_end = time.perf_counter()
+    48         1      23313.0  23313.0      0.0  	TC.counter(tmp_time_counter_start,
+    49         1        268.0    268.0      0.0  								tmp_time_counter_end,
+    50         1        322.0    322.0      0.0  								'8',
+    51         1        459.0    459.0      0.0  								clause_list_8.shape )
+    52                                           	# (9)
+    53         1        739.0    739.0      0.0  	tmp_time_counter_start = time.perf_counter()
+    54                                           
+    55         1       3513.0   3513.0      0.0  	clause_list_9 = np.array([]).reshape(0, 3)
+    56         3       2593.0    864.3      0.0  	for j in range(n_feature):
+    57                                           			# j=[0,1,2,3][j%4]
+    58                                           			# t=np.arange(n_bnodes)[j%len(np.arange(n_bnodes))]
+    59                                           			# for t in range(n_bnodes):
+    60         3    1775882.0 591960.7      0.0  			sort_ind = get_sorted_index(df, df.columns[j])
+    61         3      67186.0  22395.3      0.0  			ind = np.repeat(sort_ind, 2)[1:-1].reshape(-1, 2)
+    62                                           			# write a each chunk to file by 'j'
+    63         3     195538.0  65179.3      0.0  			clause_list_9 = np.vstack((clause_list_9,
+    64         3     148425.0  49475.0      0.0  																np.dstack((
+    65         3     209050.0  69683.3      0.0  																					np.repeat(-a[:, j], len(ind), axis=0).reshape(-1, len(ind)), s[ind[:, 0], :].T,
+    66         6      93999.0  15666.5      0.0  																					-s[ind[:, 1], :].T)).reshape(-1, 3)
+    67                                           																))
+    68         1   58356772.0 58356772.0      0.1  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_9)).reshape(-1, 1),
+    69         1        231.0    231.0      0.0  													clause_list_9,
+    70         2       8777.0   4388.5      0.0  													np.zeros(len(clause_list_9)).reshape(-1, 1))), fmt='%d')
+    71                                           
+    72         1       1337.0   1337.0      0.0  	tmp_time_counter_end = time.perf_counter()
+    73         1      26190.0  26190.0      0.0  	TC.counter(tmp_time_counter_start,
+    74         1        292.0    292.0      0.0  								tmp_time_counter_end,
+    75         1        226.0    226.0      0.0  								'9',
+    76         1        616.0    616.0      0.0  								clause_list_9.shape )
+    77                                           
+    78                                           	## (10) (!a_t,j, !s_i,t, s_i',t)
+    79                                           	# (10)
+    80         1        545.0    545.0      0.0  	tmp_time_counter_start = time.perf_counter()
+    81                                           
+    82         1       6031.0   6031.0      0.0  	clause_list_10 = np.array([]).reshape(0, 3)
+    83         7       3148.0    449.7      0.0  	for b in range(n_bnodes):
+    84                                           			# iterate over features
+    85        21      56815.0   2705.5      0.0  			for ind_j, name_j in enumerate(df.columns):
+    86        21    4434779.0 211180.0      0.0  					tmp_sort_by_f = df[name_j].sort_values()
+    87        21    1597868.0  76089.0      0.0  					tmp_sorted_consec_pairs = np.repeat(tmp_sort_by_f.index.tolist(), 2)[1:-1].reshape(-1, 2)
+    88                                           					# The index of the same point of the two column is the index of the consecutive pairs
+    89        21      12734.0    606.4      0.0  					tmp_eq_pair_ind_list = \
+    90        21    8011935.0 381520.7      0.0  					np.where(tmp_sort_by_f.iloc[:-1].reset_index(drop=True) == tmp_sort_by_f.iloc[1:].reset_index(drop=True))[0]
+    91        21      13267.0    631.8      0.0  					if len(tmp_eq_pair_ind_list) > 0:
+    92        21     397073.0  18908.2      0.0  							clause_list_10 = np.vstack((clause_list_10,
+    93        21     365281.0  17394.3      0.0  																					np.vstack((np.repeat(-a[b, ind_j], len(tmp_eq_pair_ind_list)),
+    94        21     213713.0  10176.8      0.0  																										-s[tmp_sorted_consec_pairs[tmp_eq_pair_ind_list, 0], b],
+    95        21      82779.0   3941.9      0.0  																										s[tmp_sorted_consec_pairs[tmp_eq_pair_ind_list, 1], b])).T))
+    96                                           	# write to file
+    97         2      76166.0  38083.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_10)).reshape(-1, 1), clause_list_10,
+    98         2       6434.0   3217.0      0.0  													np.zeros(len(clause_list_10)).reshape(-1, 1))), fmt='%d')
+    99                                           
+   100         1       1057.0   1057.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   101         1      21133.0  21133.0      0.0  	TC.counter(tmp_time_counter_start,
+   102         1        234.0    234.0      0.0  								tmp_time_counter_end,
+   103         1        288.0    288.0      0.0  								'10',
+   104         1        455.0    455.0      0.0  								clause_list_10.shape )
+   105                                           	## (11) $(\neg z_{i,t}, s_{i,t'}) \quad t \in T_L, x_i \in X, t'\in A_l(t)$
+   106                                           	## (12) $(\neg z_{i,t}, \neg s_{i,t'}) \quad t \in T_L, x_i \in X, t'\in A_r(t)$
+   107                                           
+   108                                           	# (11) (12)
+   109         1        510.0    510.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   110         1       2564.0   2564.0      0.0  	clause_list_11 = np.array([]).reshape(0, 2)
+   111         1        814.0    814.0      0.0  	clause_list_12 = np.array([]).reshape(0, 2)
+   112                                           	# (!z_i,t, s_i,t')
+   113         8       3558.0    444.8      0.0  	for l in range(n_lnodes):
+   114         8      65543.0   8192.9      0.0  			_, left_ancestors_list, right_ancestors_list = get_ancestor_nodes(tree_depth, l)
+   115                                           
+   116                                           			# 11
+   117         8     253281.0  31660.1      0.0  			clause_list_11 = np.vstack((clause_list_11, np.hstack(
+   118         8     161841.0  20230.1      0.0  					(np.repeat(-z[:, l], len(left_ancestors_list)).reshape(-1, 1), s[:, left_ancestors_list].reshape(-1, 1)))))
+   119                                           			# 12
+   120         8     175694.0  21961.8      0.0  			clause_list_12 = np.vstack((clause_list_12, np.hstack(
+   121         8     156753.0  19594.1      0.0  					(np.repeat(-z[:, l], len(right_ancestors_list)).reshape(-1, 1), -s[:, right_ancestors_list].reshape(-1, 1)))))
+   122                                           	# add all the clauses to solver
+   123                                           	# 11
+   124         2     146503.0  73251.5      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_11)).reshape(-1, 1), clause_list_11,
+   125         2      15439.0   7719.5      0.0  													np.zeros(len(clause_list_11)).reshape(-1, 1))), fmt='%d')
+   126                                           	# 12
+   127         2     142623.0  71311.5      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_12)).reshape(-1, 1), clause_list_12,
+   128         2       5353.0   2676.5      0.0  													np.zeros(len(clause_list_12)).reshape(-1, 1))), fmt='%d')
+   129         1       1117.0   1117.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   130         1      22821.0  22821.0      0.0  	TC.counter(tmp_time_counter_start,
+   131         1        252.0    252.0      0.0  								tmp_time_counter_end,
+   132         1        270.0    270.0      0.0  								'11_12',
+   133         1       1074.0   1074.0      0.0  								[clause_list_11.shape[0]*2,clause_list_11.shape[1]] )
+   134                                           
+   135                                           	## (13) $(z_{i,t},\underset{t' \in A_l(t)}{\vee} \neg s_{i,t'}, \underset{t' \in A_r(t)}{\vee} s_{i,t'}) \quad t\in T_L, x_i\in X$
+   136                                           	# (13)
+   137                                           	### For tree depth d, sum of left ancestor and right ancestor equals d.
+   138                                           	### Then the length of the clause is the z + s[l&r clauses] -> 1+d
+   139         1        547.0    547.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   140                                           
+   141         1       2820.0   2820.0      0.0  	clause_list_13 = np.array([]).reshape(0, tree_depth + 1)
+   142         8       3630.0    453.8      0.0  	for leaf in range(n_lnodes):
+   143         8      52819.0   6602.4      0.0  			_, left_ancestors_list, right_ancestors_list = get_ancestor_nodes(tree_depth, leaf)
+   144                                           
+   145         8     276824.0  34603.0      0.0  			clause_list_13 = np.vstack((clause_list_13, np.hstack(
+   146         8      92388.0  11548.5      0.0  					(z[:, leaf].reshape(-1, 1), -s[:, left_ancestors_list], s[:, right_ancestors_list]))))
+   147                                           
+   148                                           	# write all the clauses to file
+   149         2     111210.0  55605.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_13)).reshape(-1, 1), clause_list_13,
+   150         2      10503.0   5251.5      0.0  													np.zeros(len(clause_list_13)).reshape(-1, 1))), fmt='%d')
+   151                                           
+   152         1       1088.0   1088.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   153         1      21655.0  21655.0      0.0  	TC.counter(tmp_time_counter_start,
+   154         1        340.0    340.0      0.0  								tmp_time_counter_end,
+   155         1        366.0    366.0      0.0  								'13',
+   156         1        534.0    534.0      0.0  								clause_list_13.shape)
+   157                                           	# (14), (15)
+   158                                           	# (!a_t,j, s_#(1,j),t)
+   159                                           	# (!a_t,j, s_#(-1,j),t)
+   160         1        597.0    597.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   161                                           
+   162         1       2704.0   2704.0      0.0  	clause_list_14 = np.array([]).reshape(0, 2)
+   163         1        993.0    993.0      0.0  	clause_list_15 = np.array([]).reshape(0, 2)
+   164         3       2155.0    718.3      0.0  	for j in range(n_feature):
+   165                                           			# get the index of dataset sorted on j ascending
+   166         3     731588.0 243862.7      0.0  			sort_ind = get_sorted_index(df, df.columns[j])
+   167                                           
+   168         3      99301.0  33100.3      0.0  			clause_list_14 = np.vstack((clause_list_14, np.hstack((-a[:, j].reshape(-1, 1), s[sort_ind[0], :].reshape(-1, 1)))))
+   169         3      23364.0   7788.0      0.0  			clause_list_15 = np.vstack(
+   170         3      36385.0  12128.3      0.0  					(clause_list_15, np.hstack((-a[:, j].reshape(-1, 1), -s[sort_ind[-1], :].reshape(-1, 1)))))
+   171                                           
+   172                                           	# write all the clauses to file
+   173                                           	# (14)
+   174         2      19098.0   9549.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_14)).reshape(-1, 1), clause_list_14,
+   175         2       1753.0    876.5      0.0  													np.zeros(len(clause_list_14)).reshape(-1, 1))), fmt='%d')# (15)
+   176         2      23719.0  11859.5      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_15)).reshape(-1, 1), clause_list_15,
+   177         2       1560.0    780.0      0.0  													np.zeros(len(clause_list_15)).reshape(-1, 1))), fmt='%d')
+   178                                           
+   179         1       1111.0   1111.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   180         1      16678.0  16678.0      0.0  	TC.counter(tmp_time_counter_start,
+   181         1        328.0    328.0      0.0  								tmp_time_counter_end,
+   182         1        376.0    376.0      0.0  								'14_15',
+   183         1        791.0    791.0      0.0  								[clause_list_14.shape[0]*2, clause_list_14.shape[1]])
+   184                                           
+   185                                           	### Extended Hard Clauses
+   186                                           	# (16)
+   187                                           	# note: ! if num labels < 3, then c is 0 or negative !
+   188                                           	# The number of rows equals to the number of leaf node
+   189         1        600.0    600.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   190                                           
+   191         1      13355.0  13355.0      0.0  	clause_list_16 = np.hstack((g[:, :-2].reshape(-1,1), -g[:, 1:-1].reshape(-1,1)))
+   192                                           	# np.savetxt(f, np.repeat(0,5).reshape(1,-1), fmt='%d')
+   193                                           	# np.savetxt(f, np.hstack(
+   194                                           	#     (np.repeat(HARD_CLAUSE_W, n_lnodes).reshape(-1, 1), clause_list_16, np.zeros(n_lnodes).reshape(-1, 1))), fmt='%d')
+   195                                           
+   196         1       1790.0   1790.0      0.0  	write_clauses_to_file(f, clause_list_16, HARD_CLAUSE_W)
+   197                                           
+   198         1        539.0    539.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   199         1      10414.0  10414.0      0.0  	TC.counter(tmp_time_counter_start,
+   200         1        314.0    314.0      0.0  								tmp_time_counter_end,
+   201         1        321.0    321.0      0.0  								'16',
+   202         1        418.0    418.0      0.0  								clause_list_16.shape)
+   203                                           
+   204                                           
+   205                                           	# (17) (18)
+   206         1        497.0    497.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   207         1        466.0    466.0      0.0  	clause_list_17, clause_list_18 = [], []  # np.array([]).reshape(0,3),np.array([]).reshape(0,3)
+   208         1       1382.0   1382.0      0.0  	for k in range(n_labels - 1):
+   209      1000     365931.0    365.9      0.0  			for i in range(n_points):
+   210      8000    2998462.0    374.8      0.0  					for l in range(n_lnodes):
+   211                                           							# (17)
+   212      8000    6600399.0    825.0      0.0  							clause_list_17 += [[-z[i, l], -g[l, k], x[i, k]]]
+   213                                           							# (18)
+   214      8000   37470515.0   4683.8      0.1  							clause_list_18 += [[-z[i, l], g[l, k], -x[i, k]]]
+   215                                           
+   216                                           	# add to solver
+   217                                           	# (17)
+   218         2    1961075.0 980537.5      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_17)).reshape(-1, 1), np.array(clause_list_17),
+   219         2       6914.0   3457.0      0.0  													np.zeros(len(clause_list_17)).reshape(-1, 1))), fmt='%d')
+   220                                           	# (18)
+   221         2    1850684.0 925342.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_18)).reshape(-1, 1), np.array(clause_list_18),
+   222         2       6328.0   3164.0      0.0  													np.zeros(len(clause_list_18)).reshape(-1, 1))), fmt='%d')
+   223                                           
+   224         1       1271.0   1271.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   225         1      23812.0  23812.0      0.0  	TC.counter(tmp_time_counter_start,
+   226         1        706.0    706.0      0.0  								tmp_time_counter_end,
+   227         1        416.0    416.0      0.0  								'17_18',
+   228         1       1221.0   1221.0      0.0  								[len(clause_list_17)*2, len(clause_list_17[0])])
+   229                                           
+   230                                           	# (19)
+   231                                           	# This assumes that the number of data points is at least the same as the
+   232                                           	#  number of clusters
+   233                                           	# num(n_labels-1) diagnols of x
+   234                                           	# num of rows is also num(n_labels-1)
+   235         1        674.0    674.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   236                                           
+   237         1       5205.0   5205.0      0.0  	clause_list_19 = -x.diagonal()[:n_labels - 1].reshape(-1, 1)
+   238         1      35437.0  35437.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, n_labels - 1).reshape(-1, 1),
+   239         1        372.0    372.0      0.0  													clause_list_19,
+   240         2       1815.0    907.5      0.0  													np.zeros(n_labels - 1).reshape(-1, 1))), fmt='%d')
+   241                                           
+   242         1        618.0    618.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   243         1      12645.0  12645.0      0.0  	TC.counter(tmp_time_counter_start,
+   244         1        389.0    389.0      0.0  								tmp_time_counter_end,
+   245         1        442.0    442.0      0.0  								'19',
+   246         1        488.0    488.0      0.0  								clause_list_19.shape)
+   247                                           	# (20)
+   248                                           	# use the default ascending index order of the dataset
+   249                                           	# Assume number of points larger than number of clusters
+   250                                           	# Note: c<i and c starts from 2 (index 1), so i starts from 3 (index 2)
+   251         1        577.0    577.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   252                                           
+   253         1        431.0    431.0      0.0  	clause_list_len_20 = []
+   254                                           	# iterate over each point
+   255       998     471752.0    472.7      0.0  	for i in range(2, n_points):
+   256                                           			# iterate over c, c<i
+   257                                           			# if i smaller than the number of labels, use the number of labels instead
+   258                                           			# clause_list_20.append(np.vstack((x_[i,1:min(i,n_labels-1) ], x_[:i, 1:min(i,n_labels-1)])).T)
+   259       998     663300.0    664.6      0.0  			curr_c_value = min(i, n_labels - 1)
+   260       998    9731071.0   9750.6      0.0  			clause_20_tmp = np.vstack((-x[i, 1:curr_c_value], x[:i, 0:curr_c_value - 1])).T
+   261                                           			# print(
+   262                                           			#   f'--{np.repeat(HARD_CLAUSE_W, n_labels - 2).reshape(-1, 1).shape} - {clause_20_tmp.shape} - {np.zeros(n_labels - 2).reshape(-1, 1)}')
+   263       998     607257.0    608.5      0.0  			clause_list_len_20.append(clause_20_tmp.shape)
+   264       998   23897163.0  23945.1      0.0  			np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, curr_c_value - 1).reshape(-1, 1),
+   265       998     400831.0    401.6      0.0  															clause_20_tmp,
+   266      1996    1435602.0    719.2      0.0  															np.zeros(curr_c_value - 1).reshape(-1, 1))), fmt='%d')
+   267                                           
+   268         1       1175.0   1175.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   269         1      18012.0  18012.0      0.0  	TC.counter(tmp_time_counter_start,
+   270         1        405.0    405.0      0.0  								tmp_time_counter_end,
+   271         1        427.0    427.0      0.0  								'20',
+   272         1        476.0    476.0      0.0  								clause_list_len_20[-1])
+   273                                           	# (21)
+   274                                           	# assume |X|>=K, ensue that minimum k' or maximum k clusters
+   275                                           	# all assigned cluster non-empty
+   276                                           	# k is the number of clusters
+   277         1        722.0    722.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   278                                           
+   279         1       1839.0   1839.0      0.0  	clause_list_21 = x[:, -2].reshape(1, -1)
+   280         1     178056.0 178056.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, 1).reshape(1, -1),
+   281         1        400.0    400.0      0.0  													clause_list_21,
+   282         2       1477.0    738.5      0.0  													np.zeros(1).reshape(1, -1))), fmt='%d')
+   283                                           
+   284         1        764.0    764.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   285         1      12941.0  12941.0      0.0  	TC.counter(tmp_time_counter_start,
+   286         1        406.0    406.0      0.0  								tmp_time_counter_end,
+   287         1        417.0    417.0      0.0  								'21',
+   288         1        543.0    543.0      0.0  								clause_list_21.shape)
+   289                                           
+   290                                           	### SMART PAIR clauses
+   291                                           	# sort ML and CL ascending
+   292         1        466.0    466.0      0.0  	if use_SmartPair:
+   293         1        647.0    647.0      0.0  		SmartPair_time_counter_start = time.perf_counter()
+   294                                           		#
+   295         1      24642.0  24642.0      0.0  		CL_descending,CL_descending_index = sort_ascending_ML_CL(CL, df)
+   296         1       2014.0   2014.0      0.0  		CL_descending = CL_descending[::-1].tolist()
+   297         1        732.0    732.0      0.0  		CL_descending_index = CL_descending_index[::-1]
+   298         1       9673.0   9673.0      0.0  		ML_ascending,ML_ascending_index = sort_ascending_ML_CL(ML, df)
+   299         1        830.0    830.0      0.0  		ML_ascending = ML_ascending.tolist()
+   300                                           
+   301         1      23667.0  23667.0      0.0  		t1 = node_graph(unique_encode_generator(), len(df))
+   302         1       2276.0   2276.0      0.0  		clause_list_22_23, clause_list_25_26 = [np.array([]).reshape(0, 2)] * 2
+   303         1       1121.0   1121.0      0.0  		clause_list_24 = np.array([]).reshape(0, 4)
+   304         1        484.0    484.0      0.0  		clause_list_27_28 = []
+   305         1        450.0    450.0      0.0  		clause_list_29 = []
+   306         1        490.0    490.0      0.0  		clause_list_b0_b1 = []
+   307         1        507.0    507.0      0.0  		clause_list_30_31 = []
+   308                                           
+   309                                           		# np.vstack((x[pair[0], :-2], x[pair[1], :-2], x[pair[0], 1:-1],x[pair[1], 1:-1])).T
+   310                                           
+   311                                           
+   312         1        476.0    476.0      0.0  		infeasible_flag = False
+   313         1        829.0    829.0      0.0  		while not infeasible_flag:
+   314         1        625.0    625.0      0.0  			MLCL_time_counter_start = time.perf_counter()
+   315                                           
+   316         1        654.0    654.0      0.0  			for pair in ML_ascending:
+   317                                           				p0_cc_ind,p1_cc_ind = t1.get_cc_ind(pair)
+   318                                           				if not t1.check_inner(p0_cc_ind,p1_cc_ind):
+   319                                           					t1.update_pos_edge(pair,p0_cc_ind,p1_cc_ind)
+   320                                           					# *add clauses (25,26) for (x_i, x_i')
+   321                                           					# the length of (25) and (26) are both n_label -1, so the total length is 2*n_label-2
+   322                                           					clause_list_25_26 = np.vstack((clause_list_25_26,
+   323                                           												np.vstack((np.vstack((-x[pair[0], :-1], x[pair[1], :-1])).T,
+   324                                           															np.vstack((x[pair[0], :-1], -x[pair[1], :-1])).T))
+   325                                           												))
+   326                                           
+   327                                           			#
+   328         1        562.0    562.0      0.0  			for pair in CL_descending:
+   329                                           				p0_cc_ind,p1_cc_ind = t1.get_cc_ind(pair)
+   330                                           				if t1.check_inner(p0_cc_ind,p1_cc_ind):
+   331                                           					print("------infeasible")
+   332                                           					infeasible_flag = True
+   333                                           					break
+   334                                           				if not t1.check_crossing(p0_cc_ind,p1_cc_ind):
+   335                                           					t1.update_neg_edge(pair,p0_cc_ind,p1_cc_ind)
+   336                                           					# *add clauses (22,23,24) for (x_i, x_i')
+   337                                           					# c22=[Or(x[pair[0]][0], x[pair[1]][0])]
+   338                                           					# c23=[Or(Not(x[pair[0]][-2]),
+   339                                           					#         Not(x[pair[1]][-2]))]
+   340                                           					# The length of the list of the two clauses (22), (23) is 2
+   341                                           					clause_list_22_23 = np.vstack((clause_list_22_23,
+   342                                           												np.vstack(
+   343                                           													([x[pair[0], 0], x[pair[1], 0]], [-x[pair[0], -2], -x[pair[1], -2]]))
+   344                                           												))
+   345                                           
+   346                                           					clause_list_24 = np.vstack((clause_list_24,
+   347                                           												np.vstack((-x[pair[0], :-2], -x[pair[1], :-2], x[pair[0], 1:-1],
+   348                                           														x[pair[1], 1:-1])).T
+   349                                           												))
+   350                                           
+   351         1        515.0    515.0      0.0  			if infeasible_flag:
+   352                                           				break
+   353         1        677.0    677.0      0.0  			b1_time_counter_start = time.perf_counter()
+   354                                           
+   355         1      17233.0  17233.0      0.0  			E_plus_hat = copy.deepcopy(t1.E_plus)
+   356         1       4048.0   4048.0      0.0  			cc_set_hat = copy.deepcopy(t1.cc_set)
+   357         1       5878.0   5878.0      0.0  			node_table_hat = copy.deepcopy(t1.node_table)
+   358         1        512.0    512.0      0.0  			b1w_break_flag = False
+   359         1        474.0    474.0      0.0  			b1_counter = 0
+   360       990     545797.0    551.3      0.0  			for w in range(len(Distance_Class)):
+   361    499500  330437266.0    661.5      0.5  				for pair_ind, pair in enumerate(Distance_Class[w]):
+   362    499500 2073981606.0   4152.1      3.3  					p0_cc_ind,p1_cc_ind = t1.get_cc_ind(pair)
+   363    499500  511162755.0   1023.3      0.8  					if t1.check_crossing(p0_cc_ind,p1_cc_ind):
+   364                                           						# *add !b+w
+   365                                           						clause_list_b0_b1.append(-b1[w])
+   366                                           						# o.add(Not(b1[w]))
+   367                                           						b1w_break_flag = True
+   368                                           						print(f"-b1w_break_flag break")
+   369                                           						break
+   370    498501  543400571.0   1090.1      0.9  					if not t1.check_inner(p0_cc_ind,p1_cc_ind):
+   371       999    5714228.0   5719.9      0.0  						t1.update_pos_edge(pair,p0_cc_ind,p1_cc_ind)
+   372                                           						# *add clause (30,31) for (x_i, x_i') and w
+   373                                           						# c30,c31=[],[]
+   374       999     852258.0    853.1      0.0  						for c in range(n_labels - 1):
+   375                                           							# (30)
+   376       999    1401465.0   1402.9      0.0  							clause_list_30_31.append([-b1[w], -x[pair[0]][c], x[pair[1]][c]])
+   377                                           							# clause = Or(Not(b1[w]),Not(x[pair[0]][c]), x[pair[1]][c])
+   378                                           							# c30 += [clause]
+   379                                           							# (31)
+   380       999    1304542.0   1305.8      0.0  							clause_list_30_31.append([-b1[w], x[pair[0]][c], -x[pair[1]][c]])
+   381                                           							# clause = Or(Not(b1[w]),x[pair[0]][c], Not(x[pair[1]][c]))
+   382    499500  296061540.0    592.7      0.5  					b1_counter+=1
+   383                                           
+   384                                           						#
+   385       990     521939.0    527.2      0.0  				if b1w_break_flag:
+   386                                           					print(f"--b1w_break_flag break")
+   387                                           					break
+   388                                           
+   389                                           			#
+   390         1       3385.0   3385.0      0.0  			b0_time_counter_start = time.perf_counter()
+   391         1      18717.0  18717.0      0.0  			t1.E_plus = E_plus_hat
+   392         1      19222.0  19222.0      0.0  			t1.cc_set = cc_set_hat
+   393         1       1385.0   1385.0      0.0  			t1.node_table = node_table_hat 
+   394         1        705.0    705.0      0.0  			b0w_break_flag = False
+   395         1        627.0    627.0      0.0  			counter_p4 = 0
+   396       990     761682.0    769.4      0.0  			for w in range(len(Distance_Class) - 1, -1, -1):
+   397    499500  379962929.0    760.7      0.6  				for pair_ind, pair in enumerate(Distance_Class[w][::-1]):
+   398    499500 4041800855.0   8091.7      6.5  					p0_cc_ind,p1_cc_ind = t1.get_cc_ind(pair)
+   399                                           					#
+   400    499500  657895799.0   1317.1      1.1  					if t1.check_inner(p0_cc_ind,p1_cc_ind):
+   401                                           						# *add clause b-w
+   402                                           						clause_list_b0_b1.append(b0[w])
+   403                                           						# o.add(b0[w])
+   404                                           						b0w_break_flag = True
+   405                                           						print(f"-b0 flag True")
+   406                                           						break
+   407    499500 46982877247.0  94059.8     75.1  					if not t1.check_crossing(p0_cc_ind,p1_cc_ind):
+   408    499500 1268507170.0   2539.6      2.0  						t1.update_neg_edge(pair,p0_cc_ind,p1_cc_ind)
+   409                                           						# *add clauses (27,28,29) for (x_i, x_i') and w
+   410                                           						# c27 = [Or(b0[w], x[pair[0]][0], x[pair[1]][0])]
+   411    499500  651631412.0   1304.6      1.0  						clause_list_27_28.append([b0[w], x[pair[0], 0], x[pair[1], 0]])
+   412                                           						# c28 = [Or(b0[w], Not(x[pair[0]][-2]), Not(x[pair[1]][-2]))]
+   413    499500  949490723.0   1900.9      1.5  						clause_list_27_28.append([b0[w], -x[pair[0], -2], -x[pair[1], -2]])
+   414    499500  445346987.0    891.6      0.7  						for c in range(n_labels - 2):
+   415                                           							clause_list_29.append([b0[w], -x[pair[0], c], -x[pair[1], c], x[pair[0], c + 1], x[pair[1], c + 1]])
+   416                                           
+   417    499500  324407879.0    649.5      0.5  					counter_p4 += 1
+   418       990     718812.0    726.1      0.0  				if b0w_break_flag:
+   419                                           					print(f"-- b0 flag break")
+   420                                           					break
+   421                                           
+   422                                           			# finished
+   423         1        742.0    742.0      0.0  			infeasible_flag = True
+   424                                           
+   425                                           
+   426                                           
+   427                                           		# write the clauses generated in smart pair to file
+   428         1       4797.0   4797.0      0.0  		clause_list_b0_b1 = np.array(clause_list_b0_b1).reshape(-1, 1)
+   429                                           
+   430         1        725.0    725.0      0.0  		counter = 0
+   431         7       5482.0    783.1      0.0  		for clause_list in [clause_list_22_23, clause_list_25_26, clause_list_24,\
+   432         1        731.0    731.0      0.0  												clause_list_27_28, clause_list_29,
+   433         1        578.0    578.0      0.0  												clause_list_30_31, clause_list_b0_b1]:
+   434                                           			# try:
+   435         7 2948264924.0 421180703.4      4.7  			write_clauses_to_file(f, clause_list, HARD_CLAUSE_W)
+   436         7       8806.0   1258.0      0.0  			counter+= len(clause_list)
+   437                                           
+   438                                           		# # write the clauses generated in smart pair to file
+   439                                           
+   440         1       7579.0   7579.0      0.0  		SmartPair_time_counter_end = time.perf_counter()
+   441         1      75596.0  75596.0      0.0  		TC.counter(SmartPair_time_counter_start,
+   442         1        640.0    640.0      0.0  									SmartPair_time_counter_end,
+   443         1        722.0    722.0      0.0  									'smtPr_22-31',
+   444         1        555.0    555.0      0.0  									counter)
+   445                                           
+   446                                           
+   447         1       1491.0   1491.0      0.0  		tmp_time_counter_start = time.perf_counter()
+   448                                           		############## END OF SmartPair ################
+   449                                           	else:
+   450                                           		# (22) (23) the cluster in the paper starts from 1, assume index 0
+   451                                           		# k is the number of clusters
+   452                                           
+   453                                           		tmp_time_counter_start = time.perf_counter()
+   454                                           
+   455                                           		clause_list_22 = np.vstack((x[CL[:, 0], 0], x[CL[:, 1], 0])).T
+   456                                           		write_clauses_to_file(f, clause_list_22, HARD_CLAUSE_W)
+   457                                           
+   458                                           		
+   459                                           		tmp_time_counter_end = time.perf_counter()
+   460                                           		TC.counter(tmp_time_counter_start,
+   461                                           							tmp_time_counter_end,
+   462                                           							'22',
+   463                                           							clause_list_22.shape)
+   464                                           
+   465                                           		tmp_time_counter_start = time.perf_counter()
+   466                                           
+   467                                           		clause_list_23 = np.vstack((-x[CL[:, 0], -2], -x[CL[:, 1], -2])).T
+   468                                           		write_clauses_to_file(f, clause_list_23, HARD_CLAUSE_W)
+   469                                           
+   470                                           		tmp_time_counter_end = time.perf_counter()
+   471                                           		TC.counter(tmp_time_counter_start,
+   472                                           							tmp_time_counter_end,
+   473                                           							'23',
+   474                                           							clause_list_23.shape)
+   475                                           		# (24)
+   476                                           		tmp_time_counter_start = time.perf_counter()
+   477                                           
+   478                                           		clause_list_24 = np.hstack((-x[CL[:, 0], :-2].reshape(-1, 1),
+   479                                           																-x[CL[:, 1], :-2].reshape(-1, 1),
+   480                                           																x[CL[:, 0], 1:-1].reshape(-1, 1),
+   481                                           																x[CL[:, 1], 1:-1].reshape(-1, 1)))
+   482                                           		write_clauses_to_file(f, clause_list_24, HARD_CLAUSE_W)
+   483                                           
+   484                                           		tmp_time_counter_end = time.perf_counter()
+   485                                           		TC.counter(tmp_time_counter_start,
+   486                                           							tmp_time_counter_end,
+   487                                           							'24',
+   488                                           							clause_list_24.shape)
+   489                                           		# (25)
+   490                                           		tmp_time_counter_start = time.perf_counter()
+   491                                           
+   492                                           		clause_list_25 = np.hstack((-x[ML[:, 0], :-1].reshape(-1, 1), x[ML[:, 1], :-1].reshape(-1, 1)))
+   493                                           		write_clauses_to_file(f, clause_list_25, HARD_CLAUSE_W)
+   494                                           
+   495                                           		tmp_time_counter_end = time.perf_counter()
+   496                                           		TC.counter(tmp_time_counter_start,
+   497                                           							tmp_time_counter_end,
+   498                                           							'25',
+   499                                           							clause_list_25.shape)
+   500                                           		# (26)
+   501                                           		tmp_time_counter_start = time.perf_counter()
+   502                                           
+   503                                           		clause_list_26 = np.hstack((x[ML[:, 0], :-1].reshape(-1, 1), -x[ML[:, 1], :-1].reshape(-1, 1)))
+   504                                           		write_clauses_to_file(f, clause_list_26, HARD_CLAUSE_W)
+   505                                           
+   506                                           		tmp_time_counter_end = time.perf_counter()
+   507                                           		TC.counter(tmp_time_counter_start,
+   508                                           							tmp_time_counter_end,
+   509                                           							'26',
+   510                                           							clause_list_26.shape)
+   511                                           		# (27)
+   512                                           		tmp_time_counter_start = time.perf_counter()
+   513                                           
+   514                                           		clause_list_27 = []
+   515                                           
+   516                                           		for w_ind, p in enumerate(Distance_Class):
+   517                                           			tmp_pair = np.array(p)
+   518                                           			clause_list_27.append(np.vstack((np.repeat(b0[w_ind], len(tmp_pair)), x[tmp_pair[:, 0], 0], x[tmp_pair[:, 1], 0])).T)
+   519                                           
+   520                                           		clause_list_27 = np.concatenate(clause_list_27, axis=0)
+   521                                           		write_clauses_to_file(f, clause_list_27, HARD_CLAUSE_W)
+   522                                           
+   523                                           		# np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, clause_list_27.shape[0]).reshape(-1, 1),
+   524                                           		#                           clause_list_27,
+   525                                           		#                           np.zeros(clause_list_27.shape[0]).reshape(-1, 1))), fmt='%d')
+   526                                           
+   527                                           		tmp_time_counter_end = time.perf_counter()
+   528                                           		TC.counter(tmp_time_counter_start,
+   529                                           							tmp_time_counter_end,
+   530                                           							'27',
+   531                                           							[len(clause_list_27), len(clause_list_27[0])])
+   532                                           		# (28)
+   533                                           		tmp_time_counter_start = time.perf_counter()
+   534                                           
+   535                                           		clause_list_28 = []
+   536                                           
+   537                                           		for w_ind, p in enumerate(Distance_Class):
+   538                                           			tmp_pair = np.array(p)
+   539                                           			clause_list_28.append(
+   540                                           				np.vstack((np.repeat(b0[w_ind], len(tmp_pair)), -x[tmp_pair[:, 0], -2], -x[tmp_pair[:, 1], -2])).T)
+   541                                           
+   542                                           		clause_list_28 = np.concatenate(clause_list_28, axis=0)
+   543                                           		# write_clauses_to_file(f, clause_list_28, HARD_CLAUSE_W)
+   544                                           		write_clauses_to_file(f, clause_list_28, HARD_CLAUSE_W)
+   545                                           
+   546                                           		tmp_time_counter_end = time.perf_counter()
+   547                                           		TC.counter(tmp_time_counter_start,
+   548                                           							tmp_time_counter_end,
+   549                                           							'28',
+   550                                           							[len(clause_list_28), len(clause_list_28[0])])
+   551                                           		# (29)
+   552                                           		tmp_time_counter_start = time.perf_counter()
+   553                                           
+   554                                           		clause_list_29 = []
+   555                                           
+   556                                           		for w_ind, p in enumerate(Distance_Class):
+   557                                           			# print(f"{w_ind} -- {p}")
+   558                                           			tmp_pair = np.array(p)
+   559                                           			clause_list_29.append(np.hstack((
+   560                                           				np.repeat(b0[w_ind], len(tmp_pair) * (n_labels - 2)).reshape(-1, 1),
+   561                                           				-x[tmp_pair[:, 0], :-2].reshape(-1, 1),
+   562                                           				-x[tmp_pair[:, 1], :-2].reshape(-1, 1),
+   563                                           				x[tmp_pair[:, 0], 1:-1].reshape(-1, 1),
+   564                                           				x[tmp_pair[:, 1], 1:-1].reshape(-1, 1)))
+   565                                           			)
+   566                                           
+   567                                           		clause_list_29 = np.concatenate(clause_list_29, axis=0)
+   568                                           		write_clauses_to_file(f, clause_list_29, HARD_CLAUSE_W)
+   569                                           
+   570                                           		tmp_time_counter_end = time.perf_counter()
+   571                                           		TC.counter(tmp_time_counter_start,
+   572                                           							tmp_time_counter_end,
+   573                                           							'29',
+   574                                           							[len(clause_list_29), 0 if not len(clause_list_29) else len(clause_list_29[0])])
+   575                                           
+   576                                           		# (30) (31)
+   577                                           		tmp_time_counter_start = time.perf_counter()
+   578                                           
+   579                                           		clause_list_30, clause_list_31 = [], []
+   580                                           
+   581                                           		for w_ind, p in enumerate(Distance_Class):
+   582                                           			# print(f"{w_ind} -- {p}")
+   583                                           			tmp_pair = np.array(p)
+   584                                           			# (30)
+   585                                           			clause_list_30.append(np.hstack((np.repeat(-b1[w_ind], len(tmp_pair) * (n_labels - 1)).reshape(-1, 1),
+   586                                           																			-x[tmp_pair[:, 0], :-1].reshape(-1, 1),
+   587                                           																			x[tmp_pair[:, 1], :-1].reshape(-1, 1)
+   588                                           																			))
+   589                                           														)
+   590                                           			# (31)
+   591                                           			clause_list_31.append(np.hstack((np.repeat(-b1[w_ind], len(tmp_pair) * (n_labels - 1)).reshape(-1, 1),
+   592                                           																			x[tmp_pair[:, 0], :-1].reshape(-1, 1),
+   593                                           																			-x[tmp_pair[:, 1], :-1].reshape(-1, 1)
+   594                                           																			))
+   595                                           														)
+   596                                           
+   597                                           		# (30)
+   598                                           		clause_list_30 = np.concatenate(clause_list_30, axis=0)
+   599                                           		write_clauses_to_file(f, clause_list_30, HARD_CLAUSE_W)
+   600                                           
+   601                                           		# (31)
+   602                                           		clause_list_31 = np.concatenate(clause_list_31, axis=0)
+   603                                           		write_clauses_to_file(f, clause_list_31, HARD_CLAUSE_W)
+   604                                           
+   605                                           		tmp_time_counter_end = time.perf_counter()
+   606                                           		TC.counter(tmp_time_counter_start,
+   607                                           							tmp_time_counter_end,
+   608                                           							'30_31',
+   609                                           							[len(clause_list_30) * 2, len(clause_list_30[0])])
+   610                                           		# # write the clauses generated in smart pair to file
+   611                                           		#
+   612                                           		tmp_time_counter_start = time.perf_counter()
+   613                                           
+   614                                           	
+   615                                           	#####################  END OF HARD CLAUSES #######################
+   616                                           
+   617                                           
+   618                                           
+   619                                           	# (32) (33) (34)
+   620                                           	# total list length is 3*n_DC -2
+   621                                           	# w>1 -> w starts from the second DC, that is (index) 1
+   622         1       1393.0   1393.0      0.0  	tmp_time_counter_start = time.perf_counter()
+   623                                           
+   624         1      36591.0  36591.0      0.0  	clause_list_32_33_34 = np.vstack((np.vstack((-b0[1:], b0[:-1])).T,
+   625         1      14193.0  14193.0      0.0  																		np.vstack((-b1[1:], b1[:-1])).T,
+   626         1      12622.0  12622.0      0.0  																		np.vstack((-b1, b0)).T))
+   627                                           
+   628         1    7484345.0 7484345.0      0.0  	np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, 3 * n_DC - 2).reshape(-1, 1),
+   629         1        862.0    862.0      0.0  													clause_list_32_33_34,
+   630         2       3453.0   1726.5      0.0  													np.zeros(3 * n_DC - 2).reshape(-1, 1))), fmt='%d')
+   631                                           
+   632         1       2057.0   2057.0      0.0  	tmp_time_counter_end = time.perf_counter()
+   633         1      20510.0  20510.0      0.0  	TC.counter(tmp_time_counter_start,
+   634         1        740.0    740.0      0.0  								tmp_time_counter_end,
+   635         1        953.0    953.0      0.0  								'32_33_34',
+   636         1        930.0    930.0      0.0  								clause_list_32_33_34.shape)
+

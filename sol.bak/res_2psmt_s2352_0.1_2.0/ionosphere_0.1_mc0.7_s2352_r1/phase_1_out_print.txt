@@ -1,0 +1,67 @@
+num branch_node: 7
+num leaf_node: 8
+num feature: 34
+tree_depth: 3
+num label: 2
+nDC: 3577
+
+***variables
+a: 1 - 238 -> 238
+s: 239 - 2695 -> 2457
+z: 2696 - 5503 -> 2808
+g: 5504 - 5519 -> 16
+x: 5520 - 6221 -> 702
+ml: 6222 - 6360 -> 139
+cl: 6361 - 6466 -> 106
+
+variables***
+[debug] --> CL ML ratio 1
+the cl header --> p wcnf 6466 131797 246
+
+timeout 900s ~/SAT_Project/loandra-master/loandra_static -pmreslin-cglim=30 -weight-strategy=1 -print-model -verbosity=1 ./solutions/ionosphere_0.1_mc0.7_s2352_r1/phase_1_clauses_final >./solutions/ionosphere_0.1_mc0.7_s2352_r1/phase_1_loandra_res
+
+Start to read loandra res
+*loandra status: SATISFIABLE
+-ml sat and violated: 129 | 10  | total #ml: 139 | -violated weight: 10
+2 -- [  5 146]
+6 -- [234 140]
+19 -- [165  52]
+26 -- [118  65]
+45 -- [106  13]
+58 -- [ 11 152]
+94 -- [126  98]
+100 -- [ 73 152]
+107 -- [15 25]
+126 -- [ 12 189]
+-cl sat and violated: 97 | 9  | total #cl: 106 | -violated weight: 9
+1 -- [233  39]
+10 -- [ 89 201]
+19 -- [ 39 339]
+33 -- [320 152]
+50 -- [234 329]
+79 -- [144 262]
+90 -- [233 158]
+102 -- [87  8]
+103 -- [183 196]
+7 -time: 0.00684 -dim: (3927, 2)
+8 -time: 0.00009 -dim: (7, 34)
+9 -time: 0.16500 -dim: (83300, 3)
+10 -time: 0.14279 -dim: (26502, 3)
+11_12 -time: 0.01443 -dim: [8424, 2]
+13 -time: 0.00574 -dim: (2808, 4)
+14_15 -time: 0.00627 -dim: [476, 2]
+16 -time: 0.00001 -dim: (0, 2)
+17_18 -time: 0.01624 -dim: [5616, 3]
+19 -time: 0.00004 -dim: (1, 1)
+20 -time: 0.01014 -dim: (0, 351)
+21 -time: 0.00009 -dim: (1, 351)
+22 -time: 0.00002 -dim: (106, 3)
+23 -time: 0.00001 -dim: (106, 3)
+24 -time: 0.00002 -dim: (0, 5)
+25 -time: 0.00003 -dim: (139, 3)
+26 -time: 0.00001 -dim: (139, 3)
+smtPr 22-26 -time: 0.00087 -dim: nan
+slvr_header -time: 0.05154 -dim: nan
+*solver* -time: 900.01304 -dim: nan
+res_read -time: 0.00649 -dim: nan
+-- SUM CL TIME: 0.36864          |  SUM other TIME: 900.07107          |  SUM TIME: 900.43971

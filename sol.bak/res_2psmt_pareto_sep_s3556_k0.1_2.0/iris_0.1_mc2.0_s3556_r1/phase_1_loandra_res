@@ -1,0 +1,289 @@
+c
+c LOANDRA:	 an extension of Open-WBO to core-boosted linear search.
+c Version:	 July 2019 2018 -- Release: 1.0
+c Authors:	 Jeremias Berg, Emir Demirovic, Peter Stuckey
+c We thank the developers of Open-WBO for their work
+c
+c Open-WBO:	 a Modular MaxSAT Solver -- based on Glucose4.1 (core version)
+c Version:	 September 2018 -- Release: 2.1
+c Authors:	 Ruben Martins, Vasco Manquinho, Ines Lynce
+c Contributors:	 Miguel Neves, Saurabh Joshi, Norbert Manthey, Mikolas Janota
+c Contact:	 open-wbo@sat.inesc-id.pt -- http://sat.inesc-id.pt/open-wbo/
+c
+c WARNING: for repeatability, setting FPU to use double precision
+c |                                                                                                       |
+c ========================================[ Problem Statistics ]===========================================
+c |                                                                                                       |
+c |  Problem Format:             MaxSAT                                                                   |
+c |  Problem Type:           Unweighted                                                                   |
+c |  Number of variables:          3052                                                                   |
+c |  Number of hard clauses:      18373                                                                   |
+c |  Number of soft clauses:        300                                                                   |
+c |  Number of cardinality:           0                                                                   |
+c |  Number of PB :                   0                                                                   |
+c |  Parse time:                   0.01 s                                                                 |
+c |                                                                                                       |
+c PMRES ALGORITHM WITH LINEAR SEARCH 
+c PMRES LINEAR STRAT=1
+c PMRES LINEAR DIVISION=1
+c PMRES CORE DIVISION=0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c PMRES RELAX BEFORE STRAT =0
+c PMRES INCREMENTAL LIN DIVISION =0
+c PMRES MINIM =1
+c PMRES MINIM STRAT =0
+c PRE hard clauses before: 18673
+c PRE soft literals before: 300
+c PRE time: 0 removed weight: 0
+c PRE hard clauses after: 13445
+c PRE soft literals after: 300
+c Checking model
+c CG best 86 LB: 0 at 0
+o 86
+c CG GAP: 86 T 0
+c CG New weight: 1 at 0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c Core budget remaining 30
+c CG GAP: 85 T 0
+c LB : 1            CS : 232          W  : 1           
+c Core budget remaining 30
+c SAT-During core guided phase at 0
+c Checking model
+c CG best 71 LB: 1 at 0
+o 71
+c CG GAP: 70 T 0
+c Strat 2 Relax
+c Updating solver at 0
+c Starting lin search with: LB: 1 UB: 71 UB - LB: 70 Time 0
+c Deleting solver
+c CG New factor 1
+c Extending best model to full formula
+c Checking model
+c Reduced cost 70 gap 70
+c Building new PB
+c Considering 299 of 299 soft clauses
+c Minimizing in init
+c Minimization time 0 init minsize 70 skipped 0
+c Reduced cost 30 gap 70
+c DIF before minim: 70 after 30
+c Encoding PB with UB: 30 obj size 299
+c Encoding Done
+c Setting Card Vars currently: 5261 / orig 3052
+c Checking model
+c LIN best 31 LB: 1 at 0
+o 31
+c LIN GAP: 30 T 0
+c CardVars DONE  
+c SAT Call at 0
+c Reduced cost 30 gap 30
+c Checking model
+c BOUND UPDATE RHS: 29 at 0
+c SAT Call at 0
+c Reduced cost 29 gap 30
+c Checking model
+c LIN best 30 LB: 1 at 0
+o 30
+c LIN GAP: 29 T 0
+c BOUND UPDATE RHS: 28 at 0
+c SAT Call at 0
+c Reduced cost 28 gap 29
+c Checking model
+c LIN best 29 LB: 1 at 0
+o 29
+c LIN GAP: 28 T 0
+c BOUND UPDATE RHS: 27 at 0
+c SAT Call at 0
+c Reduced cost 27 gap 28
+c Checking model
+c LIN best 28 LB: 1 at 0
+o 28
+c LIN GAP: 27 T 0
+c BOUND UPDATE RHS: 26 at 0
+c SAT Call at 0
+c Reduced cost 26 gap 27
+c Checking model
+c LIN best 27 LB: 1 at 0
+o 27
+c LIN GAP: 26 T 0
+c BOUND UPDATE RHS: 25 at 0
+c SAT Call at 0
+c Reduced cost 25 gap 26
+c Checking model
+c LIN best 26 LB: 1 at 0
+o 26
+c LIN GAP: 25 T 0
+c BOUND UPDATE RHS: 24 at 0
+c SAT Call at 0
+c Reduced cost 24 gap 25
+c Checking model
+c LIN best 25 LB: 1 at 0
+o 25
+c LIN GAP: 24 T 0
+c BOUND UPDATE RHS: 23 at 0
+c SAT Call at 0
+c Reduced cost 23 gap 24
+c Checking model
+c LIN best 24 LB: 1 at 0
+o 24
+c LIN GAP: 23 T 0
+c BOUND UPDATE RHS: 22 at 0
+c SAT Call at 0
+c Reduced cost 22 gap 23
+c Checking model
+c LIN best 23 LB: 1 at 0
+o 23
+c LIN GAP: 22 T 0
+c BOUND UPDATE RHS: 21 at 0
+c SAT Call at 0
+c Reduced cost 21 gap 22
+c Checking model
+c LIN best 22 LB: 1 at 0
+o 22
+c LIN GAP: 21 T 0
+c BOUND UPDATE RHS: 20 at 0
+c SAT Call at 0
+c Reduced cost 20 gap 21
+c Checking model
+c LIN best 21 LB: 1 at 0
+o 21
+c LIN GAP: 20 T 0
+c BOUND UPDATE RHS: 19 at 0
+c SAT Call at 0
+c Reduced cost 19 gap 20
+c Checking model
+c LIN best 20 LB: 1 at 0
+o 20
+c LIN GAP: 19 T 0
+c BOUND UPDATE RHS: 18 at 0
+c SAT Call at 0
+c Reduced cost 18 gap 19
+c Checking model
+c LIN best 19 LB: 1 at 0
+o 19
+c LIN GAP: 18 T 0
+c BOUND UPDATE RHS: 17 at 0
+c SAT Call at 0
+c Reduced cost 17 gap 18
+c Checking model
+c LIN best 18 LB: 1 at 0
+o 18
+c LIN GAP: 17 T 0
+c BOUND UPDATE RHS: 16 at 0
+c SAT Call at 0
+c Reduced cost 16 gap 17
+c Checking model
+c LIN best 17 LB: 1 at 0
+o 17
+c LIN GAP: 16 T 0
+c BOUND UPDATE RHS: 15 at 0
+c SAT Call at 0
+c Reduced cost 15 gap 16
+c Checking model
+c LIN best 16 LB: 1 at 0
+o 16
+c LIN GAP: 15 T 0
+c BOUND UPDATE RHS: 14 at 0
+c SAT Call at 0
+c Reduced cost 14 gap 15
+c Checking model
+c LIN best 15 LB: 1 at 0
+o 15
+c LIN GAP: 14 T 0
+c BOUND UPDATE RHS: 13 at 0
+c SAT Call at 0
+c Reduced cost 13 gap 14
+c Checking model
+c LIN best 14 LB: 1 at 0
+o 14
+c LIN GAP: 13 T 0
+c BOUND UPDATE RHS: 12 at 0
+c SAT Call at 0
+c Reduced cost 12 gap 13
+c Checking model
+c LIN best 13 LB: 1 at 0
+o 13
+c LIN GAP: 12 T 0
+c BOUND UPDATE RHS: 11 at 0
+c SAT Call at 0
+c Reduced cost 11 gap 12
+c Checking model
+c LIN best 12 LB: 1 at 0
+o 12
+c LIN GAP: 11 T 0
+c BOUND UPDATE RHS: 10 at 0
+c SAT Call at 0
+c Reduced cost 10 gap 11
+c Checking model
+c LIN best 11 LB: 1 at 0
+o 11
+c LIN GAP: 10 T 0
+c BOUND UPDATE RHS: 9 at 0
+c SAT Call at 0
+c Reduced cost 9 gap 10
+c Checking model
+c LIN best 10 LB: 1 at 0
+o 10
+c LIN GAP: 9 T 0
+c BOUND UPDATE RHS: 8 at 0
+c SAT Call at 0
+c Reduced cost 8 gap 9
+c Checking model
+c LIN best 9 LB: 1 at 0
+o 9
+c LIN GAP: 8 T 0
+c BOUND UPDATE RHS: 7 at 0
+c SAT Call at 0
+c Reduced cost 7 gap 8
+c Checking model
+c LIN best 8 LB: 1 at 1
+o 8
+c LIN GAP: 7 T 1
+c BOUND UPDATE RHS: 6 at 1
+c SAT Call at 1
+c Reduced cost 6 gap 7
+c Checking model
+c LIN best 7 LB: 1 at 1
+o 7
+c LIN GAP: 6 T 1
+c BOUND UPDATE RHS: 5 at 1
+c SAT Call at 1
+c Reduced cost 5 gap 6
+c Checking model
+c LIN best 6 LB: 1 at 1
+o 6
+c LIN GAP: 5 T 1
+c BOUND UPDATE RHS: 4 at 1
+c SAT Call at 1
+c Reduced cost 4 gap 5
+c Checking model
+c LIN best 5 LB: 1 at 1
+o 5
+c LIN GAP: 4 T 1
+c BOUND UPDATE RHS: 3 at 1
+c SAT Call at 1
+c Reduced cost 3 gap 4
+c Checking model
+c LIN best 4 LB: 1 at 1
+o 4
+c LIN GAP: 3 T 1
+c BOUND UPDATE RHS: 2 at 1
+c SAT Call at 1
+c Reduced cost 2 gap 3
+c Checking model
+c LIN best 3 LB: 1 at 1
+o 3
+c LIN GAP: 2 T 1
+c BOUND UPDATE RHS: 1 at 1
+c SAT Call at 1
+c Reduced cost 1 gap 2
+c Checking model
+c LIN best 2 LB: 1 at 1
+o 2
+c LIN GAP: 1 T 1
+c BOUND UPDATE RHS: 0 at 1
+c SAT Call at 1
+c Reconstructing in print answer
+c Reconstruction time: 0
+c new cost: 2
+s OPTIMUM FOUND
+v 0001001010000010001001000001111110111111111111101111111111111011111101111110111111011111111111111111111011111101111111111111111111101111110111111011111101111110111111011111101111110111111011111101111110111111111111101111110111111011111101111111111111011111101111110111111111111101111110111111111111111111110111111011111111111110111111011111101111111111111011111101111110111111011000101100010110001111010111100011110101111000101101011110001111010111101011110101111010111101011110101111000111101011110101111000111101011100101001010111100011110101111000111100011110001110000011101011110101111010111101011110101111010011101011110101011000111100011110101111010111101011110101111010111101011110101111010111101011110001111110111101011100000000010010000001000000100000010000001000101110000010000001000000000000000000001000000100010010001001000000000000010000000000000101010011000000000101100000010000011000000000000000000011000101100000010100001100000100000000000001010000111010011000001000000000000010001011000000100000010000001000100100000000000000000000100000010000001000000000010010100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000010000100000001000000010000000100000001000000010000000000010001000000010000000100000001000000010000000010000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000001000000001000000000000100001000000000010000000100000001000000010000100000000001000000010000000100000001000000010000000100001000000010000000000100000001000000010000000100010000000000010000100000000001000000010000000100000001000000010000100000000001000100000000000100000001000000010001000000010000000000010000000100000001000010000000000100000001000000010000100000000001000000010000000100000001000000010000000100001000001101101111111101101111001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001001101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101101111101101101101101101101101101101101101101101101101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110111111111111

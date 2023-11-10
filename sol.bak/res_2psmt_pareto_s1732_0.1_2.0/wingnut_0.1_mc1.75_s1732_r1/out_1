@@ -1,0 +1,33 @@
+---curr_b1_sat 67 - 
+ ---> [debug] ---> (2522, 1)   ndc: 1261
+-b1w_break_flag break
+--b1w_break_flag break
+-b0 flag True
+-- b0 flag break
+df_consts -time: 0.00937 -dim: nan
+DC -time: 0.74067 -dim: 1261
+tree_var -time: 0.00010 -dim: nan
+7 -time: 0.00015 -dim: (7, 2)
+8 -time: 0.00007 -dim: (7, 2)
+9 -time: 0.02878 -dim: (14210, 3)
+10 -time: 0.01215 -dim: (3199, 3)
+11_12 -time: 0.03987 -dim: [24384, 2]
+13 -time: 0.01579 -dim: (8128, 4)
+14_15 -time: 0.00056 -dim: [28, 2]
+16 -time: 0.00001 -dim: (0, 2)
+17_18 -time: 0.04213 -dim: [16256, 3]
+19 -time: 0.00005 -dim: (1, 1)
+20 -time: 0.03248 -dim: (0, 1016)
+21 -time: 0.00018 -dim: (1, 1016)
+smtPr -time: 0.73717 -dim: 2628
+32_33_34 -time: 0.00619 -dim: (3781, 2)
+cl_file_header -time: 0.05795 -dim: nan
+cl_gen_oa -time: 2.95684 -dim: nan
+*solver* -time: 0.15356 -dim: nan
+-- SUM CL TIME: 0.17841          |  SUM other TIME: 1.69882          |  SUM TIME: 1.87723
+
+loandra header: p wcnf 19824 75155 1592644
+
+*loandra status: UNSATISFIABLE
+b0_final: 0 | 0_ind: 0
+b1_final: 0 | 0_ind: 0

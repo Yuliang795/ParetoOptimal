@@ -1,0 +1,28 @@
+ ---> [debug] ---> (2438, 1)   ndc: 1219
+df_consts -time: 0.00512 -dim: nan
+DC -time: 0.01105 -dim: 1219
+tree_var -time: 0.00005 -dim: nan
+7 -time: 0.00044 -dim: (42, 2)
+8 -time: 0.00014 -dim: (7, 4)
+9 -time: 0.01310 -dim: (4172, 3)
+10 -time: 0.01785 -dim: (3339, 3)
+11_12 -time: 0.00697 -dim: [3600, 2]
+13 -time: 0.00287 -dim: (1200, 4)
+14_15 -time: 0.00090 -dim: [56, 2]
+16 -time: 0.00007 -dim: (8, 2)
+17_18 -time: 0.01393 -dim: [4800, 3]
+19 -time: 0.00005 -dim: (2, 1)
+20 -time: 0.00710 -dim: (1, 150)
+21 -time: 0.00006 -dim: (1, 150)
+32_33_34 -time: 0.00667 -dim: (3655, 2)
+cl_file_header -time: 0.03070 -dim: nan
+cl_gen_oa -time: 0.16429 -dim: nan
+*solver* -time: 0.10468 -dim: nan
+-- SUM CL TIME: 0.07015          |  SUM other TIME: 0.15160          |  SUM TIME: 0.22175
+
+loandra header: p wcnf 5190 22249 2439
+
+*loandra status: OPTIMUM FOUND
+ARI: 0.00988817801762948
+b0_final: 0 | 0_ind: 0
+b1_final: 0 | 0_ind: 0

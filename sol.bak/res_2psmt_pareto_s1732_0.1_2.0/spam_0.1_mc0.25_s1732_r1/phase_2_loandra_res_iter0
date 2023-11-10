@@ -1,0 +1,790 @@
+c
+c LOANDRA:	 an extension of Open-WBO to core-boosted linear search.
+c Version:	 July 2019 2018 -- Release: 1.0
+c Authors:	 Jeremias Berg, Emir Demirovic, Peter Stuckey
+c We thank the developers of Open-WBO for their work
+c
+c Open-WBO:	 a Modular MaxSAT Solver -- based on Glucose4.1 (core version)
+c Version:	 September 2018 -- Release: 2.1
+c Authors:	 Ruben Martins, Vasco Manquinho, Ines Lynce
+c Contributors:	 Miguel Neves, Saurabh Joshi, Norbert Manthey, Mikolas Janota
+c Contact:	 open-wbo@sat.inesc-id.pt -- http://sat.inesc-id.pt/open-wbo/
+c
+c WARNING: for repeatability, setting FPU to use double precision
+c |                                                                                                       |
+c ========================================[ Problem Statistics ]===========================================
+c |                                                                                                       |
+c |  Problem Format:             MaxSAT                                                                   |
+c |  Problem Type:             Weighted                                                                   |
+c |  Number of variables:         83496                                                                   |
+c |  Number of hard clauses:    3867870                                                                   |
+c |  Number of soft clauses:       4864                                                                   |
+c |  Number of cardinality:           0                                                                   |
+c |  Number of PB :                   0                                                                   |
+c |  Parse time:                   0.67 s                                                                 |
+c |                                                                                                       |
+c PMRES ALGORITHM WITH LINEAR SEARCH 
+c PMRES LINEAR STRAT=1
+c PMRES LINEAR DIVISION=1
+c PMRES CORE DIVISION=0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c PMRES RELAX BEFORE STRAT =0
+c PMRES INCREMENTAL LIN DIVISION =0
+c PMRES MINIM =1
+c PMRES MINIM STRAT =0
+c PRE hard clauses before: 3872734
+c PRE soft literals before: 4864
+c PRE time: 14 removed weight: 5114148
+c PRE hard clauses after: 3713564
+c PRE soft literals after: 348
+c Checking model
+c Found same cost model covering more variables
+c CG New weight: 1 at 224
+c PMRES CORE LIMIT (-1 = no limit)=254
+c Core budget remaining 30
+c CG GAP: 802907 T 224
+c LB : 5116581      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 800474 T 224
+c LB : 5119014      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 798041 T 224
+c LB : 5121447      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 795608 T 224
+c LB : 5123880      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 793175 T 224
+c LB : 5126313      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 790742 T 224
+c LB : 5128746      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 788309 T 224
+c LB : 5131179      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 785876 T 224
+c LB : 5133612      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 783443 T 224
+c LB : 5136045      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 781010 T 224
+c LB : 5138478      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 778577 T 224
+c LB : 5140911      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 776144 T 224
+c LB : 5143344      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 773711 T 224
+c LB : 5145777      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 771278 T 224
+c LB : 5148210      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 768845 T 224
+c LB : 5150643      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 766412 T 224
+c LB : 5153076      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 763979 T 224
+c LB : 5155509      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 761546 T 224
+c LB : 5157942      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 759113 T 224
+c LB : 5160375      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 756680 T 224
+c LB : 5162808      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 754247 T 224
+c LB : 5165241      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 751814 T 224
+c LB : 5167674      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 749381 T 224
+c LB : 5170107      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 746948 T 224
+c LB : 5172540      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 744515 T 224
+c LB : 5174973      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 742082 T 224
+c LB : 5177406      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 739649 T 224
+c LB : 5179839      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 737216 T 224
+c LB : 5182272      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 734783 T 224
+c LB : 5184705      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 732350 T 224
+c LB : 5187138      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 729917 T 224
+c LB : 5189571      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 727484 T 224
+c LB : 5192004      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 725051 T 224
+c LB : 5194437      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 722618 T 224
+c LB : 5196870      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 720185 T 224
+c LB : 5199303      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 717752 T 224
+c LB : 5201736      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 715319 T 224
+c LB : 5204169      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 712886 T 224
+c LB : 5206602      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 710453 T 224
+c LB : 5209035      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 708020 T 224
+c LB : 5211468      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 705587 T 224
+c LB : 5213901      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 703154 T 224
+c LB : 5216334      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 700721 T 224
+c LB : 5218767      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 698288 T 224
+c LB : 5221200      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 695855 T 224
+c LB : 5223633      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 693422 T 224
+c LB : 5226066      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 690989 T 224
+c LB : 5228499      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 688556 T 224
+c LB : 5230932      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 686123 T 224
+c LB : 5233365      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 683690 T 224
+c LB : 5235798      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 681257 T 224
+c LB : 5238231      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 678824 T 224
+c LB : 5240664      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 676391 T 224
+c LB : 5243097      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 673958 T 224
+c LB : 5245530      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 671525 T 224
+c LB : 5247963      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 669092 T 224
+c LB : 5250396      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 666659 T 224
+c LB : 5252829      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 664226 T 224
+c LB : 5255262      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 661793 T 224
+c LB : 5257695      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 659360 T 224
+c LB : 5260128      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 656927 T 224
+c LB : 5262561      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 654494 T 224
+c LB : 5264994      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 652061 T 224
+c LB : 5267427      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 649628 T 224
+c LB : 5269860      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 647195 T 224
+c LB : 5272293      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 644762 T 224
+c LB : 5274726      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 642329 T 224
+c LB : 5277159      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 639896 T 224
+c LB : 5279592      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 637463 T 224
+c LB : 5282025      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 635030 T 224
+c LB : 5284458      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 632597 T 224
+c LB : 5286891      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 630164 T 224
+c LB : 5289324      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 627731 T 224
+c LB : 5291757      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 625298 T 224
+c LB : 5294190      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 622865 T 224
+c LB : 5296623      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 620432 T 224
+c LB : 5299056      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 617999 T 224
+c LB : 5301489      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 615566 T 224
+c LB : 5303922      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 613133 T 224
+c LB : 5306355      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 610700 T 224
+c LB : 5308788      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 608267 T 224
+c LB : 5311221      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 605834 T 224
+c LB : 5313654      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 603401 T 224
+c LB : 5316087      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 600968 T 224
+c LB : 5318520      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 598535 T 224
+c LB : 5320953      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 596102 T 224
+c LB : 5323386      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 593669 T 224
+c LB : 5325819      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 591236 T 224
+c LB : 5328252      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 588803 T 224
+c LB : 5330685      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 586370 T 224
+c LB : 5333118      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 583937 T 224
+c LB : 5335551      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 581504 T 224
+c LB : 5337984      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 579071 T 224
+c LB : 5340417      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 576638 T 224
+c LB : 5342850      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 574205 T 224
+c LB : 5345283      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 571772 T 224
+c LB : 5347716      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 569339 T 224
+c LB : 5350149      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 566906 T 224
+c LB : 5352582      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 564473 T 224
+c LB : 5355015      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 562040 T 224
+c LB : 5357448      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 559607 T 224
+c LB : 5359881      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 557174 T 224
+c LB : 5362314      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 554741 T 224
+c LB : 5364747      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 552308 T 224
+c LB : 5367180      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 549875 T 224
+c LB : 5369613      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 547442 T 224
+c LB : 5372046      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 545009 T 224
+c LB : 5374479      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 542576 T 224
+c LB : 5376912      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 540143 T 224
+c LB : 5379345      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 537710 T 224
+c LB : 5381778      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 535277 T 224
+c LB : 5384211      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 532844 T 224
+c LB : 5386644      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 530411 T 224
+c LB : 5389077      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 527978 T 224
+c LB : 5391510      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 525545 T 224
+c LB : 5393943      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 523112 T 224
+c LB : 5396376      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 520679 T 224
+c LB : 5398809      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 518246 T 224
+c LB : 5401242      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 515813 T 224
+c LB : 5403675      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 513380 T 224
+c LB : 5406108      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 510947 T 224
+c LB : 5408541      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 508514 T 224
+c LB : 5410974      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 506081 T 224
+c LB : 5413407      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 503648 T 224
+c LB : 5415840      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 501215 T 224
+c LB : 5418273      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 498782 T 224
+c LB : 5420706      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 496349 T 224
+c LB : 5423139      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 493916 T 224
+c LB : 5425572      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 491483 T 224
+c LB : 5428005      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 489050 T 224
+c LB : 5430438      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 486617 T 224
+c LB : 5432871      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 484184 T 224
+c LB : 5435304      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 481751 T 224
+c LB : 5437737      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 479318 T 224
+c LB : 5440170      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 476885 T 224
+c LB : 5442603      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 474452 T 224
+c LB : 5445036      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 472019 T 224
+c LB : 5447469      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 469586 T 224
+c LB : 5449902      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 467153 T 224
+c LB : 5452335      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 464720 T 224
+c LB : 5454768      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 462287 T 224
+c LB : 5457201      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 459854 T 224
+c LB : 5459634      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 457421 T 224
+c LB : 5462067      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 454988 T 224
+c LB : 5464500      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 452555 T 224
+c LB : 5466933      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 450122 T 224
+c LB : 5469366      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 447689 T 224
+c LB : 5471799      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 445256 T 224
+c LB : 5474232      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 442823 T 224
+c LB : 5476665      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 440390 T 224
+c LB : 5479098      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 437957 T 224
+c LB : 5481531      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 435524 T 224
+c LB : 5483964      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 433091 T 224
+c LB : 5486397      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 430658 T 224
+c LB : 5488830      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 428225 T 224
+c LB : 5491263      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 425792 T 224
+c LB : 5493696      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 423359 T 224
+c LB : 5496129      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 420926 T 224
+c LB : 5498562      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 418493 T 224
+c LB : 5500995      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 416060 T 224
+c LB : 5503428      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 413627 T 224
+c LB : 5505861      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 411194 T 224
+c LB : 5508294      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 408761 T 224
+c LB : 5510727      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 406328 T 224
+c LB : 5513160      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 403895 T 224
+c LB : 5515593      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 401462 T 224
+c LB : 5518026      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 399029 T 224
+c LB : 5520459      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 396596 T 224
+c LB : 5522892      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 394163 T 224
+c LB : 5525325      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 391730 T 224
+c LB : 5527758      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 389297 T 224
+c LB : 5530191      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 386864 T 224
+c LB : 5532624      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 384431 T 224
+c LB : 5535057      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 381998 T 224
+c LB : 5537490      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 379565 T 224
+c LB : 5539923      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 377132 T 224
+c LB : 5542356      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 374699 T 224
+c LB : 5544789      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 372266 T 224
+c LB : 5547222      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 369833 T 224
+c LB : 5549655      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 367400 T 224
+c LB : 5552088      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 364967 T 224
+c LB : 5554521      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 362534 T 224
+c LB : 5556954      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 360101 T 224
+c LB : 5559387      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 357668 T 224
+c LB : 5561820      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 355235 T 224
+c LB : 5564253      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 352802 T 224
+c LB : 5566686      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 350369 T 224
+c LB : 5569119      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 347936 T 224
+c LB : 5571552      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 345503 T 224
+c LB : 5573985      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 343070 T 224
+c LB : 5576418      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 340637 T 224
+c LB : 5578851      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 338204 T 224
+c LB : 5581284      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 335771 T 224
+c LB : 5583717      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 333338 T 224
+c LB : 5586150      CS : 2            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 330905 T 224
+c LB : 5588583      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 330904 T 224
+c LB : 5588584      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330903 T 224
+c LB : 5588585      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330902 T 224
+c LB : 5588586      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330901 T 224
+c LB : 5588587      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330900 T 224
+c LB : 5588588      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330899 T 224
+c LB : 5588589      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330898 T 224
+c LB : 5588590      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330897 T 224
+c LB : 5588591      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330896 T 224
+c LB : 5588592      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330895 T 224
+c LB : 5588593      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330894 T 224
+c LB : 5588594      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330893 T 224
+c LB : 5588595      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330892 T 224
+c LB : 5588596      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330891 T 224
+c LB : 5588597      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330890 T 224
+c LB : 5588598      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330889 T 224
+c LB : 5588599      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 330888 T 224
+c LB : 5588600      CS : 2            W  : 1           
+c Core budget remaining 30
+c CG GAP: 328472 T 224
+c LB : 5591016      CS : 1            W  : 2416        
+c Core budget remaining 30
+c CG GAP: 326039 T 224
+c LB : 5593449      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 323606 T 224
+c LB : 5595882      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 321173 T 224
+c LB : 5598315      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 318740 T 224
+c LB : 5600748      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 316307 T 224
+c LB : 5603181      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 313874 T 224
+c LB : 5605614      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 311441 T 224
+c LB : 5608047      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 309008 T 224
+c LB : 5610480      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 306575 T 224
+c LB : 5612913      CS : 1            W  : 2433        
+c Core budget remaining 30
+c CG GAP: 304142 T 232
+c LB : 5615346      CS : 16           W  : 2433        
+c Core budget remaining 22
+c CG GAP: 301709 T 239
+c LB : 5617779      CS : 20           W  : 2433        
+c Core budget remaining 15
+c CG GAP: 299276 T 250
+c LB : 5620212      CS : 1            W  : 2433        
+c Core budget remaining 4
+c CG GAP: 296843 T 252
+c LB : 5622645      CS : 5            W  : 2433        
+c Core budget remaining 2
+c SAT-During core guided phase at 254
+c Checking model
+c Hardening with gap: 296843
+c Hardened in total: 0 clauses
+c Hardening again at gap 0
+c Strat 2 Relax
+c Updating solver at 254
+c Starting lin search with: LB: 5622645 UB: 5919488 UB - LB: 296843 Time 254
+c Deleting solver
+c CG New factor 1000
+c Extending best model to full formula
+c Checking model
+c Reduced cost 244 gap 296843
+c Building new PB
+c Considering 122 of 139 soft clauses
+c Minimizing in init
+c Minimization time 1 init minsize 122 skipped 0
+c Reduced cost 244 gap 296843
+c Encoding PB with UB: 244 obj size 122
+c Encoding Done
+c Setting Card Vars currently: 84968 / orig 83842
+c Checking model
+c Found same cost model covering more variables
+c CardVars DONE  
+c SAT Call at 255
+c Reduced cost 244 gap 296843
+c Checking model
+c BOUND UPDATE RHS: 243 at 255
+c SAT Call at 255
+c Reduced cost 242 gap 296843
+c Checking model
+c LIN best 5917055 LB: 5622645 at 255
+o 5917055
+c LIN GAP: 294410 T 255
+c BOUND UPDATE RHS: 241 at 255
+c SAT Call at 255
+c Reduced cost 240 gap 294410
+c Checking model
+c LIN best 5914622 LB: 5622645 at 255
+o 5914622
+c LIN GAP: 291977 T 255
+c BOUND UPDATE RHS: 239 at 255
+c SAT Call at 255
+c Rebuilding after UNSAT
+c Deleting solver
+c LIN New factor 1
+c Reduced cost 291977 gap 291977
+c Building new PB
+c Considering 139 of 139 soft clauses
+c Minimizing in init
+c Minimization time 1 init minsize 137 skipped 0
+c Reduced cost 291977 gap 291977
+c Encoding PB with UB: 291977 obj size 139
+c Encoding Done
+c Setting Card Vars currently: 88327 / orig 83842
+c Checking model
+c Found same cost model covering more variables
+c CardVars DONE  
+c SAT Call at 475
+c Reduced cost 291977 gap 291977
+c Checking model
+c BOUND UPDATE RHS: 291976 at 475
+c SAT Call at 475
+c Reconstructing in print answer
+c Reconstruction time: 0
+c new cost: 5914622
+s OPTIMUM FOUND
+v 000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000010000000000000000000000000000000000000000000000101111100001011000101001110100111011011101011111011111010000100110111101111101111111101111101111100111111001111110111111000111111110110101011011101110111110111011111101101110111011111011101111111110111011111101111111110110011111111111111100111101111001101110110101111011111101011111111111011101101110111111011111111000010111011110111100000011100011111111111101111111011111011101101111111111111011101101111111111111010111001110111111111111111111111111111110011111001111101111110011111101110100101101011111101011111111111010111001011111111011001111011111111111111011111000011111111101011101101110100111111111111111110110001111011101101010100001110000111000011110111011111111101111111111010011101101111111111111010101101110110101011011101101010110111011011101101110100111111111111101110110101111111101000110111111111100111110011100101101010101110011111001110000111100011111111110000101101111110111111111111100011100101011111111011111111111111011101110110111011011011111111111111111011011111101111100001111011111111111110111011011111100011111111010111111111111110101011111111011111111111111111111001011110111011010111000011100001111011101100111110111111011101101110110111111011111100011100111111000001100111101111010111111011111011111101111111111111110101111111110000011100011111010111111111111111111111111111111110111110110101101110111111111011111011111110001111001111011111110111111001111101111101111011010101001011100101111011111101111101111110111111101111111111010000111000111110111111010111101111111111111011111110111111011110000111101110110111010111111100011111011011111111111111110111111011111111111100101011001111011111110001111111101000011111111111111111100111100001011011111111111110001010000101111111011111110010111000010111111111011101100111111111111011101100011100001110000111101111100101111111111111111110011111111111100111111111110000111101110110001011011111101111111111011000101100010111111110011111101111100001111001101101110100001110000111000011110101011001111000011110011111011101100111111111011111101110111110001011010111000111110001111111111111111110111111111111111111111111110111111101111101111100111111111111111111111111111011110110111011111111101110111111011011111100111111011111101111111111000111011011111011111101111111111111001110110101111111111001110111111111001111111111110111011001111101011010111111011111111111111101111011111111111111111111011111111111111111111011111101111111111111111111100011111111111101101111111111111111011111111110110111111111111110111110111110011101111111111111111000111111111111111111000111111111111111011000111101111111011011111111111111110001110111111100011110111110111110101111100001111011111111111110111110001110111111110001111111111100011111011111101111100111110001111000111011110110111011011111101111110011111011101111111110111110000101111111111111101111111111111111111111011101100011111111111000111101110111111111000111100011110101111100101100011111111110001101100111110011110000111001011111001011010111111110100001111100101111110111111111011001111111101111111111111011111110111111111111000111010111111101111111110110111111011101111111100001111111111111110110111111000111110010111101111110111100010110111111011111111111111111111111111011111110111011000111100011100111111010111111111110111011111111000011100111101000111111111111111111111111111111100111111111101111110110111011111111101110111011111111111001111111111111111111100110110001011011111100011100101011000111001111111111111000111100011110001110000111101110111111111111111100010100001111011111101110110111111000111100011100111011011111000011100111101111111100010110111111011101000011110001111111111100010010111011011101101111111111111111111101110110001111000111101110111001011011111110010100001111001111101111110111111111101111111110111011011101110111111111111111101000011111111011111111111111111111011111111101111101111111011111111111111111111000111011111111111110000111100110110001111011101100010110111111000101111111111111011111111111111111111111011111111111110001110000111101111110111011011111101111111111111000101100010110001011111111101110110001111000111100011110001111000101100010111111110111111101111101111110111111100011111111111111101101011100001111111111111111111111011111111000011111111110111101000110100111011011111101111100111101111101100011100001011111111100011100001010000111111111111001011111111111111111111111011111111111101111110001111011111111011011010111101110110111110111111000111111111110000111011111100001111011111100110110101111000101101111111111111011111001010000101111011110101111100101001011111100011110111010011101101011110101111011111100111101111111010101111110110001111111111101110111111111000111000011110111011011111111110110101111000111100011110111011000111000011100111011111111100011110111011111111000111110001111000111111111101111111000101100011110001110000111100011110111111111111011110111111111011101101011110111111000111100011100001111000111100010100011111001111111111100001010001111101111110001111001101111111010001011000111100010100101111011111000010110111111011111100011111111110000111000011110111111000111000010100001011111101101111111111111111111101110111111111101111101011100001110001111101011111111011111111001111111111111111111111110101111011000111111111110011111000111111111111111010111111101110111111110111111101011111111111111111111111110111110000111001110111111111111111001011100001110011111000011111111111111111111111111011111001111011110110111111111111111111101111010111101111110110001111011111110111111111111000111111110111111111001101111110110001111000111011111110111111000101000110110001010101101001110110001110010101011110111111110000110000011110001111011111000011100111110000111101110110101010000101000011110001111000111101111110111111011111000011100001111010111000010100001011000111101111100111111011111000010111111111011101000011110111110010111100111110111011011101101110110001111111100000011111111010000111111110110111111000111100011110111010011111111111100001111111111000011100001110000101101111110111011010111111110111111010011110111111110001011111111110111100001111111110101111100011010001101111111111111111101111001110110111111000111110110110111011111111111111111111100000101000010110111010000111101111100001110000101000010111111111111111000011110111011011101111111110111111111101000011111111110000101111111111111011011111101111111111111011001111111100001110111111101110111001011000111101110100001110000111101110110111111111111001011110111111111111100011110111111111111111111111111111000101111111111111101111101100011111111110011111000011110111011011111101111110111011000101111111110111011000111100011111111011111101100011110001111000111101110111111011111111101110111111011010111111111110001110000111001111100111110011111111110101111111111101100011101111101011111100011111111111111111011110111111110111101000011110001111011111100011110001110111110011111010011011001101000111111111111111111011111101111111011111101111110111111011111000011110101111011101101110110001111010111001011111111111000101100010110001011011111000010100001010000101001011010011111011111101111111111111010111000010100111110011111111111111111110000101100111100001011101111111110100001111011101100011100111111010111111110110001101000111111110111111111011111101111111111111111111100011111011111001111100011110111011011111011111110111010111111011111110001111101111111110110111010000111000111111111111011111101010110001111011101011111111011111101101101111110001110001111100011110111110011101111111101111111100111101010110111011111111000110110011111011111110111101111111011111000010100001011111111011111100101010000101110111110001011101111100111111111111111111110111110111111011111000111110101110111111100111110011110111111101011110011111111111101011100001111011101111111110001110010111111111101111111011111001110110101110011110111111110001111111101111111110001111111101101011110111111111101111110111111110000111101011111111011111101100110111111111011111111111111111110001111101011110101111010111101111111111111000101100111110000010000111000110110011111111111100011100001011111111101111110011111111111101111110101111111111110111100111101111111101010110001111010101101111100101101111111000011110101111010111101111110101011010101000010110001011000101111111100001111011101111111111111111111111110111101111111001111101110110001010010110100111110111010011111001111100101000011111111110110111111010101000010111111011010111111110111111110011110001111110101111010111000011111110011000111001010010101011111111111110110111010000111101110110001111000111111110110111011010111101011110101111111111000011111111111111101111110111111011101111100110110111110000111111110110101011010101111110110111111101111101110111111011111111000111110101111010101110111111111111010111101011100111011111111101111111111110011111101010110111011010101101110100001011000101101111111111110011111011111101111101011101111111110111011111111111111111111111111101100011110111011000111110110110111111011111110111110111011111111000010111111111000101100010100001110000111111111110111011101111001011100001111000111101111110011111011111101111100011111111101001110100101011010111001111100111010011111111111100111010011101000111000001110001111111110100001011011101111111110111111111111111110110011011000111100011100111011011101110111100001110111111100010111111110000101101110110111111011101101111110001010011101001111100111111111111001111111111110011111111111111011111111110001111110101110000111101111110111111111101100011100011100001110101110110011111001111101110110111111011101100011100111011000111100011100001110011101100011110001111001111111111110001111011101101111110001111000111111111110111011000101101110110111110000101100110100101111111111101100100101110001101101010110111111111111111110111111010000111111110110001011111111111111110111110001110011110101111011111111111011111111111011101011111111111101111111100011111111111111111101110111111111011111011111111111111011101000011111111011111111101110111111111111111100010110001111010101101111110111010111111101111110001111011111111111110001110011101100111111111111011111011111010111111011101001111110111110000101100111100001011111101101111110001111011111110111100011100000101101111100001110000111111111100011111011111000011111111111001111001110101111001011111101111111111111011110011111110111111111101100011110111100010111100010101111110000101111111101111111010111100010100001111000111101110110111111111111000110100001111010111100011111111110001111100110111111111011111110111111111011011111111111110001011011101100011110111011010111001110010101111010111101011110111111111111100111111111111000111101110110011011011101000011111111111011101101111110111111011111101110100001011011101000010100111011011111111111110111010000111101111110101111011111101011110001110000101101110111111110011101101110100011111111111111111111111111111101100011110111110111111111111110111110011110111111111111110000111100111110001011011111100011111111111010111111111111111111011101001011010000011111111101111110111011111111101111100111111011111001111110110111000111100111110101110000101101111110101100000101101110100001111010101000011111011011111101111111110101111011101111110110111111111101101111101111111111111011111110111010000111101100110101111000111100011110111111001111100010100001111111111111111110011110000111100011110111110000111101111111111111111111000011100001110000111111111101111110111111110110111111110000111000010111111111010111111111111111111011111000011110001110000111011111011111111011111101111110111110001111110110111011011101101000111110001111011111111110110111010011111000111101111110111111000111110001111111111001111100001011111111000011110011010001111000011110101011111101011111100111111101111000011111011110001111011111101111001001111101011111111111001111111111111111011000111111111110111011111111111110110001110000111111111100001110001101110110100011011000111111111111111011111101101111111111111001111001111110001110111111101110111111111111110101111110011011111111100011100011011000111100011100111110011111101111100011011111111111110101111111001111000011111111011111111100010111111010001101111111011111111111101111110111111010011110001111011111110000101111111100001011011111100010100001110011111101111100111111011111000111111111010011111101111110101110001111111111110110111111101101111110101101010111111111111111110111111101110110001010001111000011110101111111101100010110001011000101111111011111110000111100010111111111001111111111111111011000111001111100001111000111111111111111011111101000011111111010011101001110110001111111111101011110001011000111001111011111111110111001110110111111111111100011111111111011111100011110111010001111100011111111111011101111111110111011111111011110111111011111111100011100101011111111111111100111011011111000011110011110111111111111111111011001111111110110111011111111111111111111111000111111110111111011101101111110111111011111111101111111111010111111111110111111011101101111110111111111111111111110111111111111111011110111111111111101111110111111011100101101111111011111111111110010111111111111101101110111111011111111011110111111111011111111110111110111111111111110111111111111111100110111111111101101111110111111111101111110010111111111111101100111111111011111101111110111111111111101111110110111111111101100111100011011111111111111111111111111111111111110101011111101111110111011111101101110111111111111111111101111111111111101111101111110111111111111100110111111111011101111110111111111111111111110101111011011111110110111111111111111110010110001011111111111111111111111111101111110111111011111111111110111111111111101001110111111011011111111111110001011011101111110110011011111111111111111111011111111101111111111111111101111111111111011111101111111111111111111111100010111011011101111111110111111111111111101110111111111111101111111111111011101101111110111011011011101111111111111011111111001110110001011111111111110110011011001101111110110001011111111111110111011110010101011110110101111011111000010111111111111101111111110111111001101111111110111011111111011111110111011111101111111111111111111101011111111111111111101111110111111111111111111111101111010011101001110101111010111101111110111111111111111101011110001111111101100010111111010111101111111111111011011101111111111111111111111111110100111011111111111111111111110111101111111100111011111101111111111111010011101111110111111011000111001110110111011111111110110100111011011101001110111111011010111011110100111111111111111110110111011111111111111111111011111101111111111111010000111100011101111011011111111111111111110111101101111111111111111111111111101111010111101101110111111111111011111110111111111111111111111111011011111101111110111111111111101111111111111111111101111111111111111111101011110111111111111111111110111011011111111110110111111111111111111111111011011101111001110111111111011111001110100111011111111011111111001111111111101111111111111001111100110111011111101101100011110001111011101101111100111011111111101110111111111111111111111100111010011101111111111111110111101101110110111011111101001111110111111111101111111111111111001111101011110111111011111111111111111110111101111111111111111111101111111111111111011111111111111111011111111111111110111111101111111111111111111111111101110111011110111111101011111111101111111111111111001011011101111111111111011111111100011111111111101111110011111111111111111011111110111111111101111111111011111011111111111111111011101101111111111111111111111111111111111111111111111111111111111111111111110111111011111101011110111110111011101111111101111011111111101111111111111111111100110111111011111111111111111111111111111111111111111011101111111111111111011111111001010110101011111111111110111011011111111101111111011111111101111110111111011111101111111110111111100111111111111111111011101111111111111111111001111111110111111011111101111111111111111101011111111011111111101111110111111111101111111110110111011111111011111011111011001101110110111111111111101101110111111111111111101110111111011011101101110110111011111111101110111111111000111100110110111101111101111111111111011111111111110111111011111101111111110011010011101111110101111011001111110110111111111101101100110111111111111111110111111111011111111101111111111111111111111111111111110011111111111100001011111101110111110111011111111100010111110011111111110010111111111111111111110111111011111111110111111111011111101101111111111011011101111111110011011101101111110111011010011101001110111111111111111111110111111110011111011111111111011101111111111111111011100101111111111111111111101111111111111011011101111110111111111111111111111111111111111111111110111111111101101111100110111111111101111111111111011111101111110110111011111111011111111111111111111111111111111111101111111110111111111111101110111111111011111111111111111111110111111111111110111111011101011111111111111111101101110111011011101101101110111111111111111101111110111111111111111110110111111111101111111110111011111101111111111111111011111101110111111111111111111110111111011101101101111111111011111111111110100111011111101111111110001011000101111110111111010111101111110101111111111111111111100111011010111111111111111011111111111100111111011111111111110111111111111101111111111111111111111100110110011011111111111110111111011101101111110111111111111111101011111111111111101111110111111011111111111111110101111000101111110110001111001101111111111111111111111111110111111111111111111111111111111111111001110111111111111101001110111111110000110101111111111011011110100110110111101111101111111111111011111111111111101111011111111111111101111011111111111111111011011111111111110111111111111111111111110011011111111011111111111011111111100011111111011111111111111011111111111111111110111110111011101111110110111011011111101110111111111111111111111111111011111101111111111111111111111101110111111011010111111110100101110011101101111110001010111111110110111111110111111101111111111011011101111111111111111111111011111111111011111111111110110111111111101101110110111011111101011110111111111111111111111111111111111111111111111111011111011111110101111010111101111111101111111111111101110100111011111101101110111011011111101101110111111111111111101111011111111111111110110111111110011101111111101111110111101101111110111011111111111111111011111111111111111111111111111111011110111111011111111111111111111111111101111111111111110011101111110111111111111101111111111111111111111111111111111111000111101111111111111101111111110111111111111111111111110111111111111111111111111111111111011110111111011011101100110111111111111101000110111111011111111111111111011011011101111111111111111111111111111111111110111111111111111111111111111111111111011111111111111111111111111111111111111111111110111101111110111111110111101111111101111011111101101111110111011001101110110111111011111101111111111111011111101101110111111011111101110111111111111100101011111111111111101111111111100111011111111111111110111011011111111111111110110011101111111100111011111111111111111111111011101111111111111111111111111110111111011111101111111111111111111111111111101111111111111101010111111111101111111110111111011001101011110110111111111101111110111111111111111001110111111111111111111111111111111011101111111111111111111111111111111111111111111110011101011011111111100010111111011111111111100111011111111111111111111111111111101101110111111111111111111111111111111111101111111111111011000111111111110111001011101111110111111011011101111110111111010011101111111111011011111111111111111011011111111001110111111111111101101111111110011101101001111111111010111101111111101111011111101111111111111111111101101111111111111111111111110101111110011101111111111111011111101111111111111011111111111110111111111111011111111111111110111101101111000111011111111111111111111011111111101110111111111111111111111111111111111111111111100111011101101111110111111111111111111110111111011111101111111111111111111101101111111111011011101111111111011011111111011111101111111000101111111111111011111111011110011111101111111111111111111111111101001110111111111111101111111110111011111101111110111111111101111111111111111011101111111111111111111011101111110111111111010101011110111111011111101111110110111111111111011110110011011001101111111111011011001101011110111111011111111110010101111010111111111111111111111011111111111111111111111111111111111111111111111111111111111011111101011110111111010111101111111101111011111111111110101111011111111110111111111111111101111111101111111111101101110111111111111111111111111011011111101111110111111111011101101011100001011111111111111111111011111111111110111111011111101111111101111111111111111111111111111111111111111111111011011101111111111111111111111100010110001011101101100110100111011111111110110111111011111111110111111110011010111111110111111110111111101110101111111101111101110110011110011111110111111111011111101111111111111011111111001110111111111011111111110110101111111111111111110111011111101110111110111011111111111110110101111111101111110110111111111101111110111111111111101111110111011011011111111111111001011111111101111111111011111111111110111111010111111011110111111011111111111110111111111111101111111111111111011110111111110011011101111100110111011011001101111110111111011111101111111111111111011111111111111111011111101111110111111011101101111111101111010111101111110101111011111111101110110011011111111111111110111011111111111111111111111111111111111111111111111111110110101111011000111111111101111111111101111110111111110011101111111111111111011101100111111111011011101101110111111111111101111110110111111110101111110110001011111101111111111111011111101100110111111010111101111111101111011111111111110111111011111101111111111111111111111111110111111111111111111111111111111111011001110111111111111101110111111111111111101111111111111011111101111110111111111111101111111111111111111111111110111111111111111111111111111111111111111111110111111011111111111101111111011111111110110011011111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100011111111111001101111111110001011011111110110111111011111111111111111111011111101111110111111011001111111111110111111111111111110110111111111111111111111111111111111101111111111011111111111111111111111101111101111110111111111101111111110111111100101111111111111011111111111111111111111111111100110111111111111111111111111011111111101111111111111111110111111011111111011111101111111111111111000101010110111111111001101110110111011011101101110111111111111111111111111111111111011101111110100111011111111111111111111111111111101111000111011111111111111111111111111111111111111111011111101111111110111111111101111111111111111111101111110111111111111101111111110111011011101111111101111010011101111110111111011111101111110111111111111101101110111011011111101100010111111011111101111111111011111111101111111111111011111101111111101111011111101111111111111011011101101111111111111011101101110101111111111101111110111111011111101100110111111111111111111111101111011001101111110100001011111101110110110011011101111100110111111111111101111100111111111000111111111111111111110111111110111111011111111111111111110110111111111111101111111111111111111111111011111101111110100011011011101110110111111011111111111111111111010111111111110111111111001111111110111111011101111111111111111110111101100110111111110111101111111111111111111101100011110101111101101111111111111111111101111111111111111111111111110111111111111111111111111011111111111111110101111111101111111111111111011111111111111111111011111101101110111111111111111011110111111111111111111110111111011011101111111111111111101101100110111111111111111111111111111111001101100010110011011111111110111111111111111111011110110111111111111111111111011110011101111111111111011011101111111111111111111111111110110001011101101111110111111111111111011110111111111111101001111111111111111111111111111111011010111111111111111111111101111111111110111111111111110111111011111111111110110111111111111110111111111111111111111110111111111111111111111110111110111101111110111011111011110111110111111010111101111110101111111110111111111111111011111111111111111111111111101111111110011111111111100110111101111111111111111111111111111101111111111111111111101111110111011111011101111111111111111001101111111111111110111111111111111111111111111111110111111111111111111111111111111111101111111111111111111101111111110001011011111101110111111111111101011110110111011111111111111110111011111111111011111111111011101111111101111010111101111110101111011011101001110110111011101111110111111111011111111100010110111011111111001110111111011111101111110111111011000111111110111111111111101111111111111111111101111111111011011101111011111111111111011101011110111111011111101101111110111011111111111110111111111011101101110111011111111101110110111001011111101101111111111111111101111111111111011111111111110100111111111101001111111111011111101110111101111111111101101110110111011011101111111111111011111111101111011111011111111101110111011111111101110111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111001111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111011011111111100111111111011111111011110111111011111101111110111111011001101111111111111111111111111111110011011000101100110111111111111101111111111011011111111101111111111011111101111110111111111101101111111111111111111101111111111111111111111111111111111111111111100011101111111111111111110111111011111101111110111111011111111101011111111011101101111111111111111111101111111111111111111111111110111111111001101000110111111011111111101110111111011111111111010111111111111001111111111111111111111111111111111111111101101111011111111111111001110111111011111101111111111111111111101011111111011011001111111110001111111101101111111110111011111101111110111111111111111111111111111111111111111111111111111111111111110111111011111111111111111111011011111101111111111111101101111111100111011011111111110111111011111101111110111111111111111011111111111111111111111111111111111111111111110111111011111111111111111111111101101111101111011110011101111111111011011111111111111111111110111101101110111111011111101111111110111111111111001111111111111111101111111110111011101101111111110111111111111110110110001011111111111111111111011111111111111111011011111111101110100111011111001111110110011011111111111110101111001011111011111111111111111111111111011111111111111111110111111111111111111111101111110111100111110110111011001101111110111111111111101111110111111110001101111111111111111111111011111101111110111101111111110111111011111001111111111111111111000110111111011111111101111111111111011111101110111011111111101101111011011011111101111111111111111111111111111111111111001101111111111111011111111101111111111011111111011110111111011001101100110111011011101101100110111111111111101011110111111011111101111111111111011111101110110111111111011101011110111111011101111001110101111011111101001111111111111001101111111111111111111101111111100111111101101111110111111011001101111111111111011111111111110111111011111111111111111111110111101111111111111011111111100010111111011111101110111111111010111101111111111111011111101111111111110111111111110110111111010111111111111111111111111101111111111111111000111111110111111011011111011110111111111111101101111111111111111111110110111111111111111111111111111111011111111111111111111111101111110111111111011011111111111011011111101011111111111011111101111110101111111011101101110111111011111111011110101111011111101111110111011111111101111111110111111111111111110111111011111101111111111111111111111111111110111011011111101110111111111111101111110111111111111101111111111111111111111111110111111111111101111111111111011111101111111111111111111101111111111111011011111111111111111111111101111110111111111111111111110111111111111101011111111111111111111111111111111111111101111111111111111111011111110111111111111101111110111111011111111111110111111111111101111110111111011111101111111111111111111111111110111111111111111111110111111111111111111111111111110111101111111111111111111111111111111111111111111011110111111111111111011111111111011111101111111111111110111111011111111111111111111111111100111111111101111111101111010111101111110111111010111111011111101111011011111110111111111111111101111111111111111111101111111111111011111111111111111111111111111111111110011011111101111111111111111111101111110111111111111111101111111111111111111011111110111110111111111111111111111111111111111110111111111111111111110111111111111111111111111111111111111111111111111111111111111110111110011101101111111111110011111001111111111111111111111111111111111011111101111111111010111111111111100111111111111011111111111111111111101111110111111111101111111111111111111111111111110111110111101011110111111011111101111110111111011111101111110111111111011111101111110111111111111111111110101011111101111111111111110111111111111111111111111111111111111111011111111111111111111111111111111110111111011111101111111111111111111101111110111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111011111101111110111111110111101011111101111110111111011111101111111111101111111101111111011111100111110111111011111101111101111010111111011111110011111111111000111100111110111111011110111111110111101111110100111010111101111110111111111111101111111111111111101111111111101111111111101111111101111111111111111111101111011011111111111111111111111011001111101111110111111100111111111111111111101111110111111011111100111110111111111111111111111111110111111111101111111011111111111111110111011111111111111111111111111101111110101111111111101111111101111111111111111111111111011011111011111110111111111111101010111111011111111100111110011010010101001010111111111111111111111111111111111101111111111111111111111111111111111011111111111110111111111011101111111100111011111101111111111111011111111111110111111011111111111111111111111111111111111111111111011101110111111111111111111111101111111111111001111110111111111111101101110110101011111111101110111111111111111111111111111011111111001111111111110111101111111111111111111111111110111111011111101111111111111011110111001010111111111111111111111110111111111101111111101111110111111011111101111111111111011110101111111111101011111111111111111111111111111111011010101101010110101111011111111110111111111000101101010110001011010101101110110101011000101101010111111011111101111111111111011010101110010110101011100111111110100111111111111111111111111111111111111111111111011010111111111111111111111111111111110111111111111111110111111111111111101111111111011011011111110111111011111111111111111111011111101111111111111111111101111101111111011111111111110111111011011101000110110001011111101111111100101011111101111111111111111111101111110110111011011111111111110111111111111111111110111111111111111111110111111011101101111110111011111111101111111111011111111111111110111011011111111111110111110111111111111111111111001111111111101111111111111111110111111011111111111111111111111111111111111111111111111111011111111111011111111111111111111111011111111110111111111111111011111111111111111111111111111111111111101111110111111111111111011111111111011111111111110110111011111111111110111111111111111111110111111111111111111111111111111111101111111111111111111111111111111111111111101111111111111111111111111110111111111111111011110111111011111111111111110011111111111111111111111111111111111111111111011111111111111111110111111111111110111111111111111111111111111011111111111110111111111111101111111111111110010000000000010001000000000010000000100001000000000100010000000000000011000000000001000100000000010000000001000000010000000100000100000001000001000000000100000001000001000000000100000100000000010000010000000001000001000000000100000100000001000000000010000100000001000000000001000100000000010000000100000001000000010000010000000001000000010000010000000100000000000001010000000000001000000001000000010100000000010000010000000001000000010000010000000001000000010000010000000001000000000010010000000100000001000000010000000000010000000100000001000000010000010000000001000001000000010000010000000001000000000100010000000001000000000100010000000001000000000001010000000001000000010000000001000100000001000000000100000001000000010000000000010000000100000001000100000100000000010000010000000000001000010000010000000001000000010000000100000001000000010000000100000001000000010000000001000100000000010000000100000100000000000001010000000010000000100000000001000001000000100000001000000000000100010000010000000000000100010000000100000100000000010000000000100100000000000100010000000001000001000000010000000001000001000000010000000001000000010000000000010001000001000000000100000001000000010000010000000000010001000000000100000100000000000100010000000100000000000100000100000001000000000001000000010001000000010000000100000001000000010000000100000001000000010000000001000000100000010000000000100000010000000100010000000100000001000000000100000100000000000001000000010001000001000000010000000100000001000000000100000000001000010000010000000001000000000100000100000001000000000100000100000001000000010000000000100001000000000100000001000001000000010000000001000000010000010000010000000000000100000001000100000001000000010000010000000001000001000000010000000000000100010000000100000000010000010000010000000100000001000000000100000001000001000000000000100001000000000100000100000100000000000001010000000100000000010000000000010001000001000000000100000000000101000000010000000000010000000001010000000001000000010000010000000001000000010000000000010000000100010000000001000100000001000000000100000100000000010000010000000000000100010000000100000001000000010000010000000001000000010000010000000000010000010000000000010001000000010000000000010000000100000001000100000001000000000001000100000001000000010000010000000100000001000000000100000001000000000001000100000100000001000000000100000100000001000000010000000000010000010000000001000000010001000000010000000100000000000010000100000100000000010000010000000001000000010000010000000100000001000000000000100001000000000100000001000100000000000010000100000100000000000010010000000001000001000000000100000001000000010000000100000001000001000000001000000001000001000000010000000001000001000000010000000001000000010000010000000100000000010000010000000100000001000000010000000001000001000000000100000100000001000000000100000000001001000000010000000001000001000000010000000001000001000000010000000001000000010000010000000100000001000000000100000000010000010000000100000000010000010000000000010001000001000000000100000000000011000000000100000100000000010000010000000100000000010000000100000001000000000010000100000001000000010000000100000001000001000000000100000000000101000000010000000100000001000000010000000001000000010000010000000001000000010000010000000001000000010000000100000010000000010000010000000000000100010000000100000000000100000100001000000001000001000000000000010010000001000000010000000000100001000000000001000100000000000100000100000100000000000000100100000100000001000000000100000001000001000000000000010100000001000000000100000001000000100000001000000010000000010000000100000001000001000000010000000100000000000100000100000001000000010000000001000001000001000000000100000100000000000001000001000001000001000000010000000100000001000000000001000100000001000000000100000100000000010000010000000100000000000100010000000100000000010000000100000001000000010000000000100001000000000100010000000001000000010000000100000000000100010000010000000100000000010000000000010001000000010000000100000001000000010000000000100001000000000001000001000100000000010000000100000001000000000001000100000100000000010000000100000001000000010000010000000100000000010000000100000001000000010000001000000001000000100000000000010001000000010000000100000100000001000000000100000001000001000000010000000100000000000001010000000100000001000000010000000100000000010000000001000001000001000000010000000001000000000100010000000000000100010000000100000001000000010000000100000001000001000000010000000100000001000000010000000001000001000000000100000000000100010000000100000001000000010000010000000001000000010000000100000100000000010000000100000001000000010000000100000001000000010000010000000000010000010000000001000000010000010000010000000100000000010000000000010100000001000000010000000100000000000001010000000000001000000001000000100001000000010000000001000100000000010000000000010100000000010000000000010000000101000000001000000100000001000000010000000001000001000000000001000000000100000100010000000001000000010000000100000000010000000001010000000000000100000100000000010001000000010000000100000001000000010000010000000001000000000010000001000001000000010000000000100001000000010000000100000000001000010000000100000001000000010000000001000001000001000000000100000100000000010000010000000001000000000001000100000001000001000000000100000001000000010000000100000001000000000001000000100100000000010000000100000100000000000001000100000001000001000000000001000001000000010000000100000000000100010000000100000100000000000010010000000001000000010000000100000001000000010000000000010001000000010000000000010001000001000000000000010000000100010000000100000001000001000000000100000001000000010000000001000001000000000001000100000001000000010000010000000000000100000001000100000001000000000001000000010100000000010000010000000100000000010000010000000100000000010000000000010000000100010000010000000100000000000100010000000100000001000000000000100001000001000000000100000001000001000000010000000000010000010000010000000000010000010000010000000100000001000000000100000000000100000010010000000100000000000100000000010000010000000001010000000100000001000000010000000001000000000010000100000100000001000000000000100000001001000000000100000001000001000000010000000001000001000000010000000001000001000000000100000001000000000100000100000001000000000001000100000000000100000010000100000000001000000010010000000000000010000001000100000001000000000001000001000000000100010000000100000000000100000001000100000001000000010000000100000001000000000001000000010001000000000001000000010001000000010000000001000001000000000001010000000001000000000001000100000000010000010000000100000001000000010000000100000100000000000001010000000000000101000000000100000001000000010000000100000000010001000000000000010100000000000001000000010000000100010000000100000001000001000000010000000000010001000000000100000100000001000000000000010100000000010000000000010000000101000000010000000100000000000010000100000001000001000000000100000100000001000000010000000000000100000001000100000000000100010000000000010000000100000001010000000100000000000001000100000001000001000000000100000100000000000001010000000000000101000000010000000001000000010000010000000000100001000000000000010000010000010000001000000001000000010000000000010000000100010000000100000100000000000100000100000100000000010000000100000100000001000000010000000001000001000000010000000100000000010000010000000000010000000001000100000001000000010000000100000001000001000000000100000001000000010000010000000100000000010000000100000001000000010000010000000100000000010000010000000001000001000000000100000000000100000100000001000000010001000000000001000100000000010000000001000001000000010000010000000100000000000010010000000000001000000001000100000001000000010000000100000000010000000100000100000001000000000001010000000100000000000100000001000001000000010000000100000001000000000001000100000001000000010000000100000001000000000100010000000001000000010000000100000001000000000001000000010000000100000100000100000001000000010000010000000001000000000001000001000000010001000000010000000000000100010000000000010100000001000000000000010001000000010000000001000001000001000000000100000001000001000000010000000001000000010000010000000100000000010000010000000001000000010000000100000001000000000100000100000000010000000100000100000100000001000000000100000000000100000001010000000001000000010000000100000001000000000100010000000100000000010000000100000000000100010000000100000000001001000000000001000010000000010000000100000100000000000001000100000001000001000000000001000001000000000001000000010100000000000100000000100000000101000000000100000100000000010000010000000100000001000000000100000001000000000001000100000000010000010000000100000000010000010000000100000100000000010000000000010001000001000000000100000000010001000000000001000001000000000010000100000000010001000000000100000100000001000000000100000100000000010000000100000100000001000000010000000000000100010000010000000100000000010000010000000001000001000000010000000000000100010000000100000001000000010000010000000001000000010000000010000000000100000001000100000100000000010000000000010100000000010000000100000100000000010000000100000100000001000000000001000100000000010000000100000001000000010000000001000100000000000001000100000001000000010000000100000001000000000001000100000001000001000000000000010001000001000000010000000100000001000000000001000001000000010000000100000000010000010000000100000000010000000100000000100000010001000000000100000001000000000001010000000001000001000000010000000000010000000100000100000001000000000001010000000001000000000010000100000100000001000000000100000000000100010000000100000001000001000000000100000001000000010000000100000100000000000001010000000100000001000000010000000100000000010000000100000000000101000000000100000001000001000000000100000100000000010000010000000100000000000001000100000001000001000000010000000001000000010000000000100100000000010000010000000000010000010000000100000001000000010000000000010001000000010000010000000000010000000100000001000001000001000000000100000100000001000000010000000100000000010000000100000001000001000000000100000001000001000000000100000100000000000001010000000001000000010000000000010000000101000000000100000100000000000100000000010001000000010000000100000001000000010000000000010100000000000010000000100001000000000100000000100000010001000000000000100000001000000000100000010000000101000000000000010001000001000000000100000100000001000000000100000001000000010000000000100001000001000000000000010000010000010000010000000000000100010000000100000001000000010000000100000000001000000100000001000100000000000100010000000000010001000000010000000100000000000100000100000000000100010000000100000100000000010000000000001000000010010000000100000001000000010000000100000001000000010000000000100001000000010000000000010000001000010000000100000001000001000000000100000001000000010000000100000001000001000000000100000001000000010000000100000000000100010000000001000100000000001000000001000000000100010000000100000100000001000000010000000000000101000000000100000100000001000000000100000000000010000010000000100100000000100000010000000001000000000100010000000100000000010000010000000100000000010000010000000001000000000100010000000001000000000001010000000100000000010000010000000100000000010000000100000001000000010000000100000000010000010000000100000001000001000000000100000000001000010000010000000001000000000100000100000001000000000100000100000000000100010000000000010100000000010000000100000001000001000000000000001000000100010000000000010000000101000000000000010001000000000001010000000001000000000010000000100001000000010000010000000001000000000100000100000100000000010000000100000000010000010000000001000000000101000000000001000001000000010000000000010001000000010000000100000100000000000001000000010001000000010000010000000000000100010000010000000001000001000000010000000001000001000000000100000001000000010000000100000001000000000010000100000001000000010000000100000100000000010000010000000001000000010000000100000001000000000001010000000001000000010000000100000001000000010000000000010001000000000001000000100001000001000000000100000000000100010000000100000001000000010000000100000000000100010000010000000000001000010000000000010100000001000000010000000100000000010000000100000000010001000000000100000000010001000000010000000000000100010000000100000001000000010000010000000001000001000000010000000001000000000100000010000100000000010000000100000100000000010000000001000001000000000100000010000001000000010000000100000000000100010000000100000000000100010000000000010001000000000001010000000100000001000000000100000001000001000000000100000100000000010000000001000100000000000100000100000000000100001000000100000001000000010000000100000001000000010000000000010100000001000000000100000000000100010000000100000000000100010000010000000100000000000001000000010000000101000000000001000000010001000000010000000000000100000001010000000001000001000000010000000001000000000001000100000000000100000100010000000001000000010000000100000000000101000000010000000100000000000001000100000001000001000000000100000000010000000001000001000000010000000001000100000100000000000100000000010100000000000001000100000000000100000001000100000100000000000100000001000100000000000001010000000000000100000100000000100001000000010000010000000001000001000000010000000001000001000000000100000100000001000000000100000000000101000000000000010000000101000000000000010001000001000000010000000100000000010000010000000001000000000100000100000000010000010000010000000100000000010000000100000100000000010000000000010001000000010000000001000000010000010000000000010100000001000000000001000001000000000001010000000100000000010000010000000000000101000000010000000100000001000000010000000000010000000100010000000000000101000000000000010001000000010000000000010000010000010000000001000001000000000001010000000000010000010000000100000000000101000000000010000100000000010000000100000001000001000000010000000000010000010000000100000000000100000001000100000100000000010000000100000001000001000000010000000000000100010000010000000001000001000000010000000001000000000100000000010001000001000000010000000100000000000001010000000000001000000010000100000100000000010000000100000001000000000100010000000010000000000010000100000100000000010000010000000001000000010000000100000000000100010000010000000001000001000000000100000100000000000010010000000100000000010000000000100100000001000000000000100001000000000001000100000000010001000000010000000001000001000000000100000100000001000000010000000001000001000000010000000100000001000000010000000100000000010000010000000000010001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000100000001000000010000000010000000010000010000000100000000100000010000000100000000010000010000000100000000000010010000000001000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000000100000010000000100000000010000010000000100000001000000010000000100000001000000000100000100000000010000000000010100000001000000010000000100000001000000000100000100000001000000010000000100000001000000010000000100000000010000010000000100000000010000000100000100000000010000010000000001000001000000010000000100000001000000000000100001000001000000010000000100000000100000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000001000001000000000100000001000001000000000100000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000001000001000000010000000100000000000010000100000100000001000000000100000001000001000000000100000100000001000000010000000000001000000010000100000001000000000001010000000100000001000000000100000001000001000000000100000100000000000100000100000100000001000000010000000100000000000100010000000100000001000000010000000100000001000000000000100000001000000010000000100000001001000000010000000100000000010000000100000100000000010000010000000000001001000000010000000001000001000000010000000100000001000000000000100100000001000000010000000000001001000000000000100100000001000000010000000000001001000000010000000001000000000010000100000100000001000000000000100001000000000010010000000001000000000010000001000100000001000000000100000100000001000000010000000100000001000000010000000000000100010000000000100001000001000000010000000000001000010000010000000100000001000000000000100000001000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000001000000000010000000100100000000000100001000000100000000010000010000000001000000010000010000000100000000010000000100000001000000010000000000100100000000010000010000000100000001000000000000100000001001000000010000000000001000010000000100000100000000000100000100000100000001000000010000000001000000010000000100000001000001000000010000000000001001000000010000000100000001000000010000000001000001000000010000000100000001000000000100000100000001000000010000000100000000010000010000000000010000010000010000000100000001000000001000000001000001000000010000000100000000010000010000000100000000100000010000000100000000000100000100000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000001000001000000000000100100000000010000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010000100000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000000100000010000001000000010000000001000001000000010000000100000001000000000100000001000000010000010000000100000000000100010000000100000001000000010000000100000001000000000100000100000000000100010000000001000001000000010000000100000000010000010000000100000000010000010000000001000000010000000100000100000000010000010000000001000000010000000100000100000001000000010000000100000001000000010000000100000001000000000100000000001001000000000000100001000001000000010000000100000000010000010000000100000001000000010000000100000000010000010000000100000001000000010000000000010001000000000000010100000001000000000100000100000000010000010000000100000000100000010000000100000001000000010000000100000001000000010000000100000000010000010000000001000001000000000100000100000001000000010000000000001000000010010000000100000001000000010000000000010000000100010000000100000001000000010000000010000001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000100000001000000010000000100000001000000000100000100000000000100010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000010001000000000100000001000000000100010000000100000000010000010000000100000000010000010000000100000000010000000100000100000001000000000100000100000001000000000100000100000001000000010000000001000000010000010000000100000001000000010000000100000000010000010000000100000001000000000000100100000001000000000100000001000001000000010000000000001001000000000001000100000001000000000000100001000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000010000000100000100000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000000100000001000001000000000100000001000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000100000000000010010000000000000010010000010000000001000000010000000100000100000001000000010000000100000001000000000000100100000001000000000000100100000001000000010000000100000001000000010000000100000001000000000100000100000000000100010000000100000000010000010000000100000001000000010000000100000001000000010000000001000001000000000100000001000000010000010000000100000001000000010000000100000001000000010000000100000000010000010000000001000001000000000001000000001000010000000100000000010001000000010000000000010000010000010000000001000001000000010000000100000000000100010000000100000001000000000100000100000000010000000100000100000000000010010000000100000001000000010000000100000001000000010000000100000001000000000000100000001001000000000001000100000000010000000000100100000000010000010000000100000000010000010000000100000000010000010000000100000001000000010000000000001001000000000001000000001000010000000100000100000001000000010000000100000001000000010000000100000000000010010000000100000001000000010000000100000001000000010000000000001001000000010000000100000001000000010000000100000001000000010000000001000000010000010000000100000001000000010000000100000001000000000100000100000001000000010000000100000000000010010000000001000000010000010000000100000000000001010000000100000001000000010000000001000001000000010000000100000001000000010000000000010001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000001001000000010000000000001001000000000000100100000000010000000100000001000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000010000000000100010000000100000001000000000000100100000001000000000100000001000001000000010000000000001001000000000000100100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000000001000100000000010000010000000100000001000000010000000001000000000010000100000100000001000000010000000100000000000010010000000100000001000000010000000001000001000000010000000100000001000000010000000100000000100000000000010100000000010000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000001000001000000000100000001000001000000010000000001000001000000010000000000001001000000010000000100000001000000010000000100000000000010010000000100000000010000010000000100000000000100010000000000001001000000000000100100000001000000010000000100000000010000010000000100000001000000000001000000001001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000001000010000000000100100000001000000010000000100000000010000010000000100000001000000010000000100000001000000000000100100000001000000010000000100000001000000010000000100000001000000010000000100000000010000010000000001000001000000010000000100000000000100000001000001000001000000010000000100000000000010010000000100000001000000010000000100000000000010010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000001000001000000010000000001000000000010010000000100000001000000000100000100000000000010000100000001000001000000010000000001000000000010010000000100000000100000000000100000010001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000000001001000000000000100100000001000000000000100100000001000000010000000100000001000000000001000100000000010000010000000100000001000000010000000100000001000000010000000001000000010000000000010100000001000000010000000100000001000000010000000100000001000000000001000100000001000000010000000100000001000000010000000001000001000000010000000100000000010000000100000100000000010000000000100100000001000000010000000100000001000000010000000001000001000000010000000000010000010000000001000100000000010000000100000000010001000000010000000100000001000000010000000100000000000010010000000001000001000000000100000100000001000000000100000100000001000000000100000100000001000000000100000100000001000000000100000100000001000000010000000100000001000000010000000001000001000000001000000100000000010000010000000100000001000000010000000000010000000010010000000100000001000000010000000100000001000000010000000001000001000000000100000100000000010000010000000001000001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000000000100000001001000000000000100100000000010000000100000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000000000100001000001000000000001000100000001000000010000000000001001000000010000000001000000010000010000000001000000010000010000000100000001000000000100000010000001000000000100000100000001000000010000000100000000010000010000000000001001000000000000100100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000001000001000000000001000001000001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000010000010000000001000001000000000100000001000001000000010000000100000001000000010000000100000001000000010000000001000001000000000100000100000001000000000100000100000001000000010000000100000000010000010000000100000001000000010000000100000000010000000100000100000001000000000100000010000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000010000000100000010000000100000001000000010000000001000000000001010000000001000001000000010000000100000001000000010000000100000001000000010000000001000001000000000000100100000001000000010000000100000000010000000000100100000001000000010000000100000001000000010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000000100000001000001000000000000100000001001000000010000000100000001000000010000000100000000010000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000001000000000000100100000001000000010000000001000000010000010000000001000000010000000001000100000001000000010000000100000000010000010000000100000001000000000000100001000001000000000000010100000001000000000100000100000000010000010000000100000001000000010000000001000001000000010000000010000001000000010000000100000001000000010000000000010001000000000001000100000001000000010000000100000001000000000000010001000001000000010000000100000001000000010000000000010001000000010000000001000001000000010000000100000001000000010000000000001000010000010000000000001001000000010000000100000000010000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000001000100000001000000010000000100000001000000010000000100000000010000010000000100000000000010010000000100000001000000010000000001000001000000010000000100000000010000010000000100000001000000010000000001000000010000000100000100000001000000010000000100000000000010000100000100000001000000010000000000001001000000010000000001000001000000010000000100000001000000000100000100000001000000010000000100000000000010010000000100000000000100010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000000100000000001001000000010000000001000001000000010000000000001001000000000001000010000001000000010000000100000001000000010000000100000001000000000100000100000000010000001000000100000001000000010000000100000001000000010000000100000001000000010000000001000001000000010000000001000001000000010000000000010001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000001000000010000010000000100000000000010000100000100000001000000000100000100000000100000010000000001000001000000000000100000001001000000000000100001000000000010000100000100000001000000010000000100000000010000000100000100000000000010010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000000000100010000000001000000000010010000000100000000010000000100000100000001000000010000000001000000010000010000000100000001000000001000000100000000010000010000000100000001000000010000000100000001000000000001000100000000000100010000000100000001000000000001000100000000010000000100000001000001000000010000000100000000010000010000000100000000010000010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000000000010010000000100000001000000010000000001000001000000010000000100000001000000000100000001000000010000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000010000000001000100000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000000000001010000000100000000010000010000000100000000100000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000000000010010000000100000001000000010000000100000000000100010000000001000001000000000001000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000000010000010000000100000001000000000000100001000001000000010000000100000001000000010000000100000000000100010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000001001000000010000000100000001000000010000000000001000010000010000000100000001000000000100000100000000000100010000000100000001000000000100000100000001000000000100000100000001000000000100000100000001000000010000000100000001000000010000000100000000010000000000100100000001000000000100000100000001000000000000100001000000000100010000000100000001000000010000000100000001000000010000000100000001000000000001000000001001000000000100000001000001000000010000000100000001000000010000000000000101000000010000000100000000000100000001000000001001000000000100000001000000000100010000000100000000000001010000000100000000010000010000000001000000010000010000000100000000010000010000000100000001000000010000000100000001000000010000000001000001000000010000000100000000010000010000000100000000000010010000000001000000010000010000000100000000010000010000000100000000000010010000000100000001000000010000000100000001000000010000000001000000000010010000000100000000000010000000100100000000000100010000000001000001000000010000000100000001000000000001000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000000001001000000010000000100000000010000010000000100000001000000010000000000001001000000010000000100000001000000010000000100000001000000010000000000010001000000010000000100000001000000010000000001000001000000010000000001000000000010010000000100000000010000010000000100000001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000000100001000000010000000100000000000100010000000100000001000000000001000001000000010000010000000100000000000010000000100100000001000000010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000000100000001000000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000000000100010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000001001000000010000000100000001000000010000000100000000000010010000000100000000000100010000000100000001000000010000000000010000000100010000000100000001000000000001000100000001000000000000100000001001000000010000000000010000000100000000100001000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000000100000100000001000000010000000100000001000000010000000100000000010000010000000100000000000100000100000000010001000000010000000100000001000000000100000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000000100000000001000010000010000000000010000000100010000000100000001000000010000000001000000010000010000000000010001000000000001000100000000000100010000000100000000010000000100000100000001000000010000000100000001000000000100000000001000000010010000000100000001000000010000000100000001000000010000000001000000010000000100000100000001000000000100000100000001000000010000000000010001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000010000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000001000000100000001000000010000000100000001000100000001000000000001000001000000010000000100000001000000010000000000100000010000000100000100000100000000000001000001000000010000000010010000000000001001000000000000100000001001000000010000000100000001000000010000000100000001000000000001000100000001000000000001000100000001000000000000100001000001000000010000000100000000000100000001000000010000010000010000000100000000010000000100000001000000010000000100000100000001000000010000000000010001000000010000000100000001000000000100000100000001000000010000000100000001000000000001000100000001000000000001000100000001000000010000000001000000000100000100000100000000010000010000000100000000010000000100000000001000000010010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000001000000000000100100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000001000000010000000100000001000000010000000100000001000000010000000100000000010000000100000100000000010000010000000100000001000000010000000100000000000100010000000000001001000000010000000100000001000000010000000100000001000000010000000010000000000010010000000100000001000000000100000100000001000000000001000000010000000100000001000100000000000010000001000100000000000100010000000100000001000000010000000001000000010000000100000001000001000000010000000001000000010000000100000001000000010000000100000001000000010000010000000100000001000000010000000001000000100000000100000010000001000000000001000100000001000000010000000100000001000000010000000001000001000000010000000100000001000000000100000100000001000000010000000100000000010000010000000000100001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000001000000000001000100000100000001000000000000100100000001000000010000000100000001000000000100000001000001000000000100000100000001000000000100000100000001000000000100000001000000010000000100000100000000010000010000000100000001000000000100000001000001000000000100000000010001000000010000000001000001000000000001000100000001000000010000000100000001000000010000000100000001000000010000000100000000000100010000000100000001000000010000000001000001000000010000000100000000000100010000000100000001000000010000000100000001000000010000000100000000000100010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000010010000000100000001000000000100000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000110101110111011101010111110101111111011101010101010111010111011101110111011111111111011101010101110101111101111101011101110101110101110111111111110101010101010101110101110101110101110101011111010101010101011101111101110101010101010101011101011101110101010101010101110101011101111101110111110111110101010111010101110111011101111101010101010101010101010101011101110101111111011101010111111111011101110101010101010101110101010101010101110101010101110111110101010101111111010111110101011101111101010111010111110101110101110101010101011111011101110101010101110101110101010101010101010101010101111111010101011111011111110101010111111111011101110101111111110101011111011111110111010101010111010111110111110101111101111111110111011111011111110111110111110101111111010101010101010111011111011101111101010111010101010111010111111111110101110101110101010101110101010101010111010111111111011101011111011111010111011111010101010101010111111101010101010111011101010111111111011111011101111101111101010101110101110101010101111101010101010101110101011101010101011101010101111101010101010101010101011111010111111101111111111101010111110101110101010101010111111111110111010101010101110101011101010101010101110101010101111101011111111101111101110101011101011101010111011111110111010101110101010101110101010101010101110111010101110101011101010101010111011101110101010111010101010101111101011101010111010101010101011111110101010101010101010111010101010111010101010101010101110101010101011101111101111101010101111101111111110111010111110101110101111111010111111101010101111111110111011111111111010111110111110111010101010101010111011111111101010101010101010101010101010101010101010101010101110101010101010101011101110111010101010111011101010101010111110111011111011101010111111111010111011111110101010101010101111101010111011101110111110101111111010101010101010101011101011101011111110111111101110101010101010111010101111101010101111101110111010101010111011101010101111111111101010101010101010101111101010101010101010101010101110101010101010101010101110101010111110101011111010101010111010111110101111101110101010101010101011111010101110101010101111101010101011111010101011101010111010101011101110111011101111111010101010101010101011101010111010111010111010111011111011101011111110101111101110111110101010101110101110101011101011101011101011111011101010101011101010101010101010111010111111111010101010101010101110111010101110111110101010101110111011111010101010111010101011101111111111101010111010111011101111101010111110101111101110101010101010101110101010111011111111101010111010111011101110101010111011101010101010101011111110101110111111111010111010111011111010101110111010101110101010101011101011101110111111101010101011101111101010101010101110101011101010111010101010111010101010101011111010101011111110111011111011111111101110101111101111101110101110101111101111101010101010101010111011101110101010101010101011101010111110101010111010101110111110101110101011101010101010111010101010101011101010101110101110111110111010101010111010101011101110101010101110101010101010101110111010101010101010101111101011111111101010111010111110101010101110111110101111101011101010101110101010101010101010101111111010111011101011101010111010101010101011111010101010101111101010111010111110101110111110101010101110101010111111101010111010101010101011101011101010101011101011101110101110101110111110111011111010111010111010111111101110101010101111101011101010101010101011111010101111101110111111111110101110111010101010101010101110101010111111101010111110101010101011101010111110101110111110101010111111101111111011101010101110111011101110101010101110111011111111101111111110101010111110111011111110111111111111101110111111111111111111111111111110101111101111101111111110111111111111101111111111101111101111111111111011101011111111111011111111111111101111101011101110111111111110111111101011111111111111111111111110111010111011111111101111111111111111101111111111101111111111111110111111111011111010111011111111111010101111111010111011101011111111101111111111111111111111111111101011101111111110111111111111111111111111111111111110111011111110111110111011111011111111111110101110111111101111111111101111111111111111111111111111111111111111111111111111111111111110111111101011101110101111101010101111101111111111111111101011101011111110101010111111111111111110111111111011111111101110101111111010111111101111101111101011111110111111111111111111111111111111111110111111101111101111111111111111111111111011111111101111111111111010111110111111111010101111101111111111111011101110111111101111101110101011101110101011111111111111111011111110111111101111111111101111111110111011111011101111101111111111111111101110111011111111111111111110101111111110111111111110111111111111111111111011111111111011101111111111111111111111111110111010101111101111101111101011111011111011111110101111111111101111111111111010111111111011111110111111111111111111111111101011111111111111101111111111111010111010111111111111111111111111111111101110101011111111111111111111111111111111111011101111101111111111111110111010101111111111111111101110111011101010111110101110111111101111111011101011111111111111111111111111111011101111101111101111101111111111111011101011111111111111111111111111111111111111111111111110101111111111111011111111111110101111101111111110111111111110111111111111111111111111111111111111101010111111111111101111111110101111111111111010111111111111111110111111111111111111111011101111111110111011111111111111111110111111111111101011101111111111111111101111111111111110111010111110111111111111111111111111101111101111111111111111101111111011111111111111111111111111101111111111101111111111111111111111111111111111101110111111101010111111111111111111111111111011111111111111111110111110111111111011111010111110111111101110111110111111111111111111111111111111111111111111111011101111111111111110101011111111111111111011111111111110111111101011101111111111111110111110101011101010111111111111111110111011111011111011111011111011111111111110111011101111111110111111111111111110111011101110111111111110111111111111111111111111101011111011111111111111111110111011111111111110101110101111111010111011111111101111111111111111111111111111111111111111111111111111111111111111111111111111111010111010111011111111111111111111111111111111111111111111111111111111111111111111101110111010111111111111111110111011111011111111101111111111101011111010111111111111101111111111111110101111111110101110111111111111111110111111111111101111111111111111111011111111111111111010111111111111111111101111101111111111111111111111111110101110101011111111101111111110111011111011101111111110111110111111111110111011111111111010111111111110111110111111111111101111111111101011111111111111111111111111111011111111111111101111111111111110111111101111111110101011111111111011111111111110111111111011111111111111101111111110111111111111111111111011111111111111111011111110111111111010111111111111111011101011111111111111111110111110111110111111111111111111111111111010101111111011111011101110111111111110111011111111101011111111111110111111111111111111101110111111101011111110101111111011101111111111111011101111111011101010111111101111101111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111110111111111111111111111111111111101111111111111110111111111010101111111111101111111111111111111111111111101011111111111111101111111111111111111110101111101111101111111111111111101111111111111111101110111011111011111111111111111111111111111110101111111110111111111111101111111111111111111111111111111111111111101111111011101111111011111011111011111111111111101111111011111110101111111111111111111011111010111111111110111111101011111010101111101111101110101111101111111111111110111111101111111110101111101111111111111111111110111111111111101110111111111011111110111111111111111111111111101111111111111111111111111110111111111110111110111111101111111111111110111111111111111111101111111010101111111111111111111011111111111111111010101111111111111111111111111111111111111110111111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111110101111111011111111111110101110111111111111111111111111111011111111111111101111101010111111111011111011111111111111111011101110101111111110101110111011101111101011111111111011111111111111111110101011111011111110111111111111111111111111111111111111101111111111111111111111111111101010101011111010101010101110101011101010111111111111111111111111111011111011111110111111101010101111101010101011111110111111111011111111111011111011111110101011101111101011111111111111111111111111111110111111111111111111111111111110111111111111111111101011101111111111101111111111111111111110111111111011111010101011111011101111111110101010111110101010101010101111111110101010111011111111111110111111111011111111101111111111111111111111111111111110101011111111111111111010111011111011111010101011101111111010111010111110111011111111111111111111101111111110111111101111111111111111101111111011111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

@@ -1,0 +1,76 @@
+num branch_node: 7
+num leaf_node: 8
+num feature: 3
+tree_depth: 3
+num label: 2
+nDC: 990
+
+***variables
+a: 1 - 21 -> 21
+s: 22 - 7021 -> 7000
+z: 7022 - 15021 -> 8000
+g: 15022 - 15037 -> 16
+x: 15038 - 17037 -> 2000
+ml: 17038 - 17816 -> 779
+cl: 17817 - 18537 -> 721
+
+variables***
+[debug] --> CL ML ratio 1
+the cl header --> p wcnf 18537 77429 1501
+
+timeout 900s ~/SAT_Project/loandra-master/loandra_static -pmreslin-cglim=30 -weight-strategy=1 -print-model -verbosity=1 ./solutions/chainlink_0.1_mc1.5_s1732_r1/phase_1_clauses_final >./solutions/chainlink_0.1_mc1.5_s1732_r1/phase_1_loandra_res
+
+Start to read loandra res
+*loandra status: SATISFIABLE
+-ml sat and violated: 770 | 9  | total #ml: 779 | -violated weight: 9
+308 -- [451 424]
+319 -- [44  5]
+380 -- [147 483]
+422 -- [151 477]
+476 -- [430 477]
+488 -- [196 483]
+523 -- [ 76 300]
+703 -- [694 591]
+742 -- [ 76 233]
+-cl sat and violated: 702 | 19  | total #cl: 721 | -violated weight: 19
+32 -- [591 179]
+63 -- [477 674]
+84 -- [  5 665]
+109 -- [800 483]
+120 -- [591 243]
+127 -- [477 851]
+163 -- [477 532]
+165 -- [  4 591]
+171 -- [945 214]
+296 -- [987 248]
+368 -- [214 730]
+381 -- [690 223]
+412 -- [708   5]
+534 -- [987  76]
+648 -- [966 248]
+659 -- [477 761]
+668 -- [483 689]
+693 -- [483 828]
+695 -- [248 583]
+7 -time: 0.00015 -dim: (21, 2)
+8 -time: 0.00005 -dim: (7, 3)
+9 -time: 0.03859 -dim: (20979, 3)
+10 -time: 0.01665 -dim: (3878, 3)
+11_12 -time: 0.03942 -dim: [24000, 2]
+13 -time: 0.01613 -dim: (8000, 4)
+14_15 -time: 0.00079 -dim: [42, 2]
+16 -time: 0.00001 -dim: (0, 2)
+17_18 -time: 0.05823 -dim: [16000, 3]
+19 -time: 0.00005 -dim: (1, 1)
+20 -time: 0.03193 -dim: (0, 1000)
+21 -time: 0.00018 -dim: (1, 1000)
+22 -time: 0.00002 -dim: (721, 3)
+23 -time: 0.00002 -dim: (721, 3)
+24 -time: 0.00003 -dim: (0, 5)
+25 -time: 0.00002 -dim: (779, 3)
+26 -time: 0.00002 -dim: (779, 3)
+smtPr 22-26 -time: 0.00469 -dim: nan
+slvr_header -time: 0.04188 -dim: nan
+*solver* -time: 900.01396 -dim: nan
+res_read -time: 0.01383 -dim: nan
+-- SUM CL TIME: 0.20698          |  SUM other TIME: 900.06967          |  SUM TIME: 900.27665

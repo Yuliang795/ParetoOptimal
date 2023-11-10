@@ -1,0 +1,25 @@
+ ---> [debug] ---> (2962, 1)   ndc: 1481
+df_consts -time: 0.00558 -dim: nan
+DC -time: 0.02080 -dim: 1481
+tree_var -time: 0.00005 -dim: nan
+7 -time: 0.00098 -dim: (540, 2)
+8 -time: 0.00008 -dim: (15, 9)
+9 -time: 0.05456 -dim: (28755, 3)
+10 -time: 0.07568 -dim: (14805, 3)
+11_12 -time: 0.02301 -dim: [13696, 2]
+13 -time: 0.00742 -dim: (3424, 5)
+14_15 -time: 0.00193 -dim: [270, 2]
+16 -time: 0.00021 -dim: (80, 2)
+17_18 -time: 0.12741 -dim: [41088, 3]
+19 -time: 0.00032 -dim: (6, 1)
+20 -time: 0.02547 -dim: (5, 214)
+21 -time: 0.00006 -dim: (1, 214)
+smtPr_22-31 -time: 1.68439 -dim: 162093
+32_33_34 -time: 0.00754 -dim: (4441, 2)
+cl_file_header -time: 0.20007 -dim: nan
+cl_gen_oa -time: 2.35354 -dim: nan
+*solver* -time: 7.34844 -dim: nan
+-- SUM CL TIME: 2.00906          |  SUM other TIME: 7.57494          |  SUM TIME: 9.58400
+
+loandra header: p wcnf 11341 271745 2963
+

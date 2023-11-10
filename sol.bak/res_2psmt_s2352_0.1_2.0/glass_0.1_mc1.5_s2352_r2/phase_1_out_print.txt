@@ -1,0 +1,88 @@
+num branch_node: 15
+num leaf_node: 16
+num feature: 9
+tree_depth: 4
+num label: 7
+nDC: 1481
+
+***variables
+a: 1 - 135 -> 135
+s: 136 - 3345 -> 3210
+z: 3346 - 6769 -> 3424
+g: 6770 - 6881 -> 112
+x: 6882 - 8379 -> 1498
+ml: 8380 - 8465 -> 86
+cl: 8466 - 8700 -> 235
+
+variables***
+[debug] --> CL ML ratio 2
+the cl header --> p wcnf 8700 106728 557
+
+timeout 900s ~/SAT_Project/loandra-master/loandra_static -pmreslin-cglim=30 -weight-strategy=1 -print-model -verbosity=1 ./solutions/glass_0.1_mc1.5_s2352_r2/phase_1_clauses_final >./solutions/glass_0.1_mc1.5_s2352_r2/phase_1_loandra_res
+
+Start to read loandra res
+*loandra status: SATISFIABLE
+-ml sat and violated: 48 | 38  | total #ml: 86 | -violated weight: 38
+0 -- [119 121]
+1 -- [17  5]
+2 -- [165 175]
+8 -- [ 5 65]
+9 -- [105  80]
+12 -- [ 9 39]
+13 -- [118 108]
+15 -- [ 3 39]
+16 -- [50  8]
+17 -- [64 44]
+18 -- [118  88]
+20 -- [17 18]
+22 -- [131 122]
+23 -- [58 17]
+27 -- [79 84]
+28 -- [54 55]
+29 -- [91 82]
+30 -- [97 73]
+31 -- [ 92 145]
+32 -- [130  92]
+33 -- [83 82]
+39 -- [151 156]
+41 -- [56 63]
+43 -- [38 22]
+48 -- [57 46]
+52 -- [80 73]
+54 -- [ 81 105]
+55 -- [84 90]
+57 -- [130 138]
+58 -- [ 74 124]
+59 -- [144  74]
+61 -- [139 133]
+62 -- [15  0]
+63 -- [68 43]
+76 -- [ 8 56]
+79 -- [51 68]
+81 -- [ 88 107]
+84 -- [121  85]
+-cl sat and violated: 233 | 2  | total #cl: 235 | -violated weight: 4
+99 -- [  5 137]
+137 -- [118 147]
+7 -time: 0.00276 -dim: (540, 2)
+8 -time: 0.00021 -dim: (15, 9)
+9 -time: 0.05793 -dim: (28755, 3)
+10 -time: 0.12485 -dim: (14805, 3)
+11_12 -time: 0.02498 -dim: [13696, 2]
+13 -time: 0.00794 -dim: (3424, 5)
+14_15 -time: 0.00215 -dim: [270, 2]
+16 -time: 0.00019 -dim: (80, 2)
+17_18 -time: 0.11623 -dim: [41088, 3]
+19 -time: 0.00010 -dim: (6, 1)
+20 -time: 0.02725 -dim: (5, 214)
+21 -time: 0.00008 -dim: (1, 214)
+22 -time: 0.00003 -dim: (235, 3)
+23 -time: 0.00001 -dim: (235, 3)
+24 -time: 0.00005 -dim: (1175, 5)
+25 -time: 0.00002 -dim: (516, 3)
+26 -time: 0.00002 -dim: (516, 3)
+smtPr 22-26 -time: 0.00520 -dim: nan
+slvr_header -time: 0.05406 -dim: nan
+*solver* -time: 900.01444 -dim: nan
+res_read -time: 0.00890 -dim: nan
+-- SUM CL TIME: 0.37000          |  SUM other TIME: 900.07740          |  SUM TIME: 900.44740

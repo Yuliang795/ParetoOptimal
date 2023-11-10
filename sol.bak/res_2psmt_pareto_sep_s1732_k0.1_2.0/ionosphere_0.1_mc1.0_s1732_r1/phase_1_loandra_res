@@ -1,0 +1,1135 @@
+c
+c LOANDRA:	 an extension of Open-WBO to core-boosted linear search.
+c Version:	 July 2019 2018 -- Release: 1.0
+c Authors:	 Jeremias Berg, Emir Demirovic, Peter Stuckey
+c We thank the developers of Open-WBO for their work
+c
+c Open-WBO:	 a Modular MaxSAT Solver -- based on Glucose4.1 (core version)
+c Version:	 September 2018 -- Release: 2.1
+c Authors:	 Ruben Martins, Vasco Manquinho, Ines Lynce
+c Contributors:	 Miguel Neves, Saurabh Joshi, Norbert Manthey, Mikolas Janota
+c Contact:	 open-wbo@sat.inesc-id.pt -- http://sat.inesc-id.pt/open-wbo/
+c
+c WARNING: for repeatability, setting FPU to use double precision
+c |                                                                                                       |
+c ========================================[ Problem Statistics ]===========================================
+c |                                                                                                       |
+c |  Problem Format:             MaxSAT                                                                   |
+c |  Problem Type:           Unweighted                                                                   |
+c |  Number of variables:          6572                                                                   |
+c |  Number of hard clauses:     131764                                                                   |
+c |  Number of soft clauses:        351                                                                   |
+c |  Number of cardinality:           0                                                                   |
+c |  Number of PB :                   0                                                                   |
+c |  Parse time:                   0.03 s                                                                 |
+c |                                                                                                       |
+c PMRES ALGORITHM WITH LINEAR SEARCH 
+c PMRES LINEAR STRAT=1
+c PMRES LINEAR DIVISION=1
+c PMRES CORE DIVISION=0
+c PMRES CORE LIMIT (-1 = no limit)=30
+c PMRES RELAX BEFORE STRAT =0
+c PMRES INCREMENTAL LIN DIVISION =0
+c PMRES MINIM =1
+c PMRES MINIM STRAT =0
+c PRE hard clauses before: 132115
+c PRE soft literals before: 351
+c PRE time: 9 removed weight: 0
+c PRE hard clauses after: 104982
+c PRE soft literals after: 351
+c Checking model
+c CG best 174 LB: 0 at 9
+o 174
+c CG GAP: 174 T 9
+c CG New weight: 1 at 9
+c PMRES CORE LIMIT (-1 = no limit)=39
+c Core budget remaining 30
+c CG GAP: 173 T 13
+c LB : 1            CS : 288          W  : 1           
+c Core budget remaining 26
+c Interrupted core guided phase
+c Updating solver at 39
+c Starting lin search with: LB: 1 UB: 174 UB - LB: 173 Time 39
+c Deleting solver
+c CG New factor 1
+c Extending best model to full formula
+c Checking model
+c Reduced cost 173 gap 173
+c Building new PB
+c Considering 350 of 350 soft clauses
+c Minimizing in init
+c Minimization time 0 init minsize 173 skipped 0
+c Reduced cost 173 gap 173
+c Encoding PB with UB: 173 obj size 350
+c Encoding Done
+c Setting Card Vars currently: 9956 / orig 6572
+c Checking model
+c Found same cost model covering more variables
+c CardVars DONE  
+c SAT Call at 39
+c Reduced cost 173 gap 173
+c Checking model
+c BOUND UPDATE RHS: 172 at 39
+c SAT Call at 39
+c Reduced cost 172 gap 173
+c Checking model
+c LIN best 173 LB: 1 at 39
+o 173
+c LIN GAP: 172 T 39
+c BOUND UPDATE RHS: 171 at 39
+c SAT Call at 39
+c Reduced cost 171 gap 172
+c Checking model
+c LIN best 172 LB: 1 at 39
+o 172
+c LIN GAP: 171 T 39
+c BOUND UPDATE RHS: 170 at 39
+c SAT Call at 39
+c Reduced cost 170 gap 171
+c Checking model
+c LIN best 171 LB: 1 at 39
+o 171
+c LIN GAP: 170 T 39
+c BOUND UPDATE RHS: 169 at 39
+c SAT Call at 39
+c Reduced cost 169 gap 170
+c Checking model
+c LIN best 170 LB: 1 at 39
+o 170
+c LIN GAP: 169 T 39
+c BOUND UPDATE RHS: 168 at 39
+c SAT Call at 39
+c Reduced cost 168 gap 169
+c Checking model
+c LIN best 169 LB: 1 at 39
+o 169
+c LIN GAP: 168 T 39
+c BOUND UPDATE RHS: 167 at 39
+c SAT Call at 39
+c Reduced cost 167 gap 168
+c Checking model
+c LIN best 168 LB: 1 at 39
+o 168
+c LIN GAP: 167 T 39
+c BOUND UPDATE RHS: 166 at 39
+c SAT Call at 39
+c Reduced cost 166 gap 167
+c Checking model
+c LIN best 167 LB: 1 at 39
+o 167
+c LIN GAP: 166 T 39
+c BOUND UPDATE RHS: 165 at 39
+c SAT Call at 39
+c Reduced cost 165 gap 166
+c Checking model
+c LIN best 166 LB: 1 at 39
+o 166
+c LIN GAP: 165 T 39
+c BOUND UPDATE RHS: 164 at 39
+c SAT Call at 39
+c Reduced cost 164 gap 165
+c Checking model
+c LIN best 165 LB: 1 at 39
+o 165
+c LIN GAP: 164 T 39
+c BOUND UPDATE RHS: 163 at 39
+c SAT Call at 39
+c Reduced cost 163 gap 164
+c Checking model
+c LIN best 164 LB: 1 at 39
+o 164
+c LIN GAP: 163 T 39
+c BOUND UPDATE RHS: 162 at 39
+c SAT Call at 39
+c Reduced cost 162 gap 163
+c Checking model
+c LIN best 163 LB: 1 at 39
+o 163
+c LIN GAP: 162 T 39
+c BOUND UPDATE RHS: 161 at 39
+c SAT Call at 39
+c Reduced cost 161 gap 162
+c Checking model
+c LIN best 162 LB: 1 at 39
+o 162
+c LIN GAP: 161 T 39
+c BOUND UPDATE RHS: 160 at 39
+c SAT Call at 39
+c Reduced cost 160 gap 161
+c Checking model
+c LIN best 161 LB: 1 at 39
+o 161
+c LIN GAP: 160 T 39
+c BOUND UPDATE RHS: 159 at 39
+c SAT Call at 39
+c Reduced cost 159 gap 160
+c Checking model
+c LIN best 160 LB: 1 at 39
+o 160
+c LIN GAP: 159 T 39
+c BOUND UPDATE RHS: 158 at 39
+c SAT Call at 39
+c Reduced cost 158 gap 159
+c Checking model
+c LIN best 159 LB: 1 at 39
+o 159
+c LIN GAP: 158 T 39
+c BOUND UPDATE RHS: 157 at 39
+c SAT Call at 39
+c Reduced cost 157 gap 158
+c Checking model
+c LIN best 158 LB: 1 at 39
+o 158
+c LIN GAP: 157 T 39
+c BOUND UPDATE RHS: 156 at 39
+c SAT Call at 39
+c Reduced cost 156 gap 157
+c Checking model
+c LIN best 157 LB: 1 at 39
+o 157
+c LIN GAP: 156 T 39
+c BOUND UPDATE RHS: 155 at 39
+c SAT Call at 39
+c Reduced cost 155 gap 156
+c Checking model
+c LIN best 156 LB: 1 at 39
+o 156
+c LIN GAP: 155 T 39
+c BOUND UPDATE RHS: 154 at 39
+c SAT Call at 39
+c Reduced cost 154 gap 155
+c Checking model
+c LIN best 155 LB: 1 at 39
+o 155
+c LIN GAP: 154 T 39
+c BOUND UPDATE RHS: 153 at 39
+c SAT Call at 39
+c Reduced cost 153 gap 154
+c Checking model
+c LIN best 154 LB: 1 at 39
+o 154
+c LIN GAP: 153 T 39
+c BOUND UPDATE RHS: 152 at 39
+c SAT Call at 39
+c Reduced cost 152 gap 153
+c Checking model
+c LIN best 153 LB: 1 at 39
+o 153
+c LIN GAP: 152 T 39
+c BOUND UPDATE RHS: 151 at 39
+c SAT Call at 39
+c Reduced cost 151 gap 152
+c Checking model
+c LIN best 152 LB: 1 at 39
+o 152
+c LIN GAP: 151 T 39
+c BOUND UPDATE RHS: 150 at 39
+c SAT Call at 39
+c Reduced cost 150 gap 151
+c Checking model
+c LIN best 151 LB: 1 at 39
+o 151
+c LIN GAP: 150 T 39
+c BOUND UPDATE RHS: 149 at 39
+c SAT Call at 39
+c Reduced cost 149 gap 150
+c Checking model
+c LIN best 150 LB: 1 at 39
+o 150
+c LIN GAP: 149 T 39
+c BOUND UPDATE RHS: 148 at 39
+c SAT Call at 39
+c Reduced cost 148 gap 149
+c Checking model
+c LIN best 149 LB: 1 at 39
+o 149
+c LIN GAP: 148 T 39
+c BOUND UPDATE RHS: 147 at 39
+c SAT Call at 39
+c Reduced cost 147 gap 148
+c Checking model
+c LIN best 148 LB: 1 at 39
+o 148
+c LIN GAP: 147 T 39
+c BOUND UPDATE RHS: 146 at 39
+c SAT Call at 39
+c Reduced cost 146 gap 147
+c Checking model
+c LIN best 147 LB: 1 at 39
+o 147
+c LIN GAP: 146 T 39
+c BOUND UPDATE RHS: 145 at 39
+c SAT Call at 39
+c Reduced cost 145 gap 146
+c Checking model
+c LIN best 146 LB: 1 at 39
+o 146
+c LIN GAP: 145 T 39
+c BOUND UPDATE RHS: 144 at 39
+c SAT Call at 39
+c Reduced cost 144 gap 145
+c Checking model
+c LIN best 145 LB: 1 at 39
+o 145
+c LIN GAP: 144 T 39
+c BOUND UPDATE RHS: 143 at 39
+c SAT Call at 39
+c Reduced cost 143 gap 144
+c Checking model
+c LIN best 144 LB: 1 at 39
+o 144
+c LIN GAP: 143 T 39
+c BOUND UPDATE RHS: 142 at 39
+c SAT Call at 39
+c Reduced cost 142 gap 143
+c Checking model
+c LIN best 143 LB: 1 at 39
+o 143
+c LIN GAP: 142 T 39
+c BOUND UPDATE RHS: 141 at 39
+c SAT Call at 39
+c Reduced cost 141 gap 142
+c Checking model
+c LIN best 142 LB: 1 at 39
+o 142
+c LIN GAP: 141 T 39
+c BOUND UPDATE RHS: 140 at 39
+c SAT Call at 39
+c Reduced cost 140 gap 141
+c Checking model
+c LIN best 141 LB: 1 at 39
+o 141
+c LIN GAP: 140 T 39
+c BOUND UPDATE RHS: 139 at 39
+c SAT Call at 39
+c Reduced cost 139 gap 140
+c Checking model
+c LIN best 140 LB: 1 at 39
+o 140
+c LIN GAP: 139 T 39
+c BOUND UPDATE RHS: 138 at 39
+c SAT Call at 39
+c Reduced cost 138 gap 139
+c Checking model
+c LIN best 139 LB: 1 at 39
+o 139
+c LIN GAP: 138 T 39
+c BOUND UPDATE RHS: 137 at 39
+c SAT Call at 39
+c Reduced cost 137 gap 138
+c Checking model
+c LIN best 138 LB: 1 at 39
+o 138
+c LIN GAP: 137 T 39
+c BOUND UPDATE RHS: 136 at 39
+c SAT Call at 39
+c Reduced cost 136 gap 137
+c Checking model
+c LIN best 137 LB: 1 at 39
+o 137
+c LIN GAP: 136 T 39
+c BOUND UPDATE RHS: 135 at 39
+c SAT Call at 39
+c Reduced cost 135 gap 136
+c Checking model
+c LIN best 136 LB: 1 at 39
+o 136
+c LIN GAP: 135 T 39
+c BOUND UPDATE RHS: 134 at 39
+c SAT Call at 39
+c Reduced cost 134 gap 135
+c Checking model
+c LIN best 135 LB: 1 at 39
+o 135
+c LIN GAP: 134 T 39
+c BOUND UPDATE RHS: 133 at 39
+c SAT Call at 39
+c Reduced cost 133 gap 134
+c Checking model
+c LIN best 134 LB: 1 at 39
+o 134
+c LIN GAP: 133 T 39
+c BOUND UPDATE RHS: 132 at 39
+c SAT Call at 39
+c Reduced cost 132 gap 133
+c Checking model
+c LIN best 133 LB: 1 at 39
+o 133
+c LIN GAP: 132 T 39
+c BOUND UPDATE RHS: 131 at 39
+c SAT Call at 39
+c Reduced cost 131 gap 132
+c Checking model
+c LIN best 132 LB: 1 at 39
+o 132
+c LIN GAP: 131 T 39
+c BOUND UPDATE RHS: 130 at 39
+c SAT Call at 39
+c Reduced cost 130 gap 131
+c Checking model
+c LIN best 131 LB: 1 at 39
+o 131
+c LIN GAP: 130 T 39
+c BOUND UPDATE RHS: 129 at 39
+c SAT Call at 39
+c Reduced cost 129 gap 130
+c Checking model
+c LIN best 130 LB: 1 at 39
+o 130
+c LIN GAP: 129 T 39
+c BOUND UPDATE RHS: 128 at 39
+c SAT Call at 39
+c Reduced cost 128 gap 129
+c Checking model
+c LIN best 129 LB: 1 at 39
+o 129
+c LIN GAP: 128 T 39
+c BOUND UPDATE RHS: 127 at 39
+c SAT Call at 39
+c Reduced cost 127 gap 128
+c Checking model
+c LIN best 128 LB: 1 at 39
+o 128
+c LIN GAP: 127 T 39
+c BOUND UPDATE RHS: 126 at 39
+c SAT Call at 39
+c Reduced cost 126 gap 127
+c Checking model
+c LIN best 127 LB: 1 at 39
+o 127
+c LIN GAP: 126 T 39
+c BOUND UPDATE RHS: 125 at 39
+c SAT Call at 39
+c Reduced cost 125 gap 126
+c Checking model
+c LIN best 126 LB: 1 at 39
+o 126
+c LIN GAP: 125 T 39
+c BOUND UPDATE RHS: 124 at 39
+c SAT Call at 39
+c Reduced cost 124 gap 125
+c Checking model
+c LIN best 125 LB: 1 at 39
+o 125
+c LIN GAP: 124 T 39
+c BOUND UPDATE RHS: 123 at 39
+c SAT Call at 39
+c Reduced cost 123 gap 124
+c Checking model
+c LIN best 124 LB: 1 at 39
+o 124
+c LIN GAP: 123 T 39
+c BOUND UPDATE RHS: 122 at 39
+c SAT Call at 39
+c Reduced cost 122 gap 123
+c Checking model
+c LIN best 123 LB: 1 at 39
+o 123
+c LIN GAP: 122 T 39
+c BOUND UPDATE RHS: 121 at 39
+c SAT Call at 39
+c Reduced cost 121 gap 122
+c Checking model
+c LIN best 122 LB: 1 at 39
+o 122
+c LIN GAP: 121 T 39
+c BOUND UPDATE RHS: 120 at 39
+c SAT Call at 39
+c Reduced cost 120 gap 121
+c Checking model
+c LIN best 121 LB: 1 at 39
+o 121
+c LIN GAP: 120 T 39
+c BOUND UPDATE RHS: 119 at 39
+c SAT Call at 39
+c Reduced cost 119 gap 120
+c Checking model
+c LIN best 120 LB: 1 at 39
+o 120
+c LIN GAP: 119 T 39
+c BOUND UPDATE RHS: 118 at 39
+c SAT Call at 39
+c Reduced cost 118 gap 119
+c Checking model
+c LIN best 119 LB: 1 at 39
+o 119
+c LIN GAP: 118 T 39
+c BOUND UPDATE RHS: 117 at 39
+c SAT Call at 39
+c Reduced cost 117 gap 118
+c Checking model
+c LIN best 118 LB: 1 at 39
+o 118
+c LIN GAP: 117 T 39
+c BOUND UPDATE RHS: 116 at 39
+c SAT Call at 39
+c Reduced cost 116 gap 117
+c Checking model
+c LIN best 117 LB: 1 at 39
+o 117
+c LIN GAP: 116 T 39
+c BOUND UPDATE RHS: 115 at 39
+c SAT Call at 39
+c Reduced cost 115 gap 116
+c Checking model
+c LIN best 116 LB: 1 at 39
+o 116
+c LIN GAP: 115 T 39
+c BOUND UPDATE RHS: 114 at 39
+c SAT Call at 39
+c Reduced cost 114 gap 115
+c Checking model
+c LIN best 115 LB: 1 at 39
+o 115
+c LIN GAP: 114 T 39
+c BOUND UPDATE RHS: 113 at 39
+c SAT Call at 39
+c Reduced cost 113 gap 114
+c Checking model
+c LIN best 114 LB: 1 at 39
+o 114
+c LIN GAP: 113 T 39
+c BOUND UPDATE RHS: 112 at 39
+c SAT Call at 39
+c Reduced cost 112 gap 113
+c Checking model
+c LIN best 113 LB: 1 at 39
+o 113
+c LIN GAP: 112 T 39
+c BOUND UPDATE RHS: 111 at 39
+c SAT Call at 39
+c Reduced cost 111 gap 112
+c Checking model
+c LIN best 112 LB: 1 at 39
+o 112
+c LIN GAP: 111 T 39
+c BOUND UPDATE RHS: 110 at 39
+c SAT Call at 39
+c Reduced cost 110 gap 111
+c Checking model
+c LIN best 111 LB: 1 at 39
+o 111
+c LIN GAP: 110 T 39
+c BOUND UPDATE RHS: 109 at 39
+c SAT Call at 39
+c Reduced cost 109 gap 110
+c Checking model
+c LIN best 110 LB: 1 at 39
+o 110
+c LIN GAP: 109 T 39
+c BOUND UPDATE RHS: 108 at 39
+c SAT Call at 39
+c Reduced cost 108 gap 109
+c Checking model
+c LIN best 109 LB: 1 at 39
+o 109
+c LIN GAP: 108 T 39
+c BOUND UPDATE RHS: 107 at 39
+c SAT Call at 39
+c Reduced cost 107 gap 108
+c Checking model
+c LIN best 108 LB: 1 at 39
+o 108
+c LIN GAP: 107 T 39
+c BOUND UPDATE RHS: 106 at 39
+c SAT Call at 39
+c Reduced cost 106 gap 107
+c Checking model
+c LIN best 107 LB: 1 at 39
+o 107
+c LIN GAP: 106 T 39
+c BOUND UPDATE RHS: 105 at 39
+c SAT Call at 39
+c Reduced cost 105 gap 106
+c Checking model
+c LIN best 106 LB: 1 at 39
+o 106
+c LIN GAP: 105 T 39
+c BOUND UPDATE RHS: 104 at 39
+c SAT Call at 39
+c Reduced cost 104 gap 105
+c Checking model
+c LIN best 105 LB: 1 at 39
+o 105
+c LIN GAP: 104 T 39
+c BOUND UPDATE RHS: 103 at 39
+c SAT Call at 39
+c Reduced cost 103 gap 104
+c Checking model
+c LIN best 104 LB: 1 at 39
+o 104
+c LIN GAP: 103 T 39
+c BOUND UPDATE RHS: 102 at 39
+c SAT Call at 39
+c Reduced cost 102 gap 103
+c Checking model
+c LIN best 103 LB: 1 at 39
+o 103
+c LIN GAP: 102 T 39
+c BOUND UPDATE RHS: 101 at 39
+c SAT Call at 39
+c Reduced cost 101 gap 102
+c Checking model
+c LIN best 102 LB: 1 at 39
+o 102
+c LIN GAP: 101 T 39
+c BOUND UPDATE RHS: 100 at 39
+c SAT Call at 39
+c Reduced cost 100 gap 101
+c Checking model
+c LIN best 101 LB: 1 at 39
+o 101
+c LIN GAP: 100 T 39
+c BOUND UPDATE RHS: 99 at 39
+c SAT Call at 39
+c Reduced cost 99 gap 100
+c Checking model
+c LIN best 100 LB: 1 at 39
+o 100
+c LIN GAP: 99 T 39
+c BOUND UPDATE RHS: 98 at 39
+c SAT Call at 39
+c Reduced cost 98 gap 99
+c Checking model
+c LIN best 99 LB: 1 at 39
+o 99
+c LIN GAP: 98 T 39
+c BOUND UPDATE RHS: 97 at 39
+c SAT Call at 39
+c Reduced cost 97 gap 98
+c Checking model
+c LIN best 98 LB: 1 at 39
+o 98
+c LIN GAP: 97 T 39
+c BOUND UPDATE RHS: 96 at 39
+c SAT Call at 39
+c Reduced cost 96 gap 97
+c Checking model
+c LIN best 97 LB: 1 at 39
+o 97
+c LIN GAP: 96 T 39
+c BOUND UPDATE RHS: 95 at 39
+c SAT Call at 39
+c Reduced cost 95 gap 96
+c Checking model
+c LIN best 96 LB: 1 at 39
+o 96
+c LIN GAP: 95 T 39
+c BOUND UPDATE RHS: 94 at 39
+c SAT Call at 39
+c Reduced cost 94 gap 95
+c Checking model
+c LIN best 95 LB: 1 at 39
+o 95
+c LIN GAP: 94 T 39
+c BOUND UPDATE RHS: 93 at 39
+c SAT Call at 39
+c Reduced cost 93 gap 94
+c Checking model
+c LIN best 94 LB: 1 at 39
+o 94
+c LIN GAP: 93 T 39
+c BOUND UPDATE RHS: 92 at 39
+c SAT Call at 39
+c Reduced cost 92 gap 93
+c Checking model
+c LIN best 93 LB: 1 at 39
+o 93
+c LIN GAP: 92 T 39
+c BOUND UPDATE RHS: 91 at 39
+c SAT Call at 39
+c Reduced cost 91 gap 92
+c Checking model
+c LIN best 92 LB: 1 at 39
+o 92
+c LIN GAP: 91 T 39
+c BOUND UPDATE RHS: 90 at 39
+c SAT Call at 39
+c Reduced cost 90 gap 91
+c Checking model
+c LIN best 91 LB: 1 at 39
+o 91
+c LIN GAP: 90 T 39
+c BOUND UPDATE RHS: 89 at 39
+c SAT Call at 39
+c Reduced cost 89 gap 90
+c Checking model
+c LIN best 90 LB: 1 at 39
+o 90
+c LIN GAP: 89 T 39
+c BOUND UPDATE RHS: 88 at 39
+c SAT Call at 39
+c Reduced cost 88 gap 89
+c Checking model
+c LIN best 89 LB: 1 at 39
+o 89
+c LIN GAP: 88 T 39
+c BOUND UPDATE RHS: 87 at 39
+c SAT Call at 39
+c Reduced cost 87 gap 88
+c Checking model
+c LIN best 88 LB: 1 at 40
+o 88
+c LIN GAP: 87 T 40
+c BOUND UPDATE RHS: 86 at 40
+c SAT Call at 40
+c Reduced cost 86 gap 87
+c Checking model
+c LIN best 87 LB: 1 at 40
+o 87
+c LIN GAP: 86 T 40
+c BOUND UPDATE RHS: 85 at 40
+c SAT Call at 40
+c Reduced cost 85 gap 86
+c Checking model
+c LIN best 86 LB: 1 at 40
+o 86
+c LIN GAP: 85 T 40
+c BOUND UPDATE RHS: 84 at 40
+c SAT Call at 40
+c Reduced cost 84 gap 85
+c Checking model
+c LIN best 85 LB: 1 at 40
+o 85
+c LIN GAP: 84 T 40
+c BOUND UPDATE RHS: 83 at 40
+c SAT Call at 40
+c Reduced cost 83 gap 84
+c Checking model
+c LIN best 84 LB: 1 at 40
+o 84
+c LIN GAP: 83 T 40
+c BOUND UPDATE RHS: 82 at 40
+c SAT Call at 40
+c Reduced cost 82 gap 83
+c Checking model
+c LIN best 83 LB: 1 at 40
+o 83
+c LIN GAP: 82 T 40
+c BOUND UPDATE RHS: 81 at 40
+c SAT Call at 40
+c Reduced cost 81 gap 82
+c Checking model
+c LIN best 82 LB: 1 at 40
+o 82
+c LIN GAP: 81 T 40
+c BOUND UPDATE RHS: 80 at 40
+c SAT Call at 40
+c Reduced cost 80 gap 81
+c Checking model
+c LIN best 81 LB: 1 at 40
+o 81
+c LIN GAP: 80 T 40
+c BOUND UPDATE RHS: 79 at 40
+c SAT Call at 40
+c Reduced cost 79 gap 80
+c Checking model
+c LIN best 80 LB: 1 at 40
+o 80
+c LIN GAP: 79 T 40
+c BOUND UPDATE RHS: 78 at 40
+c SAT Call at 40
+c Reduced cost 78 gap 79
+c Checking model
+c LIN best 79 LB: 1 at 40
+o 79
+c LIN GAP: 78 T 40
+c BOUND UPDATE RHS: 77 at 40
+c SAT Call at 40
+c Reduced cost 77 gap 78
+c Checking model
+c LIN best 78 LB: 1 at 40
+o 78
+c LIN GAP: 77 T 40
+c BOUND UPDATE RHS: 76 at 40
+c SAT Call at 40
+c Reduced cost 76 gap 77
+c Checking model
+c LIN best 77 LB: 1 at 40
+o 77
+c LIN GAP: 76 T 40
+c BOUND UPDATE RHS: 75 at 40
+c SAT Call at 40
+c Reduced cost 75 gap 76
+c Checking model
+c LIN best 76 LB: 1 at 40
+o 76
+c LIN GAP: 75 T 40
+c BOUND UPDATE RHS: 74 at 40
+c SAT Call at 40
+c Reduced cost 74 gap 75
+c Checking model
+c LIN best 75 LB: 1 at 40
+o 75
+c LIN GAP: 74 T 40
+c BOUND UPDATE RHS: 73 at 40
+c SAT Call at 40
+c Reduced cost 73 gap 74
+c Checking model
+c LIN best 74 LB: 1 at 40
+o 74
+c LIN GAP: 73 T 40
+c BOUND UPDATE RHS: 72 at 40
+c SAT Call at 40
+c Reduced cost 72 gap 73
+c Checking model
+c LIN best 73 LB: 1 at 40
+o 73
+c LIN GAP: 72 T 40
+c BOUND UPDATE RHS: 71 at 40
+c SAT Call at 40
+c Reduced cost 71 gap 72
+c Checking model
+c LIN best 72 LB: 1 at 40
+o 72
+c LIN GAP: 71 T 40
+c BOUND UPDATE RHS: 70 at 40
+c SAT Call at 40
+c Reduced cost 70 gap 71
+c Checking model
+c LIN best 71 LB: 1 at 40
+o 71
+c LIN GAP: 70 T 40
+c BOUND UPDATE RHS: 69 at 40
+c SAT Call at 40
+c Reduced cost 69 gap 70
+c Checking model
+c LIN best 70 LB: 1 at 40
+o 70
+c LIN GAP: 69 T 40
+c BOUND UPDATE RHS: 68 at 40
+c SAT Call at 40
+c Reduced cost 68 gap 69
+c Checking model
+c LIN best 69 LB: 1 at 40
+o 69
+c LIN GAP: 68 T 40
+c BOUND UPDATE RHS: 67 at 40
+c SAT Call at 40
+c Reduced cost 67 gap 68
+c Checking model
+c LIN best 68 LB: 1 at 40
+o 68
+c LIN GAP: 67 T 40
+c BOUND UPDATE RHS: 66 at 40
+c SAT Call at 40
+c Reduced cost 66 gap 67
+c Checking model
+c LIN best 67 LB: 1 at 40
+o 67
+c LIN GAP: 66 T 40
+c BOUND UPDATE RHS: 65 at 40
+c SAT Call at 40
+c Reduced cost 65 gap 66
+c Checking model
+c LIN best 66 LB: 1 at 40
+o 66
+c LIN GAP: 65 T 40
+c BOUND UPDATE RHS: 64 at 40
+c SAT Call at 40
+c Reduced cost 64 gap 65
+c Checking model
+c LIN best 65 LB: 1 at 40
+o 65
+c LIN GAP: 64 T 40
+c BOUND UPDATE RHS: 63 at 40
+c SAT Call at 40
+c Reduced cost 63 gap 64
+c Checking model
+c LIN best 64 LB: 1 at 40
+o 64
+c LIN GAP: 63 T 40
+c BOUND UPDATE RHS: 62 at 40
+c SAT Call at 40
+c Reduced cost 62 gap 63
+c Checking model
+c LIN best 63 LB: 1 at 40
+o 63
+c LIN GAP: 62 T 40
+c BOUND UPDATE RHS: 61 at 40
+c SAT Call at 40
+c Reduced cost 61 gap 62
+c Checking model
+c LIN best 62 LB: 1 at 40
+o 62
+c LIN GAP: 61 T 40
+c BOUND UPDATE RHS: 60 at 40
+c SAT Call at 40
+c Reduced cost 60 gap 61
+c Checking model
+c LIN best 61 LB: 1 at 40
+o 61
+c LIN GAP: 60 T 40
+c BOUND UPDATE RHS: 59 at 40
+c SAT Call at 40
+c Reduced cost 59 gap 60
+c Checking model
+c LIN best 60 LB: 1 at 40
+o 60
+c LIN GAP: 59 T 40
+c BOUND UPDATE RHS: 58 at 40
+c SAT Call at 40
+c Reduced cost 58 gap 59
+c Checking model
+c LIN best 59 LB: 1 at 40
+o 59
+c LIN GAP: 58 T 40
+c BOUND UPDATE RHS: 57 at 40
+c SAT Call at 40
+c Reduced cost 57 gap 58
+c Checking model
+c LIN best 58 LB: 1 at 40
+o 58
+c LIN GAP: 57 T 40
+c BOUND UPDATE RHS: 56 at 40
+c SAT Call at 40
+c Reduced cost 56 gap 57
+c Checking model
+c LIN best 57 LB: 1 at 40
+o 57
+c LIN GAP: 56 T 40
+c BOUND UPDATE RHS: 55 at 40
+c SAT Call at 40
+c Reduced cost 55 gap 56
+c Checking model
+c LIN best 56 LB: 1 at 40
+o 56
+c LIN GAP: 55 T 40
+c BOUND UPDATE RHS: 54 at 40
+c SAT Call at 40
+c Reduced cost 54 gap 55
+c Checking model
+c LIN best 55 LB: 1 at 40
+o 55
+c LIN GAP: 54 T 40
+c BOUND UPDATE RHS: 53 at 40
+c SAT Call at 40
+c Reduced cost 53 gap 54
+c Checking model
+c LIN best 54 LB: 1 at 40
+o 54
+c LIN GAP: 53 T 40
+c BOUND UPDATE RHS: 52 at 40
+c SAT Call at 40
+c Reduced cost 52 gap 53
+c Checking model
+c LIN best 53 LB: 1 at 40
+o 53
+c LIN GAP: 52 T 40
+c BOUND UPDATE RHS: 51 at 40
+c SAT Call at 40
+c Reduced cost 51 gap 52
+c Checking model
+c LIN best 52 LB: 1 at 40
+o 52
+c LIN GAP: 51 T 40
+c BOUND UPDATE RHS: 50 at 40
+c SAT Call at 40
+c Reduced cost 50 gap 51
+c Checking model
+c LIN best 51 LB: 1 at 40
+o 51
+c LIN GAP: 50 T 40
+c BOUND UPDATE RHS: 49 at 40
+c SAT Call at 40
+c Reduced cost 49 gap 50
+c Checking model
+c LIN best 50 LB: 1 at 40
+o 50
+c LIN GAP: 49 T 40
+c BOUND UPDATE RHS: 48 at 40
+c SAT Call at 40
+c Reduced cost 48 gap 49
+c Checking model
+c LIN best 49 LB: 1 at 40
+o 49
+c LIN GAP: 48 T 40
+c BOUND UPDATE RHS: 47 at 40
+c SAT Call at 40
+c Reduced cost 47 gap 48
+c Checking model
+c LIN best 48 LB: 1 at 40
+o 48
+c LIN GAP: 47 T 40
+c BOUND UPDATE RHS: 46 at 40
+c SAT Call at 40
+c Reduced cost 46 gap 47
+c Checking model
+c LIN best 47 LB: 1 at 40
+o 47
+c LIN GAP: 46 T 40
+c BOUND UPDATE RHS: 45 at 40
+c SAT Call at 40
+c Reduced cost 45 gap 46
+c Checking model
+c LIN best 46 LB: 1 at 41
+o 46
+c LIN GAP: 45 T 41
+c BOUND UPDATE RHS: 44 at 41
+c SAT Call at 41
+c Reduced cost 44 gap 45
+c Checking model
+c LIN best 45 LB: 1 at 41
+o 45
+c LIN GAP: 44 T 41
+c BOUND UPDATE RHS: 43 at 41
+c SAT Call at 41
+c Reduced cost 43 gap 44
+c Checking model
+c LIN best 44 LB: 1 at 41
+o 44
+c LIN GAP: 43 T 41
+c BOUND UPDATE RHS: 42 at 41
+c SAT Call at 41
+c Reduced cost 42 gap 43
+c Checking model
+c LIN best 43 LB: 1 at 42
+o 43
+c LIN GAP: 42 T 42
+c BOUND UPDATE RHS: 41 at 42
+c SAT Call at 42
+c Reduced cost 41 gap 42
+c Checking model
+c LIN best 42 LB: 1 at 42
+o 42
+c LIN GAP: 41 T 42
+c BOUND UPDATE RHS: 40 at 42
+c SAT Call at 42
+c Reduced cost 40 gap 41
+c Checking model
+c LIN best 41 LB: 1 at 42
+o 41
+c LIN GAP: 40 T 42
+c BOUND UPDATE RHS: 39 at 42
+c SAT Call at 42
+c Reduced cost 39 gap 40
+c Checking model
+c LIN best 40 LB: 1 at 42
+o 40
+c LIN GAP: 39 T 42
+c BOUND UPDATE RHS: 38 at 42
+c SAT Call at 42
+c Reduced cost 38 gap 39
+c Checking model
+c LIN best 39 LB: 1 at 42
+o 39
+c LIN GAP: 38 T 42
+c BOUND UPDATE RHS: 37 at 42
+c SAT Call at 42
+c Reduced cost 37 gap 38
+c Checking model
+c LIN best 38 LB: 1 at 43
+o 38
+c LIN GAP: 37 T 43
+c BOUND UPDATE RHS: 36 at 43
+c SAT Call at 43
+c Reduced cost 36 gap 37
+c Checking model
+c LIN best 37 LB: 1 at 43
+o 37
+c LIN GAP: 36 T 43
+c BOUND UPDATE RHS: 35 at 43
+c SAT Call at 43
+c Reduced cost 35 gap 36
+c Checking model
+c LIN best 36 LB: 1 at 43
+o 36
+c LIN GAP: 35 T 43
+c BOUND UPDATE RHS: 34 at 43
+c SAT Call at 43
+c Reduced cost 34 gap 35
+c Checking model
+c LIN best 35 LB: 1 at 43
+o 35
+c LIN GAP: 34 T 43
+c BOUND UPDATE RHS: 33 at 43
+c SAT Call at 43
+c Reduced cost 33 gap 34
+c Checking model
+c LIN best 34 LB: 1 at 44
+o 34
+c LIN GAP: 33 T 44
+c BOUND UPDATE RHS: 32 at 44
+c SAT Call at 44
+c Reduced cost 32 gap 33
+c Checking model
+c LIN best 33 LB: 1 at 45
+o 33
+c LIN GAP: 32 T 45
+c BOUND UPDATE RHS: 31 at 45
+c SAT Call at 45
+c Reduced cost 31 gap 32
+c Checking model
+c LIN best 32 LB: 1 at 46
+o 32
+c LIN GAP: 31 T 46
+c BOUND UPDATE RHS: 30 at 46
+c SAT Call at 46
+c Reduced cost 30 gap 31
+c Checking model
+c LIN best 31 LB: 1 at 53
+o 31
+c LIN GAP: 30 T 53
+c BOUND UPDATE RHS: 29 at 53
+c SAT Call at 53
+c Reduced cost 29 gap 30
+c Checking model
+c LIN best 30 LB: 1 at 53
+o 30
+c LIN GAP: 29 T 53
+c BOUND UPDATE RHS: 28 at 53
+c SAT Call at 53
+c Reduced cost 28 gap 29
+c Checking model
+c LIN best 29 LB: 1 at 53
+o 29
+c LIN GAP: 28 T 53
+c BOUND UPDATE RHS: 27 at 53
+c SAT Call at 53
+c Reduced cost 27 gap 28
+c Checking model
+c LIN best 28 LB: 1 at 53
+o 28
+c LIN GAP: 27 T 53
+c BOUND UPDATE RHS: 26 at 53
+c SAT Call at 53
+c Reduced cost 26 gap 27
+c Checking model
+c LIN best 27 LB: 1 at 53
+o 27
+c LIN GAP: 26 T 53
+c BOUND UPDATE RHS: 25 at 53
+c SAT Call at 53
+c Reduced cost 25 gap 26
+c Checking model
+c LIN best 26 LB: 1 at 53
+o 26
+c LIN GAP: 25 T 53
+c BOUND UPDATE RHS: 24 at 53
+c SAT Call at 53
+c Reduced cost 24 gap 25
+c Checking model
+c LIN best 25 LB: 1 at 62
+o 25
+c LIN GAP: 24 T 62
+c BOUND UPDATE RHS: 23 at 62
+c SAT Call at 62
+c Reduced cost 23 gap 24
+c Checking model
+c LIN best 24 LB: 1 at 62
+o 24
+c LIN GAP: 23 T 62
+c BOUND UPDATE RHS: 22 at 62
+c SAT Call at 62
+c Reduced cost 22 gap 23
+c Checking model
+c LIN best 23 LB: 1 at 75
+o 23
+c LIN GAP: 22 T 75
+c BOUND UPDATE RHS: 21 at 75
+c SAT Call at 75
+c Reconstructing in print answer
+c Reconstruction time: 0
+c new cost: 23
+s SATISFIABLE
+v 00001000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000000000000000000000000000001000000100000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000111001011100101110010000001011100110111010111001101010101110011010101011100101110110111001011000100100010010001001000111111110010001101010101110011010100001100110101000111001011101001110011011101001000101000010111001000000101110011111001011000100000010111001001001000100010010001001000100000010010001010100101110011011101011100110101010111001001100100110010011010000100010001010111001100110101110010111010001000110011010010001111110100100011011010011000100100010111001011101100010000111010001000101010010010001101110100100011111100001000100110100010001001101001110010100001001000100100010011001001000100110010010001101000111110010010001111111100110011110101011100110101010111001011100110111010010001101110101110011011101011100110111010111001101110101110011011101011100110111010111001101110101110011001100111100101110010010001111110001110010111001011000110111000111001101110000100010000001011100110001010111001011100110110010011010011100100110110111001111100101110011011101011100111111010011001011101110110010111001001100110111010111001001000100100011011001001000111111010111001101110100110011011101101100111111010010001101110101110010000001101000100100000000000101111100000001011101001000100010000011001101010101110001111101001000110101010011001101110101110011000100011100100110100111001100110100100001010100010100010101100010001101110101110011111101001000110111110111001000000101110111011111011100110111010111001101010100110011001101001000110111000010001101110100100000010011001100110111010010001001001000000000100001001000100110100010001100010100100010001001001000100000010010001000000100110010000001001000110111010010001111111000100010011010011100110100010111001111110101110011011101011100110111010111001011000101110011011101011100110111010111000101110100110011011101001000010100010010001011100100100010010001001100110100010010001001000100100010010001001000101110010010001001000101110010111001011100100100010110001011100101110010011001111100100100010010001011100101110010111001001100110110010111001001000100100010010001001000110111010111001011100100110010010001011100101110010111001011100101110010111001011100101110010111001011100101110010111001011100001110000111000011100101110010111001011100101110010111001001100101110010010001001000101110010011001001100100100010011001001100100100001011000001000000100010010001001000100110010010001001100100100010011001001000010100010010000111010100100010011001011100100110010010001011100100110010011001011100101110010000010000000100000001000000001000000100001000000000010000100000000001000010000000000100000010000000010000000100000001000000010000000100100000000000010000100000000001000010000000000100001000000000010000001000000001000010000000000100000000100000010000000010000001001000000000000100000000100000010000001000000001000000010000000100000000100000010000000010000001000010000000000100001000000000010000000100000001000000100000000001001000000000010000100000000001000000100000000100001000000000010010000000000001000001000000000100000001000000010000001000000000010000100000000100000000100000010000100000000001001000000000000100000010000000010000001000000001000000001000000100000001000000010000000100000001000000010000010000100000000000010010000000000001000100000000000100001000000000010000000100001000000000010000100000000001000010000000000100001000000000010000100000000001000010000000000100001000000000010000100000000001000010000010000000000001000000010010000000000001000000010000000100001000000000010000100000000001000000001000000100001000000000010000000100000100000000100000000100000010000000010010000000000001000010000000000100100000000000010000001000000100000000010000000100001000000000010000000100000001000001000000000100100000000000010000100000000001000010000000010000100000000000010000100000000001000000001000010000000001000000000100100000000000010010000000000100000000010000010000100000000001001000000000000100001000000000010000100000000001000010000000000100000010000000010000100000000001000010000000000001001000000000010000100000000001001000000000000100001000000000010000000010000010000010000000000100001000000000010000100000000001000010000000000100001000000000010000100000000001000000100000000100001000000000010000001000000000010000001000000100000010000000010000100000000001000000001000000100000000100000010000000010000001000000001000000100001000000000010010000000000001000000100000000100000100000000010010000000000001000010000000000100001000000000010000000100000001000010000000000100001000000000010000100000000001000010000000000100000100000000010000000100000001000000010000000100000100000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010010000000000001000000010000000100000001000000010000000100000100000000010000000100000001000000010000000100001000000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000001000000000100000001000000010000000100000001000000010000000100000001000000010000000100000100000000010001000000000001000000010000000100000001000000010000000100000001000000010000000100000001001101110111011101010101110111011101110111010101010111011101110111011101110111011101110111011101010111011101110111010101110111011101110111011101010101011101110111011101110111011101110101010101010111011101010111010111011101110111011101110111011101111101011101010111011101110111010101110111011101110111011101010111010101010111011101110111011101110101011101110101011101110111011101110111011101110111011101110111011111110111011101110111011101110111011101110111011101110111011101110111011101110101011101110111010101110111011101110101010101010101010101010101010101010101010101011101010101010101010101010111010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101101111111111111111111111111111111111111111111010111111011011111111011111111111111111111111111111111111111111111111111111011101111111111111111111101111111111111111111111111111111110111111111111011111110111111111100111111111111111011110011111111111101111111110101111111111111111111111111101111111111111111111111111111110111111111111111111111111110111111

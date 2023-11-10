@@ -1,0 +1,31 @@
+---curr_b1_sat 0 - curr_b0_sat 0
+ ---> [debug] ---> (4864, 1)   ndc: 2432
+df_consts -time: 0.03151 -dim: nan
+DC -time: 21.15086 -dim: 2432
+tree_var -time: 0.00044 -dim: nan
+7 -time: 0.03303 -dim: (11172, 2)
+8 -time: 0.00015 -dim: (7, 57)
+9 -time: 5.68577 -dim: (1835400, 3)
+10 -time: 7.22350 -dim: (1730141, 3)
+11_12 -time: 0.29923 -dim: [110424, 2]
+13 -time: 0.11289 -dim: (36808, 4)
+14_15 -time: 0.04151 -dim: [798, 2]
+16 -time: 0.00002 -dim: (0, 2)
+17_18 -time: 0.93308 -dim: [73616, 3]
+19 -time: 0.00011 -dim: (1, 1)
+20 -time: 0.33316 -dim: (0, 4601)
+21 -time: 0.00079 -dim: (1, 4601)
+smtPr_22-31 -time: 7079.62212 -dim: 21173800
+32_33_34 -time: 0.01943 -dim: (7294, 2)
+cl_file_header -time: 13.49013 -dim: nan
+*solver* -time: 47.25264 -dim: nan
+-- SUM CL TIME: 7094.30479          |  SUM other TIME: 81.92558          |  SUM TIME: 7176.23037
+Global Solver Time: 0 - curr_slvr_time: 47.252639854326844 -sum: 47.252639854326844  timelimit: 36000
+
+loandra header: p wcnf 83496 24981894 4865
+
+[debug] (0, 2) (0, 2)
+*loandra status: OPTIMUM FOUND
+ARI: -0.002531122990031123
+b0_final: 2316 | 0_ind: 2316
+b1_final: 250 | 0_ind: 250
