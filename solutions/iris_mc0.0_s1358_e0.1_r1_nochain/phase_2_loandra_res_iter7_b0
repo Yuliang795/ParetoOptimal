@@ -17,11 +17,11 @@ c |                                                                             
 c |  Problem Format:             MaxSAT                                                                   |
 c |  Problem Type:           Unweighted                                                                   |
 c |  Number of variables:          5190                                                                   |
-c |  Number of hard clauses:      55152                                                                   |
+c |  Number of hard clauses:      21630                                                                   |
 c |  Number of soft clauses:       1219                                                                   |
 c |  Number of cardinality:           0                                                                   |
 c |  Number of PB :                   0                                                                   |
-c |  Parse time:                   0.02 s                                                                 |
+c |  Parse time:                   0.01 s                                                                 |
 c |                                                                                                       |
 c PMRES ALGORITHM WITH LINEAR SEARCH 
 c PMRES LINEAR STRAT=1
@@ -32,11 +32,11 @@ c PMRES RELAX BEFORE STRAT =0
 c PMRES INCREMENTAL LIN DIVISION =0
 c PMRES MINIM =1
 c PMRES MINIM STRAT =0
-c PRE hard clauses before: 56371
+c PRE hard clauses before: 22849
 c PRE soft literals before: 1219
 c PRE time: 0 removed weight: 1054
-c PRE hard clauses after: 9890
-c PRE soft literals after: 0
+c PRE hard clauses after: 11131
+c PRE soft literals after: 165
 s UNSATISFIABLE
 c CG New weight: 1 at 0
 c PMRES CORE LIMIT (-1 = no limit)=30

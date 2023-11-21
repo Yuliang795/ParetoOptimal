@@ -195,11 +195,25 @@ def unique_encode_generator():
 # param: the path to the constraint file
 # return: ML and CL values in numpy array
 def get_ML_CL(consts_path):
-  consts_df = pd.read_csv(consts_path, header=None, delimiter=r"\s+")
-  ML_CL_end_index = consts_df.loc[consts_df[0]=='*'].index
-  ML = consts_df.head(ML_CL_end_index[0]).to_numpy(dtype='int')
-  CL = consts_df.iloc[ML_CL_end_index[0] + 1 : ML_CL_end_index[1]].to_numpy(dtype='int')
-  return ML,CL
+    # initialize empty lists for ML and CL
+    list_ML,list_CL = [],[]
+    with open(consts_path, 'r') as f:
+        current_list = list_ML
+        for line in f:
+            if not line.strip():
+                continue
+            # ML first switch to CL when reach *
+            if line.strip() == "*":
+                current_list = list_CL
+                continue
+            # split the line into a pair of integers
+            # add the pair to the current list
+            current_list.append(tuple(map(int, line.split())))
+    # if the ML/CL consts block is empty, the empty numpy still has to maintain the format
+    array_ML = np.array(list_ML, dtype='int').reshape(-1,2) if list_ML else np.array([], dtype='int').reshape(-1,2)
+    array_CL = np.array(list_CL, dtype='int').reshape(-1,2) if list_CL else np.array([], dtype='int').reshape(-1,2)
+    # 
+    return array_ML, array_CL
 
 
 def write_clauses_to_file(f_handle, clause_list, WEIGHT):
@@ -668,6 +682,7 @@ def writeMLCL(ML, CL, outputPath):
       f.write("*\n")
       for clPair in CL:
           f.write(f"{clPair[0]} {clPair[1]}\n")
+      f.write("*\n")
       
  
 
@@ -725,3 +740,21 @@ def write_pairs_to_file(tmp_DC, filename, type):
           if type=="ml":
             f.write("*\n")
           f.write("*")
+
+def write_pairs_to_file_withBaseConsts(tmp_DC, filename, type, ML_base=[], CL_base=[]):
+    
+    with open(filename, 'w') as f:
+      for ml_basePair in ML_base:
+          f.write(f"{ml_basePair[0]} {ml_basePair[1]}\n")
+      if (type=="ml" and len(tmp_DC)>0):
+          for w in tmp_DC:
+              for pair in w:
+                  f.write(f'{pair[0]} {pair[1]}\n')
+      f.write("*\n")
+      for cl_basePair in CL_base:
+          f.write(f"{cl_basePair[0]} {cl_basePair[1]}\n")
+      if (type=="cl" and len(tmp_DC)>0):
+          for w in tmp_DC:
+              for pair in w:
+                  f.write(f'{pair[0]} {pair[1]}\n')
+      f.write("*\n")

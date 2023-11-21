@@ -1,5 +1,0 @@
----curr_b1_sat 0 - curr_b0_sat 0
- ---> [debug] ---> (4864, 1)   ndc: 2432
-content/instance_spam ./consts_collection/1732/consts_k0.0_s1732/spam_0.1_mc0.0_s1732 ./solutions/spam_0.1_mc0.0_s1732_r1/ ./solutions/spam_0.1_mc0.0_s1732_r1/clauses_spam_0.1_mc0.0_s1732
-Smart Pair jar 
-java -DdataPath=content/instance_spam -DxStartInd=69431 -Db0StartInd=78633 -DhardClauseWeight=4865 -DdistanceClassPath=./solutions/spam_0.1_mc0.0_s1732_r1/DC -DoutFileName=./solutions/spam_0.1_mc0.0_s1732_r1/clauses_spam_0.1_mc0.0_s1732 -jar smart-pair.jar

@@ -36,17 +36,19 @@ for root, dirs, files in os.walk(consts_folder_path, topdown=False):
 consts_df = pd.concat([consts_df, pd.DataFrame(consts_list, columns = consts_df.columns)], ignore_index=True)
 
 file_list = consts_path_query(consts_df,
-                                    in_data=["chainlink"],
-                                    in_seed=[1732],
-                                    in_kappa=[0.0]) 
+                                    in_data=["iris"],
+                                    in_seed=[1358],
+                                    in_kappa=[0.0,0.1]) 
                                     # kappa cannot be 0.0 must >0
                                     #0.1,0.25,0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5
 use_Chain=["nochain","euc"][0]
 ML_CL_ratio_set = ["1"]
 stage1_timeout, stage2_timeout = [1800, 1800]
+verify_b0b1=True
 
-for ML_CL_ratio in ML_CL_ratio_set:
-    print('*'*50 + f'Start to iterate data files with ratio{ML_CL_ratio}' + '*'*50)
+
+for ML_CL_ratio in ML_CL_ratio_set: 
+    # print('*'*50 + f'Start to iterate data files with ratio{ML_CL_ratio}' + '*'*50)
     for consts_path in file_list:
         consts_name=consts_path.split('/')[-1]
         data_file_name = 'instance_' + consts_name.split('_')[0]
@@ -82,11 +84,20 @@ for ML_CL_ratio in ML_CL_ratio_set:
             # - (6) final stage solver time out (s)
             # - output path
             ## For no Constarints ##
-            cmd = 'python clauses_gen_allPhases_noConsts.py ' + data_file_name + ' ' \
-                + str(data_param_dict[data_file_name][0]) + ' ' \
-                + str(data_param_dict[data_file_name][1]) + ' ' \
-                + consts_path + ' ' \
-                + tmp_solution_path +' ' \
+            # cmd = 'python3 clauses_gen_allPhases_noConsts.py ' + data_file_name + ' ' \
+            #     + str(data_param_dict[data_file_name][0]) + ' ' \
+            #     + str(data_param_dict[data_file_name][1]) + ' ' \
+            #     + consts_path + ' ' \
+            #     + tmp_solution_path +' ' \
+            #     + str(stage2_timeout) 
+            cmd = 'python3 clauses_gen_allPhases.py ' + data_file_name + ' ' \
+                + str(data_param_dict[data_file_name][0]) + ' '  \
+                + str(data_param_dict[data_file_name][1] )+ ' ' \
+                + consts_path  + ' ' \
+                + tmp_solution_path + ' ' \
+                + '1' +' ' \
+                + 'nochain'  +' ' \
+                + str(stage1_timeout)  +' ' \
                 + str(stage2_timeout) 
                 
         
@@ -101,20 +112,34 @@ for ML_CL_ratio in ML_CL_ratio_set:
         phase1_cmd_status = subprocess.call(cmd, shell=True)
         phase1_end = time.perf_counter()
         if phase1_cmd_status!=0:
-            curr_time = datetime.datetime.now().strftime("%y_%m_%d_%H_%M")
-            print(f'***{curr_time} {consts_path}\nstage-1 status error code: {phase1_cmd_status}\n')
+            print(f'***{curr_time()} {consts_path}\nstage-1 status error code: {phase1_cmd_status}\n')
             # sys.exit()
-            # continue
+            continue
         print(f"finished successfully @{curr_time()}")
        
+
+       ## Verify
+        if verify_b0b1:
+            cmd = 'python3 b0b1_verify.py ' + data_file_name + ' ' \
+                + str(data_param_dict[data_file_name][0]) + ' ' \
+                + str(data_param_dict[data_file_name][1]) + ' ' \
+                + consts_path + ' ' \
+                + tmp_solution_path + ' ' \
+                + tmp_solution_path + 'phase_1_loandra_res'
+            
+            # print(cmd)
+            os.system(cmd)
+
+
         time.sleep(2)
+
 
 
         #     ## !!! CLEAN CLAUSE FILES !!! ##
         # this one deletes all matches under current directory
         # cmd = 'find . -type f -name "*clauses_final" -exec rm {} +' 
         # this one only deletes the matches under the current solution folder
-        cmd = f'find {tmp_solution_path} -type f -name "*clauses_final" -exec rm {{}} +'
+        cmd = f'find {tmp_solution_path} -type f -name "*clauses_final*" -exec rm {{}} +'
         os.system(cmd)
         ## !!! CLEAN ALL DC FILES !!! ##
         # cmd = 'find . -type f -name "DC" -exec rm {} +'

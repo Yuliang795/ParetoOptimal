@@ -109,23 +109,22 @@ start_ind +=  n_points*n_labels
 # set base startind for stage-2, the previous variables are same
 baseStartInd = start_ind
 
-# introduce new vars ml_var, cl_var
-ml_var = np.arange(start_ind, start_ind+len(ML))
-start_ind += len(ML)
-cl_var = np.arange(start_ind, start_ind+len(CL))
-
-
 print('***variables')
 print(f'a: {a[0,0]} - {a[-1,-1]} -> {a[-1,-1] - a[0,0] +1}\n'
       f's: {s[0,0]} - {s[-1,-1]} -> {s[-1,-1] - s[0,0] +1}\n'
       f'z: {z[0,0]} - {z[-1,-1]} -> {z[-1,-1] - z[0,0] +1}\n'
       f'g: {g[0,0]} - {g[-1,-1]} -> {g[-1,-1] - g[0,0] +1}\n'
       f'x: {x[0,0]} - {x[-1,-1]} -> {x[-1,-1] - x[0,0] +1}\n'
-      
-      f'ml: {ml_var[0]} - {ml_var[-1]} -> {ml_var[-1] - ml_var[0] +1}\n'
-      f'cl: {cl_var[0]} - {cl_var[-1]} -> {cl_var[-1] - cl_var[0] +1}\n'
       )
 
+# introduce new vars ml_var, cl_var
+if not 'mc0.0' in consts_path.split('/')[-1]:
+    ml_var = np.arange(start_ind, start_ind+len(ML))
+    start_ind += len(ML)
+    cl_var = np.arange(start_ind, start_ind+len(CL))
+    start_ind += len(CL)
+    print(f'ml: {ml_var[0]} - {ml_var[-1]} -> {ml_var[-1] - ml_var[0] +1}\n'
+          f'cl: {cl_var[0]} - {cl_var[-1]} -> {cl_var[-1] - cl_var[0] +1}\n')
 
 print('variables***')
 
@@ -141,37 +140,11 @@ ML_W = SOFT_CLAUSE_W
 # hard clauses
 HARD_CLAUSE_W = CL_W*len(CL) + ML_W*len(ML) + 1
 # num vars
-stage1_Num_VARS = cl_var[-1]
+stage1_Num_VARS = start_ind-1 #cl_var[-1]
 
 print(f'[debug] --> CL ML ratio {CL_ML_r}')
 
 ######################## Clause Gen ###############################
-
-### Start file I/O
-# clause_file_name = tmp_solution_path + consts_path.split('/')[-1]
-clause_file_name = tmp_solution_path + 'phase1_clauses_tmp'
-try:
-    os.remove(clause_file_name)
-except OSError:
-    pass
-f = open(clause_file_name, "a")  # Textual write and read
-
-### Obj  SOFT CLAUSES
-#   # (37) Not(b0[w]) weight='1'
-#   # (38) b1[w] weight='1'
-# The length of the list of the two objectives is 2*n_DC
-# np.savetxt(f ,np.hstack((np.repeat(SOFT_CLAUSE_W,2*n_DC).reshape(-1,1), np.vstack((-b0, b1)).reshape(-1,1) , np.zeros(2*n_DC).reshape(-1,1))), fmt='%d')
-
-### ML CL as Obj
-np.savetxt(f ,
-           np.hstack(
-               (np.concatenate((np.repeat(CL_W, len(cl_var)), np.repeat(ML_W, len(ml_var))), axis=0).reshape(-1, 1),
-                np.concatenate((cl_var, ml_var), axis=0).reshape(-1, 1),
-                np.zeros(len(cl_var) + len(ml_var)).reshape(-1, 1))),
-           fmt='%d')
-
-############### Kmeans separate order ML CL seq
-
 
 # (7)
 # (!a_t,j, !a_t,j')
@@ -179,9 +152,6 @@ tmp_time_counter_start = time.perf_counter()
 
 feature_comb_ind = np.array(list(combinations(feature_index, 2)))
 clause_list_7 = np.dstack((-a[:, feature_comb_ind[:, 0]], -a[:, feature_comb_ind[:, 1]])).reshape(-1, 2)
-# write to file
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_7)).reshape(-1, 1), clause_list_7,
-                         np.zeros(len(clause_list_7)).reshape(-1, 1))), fmt='%d')
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -194,8 +164,7 @@ TC.counter(tmp_time_counter_start,
 # this is just the rows of a are the clauses
 tmp_time_counter_start = time.perf_counter()
 clause_list_8 = a
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_8)).reshape(-1, 1), clause_list_8, np.zeros(len(clause_list_8)).reshape(-1, 1))),
-           fmt='%d')
+
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
                tmp_time_counter_end,
@@ -217,9 +186,6 @@ for j in range(n_feature):
                                          np.repeat(-a[:, j], len(ind), axis=0).reshape(-1, len(ind)), s[ind[:, 0], :].T,
                                          -s[ind[:, 1], :].T)).reshape(-1, 3)
                                ))
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_9)).reshape(-1, 1),
-                         clause_list_9,
-                         np.zeros(len(clause_list_9)).reshape(-1, 1))), fmt='%d')
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -245,9 +211,6 @@ for b in range(n_bnodes):
                                         np.vstack((np.repeat(-a[b, ind_j], len(tmp_eq_pair_ind_list)),
                                                    -s[tmp_sorted_consec_pairs[tmp_eq_pair_ind_list, 0], b],
                                                    s[tmp_sorted_consec_pairs[tmp_eq_pair_ind_list, 1], b])).T))
-# write to file
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_10)).reshape(-1, 1), clause_list_10,
-                         np.zeros(len(clause_list_10)).reshape(-1, 1))), fmt='%d')
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -271,13 +234,7 @@ for l in range(n_lnodes):
     # 12
     clause_list_12 = np.vstack((clause_list_12, np.hstack(
         (np.repeat(-z[:, l], len(right_ancestors_list)).reshape(-1, 1), -s[:, right_ancestors_list].reshape(-1, 1)))))
-# add all the clauses to solver
-# 11
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_11)).reshape(-1, 1), clause_list_11,
-                         np.zeros(len(clause_list_11)).reshape(-1, 1))), fmt='%d')
-# 12
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_12)).reshape(-1, 1), clause_list_12,
-                         np.zeros(len(clause_list_12)).reshape(-1, 1))), fmt='%d')
+
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
                tmp_time_counter_end,
@@ -296,10 +253,6 @@ for leaf in range(n_lnodes):
 
     clause_list_13 = np.vstack((clause_list_13, np.hstack(
         (z[:, leaf].reshape(-1, 1), -s[:, left_ancestors_list], s[:, right_ancestors_list]))))
-
-# write all the clauses to file
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_13)).reshape(-1, 1), clause_list_13,
-                         np.zeros(len(clause_list_13)).reshape(-1, 1))), fmt='%d')
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -321,14 +274,6 @@ for j in range(n_feature):
     clause_list_15 = np.vstack(
         (clause_list_15, np.hstack((-a[:, j].reshape(-1, 1), -s[sort_ind[-1], :].reshape(-1, 1)))))
 
-# write all the clauses to file
-# (14)
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_14)).reshape(-1, 1), clause_list_14,
-                         np.zeros(len(clause_list_14)).reshape(-1, 1))), fmt='%d')
-# (15)
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_15)).reshape(-1, 1), clause_list_15,
-                         np.zeros(len(clause_list_15)).reshape(-1, 1))), fmt='%d')
-
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
                tmp_time_counter_end,
@@ -342,11 +287,6 @@ TC.counter(tmp_time_counter_start,
 tmp_time_counter_start = time.perf_counter()
 
 clause_list_16 = np.hstack((g[:, :-2].reshape(-1,1), -g[:, 1:-1].reshape(-1,1)))
-# np.savetxt(f, np.repeat(0,5).reshape(1,-1), fmt='%d')
-# np.savetxt(f, np.hstack(
-#     (np.repeat(HARD_CLAUSE_W, n_lnodes).reshape(-1, 1), clause_list_16, np.zeros(n_lnodes).reshape(-1, 1))), fmt='%d')
-
-write_clauses_to_file(f, clause_list_16, HARD_CLAUSE_W)
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -366,14 +306,6 @@ for k in range(n_labels - 1):
             # (18)
             clause_list_18 += [[-z[i, l], g[l, k], -x[i, k]]]
 
-# add to solver
-# (17)
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_17)).reshape(-1, 1), np.array(clause_list_17),
-                         np.zeros(len(clause_list_17)).reshape(-1, 1))), fmt='%d')
-# (18)
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, len(clause_list_18)).reshape(-1, 1), np.array(clause_list_18),
-                         np.zeros(len(clause_list_18)).reshape(-1, 1))), fmt='%d')
-
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
                tmp_time_counter_end,
@@ -388,9 +320,6 @@ TC.counter(tmp_time_counter_start,
 tmp_time_counter_start = time.perf_counter()
 
 clause_list_19 = -x.diagonal()[:n_labels - 1].reshape(-1, 1)
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, n_labels - 1).reshape(-1, 1),
-                         clause_list_19,
-                         np.zeros(n_labels - 1).reshape(-1, 1))), fmt='%d')
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -416,10 +345,6 @@ for i in range(2, n_points):
   #   f'--{np.repeat(HARD_CLAUSE_W, n_labels - 2).reshape(-1, 1).shape} - {clause_20_tmp.shape} - {np.zeros(n_labels - 2).reshape(-1, 1)}')
   clause_list_len_20.append(clause_20_tmp.shape)
   clause_list_20.append(clause_20_tmp)
-  np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, curr_c_value - 1).reshape(-1, 1),
-                           clause_20_tmp,
-                           np.zeros(curr_c_value - 1).reshape(-1, 1))), fmt='%d')
-
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -433,9 +358,6 @@ TC.counter(tmp_time_counter_start,
 tmp_time_counter_start = time.perf_counter()
 
 clause_list_21 = x[:, -2].reshape(1, -1)
-np.savetxt(f, np.hstack((np.repeat(HARD_CLAUSE_W, 1).reshape(1, -1),
-                         clause_list_21,
-                         np.zeros(1).reshape(1, -1))), fmt='%d')
 
 tmp_time_counter_end = time.perf_counter()
 TC.counter(tmp_time_counter_start,
@@ -443,177 +365,212 @@ TC.counter(tmp_time_counter_start,
                '21',
                clause_list_21.shape)
 
-
+clause_list_dict = {
+    "clause_list_7": clause_list_7,
+    "clause_list_8": clause_list_8,
+    "clause_list_9": clause_list_9,
+    "clause_list_10": clause_list_10,
+    "clause_list_11": clause_list_11,
+    "clause_list_12": clause_list_12,
+    "clause_list_13": clause_list_13,
+    "clause_list_14": clause_list_14,
+    "clause_list_15": clause_list_15,
+    "clause_list_16": clause_list_16,
+    "clause_list_17": clause_list_17,
+    "clause_list_18": clause_list_18,
+    "clause_list_19": clause_list_19,
+    "clause_list_21": clause_list_21
+}
 
 ### SMART PAIR clauses for euc chained method
-if use_Chain=="euc":
+if not 'mc0.0' in consts_path.split('/')[-1]:
+    if use_Chain=="euc":
+        tmp_time_counter_start = time.perf_counter()
+    # euc chain sep  ###This one for euc chain###
+        consts_seq_dist_chain_sep2(df,ML, CL,ml_var, cl_var, HARD_CLAUSE_W, f)
+        ## SmartPair on ML chain
+        ML_ascending,ML_ascending_index = sort_ascending_ML_CL(ML, df)
+        ML_ascending = ML_ascending.tolist()
+        clause_list_25,clause_list_26 = [np.array([]).reshape(0, 3)]*2
+        t1 = node_graph(unique_encode_generator(), len(df))
+        for pair_ind, pair in enumerate(ML_ascending):
+            p0_cc_ind,p1_cc_ind = t1.get_cc_ind(pair)
+            if not t1.check_inner(p0_cc_ind,p1_cc_ind):
+                t1.update_pos_edge(pair,p0_cc_ind,p1_cc_ind)
+                # *add clauses (25,26) for (x_i, x_i')
+                # the length of (25) and (26) are both n_label -1, so the total length is 2*n_label-2
+                # try:
+                # clause_list_25 = np.vstack((clause_list_25,np.vstack((-x[pair[0], :-1], x[pair[1], :-1])).T))
+                # clause_list_26 = np.vstack((clause_list_26,np.vstack((x[pair[0], :-1], -x[pair[1], :-1])).T))
+                clause_list_25 = np.vstack((clause_list_25,
+                                            np.vstack((np.repeat(-ml_var[ML_ascending_index[pair_ind]], x.shape[1]-1),
+                                                    -x[pair[0], :-1], x[pair[1], :-1])).T))
+                clause_list_26 = np.vstack((clause_list_26,
+                                            np.vstack((np.repeat(-ml_var[ML_ascending_index[pair_ind]], x.shape[1]-1),
+                                                    x[pair[0], :-1], -x[pair[1], :-1])).T))
+        
+        tmp_time_counter_end = time.perf_counter()
+        TC.counter(tmp_time_counter_start,
+                    tmp_time_counter_end,
+                    'smtpr_25_26',
+                    [clause_list_25.shape[0] , clause_list_26.shape[0]])
+    else:
+        # (25)
+        tmp_time_counter_start = time.perf_counter()
+        # x.shape[1]-1 is the number of labels -1
+        clause_list_25 = np.hstack((np.repeat(-ml_var, x.shape[1]-1).reshape(-1,1),
+                                    -x[ML[:,0], :-1].reshape(-1,1), x[ML[:,1], :-1].reshape(-1,1)))
+
+        tmp_time_counter_end = time.perf_counter()
+        TC.counter(tmp_time_counter_start,
+                    tmp_time_counter_end,
+                    '25',
+                    clause_list_25.shape)
+        # (26)
+        tmp_time_counter_start = time.perf_counter()
+
+        clause_list_26 = np.hstack((np.repeat(-ml_var, x.shape[1]-1).reshape(-1,1),
+                                    x[ML[:,0], :-1].reshape(-1,1), -x[ML[:,1], :-1].reshape(-1,1)))
+
+        tmp_time_counter_end = time.perf_counter()
+        TC.counter(tmp_time_counter_start,
+                    tmp_time_counter_end,
+                    '26',
+                    clause_list_26.shape)
+
+    # (22) (23) the cluster in the paper starts from 1, assume index 0
+    # k is the number of clusters
     tmp_time_counter_start = time.perf_counter()
-   # euc chain sep  ###This one for euc chain###
-    consts_seq_dist_chain_sep2(df,ML, CL,ml_var, cl_var, HARD_CLAUSE_W, f)
-    ## SmartPair on ML chain
-    ML_ascending,ML_ascending_index = sort_ascending_ML_CL(ML, df)
-    ML_ascending = ML_ascending.tolist()
-    clause_list_25,clause_list_26 = [np.array([]).reshape(0, 3)]*2
-    t1 = node_graph(unique_encode_generator(), len(df))
-    for pair_ind, pair in enumerate(ML_ascending):
-        p0_cc_ind,p1_cc_ind = t1.get_cc_ind(pair)
-        if not t1.check_inner(p0_cc_ind,p1_cc_ind):
-            t1.update_pos_edge(pair,p0_cc_ind,p1_cc_ind)
-            # *add clauses (25,26) for (x_i, x_i')
-            # the length of (25) and (26) are both n_label -1, so the total length is 2*n_label-2
-            # try:
-            # clause_list_25 = np.vstack((clause_list_25,np.vstack((-x[pair[0], :-1], x[pair[1], :-1])).T))
-            # clause_list_26 = np.vstack((clause_list_26,np.vstack((x[pair[0], :-1], -x[pair[1], :-1])).T))
-            clause_list_25 = np.vstack((clause_list_25,
-                                        np.vstack((np.repeat(-ml_var[ML_ascending_index[pair_ind]], x.shape[1]-1),
-                                                   -x[pair[0], :-1], x[pair[1], :-1])).T))
-            clause_list_26 = np.vstack((clause_list_26,
-                                        np.vstack((np.repeat(-ml_var[ML_ascending_index[pair_ind]], x.shape[1]-1),
-                                                   x[pair[0], :-1], -x[pair[1], :-1])).T))
+
+    clause_list_22 = np.vstack((-cl_var,
+                                x[CL[:,0],0], x[CL[:,1],0])).T
+
+    tmp_time_counter_end = time.perf_counter()
+    TC.counter(tmp_time_counter_start,
+                tmp_time_counter_end,
+                '22',
+                clause_list_22.shape)
+
+    tmp_time_counter_start = time.perf_counter()
+
+    clause_list_23 = np.vstack((-cl_var,
+                                -x[CL[:,0],-2], -x[CL[:,1],-2])).T
+
+    tmp_time_counter_end = time.perf_counter()
+    TC.counter(tmp_time_counter_start,
+                tmp_time_counter_end,
+                '23',
+                clause_list_23.shape)
+    # (24)
+    tmp_time_counter_start = time.perf_counter()
+
+    clause_list_24 = np.hstack((np.repeat(-cl_var, x.shape[1]-2).reshape(-1,1),
+                                -x[CL[:,0], :-2].reshape(-1,1),
+                                -x[CL[:,1], :-2].reshape(-1,1),
+                                x[CL[:,0], 1:-1].reshape(-1,1),
+                                x[CL[:,1], 1:-1].reshape(-1,1)))
+
+    tmp_time_counter_end = time.perf_counter()
+    TC.counter(tmp_time_counter_start,
+                tmp_time_counter_end,
+                '24',
+                clause_list_24.shape)
+    # add to clauses dict
+    clause_list_dict.update({"clause_list_22": clause_list_22,
+                             "clause_list_23": clause_list_23,
+                             "clause_list_24": clause_list_24,
+                             "clause_list_25": clause_list_25,
+                             "clause_list_26": clause_list_26})
     
-    tmp_time_counter_end = time.perf_counter()
-    TC.counter(tmp_time_counter_start,
-                tmp_time_counter_end,
-                'smtpr_25_26',
-                [clause_list_25.shape[0] , clause_list_26.shape[0]])
-else:
-    # (25)
+    ### Start file I/O
+    # clause_file_name = tmp_solution_path + consts_path.split('/')[-1]
+    clause_file_name = tmp_solution_path + 'phase1_clauses_tmp'
+    try:
+        os.remove(clause_file_name)
+    except OSError:
+        pass
+    f = open(clause_file_name, "a")  # Textual write and read
+    
+    ### Obj  SOFT CLAUSES ### ML CL as Obj
+    np.savetxt(f ,
+            np.hstack(
+                (np.concatenate((np.repeat(CL_W, len(cl_var)), np.repeat(ML_W, len(ml_var))), axis=0).reshape(-1, 1),
+                    np.concatenate((cl_var, ml_var), axis=0).reshape(-1, 1),
+                    np.zeros(len(cl_var) + len(ml_var)).reshape(-1, 1))),
+            fmt='%d')
+        
+    # write clauses 7-26 to file
+    for ind, (clause_name, clause_list) in enumerate(clause_list_dict.items()):
+        write_clauses_to_file(f, clause_list, HARD_CLAUSE_W)
+        print(f"stage1 IO |{clause_name} -size: {len(clause_list)}")
+    counter=0
+    for sub_clause_list in clause_list_20:
+        write_clauses_to_file(f, sub_clause_list, HARD_CLAUSE_W)
+        counter+=sub_clause_list.shape[0]
+    print(f"stage1 IO |clauses20 -size:{counter}")
+
+    ### Finish File I/O
+    f.close()
+
     tmp_time_counter_start = time.perf_counter()
-    # x.shape[1]-1 is the number of labels -1
-    clause_list_25 = np.hstack((np.repeat(-ml_var, x.shape[1]-1).reshape(-1,1),
-                                -x[ML[:,0], :-1].reshape(-1,1), x[ML[:,1], :-1].reshape(-1,1)))
+    ### Add header to clause
+    final_clause_file_name = tmp_solution_path + 'phase_1_clauses_final'
+    with open(final_clause_file_name, 'w') as f0:
+        with open(clause_file_name, 'r+') as f1:
+            clauses_list_fr_file = f1.readlines()
+            num_clauses = len(clauses_list_fr_file)
+            loandra_param = f'p wcnf {stage1_Num_VARS} {num_clauses} {HARD_CLAUSE_W}\n'
+            f0.write(loandra_param)
+            for clause in clauses_list_fr_file:
+                f0.write(clause)
+
+    # delete the file without handler
+    os.remove(clause_file_name)
+    loandra_res_file_name = tmp_solution_path + 'phase_1_loandra_res'
+    print(f'the cl header --> {loandra_param}')
 
     tmp_time_counter_end = time.perf_counter()
     TC.counter(tmp_time_counter_start,
                 tmp_time_counter_end,
-                '25',
-                clause_list_25.shape)
-    # (26)
+                'slvr_header',
+                np.nan)
+
+    ### call loandra 
+    # time out timeout 900s
+    # global_time_limit = 900# 3600*3
+    loandra_cmd  = f'timeout {stage1_timeout}s ./loandra-master/loandra_static -pmreslin-cglim=30 -weight-strategy=1 -print-model -verbosity=1 ' \
+                + final_clause_file_name+' >' + loandra_res_file_name
+
+    print(loandra_cmd)
+
     tmp_time_counter_start = time.perf_counter()
-
-    clause_list_26 = np.hstack((np.repeat(-ml_var, x.shape[1]-1).reshape(-1,1),
-                                x[ML[:,0], :-1].reshape(-1,1), -x[ML[:,1], :-1].reshape(-1,1)))
-
+    os.system(loandra_cmd)
     tmp_time_counter_end = time.perf_counter()
     TC.counter(tmp_time_counter_start,
                 tmp_time_counter_end,
-                '26',
-                clause_list_26.shape)
+                '*solver*',
+                np.nan)
+    stage1_Total_time_counter_end = time.perf_counter()
+    TC.counter(stage1_Total_time_counter_start,
+            stage1_Total_time_counter_end,
+            'Total',
+            np.nan)
+    
+    # read loandra res
+    loandra_status, ml_res, cl_res = output_1p(loandra_res_file_name,ML,ml_var, CL, cl_var,ML_W, CL_W, TC)
 
-# (22) (23) the cluster in the paper starts from 1, assume index 0
-# k is the number of clusters
-tmp_time_counter_start = time.perf_counter()
-
-clause_list_22 = np.vstack((-cl_var,
-                            x[CL[:,0],0], x[CL[:,1],0])).T
-
-tmp_time_counter_end = time.perf_counter()
-TC.counter(tmp_time_counter_start,
-            tmp_time_counter_end,
-            '22',
-            clause_list_22.shape)
-
-tmp_time_counter_start = time.perf_counter()
-
-clause_list_23 = np.vstack((-cl_var,
-                            -x[CL[:,0],-2], -x[CL[:,1],-2])).T
-
-tmp_time_counter_end = time.perf_counter()
-TC.counter(tmp_time_counter_start,
-            tmp_time_counter_end,
-            '23',
-            clause_list_23.shape)
-# (24)
-tmp_time_counter_start = time.perf_counter()
-
-clause_list_24 = np.hstack((np.repeat(-cl_var, x.shape[1]-2).reshape(-1,1),
-                            -x[CL[:,0], :-2].reshape(-1,1),
-                            -x[CL[:,1], :-2].reshape(-1,1),
-                            x[CL[:,0], 1:-1].reshape(-1,1),
-                            x[CL[:,1], 1:-1].reshape(-1,1)))
-
-tmp_time_counter_end = time.perf_counter()
-TC.counter(tmp_time_counter_start,
-            tmp_time_counter_end,
-            '24',
-            clause_list_24.shape)
-
-
-tmp_time_counter_start = time.perf_counter()
-ind_counter = 22
-num_counter = 0
-for clause_list in [clause_list_22,clause_list_23,clause_list_24,
-                    clause_list_25, clause_list_26]:
-    write_clauses_to_file(f, clause_list, HARD_CLAUSE_W)
-    # clauses num
-    num_counter +=clause_list.shape[0]
-    ind_counter+=1
-# for clause_list in [clause_list_26]:
-#   fast_write_clauses_to_file(f, clause_list, HARD_CLAUSE_W)
-# with open('./test_fast_write', 'w')as k:
-#    fast_write_clauses_to_file(k, clause_list, HARD_CLAUSE_W)
-
-tmp_time_counter_end = time.perf_counter()
-TC.counter(tmp_time_counter_start,
-               tmp_time_counter_end,
-               'writeIO 22-26',
-               np.nan)
-### Finish File I/O
-f.close()
-
-tmp_time_counter_start = time.perf_counter()
-### Add header to clause
-final_clause_file_name = tmp_solution_path + 'phase_1_clauses_final'
-with open(final_clause_file_name, 'w') as f0:
-  with open(clause_file_name, 'r+') as f1:
-    clauses_list_fr_file = f1.readlines()
-    num_clauses = len(clauses_list_fr_file)
-    loandra_param = f'p wcnf {stage1_Num_VARS} {num_clauses} {HARD_CLAUSE_W}\n'
-    f0.write(loandra_param)
-    for clause in clauses_list_fr_file:
-      f0.write(clause)
-
-# delete the file without handler
-os.remove(clause_file_name)
-loandra_res_file_name = tmp_solution_path + 'phase_1_loandra_res'
-print(f'the cl header --> {loandra_param}')
-
-tmp_time_counter_end = time.perf_counter()
-TC.counter(tmp_time_counter_start,
-               tmp_time_counter_end,
-               'slvr_header',
-               np.nan)
-
-### call loandra 
-# time out timeout 900s
-# global_time_limit = 900# 3600*3
-loandra_cmd  = f'timeout {stage1_timeout}s ./loandra-master/loandra_static -pmreslin-cglim=30 -weight-strategy=1 -print-model -verbosity=1 ' \
-              + final_clause_file_name+' >' + loandra_res_file_name
-
-print(loandra_cmd)
-
-tmp_time_counter_start = time.perf_counter()
-os.system(loandra_cmd)
-tmp_time_counter_end = time.perf_counter()
-TC.counter(tmp_time_counter_start,
-               tmp_time_counter_end,
-               '*solver*',
-               np.nan)
+    TC.print_dict()
+    if loandra_status not in ["OPTIMUM FOUND", "SATISFIABLE"]:
+        print(f"\n*** stage1 loandra status not valid: {loandra_status} ->exit***")
+        stage1MsgOut.close()
+        sys.exit()
 
 stage1_Total_time_counter_end = time.perf_counter()
 TC.counter(stage1_Total_time_counter_start,
            stage1_Total_time_counter_end,
            'Total',
            np.nan)
-
-# read loandra res
-loandra_status, ml_res, cl_res = output_1p(loandra_res_file_name,ML,ml_var, CL, cl_var,ML_W, CL_W, TC)
-
 TC.print_dict()
-if loandra_status not in ["OPTIMUM FOUND", "SATISFIABLE"]:
-    print(f"\n*** stage1 loandra status not valid: {loandra_status} ->exit***")
-    stage1MsgOut.close()
-    sys.exit()
 
 stage1MsgOut.close()
 #=====================================================================================================================#
@@ -650,7 +607,14 @@ print(f'a: {a[0, 0]} - {a[-1, -1]} -> {a[-1, -1] - a[0, 0] + 1}  \n'
       f'b0: {b0[0]} - {b0[-1]} -> {b0[-1] - b0[0] + 1}\n'
       f'b1: {b1[0]} - {b1[-1]} -> {b1[-1] - b1[0] + 1}')
 
-ML, CL = get_optimal_ml_cl(tmp_solution_path + 'phase_1_loandra_res', ML, CL)
+# Question: Do we want to do ParetoOptimal on 1P with constraints?
+# if so, when (not 'mc0.0') and *(1P)* add all consts as base constraints
+if not 'mc0.0' in consts_path.split('/')[-1]: #2P
+    ML_base, CL_base = get_optimal_ml_cl(tmp_solution_path + 'phase_1_loandra_res', ML, CL)
+else: #1P no consts
+    ML_base, CL_base = np.array([], dtype='int').reshape(-1,2), np.array([], dtype='int').reshape(-1,2)
+writeMLCL(ML_base, CL_base, f"{tmp_solution_path}stage1_optimalConsts") #_{consts_path.split('/')[-1]}
+
 print(f"--- len ml cl ---   ml: {len(ML)}, cl: {len(CL)}")
 
 # (32) (33) (34)
@@ -659,17 +623,27 @@ print(f"--- len ml cl ---   ml: {len(ML)}, cl: {len(CL)}")
 clause_list_32_33_34 = np.vstack((np.vstack((-b0[1:], b0[:-1])).T,
                                   np.vstack((-b1[1:], b1[:-1])).T,
                                   np.vstack((-b1, b0)).T))
+clause_list_dict.update({ "clause_list_32_33_34": clause_list_32_33_34})
+# remove ML CL clauses 22-26
+if not 'mc0.0' in consts_path.split('/')[-1]:
+    for key in ["clause_list_22","clause_list_23","clause_list_24","clause_list_25","clause_list_26"]:
+        if key in clause_list_dict:
+            del clause_list_dict[key]
+        else:
+            print(f"**Missing Clause LIST** - {key}")
 
 stage2MsgOut.close()
 
 
-loandra_status, b0_res, b1_res = 'OPTIMUM FOUND',0,0
+loandra_status, b0_res, b1_res = 'OPTIMUM FOUND',-1,-1
 global_solver_time_counter = 0
 global_time_limit = stage2_timeout
 iter_ind=0
 alter_ind_gen = binary_generator() #
 
 while loandra_status=='OPTIMUM FOUND':
+    iter_TC = Time_Counter_v2()
+    iter_stage2_Total_time_counter_start = time.perf_counter()
     obj_ = ['b0','b1'][next(alter_ind_gen)]
     outfile_handle = open(f'{tmp_solution_path}out_{iter_ind}_{obj_}', 'w')
     sys.stdout=outfile_handle
@@ -687,64 +661,45 @@ while loandra_status=='OPTIMUM FOUND':
     except OSError:
         pass
     f = open(clause_file_name, "a", 100 * (2 ** 20))  # Textual write and read
+    # use ML and CL to enforce b0 b1
+    b0b1_MlCl_Consts_path = tmp_solution_path+f"b0b1_MlCl_Consts_{iter_ind}_{obj_}"
 
     ### Obj  SOFT CLAUSES
     if obj_ == 'b0':    
         np.savetxt(f ,np.hstack((np.repeat(1, len(b0)).reshape(-1,1),
                                     -b0.reshape(-1,1),
                                     np.zeros(len(b0)).reshape(-1,1))), fmt='%d')
-        ## MD enforcement hard clause
-        if iter_ind!=0:
-            np.savetxt(f,np.array([HARD_CLAUSE_W,b1[min(curr_b1_sat, len(b1)-1)],0]).reshape(-1,3),fmt='%d')
+        ## b1 (b+) enforcement hard clause
+        print(f"************* {curr_b1_sat}    _{iter_ind}_{obj_}")
+        write_pairs_to_file_withBaseConsts(Distance_Class[:curr_b1_sat+1], filename=b0b1_MlCl_Consts_path, type="ml",
+                                            ML_base = ML_base, CL_base = CL_base)
         
     if obj_ == 'b1':
         np.savetxt(f ,np.hstack((np.repeat(1, len(b1)).reshape(-1,1),
                                 b1.reshape(-1,1),
                                     np.zeros(len(b1)).reshape(-1,1))), fmt='%d')
-        # 
-        if curr_b0_sat> len(b0): sys.exit()
-        # [1,-1][curr_b0_sat==len(b0)]*b0[min(curr_b0_sat, len(b0)-1)]
-        if curr_b0_sat==len(b0):
-            np.savetxt(f,np.array([HARD_CLAUSE_W,b0[-1],0]).reshape(-1,3),fmt='%d')
-        # case where curr_b0_sat>=0. When curr_b0_sat==0, the first b0 must be unsat
-        else: 
-            np.savetxt(f,np.array([HARD_CLAUSE_W,-b0[curr_b0_sat],0]).reshape(-1,3),fmt='%d')
+        # b0 (b-) enforcement hard clause
+        print(f"\n******{curr_b0_sat}   - dc size: {len(Distance_Class[curr_b0_sat:])}")
+        write_pairs_to_file_withBaseConsts(Distance_Class[curr_b0_sat:], filename=b0b1_MlCl_Consts_path, type="cl",
+                                           ML_base = ML_base, CL_base = CL_base)
+        #
         print(f'[debug] ---------- > len equal {curr_b0_sat==len(b0)} {-b0[min(curr_b0_sat, len(b0)-1)]}  -curb0: {curr_b0_sat} len-1: {len(b0)-1}')
-
     #
     print(f' ---> [debug] ---> {np.vstack((-b0, b1)).reshape(-1,1).shape}   ndc: {n_DC}')
 
-
-
-
-    clauses_names = (['clause_list_7','clause_list_8','clause_list_9',
-                        'clause_list_10','clause_list_11','clause_list_12',
-                        'clause_list_13','clause_list_14','clause_list_15',
-                        'clause_list_16','clause_list_17','clause_list_18',
-                        'clause_list_19','clause_list_21', 'clause_list_32_33_34'])
-
-    stage2NumOfClauses=[]
-    for ind, clause_list in enumerate([clause_list_7,clause_list_8,clause_list_9,
-                        clause_list_10,clause_list_11,clause_list_12,
-                        clause_list_13,clause_list_14,clause_list_15,
-                        clause_list_16,clause_list_17,clause_list_18,
-                        clause_list_19,clause_list_21, clause_list_32_33_34]):
+    ### CLAUSES IO: write clauses 7-26 to file  ###
+    for ind, (clause_name, clause_list) in enumerate(clause_list_dict.items()):
         write_clauses_to_file(f, clause_list, HARD_CLAUSE_W)
-        stage2NumOfClauses.append(len(clause_list))
-        print(f"{clauses_names[ind]} -size: {len(clause_list)}")
-        
+        print(f"stage2 IO |{clause_name} -size: {len(clause_list)}")
     counter=0
     for sub_clause_list in clause_list_20:
         write_clauses_to_file(f, sub_clause_list, HARD_CLAUSE_W)
         counter+=sub_clause_list.shape[0]
-    print(f"clauses20 -size:{counter}")
-    stage2NumOfClauses.append(counter)
-
-
+    print(f"stage2 IO |clauses20 -size:{counter}")
 
     f.close()
     clausesIO_time_counter_end = time.perf_counter()
-    TC.counter(clausesIO_time_counter_start,
+    iter_TC.counter(clausesIO_time_counter_start,
                     clausesIO_time_counter_end,
                     'clausesIO_7-21_32-34',
                     np.nan)
@@ -752,6 +707,7 @@ while loandra_status=='OPTIMUM FOUND':
     SmartPair_time_counter_start = time.perf_counter()
     print(data_file_path,consts_path, tmp_solution_path,clause_file_name)
     command = ['java',
+                    f'-DconstsPath={b0b1_MlCl_Consts_path}',
                     f'-DdataPath={data_file_path}', 
                     f'-DxStartInd={x[0,0]}', 
                     f'-Db0StartInd={b0[0]}', 
@@ -760,25 +716,27 @@ while loandra_status=='OPTIMUM FOUND':
                     f'-DoutFileName={clause_file_name}', 
                     '-jar', 
                     'smart-pair.jar']
-    if 'mc0.0' not in consts_path.split('/')[-1]:
-        optimalConstsPath = f"{tmp_solution_path}optimalConsts_{consts_path.split('/')[-1]}"
-        writeMLCL(ML, CL, optimalConstsPath)
-        paramConsts = f'-DconstsPath={optimalConstsPath}'
-        command.insert(1, paramConsts)
-
+    
     print("Smart Pair jar \n"+' '.join(command))
     # os.system(' '.join(command))
     output = subprocess.check_output(command, cwd=os.getcwd())
-    print(output.decode())
+    output_str = output.decode()
+    print(output_str)
 
     # time counter
     SmartPair_time_counter_end = time.perf_counter()
-    TC.counter(SmartPair_time_counter_start,
+    iter_TC.counter(SmartPair_time_counter_start,
                     SmartPair_time_counter_end,
                     'smtPr_22-31',
                     np.nan)
-
-   
+    
+    # As we using the ML and CL as b+ and b- enforecement, we may reach infeasible solution
+    # in smart pair. So we check the output of the smartpair.
+    if "infeasible solution -inner pair" in output_str:
+        iter_TC.print_dict()
+        print("*Infeasible solution detected in SmartPair*")
+        print("*loandra status: UNSATISFIABLE\nb0_final: 0 | 0_ind: 0\nb1_final: 0 | 0_ind: 0")
+        break
 
 
 
@@ -799,11 +757,10 @@ while loandra_status=='OPTIMUM FOUND':
     os.remove(clause_file_name)
 
     tmp_time_counter_end = time.perf_counter()
-    TC.counter(tmp_time_counter_start,
+    iter_TC.counter(tmp_time_counter_start,
             tmp_time_counter_end,
             'cl_file_header',
             np.nan)
-
 
 
     ### call loandra solver
@@ -816,7 +773,7 @@ while loandra_status=='OPTIMUM FOUND':
     os.system(loandra_cmd)
 
     solver_time_counter_end = time.perf_counter()
-    TC.counter(tmp_time_counter_start,
+    iter_TC.counter(tmp_time_counter_start,
             tmp_time_counter_end,
             '*solver*',
             np.nan)
@@ -827,20 +784,30 @@ while loandra_status=='OPTIMUM FOUND':
     print(f'Global Solver Time: {global_solver_time_counter} - curr_slvr_time: {curr_solver_time} -sum: {global_solver_time_counter+curr_solver_time}  timelimit: {stage2_timeout}')
 
 
-    stage2_Total_time_counter_end = time.perf_counter()
-    TC.counter(stage2_Total_time_counter_start,
-            stage2_Total_time_counter_end,
+    iter_stage2_Total_time_counter_end = time.perf_counter()
+    iter_TC.counter(iter_stage2_Total_time_counter_start,
+            iter_stage2_Total_time_counter_end,
             'Total',
             np.nan)
     # print stat
-    TC.print_dict()
+    iter_TC.print_dict()
 
 
     loandra_status, b0_res, b1_res = output_final_stage(loandra_res_file_name, b0,b1,x,y,n_points, n_labels)
-    # terminate the output for this round
-    outfile_handle.close()
+    
     # if the global time limit is exceeded, break
     if global_solver_time_counter  >= global_time_limit:
+        print(f"*PO break Global Solver Time Limit reached | {global_solver_time_counter} >= {global_time_limit}|")
         break
     if obj_=="b1":
         iter_ind+=1
+        # if all b0 sat, then it will automatically get UNSAT when optimizing b0 again, as it enforeces b1+=1, conflicting
+        # But if all b1 sat, it will get in infinite loop, as [:#sat_b1+1] still the full set, and we don't enforce b0+=1
+        # so we detect if all b1 sat when optmizing b1, finish
+        if np.sum(b1_res) == NUM_DISTANCE_CLASS:
+            print(f"*PO Break all b+ sat b+size: {np.sum(b1_res)}  -  DC size: {NUM_DISTANCE_CLASS}")
+            break
+    # terminate the output for this round
+    outfile_handle.close()
+
+
